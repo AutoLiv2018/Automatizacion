@@ -1,0 +1,4 @@
+[17/08/2018 07:54:38] - Inicia Sistema de Automatizacion
+[17/08/2018 10:12:55] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\iasancheza\Documents\NetBeansProjects\Checkout\ambientes\web\WQA
+[17/08/2018 10:12:55] - java.io.FileNotFoundException: C:\Users\iasancheza\Documents\NetBeansProjects\Checkout\ambientes\web\WQA (Access is denied)
+[17/08/2018 10:18:42] - Inicia Sistema de Automatizacion

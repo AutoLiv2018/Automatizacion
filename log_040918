@@ -1,0 +1,7 @@
+[04/09/2018 08:01:04] - Inicia Sistema de Automatizacion
+[04/09/2018 08:02:08] - Ocurrio una excepcion al conectar con la base de datos: 
+[04/09/2018 08:02:08] - java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=172.22.148.238)(port=3306)(type=master) : Connection timed out: connect
+[04/09/2018 08:11:44] - Inicia Sistema de Automatizacion
+[04/09/2018 08:12:26] - Ocurrio una excepcion al conectar con la base de datos: 
+[04/09/2018 08:12:26] - java.sql.SQLNonTransientConnectionException: Could not connect to address=(host=172.22.148.238)(port=3306)(type=master) : Connection timed out: connect
+[04/09/2018 08:15:35] - Inicia Sistema de Automatizacion

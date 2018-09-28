@@ -1,0 +1,16 @@
+[15/08/2018 07:12:07] - Ocurrio una excepcion al cargar el archivo de configuracion: https://wqa.liverpool.com.mx.properties
+[15/08/2018 07:12:07] - java.io.FileNotFoundException: https:\wqa.liverpool.com.mx.properties (The filename, directory name, or volume label syntax is incorrect)
+[15/08/2018 07:12:09] - Ocurrio una excepcion al leer el archivo: https://wqa.liverpool.com.mx.properties
+[15/08/2018 07:12:55] - Ocurrio una excepcion al cargar el archivo de configuracion: https://wqa.liverpool.com.mx.properties
+[15/08/2018 07:12:55] - java.io.FileNotFoundException: https:\wqa.liverpool.com.mx.properties (The filename, directory name, or volume label syntax is incorrect)
+[15/08/2018 07:12:55] - Ocurrio una excepcion al leer el archivo: https://wqa.liverpool.com.mx.properties
+[15/08/2018 07:12:57] - Inicia Sistema de Automatizacion
+[15/08/2018 07:42:24] - Inicia Sistema de Automatizacion
+[15/08/2018 08:01:34] - Inicia Sistema de Automatizacion
+[15/08/2018 11:50:41] - Ocurrio una excepcion al cargar el archivo de configuracion: ambientes\web\WQA.properties
+[15/08/2018 11:50:41] - java.io.FileNotFoundException: ambientes\web\WQA.properties (The system cannot find the file specified)
+[15/08/2018 11:50:42] - Ocurrio una excepcion al leer el archivo: ambientes\web\WQA.properties
+[15/08/2018 16:21:26] - Inicia Sistema de Automatizacion
+[15/08/2018 16:47:28] - Inicia Sistema de Automatizacion
+[15/08/2018 16:50:14] - Inicia Sistema de Automatizacion
+[15/08/2018 16:51:16] - Inicia Sistema de Automatizacion
