@@ -51,9 +51,10 @@ public class LivPDP {
     public void cantidadSKU(Sku sku){
         WebElement element;
         if ((element = Find.element(driver, pdp.getProperty(PDPLiver.SELECTOR_CANTIDAD))) != null){
-                element.clear();
+                try{element.clear();
                 element.sendKeys(Keys.BACK_SPACE);
                 element.sendKeys(sku.getCantidad());
+                }catch(Exception ex){}
             }
     }
     

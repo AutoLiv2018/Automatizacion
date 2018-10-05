@@ -48,8 +48,9 @@ import org.openqa.selenium.os.WindowsUtils;
 public class Principal {
     Properties p = new Properties(); // propiedades generales
     private JFrame frame; // Ventana de la aplicacion
-    private Interfaz interfaz; // Interfaz de la aplicacion
+    public Interfaz interfaz; // Interfaz de la aplicacion
     private WebDriver driver; // manejador del explorador web
+    private Properties entorno;
     
     public static void main(String[] args) {
         new Principal();
@@ -133,7 +134,7 @@ public class Principal {
             // Cargar el ambiente
             String entornoFl = p.getProperty(Const.APP_ENTORNO).replace("?", folder.getName());
             entornoFl = new File(folder, entornoFl).getAbsolutePath();
-            Properties entorno = new Properties(); // propiedades del ambiente de ejecucion
+            entorno = new Properties(); // propiedades del ambiente de ejecucion
             if(!loadProperties(entornoFl, entorno)){
                 Log.write("No se encontro el archivo: " + entornoFl);
                 return;
@@ -234,6 +235,7 @@ switch(matrizSelected){
 }       
         });
     }
+    
     
     private String getNameExe(){
         String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();

@@ -64,8 +64,21 @@ public class Checkout_P2 {
             case "Paypal":
                 paypalSeleccionar();
                 break;
+            case "Openpay":
+                efectivoSeleccionar();
+                efectivoVista();
+                break;
+            case "SPEI":
+                efectivoSeleccionar();
+                efectivoVista();
+                speiSeleccionar();
+                speiRadioButton();
+                break;
             case "CIE":
+                efectivoSeleccionar();
+                efectivoVista();
                 cieSeleccionar();
+                cieRadioButton();
                 break;
         }
         siguientePaso();
@@ -118,22 +131,64 @@ public class Checkout_P2 {
     
     public void paypalSeleccionar(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOPAYPAL)+"..")) != null)
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOPAYPAL))) != null)
             element.click();
         while((Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.PAYPALVISTA))) == null)
             Utils.sleep(500);
         Utils.sleep(500);
     }
     
+    public void efectivoSeleccionar(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.PAGOEFECTIVO))) != null)
+            element.click();
+        Utils.sleep(2000);
+    }
+    
+    public void efectivoVista(){
+        while((Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.EFECTIVOVISTA))) == null)
+            Utils.sleep(500);
+    }
+    
+    public void openpaySeleccionar(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOCIE))) != null)
+            element.click();
+        Utils.sleep(500);
+    }
+    
+    public void openpayRadioButton(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.SELECCIONCIE))) != null)
+            element.click();
+        Utils.sleep(500);
+    }
+    
+    public void speiSeleccionar(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOSPEI))) != null)
+            element.click();
+        Utils.sleep(500);
+    }
+    
+    public void speiRadioButton(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.SELECCIONSPEI))) != null)
+            element.click();
+        Utils.sleep(500);
+    }
+    
     public void cieSeleccionar(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOCIE)+"..")) != null)
-            if(element.isDisplayed())
-                element.click();
-            else
-                js.executeScript("arguments[0].click();", element);
-        if(( Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CIEVISTA))) == null)
-            Utils.sleep(500);
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOCIE))) != null)
+            element.click();
+        Utils.sleep(500);
+    }
+    
+    public void cieRadioButton(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.SELECCIONCIE))) != null)
+            element.click();
         Utils.sleep(500);
     }
     
@@ -149,12 +204,8 @@ public class Checkout_P2 {
         WebElement element;
         String nomCorto = Cpaso2.getProperty(Checkout_Paso2.NOMBRECORTO).replace("?", nombreCorto).replace("xpath|", "");
         String nipElement = Cpaso2.getProperty(Checkout_Paso2.NIPLOGIN).replace("?", nomCorto);
-        System.out.println(nipElement);
-        System.out.println(Find.element(driver, nipElement) != null);
-        if((element = Find.element(driver, nipElement)) != null){
+        if((element = Find.element(driver, nipElement)) != null)
             element.sendKeys(nip);
-            System.out.println("hola");
-        }
     }
     
     public void creditoMes (String mes, String nombreCorto){
@@ -164,7 +215,7 @@ public class Checkout_P2 {
         String mesElement = Cpaso2.getProperty(Checkout_Paso2.MESLOGIN).replace("?", nomCorto);
         if((element = Find.element(driver, mesElement)) != null){
             ddMes = new Select(element);
-            ddMes.selectByVisibleText(mes);
+            try{ddMes.selectByVisibleText(mes);}catch(Exception ex){}
         }
     }
     
@@ -175,7 +226,7 @@ public class Checkout_P2 {
         String anioElement = Cpaso2.getProperty(Checkout_Paso2.ANIOLOGIN).replace("?", nomCorto);
         if((element = Find.element(driver, anioElement)) != null){
             ddAnio = new Select(element);
-            ddAnio.selectByVisibleText(anio);
+            try{ddAnio.selectByVisibleText(anio);}catch(Exception ex){}
         }
     }
     

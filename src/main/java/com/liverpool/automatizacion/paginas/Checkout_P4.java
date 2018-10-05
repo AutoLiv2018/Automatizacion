@@ -41,6 +41,7 @@ public class Checkout_P4 {
     }
     
     public Ticket extraccionDatos(String metodoPago){
+        System.out.println("paso 4");
         cliente();
         correoCliente();
         fecha();
@@ -72,7 +73,34 @@ public class Checkout_P4 {
         referenciaCIE();
         mesa();
         festejado();
-
+        System.out.println("1 "+ticket.getCliente());
+        System.out.println("2 "+ticket.getCorreoCliente());
+        System.out.println("3 "+ticket.getFecha());
+        System.out.println("4 "+ticket.getSku());
+        System.out.println("5 "+ticket.getCantidadSKU());
+        System.out.println("6 "+ticket.getFacturacion());
+        System.out.println("7 "+ticket.getBoleta());
+        System.out.println("8 "+ticket.getTerminal());
+        System.out.println("9 "+ticket.getTienda());
+        System.out.println("10 "+ticket.getPedido());
+        System.out.println("11 "+ticket.getAutoBancaria());
+        System.out.println("12 "+ticket.getPrecioSKU());
+        System.out.println("13 "+ticket.getCalle());
+        System.out.println("14 "+ticket.getNExterior());
+        System.out.println("15 "+ticket.getNInterior());
+        System.out.println("16 "+ticket.getColonia());
+        System.out.println("17 "+ticket.getCp());
+        System.out.println("18 "+ticket.getDelegacion());
+        System.out.println("19 "+ticket.getCiudad());
+        System.out.println("20 "+ticket.getFolioPago());
+        System.out.println("21 "+ticket.getFolioPaypal());
+        System.out.println("22 "+ticket.getTarjeta());
+        System.out.println("23 "+ticket.getNTarjeta());
+        System.out.println("24 "+ticket.getFechaTarjeta());
+        System.out.println("25 "+ticket.getPrecioTotal());
+        System.out.println("26 "+ticket.getReferenciaCIE());
+        System.out.println("27 "+ticket.getMesa());
+        System.out.println("28 "+ticket.getFestejado());
         return ticket;
     }
     
@@ -323,6 +351,15 @@ public class Checkout_P4 {
         WebElement element;
         if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FESTEJADO))) != null){
             ticket.setFestejado(element.getText());
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean clickLogoLiverpool(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.LOGOLIVERPOOL))) != null){
+            element.click();
             return true;
         }
         return false;

@@ -13,7 +13,13 @@ public class Checkout_Paso2 {
     public static final String CREDITOVISTA = "creditoVista";
     public static final String METODOPAYPAL = "metodoPaypal";
     public static final String PAYPALVISTA = "paypalVista";
+    public static final String PAGOEFECTIVO = "pagoEfectivo";
+    public static final String EFECTIVOVISTA = "efectivoVista";
+    public static final String SELECCIONSPEI = "seleccionSPEI";
+    public static final String METODOSPEI = "metodoSPEI";
+    public static final String VISTACIE = "vistaCIE";
     public static final String METODOCIE = "metodoCie";
+    public static final String SELECCIONCIE = "seleccionCie";
     public static final String CIEVISTA = "cievista";
     public static final String NOMBRECORTO = "nombreCorto";
     public static final String TARJETANOMBRE = "tarjetaNombre";

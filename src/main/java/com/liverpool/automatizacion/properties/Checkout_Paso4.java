@@ -40,4 +40,5 @@ public class Checkout_Paso4 {
     public static final String REFENCIACIE = "refenciaCIE";
     public static final String MESA = "mesa";
     public static final String FESTEJADO = "festejado";
+    public static final String LOGOLIVERPOOL = "logoLiverpool";
 }

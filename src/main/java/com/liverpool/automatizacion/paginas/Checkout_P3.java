@@ -41,7 +41,7 @@ public class Checkout_P3 {
     //Terminar compra
     public void terminarCompra(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.BTONCOMPRA2))) != null)
+        if((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.BOTONTERMINARCOMPRA1))) != null)
             element.click();
     }
     

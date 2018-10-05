@@ -26,11 +26,15 @@ public class Checkout_P1 {
     private Interfaz interfaz;
     public final File paso1;
     public final Properties Cpaso1;
+    public final String envio;
+    public final String direccion;
     Tienda tienda;
     
-    public Checkout_P1(Interfaz interfaz, WebDriver driver, Tienda tienda){
+    public Checkout_P1(Interfaz interfaz, WebDriver driver, String envio, Tienda tienda, String direccion){
         this.driver = driver;
         this.tienda = tienda;
+        this.envio = envio;
+        this.direccion = direccion;
         
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso1 = new Properties(); // propiedades de la pagina shipping.jsp
@@ -41,8 +45,35 @@ public class Checkout_P1 {
         }
     }
     
+    public void envio(){
+        String usuario;
+        usuario = "Login";
+
+        switch (usuario){
+            case "Login": 
+                metodoEntrega();
+                break;
+            case "Guest":
+                datosGuest();
+                metodoEntrega();
+                break;
+        }
+    }
+    
     public void metodoEntrega(){
-        tipoEntregaCC();
+        switch (envio){
+            case "Tienda": 
+                tipoEntregaCC();
+                break;
+            case "Domicilio":
+                tipoEntregaDomLogin();
+                break;
+        }
+        
+    }
+    
+    public void datosGuest(){
+        
     }
     
     public void tipoEntregaCC (){ //Estado y numero de la tienda
@@ -50,6 +81,22 @@ public class Checkout_P1 {
         estadoCC();
         seleccionTiendaCC();
         siguientePasoButton();
+    }
+    
+    public void tipoEntregaDomLogin(){
+        seleccionDomicilio();
+        siguientePasoButton();
+    }
+    
+    public boolean seleccionDomicilio(){
+        WebElement element;
+        String nombre = Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion).replace("xpath|", "");
+        String nombreSeleccion = Cpaso1.getProperty(Checkout_Paso1.NOMBRESELECCION).replace("?", nombre);
+        if((element = Find.element(driver, nombreSeleccion)) != null){
+            element.click();
+            return true;
+        }
+        return false;
     }
     
     public boolean buttonClickCollect(){//Seleccion de Click and Collect
