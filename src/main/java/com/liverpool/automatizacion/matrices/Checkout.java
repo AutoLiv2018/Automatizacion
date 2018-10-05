@@ -13,7 +13,6 @@ import com.liverpool.automatizacion.modelo.Tienda;
 import com.liverpool.automatizacion.modelo.Validacion;
 import com.liverpool.automatizacion.properties.Cart;
 import com.liverpool.automatizacion.properties.Shipping;
-import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.RE;
 import com.liverpool.automatizacion.util.Utils;
 import java.util.ArrayList;
