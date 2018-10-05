@@ -46,6 +46,8 @@ public class PaypalSite {
         iniciarSesion();
         escribirEmail();
         escribirPassword();
+        seleccionarTarjeta();
+        botonContinuar();
         comprar();
         esperaTicket();
     }
@@ -81,6 +83,23 @@ public class PaypalSite {
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.PASSWORD))) != null)
             element.sendKeys(loginPaypal.getPassword());
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.LOGEAR))) != null)
+            element.click();
+        esperaLoad();
+    }
+    
+    public void seleccionarTarjeta(){
+        WebElement element;
+        System.out.println(proPaypal.getProperty(PaypalProper.SELECCIONARTARJETA));
+        if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.SELECCIONARTARJETA))) != null){
+            element.click();
+            System.out.println("Entra");
+        }
+        esperaLoad();
+    }
+    
+    public void botonContinuar(){
+        WebElement element;
+        if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.BOTONCONTINUAR))) != null)
             element.click();
         esperaLoad();
     }

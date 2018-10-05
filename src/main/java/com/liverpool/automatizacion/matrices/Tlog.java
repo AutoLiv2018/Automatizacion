@@ -19,6 +19,7 @@ import com.liverpool.automatizacion.paginas.Checkout_P2;
 import com.liverpool.automatizacion.paginas.Checkout_P3;
 import com.liverpool.automatizacion.paginas.PaypalSite;
 import com.liverpool.automatizacion.paginas.Checkout_P4;
+import com.liverpool.automatizacion.paginas.ThreeDSecure;
 import com.liverpool.automatizacion.util.Excel;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -148,6 +149,7 @@ public class Tlog {
             Checkout_P3 paso3 = new Checkout_P3(interfaz,driver);
             PaypalSite paypal = new PaypalSite(interfaz, driver, loginPaypal);
             Checkout_P4 paso4 = new Checkout_P4(interfaz,driver);
+            ThreeDSecure tds = new ThreeDSecure(interfaz,driver);
             
             if(usuario.equals("Login"))
                 home.incioSesion();
@@ -168,6 +170,8 @@ public class Tlog {
             paso3.terminarCompra();
             if(metodoPago.equals("Paypal"))
                 paypal.paypalSandBox();
+            tds.validacion3DS();
+            
             ticket = paso4.extraccionDatos(metodoPago);
     //        Excel escritura = new Excel();
     //        escritura.writeExcel(ticket);

@@ -17,6 +17,8 @@ public class PaypalProper {
     public static final String EMAIL = "email";
     public static final String SIGUIENTE = "siguiente";
     public static final String PASSWORD = "password";
+    public static final String SELECCIONARTARJETA = "selecionTarjeta";
+    public static final String BOTONCONTINUAR = "botonContinuar";
     public static final String LOGEAR = "logear";
     public static final String COMPRAR = "comprar";
     public static final String COMPRAURL = "compraURL";
