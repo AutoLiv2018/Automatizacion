@@ -1,0 +1,1285 @@
+[08/10/2018 09:14:02] - Inicia Sistema de Automatizacion
+[08/10/2018 09:14:19] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:14:19] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:14:19] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.145.185', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64471}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 2ebf5f53b52cf408944bb3e7a19723f7
+[08/10/2018 09:14:32] - Antes de SKUs ****************************************
+[08/10/2018 09:14:32] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:14:32] - InicioSesion
+[08/10/2018 09:14:32] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\HomeLiv.properties
+[08/10/2018 09:14:32] - java.io.FileNotFoundException: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\HomeLiv.properties (The system cannot find the file specified)
+[08/10/2018 09:14:32] - Ocurrio una excepcion al leer el archivo: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\HomeLiv.properties
+[08/10/2018 09:14:32] - Despues de LiveHome
+[08/10/2018 09:14:32] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\PDPLiver.properties
+[08/10/2018 09:14:32] - java.io.FileNotFoundException: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\PDPLiver.properties (The system cannot find the file specified)
+[08/10/2018 09:14:32] - Ocurrio una excepcion al leer el archivo: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\PDPLiver.properties
+[08/10/2018 09:14:32] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\Paso0_Checkout.properties
+[08/10/2018 09:14:32] - java.io.FileNotFoundException: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\Paso0_Checkout.properties (The system cannot find the file specified)
+[08/10/2018 09:14:32] - Ocurrio una excepcion al leer el archivo: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\www\Paso0_Checkout.properties
+[08/10/2018 09:22:55] - Inicia Sistema de Automatizacion
+[08/10/2018 09:23:12] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:23:12] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:23:12] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.145.185', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64580}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: ec371c67de0dc5342f89caa051f58ee6
+[08/10/2018 09:23:21] - Antes de SKUs ****************************************
+[08/10/2018 09:23:21] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:23:21] - InicioSesion
+[08/10/2018 09:23:21] - Despues de LiveHome
+[08/10/2018 09:23:41] - Numero de evento ------------------------36773699
+[08/10/2018 09:23:41] - Numero de evento *******************36773699
+[08/10/2018 09:23:44] - selecciono agrega regalo
+[08/10/2018 09:23:44] - seleccionotrue
+[08/10/2018 09:23:45] - cambia de frame *******************[[ChromeDriver: chrome on XP (ec371c67de0dc5342f89caa051f58ee6)] -> class name: fancybox-iframe]
+[08/10/2018 09:23:45] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 09:23:45] - primer if *******************
+[08/10/2018 09:23:46] - Leyenda *********  No existen eventos para los criterios de búsqueda proporcionados, revisa tus datos e intenta nuevamente
+[08/10/2018 09:23:46] - Leyenda *********  false leyenda
+[08/10/2018 09:23:46] - flag antes de *******************false leyenda
+[08/10/2018 09:23:46] - Numero encontrado ------------------------false leyenda
+[08/10/2018 09:32:42] - Inicia Sistema de Automatizacion
+[08/10/2018 09:35:26] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:35:26] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:35:26] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.145.185', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64867}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: ab3e3a161c90f009f16e762950b542d5
+[08/10/2018 09:35:32] - Antes de SKUs ****************************************
+[08/10/2018 09:35:32] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:35:32] - InicioSesion
+[08/10/2018 09:35:32] - Despues de LiveHome
+[08/10/2018 09:35:53] - Numero de evento ------------------------50009146
+[08/10/2018 09:35:53] - Numero de evento *******************50009146
+[08/10/2018 09:35:55] - selecciono agrega regalo
+[08/10/2018 09:35:55] - seleccionotrue
+[08/10/2018 09:35:56] - cambia de frame *******************[[ChromeDriver: chrome on XP (ab3e3a161c90f009f16e762950b542d5)] -> class name: fancybox-iframe]
+[08/10/2018 09:35:56] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 09:35:56] - primer if *******************
+[08/10/2018 09:35:57] - busca numero 1 *******************50009146
+[08/10/2018 09:35:57] - busca numero *******************true evento
+[08/10/2018 09:36:00] - elemento *******************[[ChromeDriver: chrome on XP (ab3e3a161c90f009f16e762950b542d5)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 09:40:43] - Inicia Sistema de Automatizacion
+[08/10/2018 09:40:57] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:40:57] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:40:57] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.145.185', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64974}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 568821b42b598d7f4a35c9b7975aca82
+[08/10/2018 09:42:41] - Antes de SKUs ****************************************
+[08/10/2018 09:42:41] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:42:41] - InicioSesion
+[08/10/2018 09:42:41] - Despues de LiveHome
+[08/10/2018 09:42:50] - Inicia Sistema de Automatizacion
+[08/10/2018 09:43:05] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:43:05] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:43:05] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51133}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: f2877fbf1b8a8eaf416d45bfd031d134
+[08/10/2018 09:43:09] - Antes de SKUs ****************************************
+[08/10/2018 09:43:09] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:43:09] - InicioSesion
+[08/10/2018 09:43:09] - Despues de LiveHome
+[08/10/2018 09:43:23] - Numero de evento ------------------------50009146
+[08/10/2018 09:43:23] - Numero de evento *******************50009146
+[08/10/2018 09:43:25] - selecciono agrega regalo
+[08/10/2018 09:43:25] - seleccionotrue
+[08/10/2018 09:43:26] - cambia de frame *******************[[ChromeDriver: chrome on XP (f2877fbf1b8a8eaf416d45bfd031d134)] -> class name: fancybox-iframe]
+[08/10/2018 09:43:26] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 09:43:26] - primer if *******************
+[08/10/2018 09:43:27] - busca numero 1 *******************50009146
+[08/10/2018 09:43:27] - busca numero *******************true evento
+[08/10/2018 09:43:30] - elemento *******************[[ChromeDriver: chrome on XP (f2877fbf1b8a8eaf416d45bfd031d134)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 09:43:30] - ========entra a combo ===== : 
+[08/10/2018 09:44:48] - Inicia Sistema de Automatizacion
+[08/10/2018 09:45:02] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:45:02] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:45:02] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51228}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 1ea8d1d7e72bf9e7db5dc7d1b55aa422
+[08/10/2018 09:45:10] - Antes de SKUs ****************************************
+[08/10/2018 09:45:10] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:45:10] - InicioSesion
+[08/10/2018 09:45:10] - Despues de LiveHome
+[08/10/2018 09:45:29] - Numero de evento ------------------------50009146
+[08/10/2018 09:45:29] - Numero de evento *******************50009146
+[08/10/2018 09:45:30] - selecciono agrega regalo
+[08/10/2018 09:45:30] - seleccionotrue
+[08/10/2018 09:45:32] - cambia de frame *******************[[ChromeDriver: chrome on XP (1ea8d1d7e72bf9e7db5dc7d1b55aa422)] -> class name: fancybox-iframe]
+[08/10/2018 09:45:32] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 09:45:32] - primer if *******************
+[08/10/2018 09:45:33] - busca numero 1 *******************50009146
+[08/10/2018 09:45:33] - busca numero *******************true evento
+[08/10/2018 09:45:36] - elemento *******************[[ChromeDriver: chrome on XP (1ea8d1d7e72bf9e7db5dc7d1b55aa422)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 09:45:36] - ========entra a combo ===== : 
+[08/10/2018 09:47:41] - Inicia Sistema de Automatizacion
+[08/10/2018 09:48:06] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:48:06] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:48:06] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51316}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: e7a16ded44520ce6fdd23f5aa4500d82
+[08/10/2018 09:48:10] - Antes de SKUs ****************************************
+[08/10/2018 09:48:10] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:48:10] - InicioSesion
+[08/10/2018 09:48:10] - Despues de LiveHome
+[08/10/2018 09:48:26] - Numero de evento ------------------------50009146
+[08/10/2018 09:48:26] - Numero de evento *******************50009146
+[08/10/2018 09:48:27] - selecciono agrega regalo
+[08/10/2018 09:48:27] - seleccionotrue
+[08/10/2018 09:48:28] - cambia de frame *******************[[ChromeDriver: chrome on XP (e7a16ded44520ce6fdd23f5aa4500d82)] -> class name: fancybox-iframe]
+[08/10/2018 09:48:28] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 09:48:28] - primer if *******************
+[08/10/2018 09:48:29] - busca numero 1 *******************50009146
+[08/10/2018 09:48:29] - busca numero *******************true evento
+[08/10/2018 09:48:32] - elemento *******************[[ChromeDriver: chrome on XP (e7a16ded44520ce6fdd23f5aa4500d82)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 09:48:32] - ========entra a combo ===== : 
+[08/10/2018 09:49:18] - Inicia Sistema de Automatizacion
+[08/10/2018 09:49:31] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 09:49:31] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 09:49:31] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51408}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 5d45abdb807380e7cadd5e2471ba6665
+[08/10/2018 09:49:35] - Antes de SKUs ****************************************
+[08/10/2018 09:49:35] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 09:49:35] - InicioSesion
+[08/10/2018 09:49:35] - Despues de LiveHome
+[08/10/2018 09:49:50] - Numero de evento ------------------------50009146
+[08/10/2018 09:49:50] - Numero de evento *******************50009146
+[08/10/2018 09:49:51] - selecciono agrega regalo
+[08/10/2018 09:49:51] - seleccionotrue
+[08/10/2018 09:49:52] - cambia de frame *******************[[ChromeDriver: chrome on XP (5d45abdb807380e7cadd5e2471ba6665)] -> class name: fancybox-iframe]
+[08/10/2018 09:49:52] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 09:51:10] - primer if *******************
+[08/10/2018 09:55:29] - busca numero 1 *******************50009146
+[08/10/2018 09:55:38] - busca numero *******************true evento
+[08/10/2018 09:56:41] - elemento *******************[[ChromeDriver: chrome on XP (5d45abdb807380e7cadd5e2471ba6665)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 09:57:10] - ========entra a combo ===== : 
+[08/10/2018 10:20:00] - Inicia Sistema de Automatizacion
+[08/10/2018 10:20:15] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:20:15] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:20:15] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54004}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 2883ff42b61cfa2b7d0db967d749d56e
+[08/10/2018 10:20:21] - Antes de SKUs ****************************************
+[08/10/2018 10:20:21] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:20:21] - InicioSesion
+[08/10/2018 10:20:21] - Despues de LiveHome
+[08/10/2018 10:20:39] - Numero de evento ------------------------50009146
+[08/10/2018 10:20:39] - Numero de evento *******************50009146
+[08/10/2018 10:20:41] - selecciono agrega regalo
+[08/10/2018 10:20:41] - seleccionotrue
+[08/10/2018 10:20:42] - cambia de frame *******************[[ChromeDriver: chrome on XP (2883ff42b61cfa2b7d0db967d749d56e)] -> class name: fancybox-iframe]
+[08/10/2018 10:20:42] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:20:42] - primer if *******************
+[08/10/2018 10:20:43] - busca numero 1 *******************50009146
+[08/10/2018 10:20:43] - busca numero *******************true evento
+[08/10/2018 10:20:46] - elemento *******************[[ChromeDriver: chrome on XP (2883ff42b61cfa2b7d0db967d749d56e)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:20:46] - ========entra a combo ===== : 
+[08/10/2018 10:20:47] - ========nombre ===== : illi israel sanchez
+[08/10/2018 10:20:47] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:23:13] - Inicia Sistema de Automatizacion
+[08/10/2018 10:23:26] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:23:26] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:23:26] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54349}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 6442f5866041f57f9d2b39da76f99112
+[08/10/2018 10:23:30] - Antes de SKUs ****************************************
+[08/10/2018 10:23:30] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:23:30] - InicioSesion
+[08/10/2018 10:23:30] - Despues de LiveHome
+[08/10/2018 10:23:45] - Numero de evento ------------------------50009146
+[08/10/2018 10:23:45] - Numero de evento *******************50009146
+[08/10/2018 10:23:46] - selecciono agrega regalo
+[08/10/2018 10:23:46] - seleccionotrue
+[08/10/2018 10:23:47] - cambia de frame *******************[[ChromeDriver: chrome on XP (6442f5866041f57f9d2b39da76f99112)] -> class name: fancybox-iframe]
+[08/10/2018 10:23:47] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:23:48] - primer if *******************
+[08/10/2018 10:23:49] - busca numero 1 *******************50009146
+[08/10/2018 10:23:49] - busca numero *******************true evento
+[08/10/2018 10:23:52] - elemento *******************[[ChromeDriver: chrome on XP (6442f5866041f57f9d2b39da76f99112)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:23:52] - ========entra a combo ===== : 
+[08/10/2018 10:23:52] - ========nombre ===== : [[[[[ChromeDriver: chrome on XP (6442f5866041f57f9d2b39da76f99112)] -> xpath: //*[@id='singleOwnerSelection_50009146']]] -> tag name: option], [[[[ChromeDriver: chrome on XP (6442f5866041f57f9d2b39da76f99112)] -> xpath: //*[@id='singleOwnerSelection_50009146']]] -> tag name: option], [[[[ChromeDriver: chrome on XP (6442f5866041f57f9d2b39da76f99112)] -> xpath: //*[@id='singleOwnerSelection_50009146']]] -> tag name: option]]
+[08/10/2018 10:23:52] - ========nombre ===== : illi israel sanchez
+[08/10/2018 10:23:52] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:25:16] - Inicia Sistema de Automatizacion
+[08/10/2018 10:25:31] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:25:31] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:25:31] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54602}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 34aa08da173e398ed92f066a300d3766
+[08/10/2018 10:25:37] - Antes de SKUs ****************************************
+[08/10/2018 10:25:37] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:25:37] - InicioSesion
+[08/10/2018 10:25:37] - Despues de LiveHome
+[08/10/2018 10:25:54] - Numero de evento ------------------------50009146
+[08/10/2018 10:25:54] - Numero de evento *******************50009146
+[08/10/2018 10:25:55] - selecciono agrega regalo
+[08/10/2018 10:25:55] - seleccionotrue
+[08/10/2018 10:25:57] - cambia de frame *******************[[ChromeDriver: chrome on XP (34aa08da173e398ed92f066a300d3766)] -> class name: fancybox-iframe]
+[08/10/2018 10:25:57] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:25:57] - primer if *******************
+[08/10/2018 10:25:58] - busca numero 1 *******************50009146
+[08/10/2018 10:25:58] - busca numero *******************true evento
+[08/10/2018 10:26:01] - elemento *******************[[ChromeDriver: chrome on XP (34aa08da173e398ed92f066a300d3766)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:26:01] - ========entra a combo ===== : 
+[08/10/2018 10:26:01] - ========nombre ===== : [[[[ChromeDriver: chrome on XP (34aa08da173e398ed92f066a300d3766)] -> xpath: //*[@id='singleOwnerSelection_50009146']]] -> tag name: option]
+[08/10/2018 10:26:01] - ========nombre ===== : illi israel sanchez
+[08/10/2018 10:26:01] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:27:43] - Inicia Sistema de Automatizacion
+[08/10/2018 10:28:01] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:28:01] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:28:01] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54893}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 3f60ea754a0e6403378bf148a5a576ba
+[08/10/2018 10:28:05] - Antes de SKUs ****************************************
+[08/10/2018 10:28:05] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:28:05] - InicioSesion
+[08/10/2018 10:28:05] - Despues de LiveHome
+[08/10/2018 10:28:21] - Numero de evento ------------------------50009146
+[08/10/2018 10:28:21] - Numero de evento *******************50009146
+[08/10/2018 10:28:22] - selecciono agrega regalo
+[08/10/2018 10:28:22] - seleccionotrue
+[08/10/2018 10:28:23] - cambia de frame *******************[[ChromeDriver: chrome on XP (3f60ea754a0e6403378bf148a5a576ba)] -> class name: fancybox-iframe]
+[08/10/2018 10:28:23] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:28:23] - primer if *******************
+[08/10/2018 10:28:25] - busca numero 1 *******************50009146
+[08/10/2018 10:28:25] - busca numero *******************true evento
+[08/10/2018 10:28:28] - elemento *******************[[ChromeDriver: chrome on XP (3f60ea754a0e6403378bf148a5a576ba)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:28:28] - ========entra a combo ===== : 
+[08/10/2018 10:28:28] - ========nombre ===== : Selecciona festejado
+[08/10/2018 10:28:28] - ========nombre ===== : illi israel sanchez
+[08/10/2018 10:28:28] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:29:11] - Inicia Sistema de Automatizacion
+[08/10/2018 10:29:24] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:29:24] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:29:24] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55087}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 95974a705ca49ef9de2a1bf6fe6e217b
+[08/10/2018 10:29:27] - Antes de SKUs ****************************************
+[08/10/2018 10:29:27] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:29:27] - InicioSesion
+[08/10/2018 10:29:27] - Despues de LiveHome
+[08/10/2018 10:29:43] - Numero de evento ------------------------50009146
+[08/10/2018 10:29:43] - Numero de evento *******************50009146
+[08/10/2018 10:29:45] - selecciono agrega regalo
+[08/10/2018 10:29:45] - seleccionotrue
+[08/10/2018 10:29:46] - cambia de frame *******************[[ChromeDriver: chrome on XP (95974a705ca49ef9de2a1bf6fe6e217b)] -> class name: fancybox-iframe]
+[08/10/2018 10:29:46] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:29:46] - primer if *******************
+[08/10/2018 10:29:47] - busca numero 1 *******************50009146
+[08/10/2018 10:29:47] - busca numero *******************true evento
+[08/10/2018 10:29:50] - elemento *******************[[ChromeDriver: chrome on XP (95974a705ca49ef9de2a1bf6fe6e217b)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:29:50] - ========entra a combo ===== : 
+[08/10/2018 10:29:50] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:29:50] - ========nombre ===== : illi israel sanchez
+[08/10/2018 10:29:50] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:31:12] - Inicia Sistema de Automatizacion
+[08/10/2018 10:31:34] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:31:34] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:31:34] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55368}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 377ca79aaaa5f503951d571f7062c0c8
+[08/10/2018 10:31:40] - Antes de SKUs ****************************************
+[08/10/2018 10:31:40] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:31:40] - InicioSesion
+[08/10/2018 10:31:40] - Despues de LiveHome
+[08/10/2018 10:31:56] - Numero de evento ------------------------50009146
+[08/10/2018 10:31:56] - Numero de evento *******************50009146
+[08/10/2018 10:31:57] - selecciono agrega regalo
+[08/10/2018 10:31:57] - seleccionotrue
+[08/10/2018 10:31:58] - cambia de frame *******************[[ChromeDriver: chrome on XP (377ca79aaaa5f503951d571f7062c0c8)] -> class name: fancybox-iframe]
+[08/10/2018 10:31:58] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:31:58] - primer if *******************
+[08/10/2018 10:31:59] - busca numero 1 *******************50009146
+[08/10/2018 10:31:59] - busca numero *******************true evento
+[08/10/2018 10:32:02] - elemento *******************[[ChromeDriver: chrome on XP (377ca79aaaa5f503951d571f7062c0c8)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:32:02] - ========entra a combo ===== : 
+[08/10/2018 10:32:03] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:32:03] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:32:03] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:32:03] - ========boton===== otro : [[ChromeDriver: chrome on XP (377ca79aaaa5f503951d571f7062c0c8)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 10:33:22] - Inicia Sistema de Automatizacion
+[08/10/2018 10:33:36] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:33:36] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:33:36] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55625}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 9629a21b20a867e3f9bc068ca9d38c67
+[08/10/2018 10:33:40] - Antes de SKUs ****************************************
+[08/10/2018 10:33:40] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:33:40] - InicioSesion
+[08/10/2018 10:33:40] - Despues de LiveHome
+[08/10/2018 10:33:55] - Numero de evento ------------------------50009146
+[08/10/2018 10:33:55] - Numero de evento *******************50009146
+[08/10/2018 10:33:56] - selecciono agrega regalo
+[08/10/2018 10:33:56] - seleccionotrue
+[08/10/2018 10:33:57] - cambia de frame *******************[[ChromeDriver: chrome on XP (9629a21b20a867e3f9bc068ca9d38c67)] -> class name: fancybox-iframe]
+[08/10/2018 10:33:57] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:33:57] - primer if *******************
+[08/10/2018 10:33:58] - busca numero 1 *******************50009146
+[08/10/2018 10:33:58] - busca numero *******************true evento
+[08/10/2018 10:34:01] - elemento *******************[[ChromeDriver: chrome on XP (9629a21b20a867e3f9bc068ca9d38c67)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:34:01] - ========entra a combo ===== : 
+[08/10/2018 10:34:02] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:34:02] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:34:02] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:34:02] - ========boton===== otro : [[ChromeDriver: chrome on XP (9629a21b20a867e3f9bc068ca9d38c67)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 10:34:04] - ========boton sin registro antes del if  : 
+[08/10/2018 10:34:05] - flag antes de *******************true evento
+[08/10/2018 10:34:05] - Numero encontrado ------------------------true evento
+[08/10/2018 10:40:09] - Inicia Sistema de Automatizacion
+[08/10/2018 10:40:25] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:40:25] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:40:25] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56614}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 13506bb5346ad12785b7fa3a3ecb2d21
+[08/10/2018 10:40:29] - Antes de SKUs ****************************************
+[08/10/2018 10:40:29] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:40:29] - InicioSesion
+[08/10/2018 10:40:29] - Despues de LiveHome
+[08/10/2018 10:40:45] - Numero de evento ------------------------50009146
+[08/10/2018 10:40:45] - Numero de evento *******************50009146
+[08/10/2018 10:40:46] - selecciono agrega regalo
+[08/10/2018 10:40:46] - seleccionotrue
+[08/10/2018 10:40:47] - cambia de frame *******************[[ChromeDriver: chrome on XP (13506bb5346ad12785b7fa3a3ecb2d21)] -> class name: fancybox-iframe]
+[08/10/2018 10:40:47] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:40:47] - primer if *******************
+[08/10/2018 10:40:48] - busca numero 1 *******************50009146
+[08/10/2018 10:40:48] - busca numero *******************true evento
+[08/10/2018 10:40:51] - elemento *******************[[ChromeDriver: chrome on XP (13506bb5346ad12785b7fa3a3ecb2d21)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:40:51] - ========entra a combo ===== : 
+[08/10/2018 10:40:51] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:40:51] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:40:51] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:40:51] - ========boton===== otro : [[ChromeDriver: chrome on XP (13506bb5346ad12785b7fa3a3ecb2d21)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 10:40:52] - ---------boton pagar----true
+[08/10/2018 10:40:52] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (13506bb5346ad12785b7fa3a3ecb2d21)] -> class name: btn-pay]
+[08/10/2018 10:44:05] - Inicia Sistema de Automatizacion
+[08/10/2018 10:44:42] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:44:42] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:44:42] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:57044}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 776da8121ecd82bb8e6d0677666d7e0c
+[08/10/2018 10:44:46] - Antes de SKUs ****************************************
+[08/10/2018 10:44:46] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:44:46] - InicioSesion
+[08/10/2018 10:44:46] - Despues de LiveHome
+[08/10/2018 10:45:03] - Numero de evento ------------------------50009146
+[08/10/2018 10:45:03] - Numero de evento *******************50009146
+[08/10/2018 10:45:04] - selecciono agrega regalo
+[08/10/2018 10:45:04] - seleccionotrue
+[08/10/2018 10:45:05] - cambia de frame *******************[[ChromeDriver: chrome on XP (776da8121ecd82bb8e6d0677666d7e0c)] -> class name: fancybox-iframe]
+[08/10/2018 10:45:05] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:45:05] - primer if *******************
+[08/10/2018 10:45:06] - busca numero 1 *******************50009146
+[08/10/2018 10:45:06] - busca numero *******************true evento
+[08/10/2018 10:45:09] - elemento *******************[[ChromeDriver: chrome on XP (776da8121ecd82bb8e6d0677666d7e0c)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:45:09] - ========entra a combo ===== : 
+[08/10/2018 10:45:09] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:45:09] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:45:09] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:45:09] - ========boton===== otro : [[ChromeDriver: chrome on XP (776da8121ecd82bb8e6d0677666d7e0c)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 10:45:10] - ---------boton pagar----true
+[08/10/2018 10:45:10] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (776da8121ecd82bb8e6d0677666d7e0c)] -> class name: btn-pay]
+[08/10/2018 10:58:39] - Inicia Sistema de Automatizacion
+[08/10/2018 10:58:57] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 10:58:57] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 10:58:57] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59399}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: d59aff9324c962036091f6e906e7dc7e
+[08/10/2018 10:59:01] - Antes de SKUs ****************************************
+[08/10/2018 10:59:01] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 10:59:01] - InicioSesion
+[08/10/2018 10:59:01] - Despues de LiveHome
+[08/10/2018 10:59:18] - Numero de evento ------------------------50009146
+[08/10/2018 10:59:18] - Numero de evento *******************50009146
+[08/10/2018 10:59:20] - selecciono agrega regalo
+[08/10/2018 10:59:20] - seleccionotrue
+[08/10/2018 10:59:21] - cambia de frame *******************[[ChromeDriver: chrome on XP (d59aff9324c962036091f6e906e7dc7e)] -> class name: fancybox-iframe]
+[08/10/2018 10:59:21] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 10:59:21] - primer if *******************
+[08/10/2018 10:59:22] - busca numero 1 *******************50009146
+[08/10/2018 10:59:22] - busca numero *******************true evento
+[08/10/2018 10:59:25] - elemento *******************[[ChromeDriver: chrome on XP (d59aff9324c962036091f6e906e7dc7e)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 10:59:25] - ========entra a combo ===== : 
+[08/10/2018 10:59:25] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:59:25] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 10:59:25] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 10:59:25] - ========boton===== otro : [[ChromeDriver: chrome on XP (d59aff9324c962036091f6e906e7dc7e)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:07:21] - Inicia Sistema de Automatizacion
+[08/10/2018 11:07:37] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:07:37] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:07:37] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61412}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: b450ecfc2615a30200901e80184bb559
+[08/10/2018 11:07:41] - Antes de SKUs ****************************************
+[08/10/2018 11:07:41] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:07:41] - InicioSesion
+[08/10/2018 11:07:41] - Despues de LiveHome
+[08/10/2018 11:07:56] - Numero de evento ------------------------50009146
+[08/10/2018 11:07:56] - Numero de evento *******************50009146
+[08/10/2018 11:07:58] - selecciono agrega regalo
+[08/10/2018 11:07:58] - seleccionotrue
+[08/10/2018 11:07:59] - cambia de frame *******************[[ChromeDriver: chrome on XP (b450ecfc2615a30200901e80184bb559)] -> class name: fancybox-iframe]
+[08/10/2018 11:07:59] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:07:59] - primer if *******************
+[08/10/2018 11:08:00] - busca numero 1 *******************50009146
+[08/10/2018 11:08:00] - busca numero *******************true evento
+[08/10/2018 11:08:03] - elemento *******************[[ChromeDriver: chrome on XP (b450ecfc2615a30200901e80184bb559)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:08:03] - ========entra a combo ===== : 
+[08/10/2018 11:08:03] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:08:03] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:08:03] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:08:03] - ========boton===== otro : [[ChromeDriver: chrome on XP (b450ecfc2615a30200901e80184bb559)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:08:04] - ---------boton pagar----true
+[08/10/2018 11:08:04] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (b450ecfc2615a30200901e80184bb559)] -> class name: btn-pay]
+[08/10/2018 11:10:57] - Inicia Sistema de Automatizacion
+[08/10/2018 11:11:10] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:11:10] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:11:10] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61915}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: a698f601317a20b7cc5492537f325961
+[08/10/2018 11:11:15] - Antes de SKUs ****************************************
+[08/10/2018 11:11:15] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:11:15] - InicioSesion
+[08/10/2018 11:11:15] - Despues de LiveHome
+[08/10/2018 11:11:30] - Numero de evento ------------------------50009146
+[08/10/2018 11:11:30] - Numero de evento *******************50009146
+[08/10/2018 11:11:31] - selecciono agrega regalo
+[08/10/2018 11:11:31] - seleccionotrue
+[08/10/2018 11:11:32] - cambia de frame *******************[[ChromeDriver: chrome on XP (a698f601317a20b7cc5492537f325961)] -> class name: fancybox-iframe]
+[08/10/2018 11:11:32] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:11:32] - primer if *******************
+[08/10/2018 11:11:33] - busca numero 1 *******************50009146
+[08/10/2018 11:11:33] - busca numero *******************true evento
+[08/10/2018 11:11:36] - elemento *******************[[ChromeDriver: chrome on XP (a698f601317a20b7cc5492537f325961)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:11:36] - ========entra a combo ===== : 
+[08/10/2018 11:11:36] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:11:36] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:11:36] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:11:36] - ========boton===== otro : [[ChromeDriver: chrome on XP (a698f601317a20b7cc5492537f325961)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:11:36] - cambia entra  *******************
+[08/10/2018 11:11:38] - ---------boton pagar----false
+[08/10/2018 11:11:38] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (a698f601317a20b7cc5492537f325961)] -> class name: btn-pay]
+[08/10/2018 11:13:13] - Inicia Sistema de Automatizacion
+[08/10/2018 11:13:27] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:13:27] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:13:27] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62349}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 942d1fab2de1d38955018225354ecc0f
+[08/10/2018 11:13:31] - Antes de SKUs ****************************************
+[08/10/2018 11:13:31] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:13:31] - InicioSesion
+[08/10/2018 11:13:31] - Despues de LiveHome
+[08/10/2018 11:13:47] - Numero de evento ------------------------50009146
+[08/10/2018 11:13:47] - Numero de evento *******************50009146
+[08/10/2018 11:13:48] - selecciono agrega regalo
+[08/10/2018 11:13:48] - seleccionotrue
+[08/10/2018 11:13:49] - cambia de frame *******************[[ChromeDriver: chrome on XP (942d1fab2de1d38955018225354ecc0f)] -> class name: fancybox-iframe]
+[08/10/2018 11:13:49] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:13:49] - primer if *******************
+[08/10/2018 11:13:50] - busca numero 1 *******************50009146
+[08/10/2018 11:13:50] - busca numero *******************true evento
+[08/10/2018 11:13:53] - elemento *******************[[ChromeDriver: chrome on XP (942d1fab2de1d38955018225354ecc0f)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:13:53] - ========entra a combo ===== : 
+[08/10/2018 11:13:53] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:13:53] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:13:53] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:13:54] - ========boton===== otro : [[ChromeDriver: chrome on XP (942d1fab2de1d38955018225354ecc0f)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:13:54] - cambia entra  *******************
+[08/10/2018 11:13:54] - cambia entra  *******************
+[08/10/2018 11:13:54] - div mesa  *******************false
+[08/10/2018 11:13:55] - ---------boton pagar----true
+[08/10/2018 11:13:55] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (942d1fab2de1d38955018225354ecc0f)] -> class name: btn-pay]
+[08/10/2018 11:18:05] - Inicia Sistema de Automatizacion
+[08/10/2018 11:18:30] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:18:30] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:18:30] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63072}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 878e2c2b415a705c1f4b3ff7a2f99ace
+[08/10/2018 11:18:34] - Antes de SKUs ****************************************
+[08/10/2018 11:18:34] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:18:34] - InicioSesion
+[08/10/2018 11:18:34] - Despues de LiveHome
+[08/10/2018 11:18:49] - Numero de evento ------------------------50009146
+[08/10/2018 11:18:49] - Numero de evento *******************50009146
+[08/10/2018 11:18:50] - selecciono agrega regalo
+[08/10/2018 11:18:50] - seleccionotrue
+[08/10/2018 11:18:51] - cambia de frame *******************[[ChromeDriver: chrome on XP (878e2c2b415a705c1f4b3ff7a2f99ace)] -> class name: fancybox-iframe]
+[08/10/2018 11:18:51] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:18:51] - primer if *******************
+[08/10/2018 11:18:52] - busca numero 1 *******************50009146
+[08/10/2018 11:18:52] - busca numero *******************true evento
+[08/10/2018 11:18:55] - elemento *******************[[ChromeDriver: chrome on XP (878e2c2b415a705c1f4b3ff7a2f99ace)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:18:55] - ========entra a combo ===== : 
+[08/10/2018 11:18:55] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:18:55] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:18:55] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:18:55] - ========boton===== otro : [[ChromeDriver: chrome on XP (878e2c2b415a705c1f4b3ff7a2f99ace)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:18:55] - ---------boton pagar----false
+[08/10/2018 11:18:55] - ========RES===== : false
+[08/10/2018 11:18:57] - ========boton sin registro antes del if  : 
+[08/10/2018 11:18:58] - flag antes de *******************true evento
+[08/10/2018 11:18:58] - Numero encontrado ------------------------true evento
+[08/10/2018 11:24:27] - Inicia Sistema de Automatizacion
+[08/10/2018 11:24:42] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:24:42] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:24:42] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64360}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 1ef2a0dec6ac35654644baf6334bcd57
+[08/10/2018 11:24:45] - Antes de SKUs ****************************************
+[08/10/2018 11:24:45] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:24:45] - InicioSesion
+[08/10/2018 11:24:45] - Despues de LiveHome
+[08/10/2018 11:25:00] - Numero de evento ------------------------50009146
+[08/10/2018 11:25:00] - Numero de evento *******************50009146
+[08/10/2018 11:25:01] - selecciono agrega regalo
+[08/10/2018 11:25:01] - seleccionotrue
+[08/10/2018 11:25:03] - cambia de frame *******************[[ChromeDriver: chrome on XP (1ef2a0dec6ac35654644baf6334bcd57)] -> class name: fancybox-iframe]
+[08/10/2018 11:25:03] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:25:03] - primer if *******************
+[08/10/2018 11:25:04] - busca numero 1 *******************50009146
+[08/10/2018 11:25:04] - busca numero *******************true evento
+[08/10/2018 11:25:07] - elemento *******************[[ChromeDriver: chrome on XP (1ef2a0dec6ac35654644baf6334bcd57)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:25:07] - ========entra a combo ===== : 
+[08/10/2018 11:25:07] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:25:07] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:25:07] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:25:07] - ========boton===== otro : [[ChromeDriver: chrome on XP (1ef2a0dec6ac35654644baf6334bcd57)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:25:08] - ---------boton pagar----true
+[08/10/2018 11:25:08] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (1ef2a0dec6ac35654644baf6334bcd57)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:26:46] - Inicia Sistema de Automatizacion
+[08/10/2018 11:26:59] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:26:59] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:26:59] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64629}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 9f25619876749c18c0b9c8c979bca67e
+[08/10/2018 11:27:03] - Antes de SKUs ****************************************
+[08/10/2018 11:27:03] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:27:03] - InicioSesion
+[08/10/2018 11:27:03] - Despues de LiveHome
+[08/10/2018 11:27:18] - Numero de evento ------------------------50009146
+[08/10/2018 11:27:18] - Numero de evento *******************50009146
+[08/10/2018 11:27:19] - selecciono agrega regalo
+[08/10/2018 11:27:19] - seleccionotrue
+[08/10/2018 11:27:20] - cambia de frame *******************[[ChromeDriver: chrome on XP (9f25619876749c18c0b9c8c979bca67e)] -> class name: fancybox-iframe]
+[08/10/2018 11:27:20] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:27:20] - primer if *******************
+[08/10/2018 11:27:22] - busca numero 1 *******************50009146
+[08/10/2018 11:27:22] - busca numero *******************true evento
+[08/10/2018 11:27:25] - elemento *******************[[ChromeDriver: chrome on XP (9f25619876749c18c0b9c8c979bca67e)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:27:25] - ========entra a combo ===== : 
+[08/10/2018 11:27:25] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:27:25] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:27:25] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:27:25] - ========boton===== otro : [[ChromeDriver: chrome on XP (9f25619876749c18c0b9c8c979bca67e)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:27:26] - ---------boton pagar----true
+[08/10/2018 11:27:26] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (9f25619876749c18c0b9c8c979bca67e)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:28:56] - Inicia Sistema de Automatizacion
+[08/10/2018 11:29:57] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:29:57] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:29:57] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:64950}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 803d9bb00187a593b2066a08dd81f79a
+[08/10/2018 11:30:01] - Antes de SKUs ****************************************
+[08/10/2018 11:30:01] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:30:01] - InicioSesion
+[08/10/2018 11:30:01] - Despues de LiveHome
+[08/10/2018 11:30:16] - Numero de evento ------------------------50009146
+[08/10/2018 11:30:16] - Numero de evento *******************50009146
+[08/10/2018 11:30:17] - selecciono agrega regalo
+[08/10/2018 11:30:17] - seleccionotrue
+[08/10/2018 11:30:18] - cambia de frame *******************[[ChromeDriver: chrome on XP (803d9bb00187a593b2066a08dd81f79a)] -> class name: fancybox-iframe]
+[08/10/2018 11:30:18] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:30:18] - primer if *******************
+[08/10/2018 11:30:19] - busca numero 1 *******************50009146
+[08/10/2018 11:30:19] - busca numero *******************true evento
+[08/10/2018 11:30:22] - elemento *******************[[ChromeDriver: chrome on XP (803d9bb00187a593b2066a08dd81f79a)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:30:22] - ========entra a combo ===== : 
+[08/10/2018 11:30:23] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:30:23] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:30:23] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:30:23] - ========boton===== otro : [[ChromeDriver: chrome on XP (803d9bb00187a593b2066a08dd81f79a)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:30:24] - ---------boton pagar----false
+[08/10/2018 11:30:24] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (803d9bb00187a593b2066a08dd81f79a)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:35:33] - Inicia Sistema de Automatizacion
+[08/10/2018 11:35:46] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:35:46] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:35:46] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49461}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 97418f976812f3783428b38e842bc034
+[08/10/2018 11:35:49] - Antes de SKUs ****************************************
+[08/10/2018 11:35:49] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:35:49] - InicioSesion
+[08/10/2018 11:35:49] - Despues de LiveHome
+[08/10/2018 11:36:06] - Numero de evento ------------------------50009146
+[08/10/2018 11:36:06] - Numero de evento *******************50009146
+[08/10/2018 11:36:07] - selecciono agrega regalo
+[08/10/2018 11:36:07] - seleccionotrue
+[08/10/2018 11:36:08] - cambia de frame *******************[[ChromeDriver: chrome on XP (97418f976812f3783428b38e842bc034)] -> class name: fancybox-iframe]
+[08/10/2018 11:36:08] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:36:09] - primer if *******************
+[08/10/2018 11:36:10] - busca numero 1 *******************50009146
+[08/10/2018 11:36:10] - busca numero *******************true evento
+[08/10/2018 11:36:13] - elemento *******************[[ChromeDriver: chrome on XP (97418f976812f3783428b38e842bc034)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:36:13] - ========entra a combo ===== : 
+[08/10/2018 11:36:13] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:36:13] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:36:13] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:36:13] - ========boton===== otro : [[ChromeDriver: chrome on XP (97418f976812f3783428b38e842bc034)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:36:14] - ---------boton pagar----true
+[08/10/2018 11:36:14] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (97418f976812f3783428b38e842bc034)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:36:14] - ========RES===== : true
+[08/10/2018 11:36:14] - div mesa  *******************true
+[08/10/2018 11:36:14] - ---------boton pagar----true
+[08/10/2018 11:36:14] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (97418f976812f3783428b38e842bc034)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:36:14] - ========RES===== : true
+[08/10/2018 11:36:15] - ========boton sin registro antes del if  : 
+[08/10/2018 11:36:16] - flag antes de *******************true evento
+[08/10/2018 11:36:16] - Numero encontrado ------------------------true evento
+[08/10/2018 11:37:10] - Inicia Sistema de Automatizacion
+[08/10/2018 11:37:22] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:37:22] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:37:22] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49818}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 561812431a305fb75190c674cc80cb70
+[08/10/2018 11:37:25] - Antes de SKUs ****************************************
+[08/10/2018 11:37:25] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:37:25] - InicioSesion
+[08/10/2018 11:37:25] - Despues de LiveHome
+[08/10/2018 11:37:42] - Numero de evento ------------------------50009146
+[08/10/2018 11:37:42] - Numero de evento *******************50009146
+[08/10/2018 11:37:43] - selecciono agrega regalo
+[08/10/2018 11:37:43] - seleccionotrue
+[08/10/2018 11:37:44] - cambia de frame *******************[[ChromeDriver: chrome on XP (561812431a305fb75190c674cc80cb70)] -> class name: fancybox-iframe]
+[08/10/2018 11:37:44] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:37:44] - primer if *******************
+[08/10/2018 11:37:45] - busca numero 1 *******************50009146
+[08/10/2018 11:37:45] - busca numero *******************true evento
+[08/10/2018 11:37:48] - elemento *******************[[ChromeDriver: chrome on XP (561812431a305fb75190c674cc80cb70)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:37:48] - ========entra a combo ===== : 
+[08/10/2018 11:37:48] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:37:48] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:37:48] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:37:48] - ========boton===== otro : [[ChromeDriver: chrome on XP (561812431a305fb75190c674cc80cb70)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:37:49] - ---------boton pagar----true
+[08/10/2018 11:37:49] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (561812431a305fb75190c674cc80cb70)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:39:26] - Inicia Sistema de Automatizacion
+[08/10/2018 11:39:45] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:39:45] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:39:45] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50282}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: a2b346418f4d457e3218340157d6cd3b
+[08/10/2018 11:39:50] - Antes de SKUs ****************************************
+[08/10/2018 11:39:50] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:39:50] - InicioSesion
+[08/10/2018 11:39:50] - Despues de LiveHome
+[08/10/2018 11:40:07] - Numero de evento ------------------------50009146
+[08/10/2018 11:40:07] - Numero de evento *******************50009146
+[08/10/2018 11:40:08] - selecciono agrega regalo
+[08/10/2018 11:40:08] - seleccionotrue
+[08/10/2018 11:40:09] - cambia de frame *******************[[ChromeDriver: chrome on XP (a2b346418f4d457e3218340157d6cd3b)] -> class name: fancybox-iframe]
+[08/10/2018 11:40:09] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:40:09] - primer if *******************
+[08/10/2018 11:40:10] - busca numero 1 *******************50009146
+[08/10/2018 11:40:10] - busca numero *******************true evento
+[08/10/2018 11:40:13] - elemento *******************[[ChromeDriver: chrome on XP (a2b346418f4d457e3218340157d6cd3b)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:40:13] - ========entra a combo ===== : 
+[08/10/2018 11:40:13] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:40:13] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:40:13] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:40:13] - ========boton===== otro : [[ChromeDriver: chrome on XP (a2b346418f4d457e3218340157d6cd3b)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:40:14] - ---------boton pagar----true
+[08/10/2018 11:40:14] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (a2b346418f4d457e3218340157d6cd3b)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:40:14] - ========RES===== : true
+[08/10/2018 11:40:14] - div mesa  *******************true
+[08/10/2018 11:40:14] - ---------boton pagar----true
+[08/10/2018 11:40:14] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (a2b346418f4d457e3218340157d6cd3b)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:40:14] - ========RES===== : true
+[08/10/2018 11:40:15] - ========boton sin registro antes del if  : 
+[08/10/2018 11:40:16] - flag antes de *******************true evento
+[08/10/2018 11:40:16] - Numero encontrado ------------------------true evento
+[08/10/2018 11:42:14] - Inicia Sistema de Automatizacion
+[08/10/2018 11:42:39] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:42:39] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:42:39] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50894}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 713d1694e849239826429d9b340e46f9
+[08/10/2018 11:42:44] - Antes de SKUs ****************************************
+[08/10/2018 11:42:44] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:42:44] - InicioSesion
+[08/10/2018 11:42:44] - Despues de LiveHome
+[08/10/2018 11:43:35] - Inicia Sistema de Automatizacion
+[08/10/2018 11:43:47] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:43:47] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:43:47] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51134}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 3fe97ea4668033147a22590580eecbd0
+[08/10/2018 11:43:52] - Antes de SKUs ****************************************
+[08/10/2018 11:43:52] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:43:52] - InicioSesion
+[08/10/2018 11:43:52] - Despues de LiveHome
+[08/10/2018 11:44:09] - Numero de evento ------------------------50009146
+[08/10/2018 11:44:09] - Numero de evento *******************50009146
+[08/10/2018 11:44:10] - selecciono agrega regalo
+[08/10/2018 11:44:10] - seleccionotrue
+[08/10/2018 11:44:11] - cambia de frame *******************[[ChromeDriver: chrome on XP (3fe97ea4668033147a22590580eecbd0)] -> class name: fancybox-iframe]
+[08/10/2018 11:44:11] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:44:11] - primer if *******************
+[08/10/2018 11:44:13] - busca numero 1 *******************50009146
+[08/10/2018 11:44:13] - busca numero *******************true evento
+[08/10/2018 11:44:16] - elemento *******************[[ChromeDriver: chrome on XP (3fe97ea4668033147a22590580eecbd0)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:44:16] - ========entra a combo ===== : 
+[08/10/2018 11:44:16] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:44:16] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:44:16] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:44:16] - ========boton===== otro : [[ChromeDriver: chrome on XP (3fe97ea4668033147a22590580eecbd0)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:44:17] - ---------boton pagar----false
+[08/10/2018 11:44:17] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (3fe97ea4668033147a22590580eecbd0)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:44:17] - ========RES===== : true
+[08/10/2018 11:44:17] - div mesa  *******************true
+[08/10/2018 11:44:17] - ---------boton pagar----true
+[08/10/2018 11:44:17] - ========boton===== PAGAR : [[ChromeDriver: chrome on XP (3fe97ea4668033147a22590580eecbd0)] -> xpath: //*[@id='main']/div[3]/div/div[3]/div/a[2]/button]
+[08/10/2018 11:44:17] - ========RES===== : true
+[08/10/2018 11:46:21] - Inicia Sistema de Automatizacion
+[08/10/2018 11:46:35] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:46:35] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:46:35] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51455}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: ac835b7227b2173180cd771a84327951
+[08/10/2018 11:46:38] - Antes de SKUs ****************************************
+[08/10/2018 11:46:38] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:46:38] - InicioSesion
+[08/10/2018 11:46:38] - Despues de LiveHome
+[08/10/2018 11:46:53] - Numero de evento ------------------------50009146
+[08/10/2018 11:46:53] - Numero de evento *******************50009146
+[08/10/2018 11:46:55] - selecciono agrega regalo
+[08/10/2018 11:46:55] - seleccionotrue
+[08/10/2018 11:46:56] - cambia de frame *******************[[ChromeDriver: chrome on XP (ac835b7227b2173180cd771a84327951)] -> class name: fancybox-iframe]
+[08/10/2018 11:46:56] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:46:56] - primer if *******************
+[08/10/2018 11:46:57] - busca numero 1 *******************50009146
+[08/10/2018 11:46:57] - busca numero *******************true evento
+[08/10/2018 11:47:00] - elemento *******************[[ChromeDriver: chrome on XP (ac835b7227b2173180cd771a84327951)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:47:00] - ========entra a combo ===== : 
+[08/10/2018 11:47:00] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:47:00] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:47:00] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:47:00] - ========boton===== otro : [[ChromeDriver: chrome on XP (ac835b7227b2173180cd771a84327951)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:47:01] - ---------boton pagar----true
+[08/10/2018 11:47:01] - ========RES==antes del click=== : true
+[08/10/2018 11:47:46] - Inicia Sistema de Automatizacion
+[08/10/2018 11:48:14] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:48:14] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:48:14] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51672}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: a63302f4f5253cbcae5c70caa6579663
+[08/10/2018 11:48:17] - Antes de SKUs ****************************************
+[08/10/2018 11:48:17] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:48:17] - InicioSesion
+[08/10/2018 11:48:17] - Despues de LiveHome
+[08/10/2018 11:48:32] - Numero de evento ------------------------50009146
+[08/10/2018 11:48:32] - Numero de evento *******************50009146
+[08/10/2018 11:48:34] - selecciono agrega regalo
+[08/10/2018 11:48:34] - seleccionotrue
+[08/10/2018 11:48:35] - cambia de frame *******************[[ChromeDriver: chrome on XP (a63302f4f5253cbcae5c70caa6579663)] -> class name: fancybox-iframe]
+[08/10/2018 11:48:35] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:48:35] - primer if *******************
+[08/10/2018 11:48:36] - busca numero 1 *******************50009146
+[08/10/2018 11:48:36] - busca numero *******************true evento
+[08/10/2018 11:48:39] - elemento *******************[[ChromeDriver: chrome on XP (a63302f4f5253cbcae5c70caa6579663)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:48:39] - ========entra a combo ===== : 
+[08/10/2018 11:48:39] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:48:39] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:48:39] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:48:39] - ========boton===== otro : [[ChromeDriver: chrome on XP (a63302f4f5253cbcae5c70caa6579663)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:48:40] - ---------boton pagar----true
+[08/10/2018 11:48:40] - ========RES==antes del click=== : true
+[08/10/2018 11:58:19] - Inicia Sistema de Automatizacion
+[08/10/2018 11:58:31] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 11:58:31] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 11:58:31] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52685}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: b5e0f4c87f9fd764a4254e65a81e9283
+[08/10/2018 11:58:36] - Antes de SKUs ****************************************
+[08/10/2018 11:58:36] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 11:58:36] - InicioSesion
+[08/10/2018 11:58:36] - Despues de LiveHome
+[08/10/2018 11:58:52] - Numero de evento ------------------------50009146
+[08/10/2018 11:58:52] - Numero de evento *******************50009146
+[08/10/2018 11:58:54] - selecciono agrega regalo
+[08/10/2018 11:58:54] - seleccionotrue
+[08/10/2018 11:58:55] - cambia de frame *******************[[ChromeDriver: chrome on XP (b5e0f4c87f9fd764a4254e65a81e9283)] -> class name: fancybox-iframe]
+[08/10/2018 11:58:55] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 11:58:55] - primer if *******************
+[08/10/2018 11:58:56] - busca numero 1 *******************50009146
+[08/10/2018 11:58:56] - busca numero *******************true evento
+[08/10/2018 11:58:59] - elemento *******************[[ChromeDriver: chrome on XP (b5e0f4c87f9fd764a4254e65a81e9283)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 11:58:59] - ========entra a combo ===== : 
+[08/10/2018 11:58:59] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:58:59] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 11:58:59] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 11:58:59] - ========boton===== otro : [[ChromeDriver: chrome on XP (b5e0f4c87f9fd764a4254e65a81e9283)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 11:59:00] - ---------boton pagar----true
+[08/10/2018 11:59:00] - ========RES==antes del click=== : true
+[08/10/2018 12:17:06] - Inicia Sistema de Automatizacion
+[08/10/2018 12:17:18] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 12:17:18] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 12:17:18] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54543}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: ddfab8090253953241fb7cc4b15587d0
+[08/10/2018 12:17:39] - Antes de SKUs ****************************************
+[08/10/2018 12:17:39] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 12:17:39] - InicioSesion
+[08/10/2018 12:17:39] - Despues de LiveHome
+[08/10/2018 12:35:50] - Inicia Sistema de Automatizacion
+[08/10/2018 12:36:11] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 12:36:11] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 12:36:11] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56346}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 82ba80f70572903fba370c0695c0d9b4
+[08/10/2018 12:36:32] - Antes de SKUs ****************************************
+[08/10/2018 12:36:32] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 12:36:32] - InicioSesion
+[08/10/2018 12:36:32] - Despues de LiveHome
+[08/10/2018 13:21:51] - Inicia Sistema de Automatizacion
+[08/10/2018 13:22:06] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 13:22:06] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 13:22:06] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60667}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 507c9094f328b3fb55b221450bb59015
+[08/10/2018 13:22:10] - Antes de SKUs ****************************************
+[08/10/2018 13:22:10] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 13:22:10] - InicioSesion
+[08/10/2018 13:22:10] - Despues de LiveHome
+[08/10/2018 13:22:27] - Numero de evento ------------------------50009146
+[08/10/2018 13:22:27] - Numero de evento *******************50009146
+[08/10/2018 13:22:28] - selecciono agrega regalo
+[08/10/2018 13:22:28] - seleccionotrue
+[08/10/2018 13:22:29] - cambia de frame *******************[[ChromeDriver: chrome on XP (507c9094f328b3fb55b221450bb59015)] -> class name: fancybox-iframe]
+[08/10/2018 13:22:29] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 13:22:29] - primer if *******************
+[08/10/2018 13:22:30] - busca numero 1 *******************50009146
+[08/10/2018 13:22:30] - busca numero *******************true evento
+[08/10/2018 13:22:33] - elemento *******************[[ChromeDriver: chrome on XP (507c9094f328b3fb55b221450bb59015)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 13:22:33] - ========entra a combo ===== : 
+[08/10/2018 13:22:33] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 13:22:33] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 13:22:33] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 13:22:33] - ========boton===== otro : [[ChromeDriver: chrome on XP (507c9094f328b3fb55b221450bb59015)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 13:22:35] - ---------boton pagar----true
+[08/10/2018 13:22:35] - ========RES==antes del click=== : true
+[08/10/2018 13:22:39] - ========RES===== : true
+[08/10/2018 13:22:39] - div mesa  *******************true
+[08/10/2018 13:22:41] - ---------boton pagar----false
+[08/10/2018 13:22:42] - ========RES===== : false
+[08/10/2018 13:22:43] - ========boton sin registro antes del if  : 
+[08/10/2018 13:22:44] - flag antes de *******************true evento
+[08/10/2018 13:22:44] - Numero encontrado ------------------------true evento
+[08/10/2018 14:32:06] - Inicia Sistema de Automatizacion
+[08/10/2018 14:32:29] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 14:32:29] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 14:32:29] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50253}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 746dddf3fb13156cd033a81d610c4fa4
+[08/10/2018 14:32:34] - Antes de SKUs ****************************************
+[08/10/2018 14:32:34] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 14:32:34] - Despues de LiveHome
+[08/10/2018 14:32:49] - Numero de evento ------------------------36773699
+[08/10/2018 14:32:49] - Numero de evento *******************36773699
+[08/10/2018 14:32:49] - selecciono agrega regalo
+[08/10/2018 14:32:49] - seleccionotrue
+[08/10/2018 14:32:51] - cambia de frame *******************[[ChromeDriver: chrome on XP (746dddf3fb13156cd033a81d610c4fa4)] -> class name: fancybox-iframe]
+[08/10/2018 14:32:51] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 14:32:51] - primer if *******************
+[08/10/2018 14:32:51] - Leyenda *********  No existen eventos para los criterios de búsqueda proporcionados, revisa tus datos e intenta nuevamente
+[08/10/2018 14:32:51] - Leyenda *********  false leyenda
+[08/10/2018 14:32:51] - flag antes de *******************false leyenda
+[08/10/2018 14:32:51] - Numero encontrado ------------------------false leyenda
+[08/10/2018 14:33:34] - Inicia Sistema de Automatizacion
+[08/10/2018 14:33:47] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 14:33:47] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 14:33:47] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:50452}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: af744431c343110d0f8c7b80ee71279d
+[08/10/2018 14:33:52] - Antes de SKUs ****************************************
+[08/10/2018 14:33:52] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 14:33:52] - Despues de LiveHome
+[08/10/2018 14:34:03] - Numero de evento ------------------------50009146
+[08/10/2018 14:34:03] - Numero de evento *******************50009146
+[08/10/2018 14:34:05] - selecciono agrega regalo
+[08/10/2018 14:34:05] - seleccionotrue
+[08/10/2018 14:34:06] - cambia de frame *******************[[ChromeDriver: chrome on XP (af744431c343110d0f8c7b80ee71279d)] -> class name: fancybox-iframe]
+[08/10/2018 14:34:06] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 14:34:06] - primer if *******************
+[08/10/2018 14:34:08] - busca numero 1 *******************50009146
+[08/10/2018 14:34:08] - busca numero *******************true evento
+[08/10/2018 14:34:11] - elemento *******************[[ChromeDriver: chrome on XP (af744431c343110d0f8c7b80ee71279d)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 14:34:11] - ========entra a combo ===== : 
+[08/10/2018 14:34:11] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:34:11] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:34:11] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 14:34:11] - ========boton===== otro : [[ChromeDriver: chrome on XP (af744431c343110d0f8c7b80ee71279d)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 14:34:11] - ---------boton pagar----true
+[08/10/2018 14:34:11] - ========RES==antes del click=== : true
+[08/10/2018 14:34:13] - ========RES===== : true
+[08/10/2018 14:34:13] - div mesa  *******************true
+[08/10/2018 14:34:13] - ---------boton pagar----true
+[08/10/2018 14:34:13] - ========RES==antes del click=== : true
+[08/10/2018 14:34:14] - ========RES===== : true
+[08/10/2018 14:34:14] - cambia de frame *******************[[ChromeDriver: chrome on XP (af744431c343110d0f8c7b80ee71279d)] -> class name: fancybox-iframe]
+[08/10/2018 14:34:14] - ========boton sin registro antes del if  : 
+[08/10/2018 14:34:14] - ========boton sin registro : [[ChromeDriver: chrome on XP (af744431c343110d0f8c7b80ee71279d)] -> xpath: //*[@id='comprar']/a/p/button]
+[08/10/2018 14:34:15] - flag antes de *******************true evento
+[08/10/2018 14:34:15] - Numero encontrado ------------------------true evento
+[08/10/2018 14:46:57] - Inicia Sistema de Automatizacion
+[08/10/2018 14:47:17] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 14:47:17] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 14:47:17] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51700}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: b9987f2ce40e92127ccd02933aae8c86
+[08/10/2018 14:47:23] - Antes de SKUs ****************************************
+[08/10/2018 14:47:23] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 14:47:23] - Despues de LiveHome
+[08/10/2018 14:47:39] - Numero de evento ------------------------50009146
+[08/10/2018 14:47:39] - Numero de evento *******************50009146
+[08/10/2018 14:47:40] - selecciono agrega regalo
+[08/10/2018 14:47:40] - seleccionotrue
+[08/10/2018 14:47:41] - cambia de frame *******************[[ChromeDriver: chrome on XP (b9987f2ce40e92127ccd02933aae8c86)] -> class name: fancybox-iframe]
+[08/10/2018 14:47:41] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 14:47:41] - primer if *******************
+[08/10/2018 14:47:42] - busca numero 1 *******************50009146
+[08/10/2018 14:47:42] - busca numero *******************true evento
+[08/10/2018 14:47:45] - elemento *******************[[ChromeDriver: chrome on XP (b9987f2ce40e92127ccd02933aae8c86)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 14:47:45] - ========entra a combo ===== : 
+[08/10/2018 14:47:46] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:47:46] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:47:46] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 14:47:46] - ========boton===== otro : [[ChromeDriver: chrome on XP (b9987f2ce40e92127ccd02933aae8c86)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 14:47:46] - ---------boton pagar----true
+[08/10/2018 14:47:46] - ========RES==antes del click=== : true
+[08/10/2018 14:47:48] - ========RES===== : true
+[08/10/2018 14:47:48] - div mesa  *******************true
+[08/10/2018 14:47:48] - ---------boton pagar----true
+[08/10/2018 14:47:48] - ========RES==antes del click=== : true
+[08/10/2018 14:47:49] - ========RES===== : true
+[08/10/2018 14:47:50] - cambia de frame *******************[[ChromeDriver: chrome on XP (b9987f2ce40e92127ccd02933aae8c86)] -> class name: fancybox-iframe]
+[08/10/2018 14:47:50] - ========boton sin registro antes del if  : 
+[08/10/2018 14:47:50] - ========boton sin registro : [[ChromeDriver: chrome on XP (b9987f2ce40e92127ccd02933aae8c86)] -> xpath: //*[@id='comprar']/a/p/button]
+[08/10/2018 14:47:51] - flag antes de *******************true evento
+[08/10/2018 14:47:51] - Numero encontrado ------------------------true evento
+[08/10/2018 14:49:35] - Inicia Sistema de Automatizacion
+[08/10/2018 14:49:50] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 14:49:50] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 14:49:50] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52007}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 7f25ce9a4cd207a811cc61cbbb0897de
+[08/10/2018 14:49:53] - Antes de SKUs ****************************************
+[08/10/2018 14:49:53] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 14:49:53] - Despues de LiveHome
+[08/10/2018 14:50:05] - Numero de evento ------------------------50009146
+[08/10/2018 14:50:05] - Numero de evento *******************50009146
+[08/10/2018 14:50:06] - selecciono agrega regalo
+[08/10/2018 14:50:06] - seleccionotrue
+[08/10/2018 14:50:07] - cambia de frame *******************[[ChromeDriver: chrome on XP (7f25ce9a4cd207a811cc61cbbb0897de)] -> class name: fancybox-iframe]
+[08/10/2018 14:50:07] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 14:50:08] - primer if *******************
+[08/10/2018 14:50:09] - busca numero 1 *******************50009146
+[08/10/2018 14:50:09] - busca numero *******************true evento
+[08/10/2018 14:50:12] - elemento *******************[[ChromeDriver: chrome on XP (7f25ce9a4cd207a811cc61cbbb0897de)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 14:50:12] - ========entra a combo ===== : 
+[08/10/2018 14:50:12] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:50:12] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:50:12] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 14:50:12] - ========boton===== otro : [[ChromeDriver: chrome on XP (7f25ce9a4cd207a811cc61cbbb0897de)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 14:50:13] - ---------boton pagar----true
+[08/10/2018 14:50:13] - ========RES==antes del click=== : true
+[08/10/2018 14:50:14] - ========RES===== : true
+[08/10/2018 14:50:14] - div mesa  *******************true
+[08/10/2018 14:50:14] - ---------boton pagar----true
+[08/10/2018 14:50:14] - ========RES==antes del click=== : true
+[08/10/2018 14:50:15] - ========RES===== : true
+[08/10/2018 14:50:15] - cambia de frame *******************[[ChromeDriver: chrome on XP (7f25ce9a4cd207a811cc61cbbb0897de)] -> class name: fancybox-iframe]
+[08/10/2018 14:50:15] - ========boton sin registro antes del if  : 
+[08/10/2018 14:50:15] - ========boton sin registro : [[ChromeDriver: chrome on XP (7f25ce9a4cd207a811cc61cbbb0897de)] -> xpath: //*[@id='comprar']/a/p/button]
+[08/10/2018 14:50:19] - flag antes de *******************true evento
+[08/10/2018 14:50:19] - Numero encontrado ------------------------true evento
+[08/10/2018 14:53:57] - Inicia Sistema de Automatizacion
+[08/10/2018 14:54:11] - Ocurrio una excepcion al agregar la sig cookie:
+[08/10/2018 14:54:11] - Cookie = {ActiveDataCenterCookie,SiteA}
+[08/10/2018 14:54:11] - org.openqa.selenium.WebDriverException: unable to set cookie
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'PC033ASX', ip: '172.22.136.90', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\VGVELA~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52465}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: cb51d50379978e4579265dc6ef53c3a0
+[08/10/2018 14:54:14] - Antes de SKUs ****************************************
+[08/10/2018 14:54:14] - Login********   iisancheze@liverpool.com.mx
+[08/10/2018 14:54:14] - Despues de LiveHome
+[08/10/2018 14:54:25] - Numero de evento ------------------------50009146
+[08/10/2018 14:54:25] - Numero de evento *******************50009146
+[08/10/2018 14:54:26] - selecciono agrega regalo
+[08/10/2018 14:54:26] - seleccionotrue
+[08/10/2018 14:54:27] - cambia de frame *******************[[ChromeDriver: chrome on XP (cb51d50379978e4579265dc6ef53c3a0)] -> class name: fancybox-iframe]
+[08/10/2018 14:54:27] - property     xpath|//input[@class='inputMaterial justNumbers']
+[08/10/2018 14:54:27] - primer if *******************
+[08/10/2018 14:54:28] - busca numero 1 *******************50009146
+[08/10/2018 14:54:28] - busca numero *******************true evento
+[08/10/2018 14:54:31] - elemento *******************[[ChromeDriver: chrome on XP (cb51d50379978e4579265dc6ef53c3a0)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[08/10/2018 14:54:31] - ========entra a combo ===== : 
+[08/10/2018 14:54:32] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:54:32] - ========nombre ===== : Illi Israel Sanchez
+[08/10/2018 14:54:32] - ========nombre con toUpperCase===== : ILLI ISRAEL SANCHEZ
+[08/10/2018 14:54:32] - ========boton===== otro : [[ChromeDriver: chrome on XP (cb51d50379978e4579265dc6ef53c3a0)] -> xpath: /html/body/div[2]/div[2]/button]
+[08/10/2018 14:54:32] - ---------boton pagar----true
+[08/10/2018 14:54:32] - ========RES==antes del click=== : true
+[08/10/2018 14:54:34] - ========RES===== : true
+[08/10/2018 14:54:34] - div mesa  *******************true
+[08/10/2018 14:54:34] - ---------boton pagar----true
+[08/10/2018 14:54:34] - ========RES==antes del click=== : true
+[08/10/2018 14:54:35] - ========RES===== : true
+[08/10/2018 14:54:35] - cambia de frame *******************[[ChromeDriver: chrome on XP (cb51d50379978e4579265dc6ef53c3a0)] -> class name: fancybox-iframe]
+[08/10/2018 14:54:35] - ========boton sin registro antes del if  : 
+[08/10/2018 14:54:35] - ========boton sin registro : [[ChromeDriver: chrome on XP (cb51d50379978e4579265dc6ef53c3a0)] -> xpath: //*[@id='comprar']/a/p/button]
+[08/10/2018 14:54:36] - flag antes de *******************true evento
+[08/10/2018 14:54:36] - Numero encontrado ------------------------true evento
