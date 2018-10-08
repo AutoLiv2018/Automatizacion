@@ -40,7 +40,7 @@ public class LivHome {
         this.interfaz = interfaz;
         this.login = login;
         
-        Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
+        Archivo folder = (Archivo)interfaz.getCbxAmbiente().getSelectedItem();
         home = new Properties(); // propiedades de la pagina HOME
                 
         LHome = new File(folder, HomeLiv.PROPERTIES_FILE);
