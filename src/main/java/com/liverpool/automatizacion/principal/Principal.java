@@ -168,7 +168,7 @@ public class Principal {
             dataConn.setProperty(DB.DB_NAME, p.getProperty(DB.DB_NAME));
             dataConn.setProperty(DB.DB_USR, p.getProperty(DB.DB_USR));
             dataConn.setProperty(DB.DB_PSW, p.getProperty(DB.DB_PSW));
-
+            
             // Configuracion del driver
             String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
             Navegador browser = new Navegador(navegador, p, entorno);
