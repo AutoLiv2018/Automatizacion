@@ -20,6 +20,7 @@ import com.liverpool.automatizacion.paginas.Checkout_P3;
 import com.liverpool.automatizacion.paginas.PaypalSite;
 import com.liverpool.automatizacion.paginas.Checkout_P4;
 import com.liverpool.automatizacion.paginas.ThreeDSecure;
+import com.liverpool.automatizacion.principal.Navegador;
 import com.liverpool.automatizacion.util.Excel;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class Tlog {
 
-    private final WebDriver driver;
+    private WebDriver driver;
+    Navegador browser;
     private Interfaz interfaz;
     Login login;
     ArrayList<Sku> skus;
@@ -50,9 +52,9 @@ public class Tlog {
     public String usuario, envio, direccion; //Tipo de usuario
     public String metodoPago;
     
-    public Tlog (Interfaz interfaz, WebDriver driver, boolean excel){
-        this.driver = driver;
+    public Tlog (Interfaz interfaz, Navegador browser, boolean excel){
         this.interfaz = interfaz;
+        this.browser = browser;
         
         if(!excel){
             skus = new ArrayList<Sku>(){{
@@ -140,6 +142,7 @@ public class Tlog {
         
         for(int e=1;e<casos.size();e++){
             datosEscenarioExcel(e);
+            driver = browser.iniciarNavegador();
             
             LivHome home = new LivHome(interfaz, driver, login);
             LivPDP pdp = new LivPDP(interfaz, driver);

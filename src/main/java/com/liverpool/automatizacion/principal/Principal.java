@@ -171,42 +171,43 @@ public class Principal {
             
 // Configuracion del driver
 String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
-switch(navegador){
-    case "Chrome":
-        System.setProperty(p.getProperty(Const.CHROME_DRIVER),p.getProperty(Const.CHROME_PATH));
-        driver = new ChromeDriver(); // Abre el navegador
-        break;
-    case "Mozilla Firefox":
-        
-        break;
-    case "Internet Explorer":
-        
-        break;
-    case "No Aplica":
-        
-        break;
-}
-
-// Configurar timeouts
-driver.manage().timeouts().pageLoadTimeout(Long.parseLong(p.getProperty(Const.DRIVER_PAGE_LOAD_TIMEOUT)), TimeUnit.SECONDS);
-driver.manage().timeouts().setScriptTimeout(Long.parseLong(p.getProperty(Const.DRIVER_SET_SCRIPT_TIMEOUT)), TimeUnit.SECONDS);
-driver.manage().timeouts().implicitlyWait(Long.parseLong(p.getProperty(Const.DRIVER_IMPLICITLY_WAIT)), TimeUnit.SECONDS);
-
-// Determinar ambiente de ejecucion
-Cookie cookie = new Cookie(p.getProperty(Const.APP_COOKIE), p.getProperty(Const.APP_SITIO));
-driver.manage().window().maximize();
-driver.manage().deleteAllCookies();
-
-try{
-    driver.manage().addCookie(cookie);
-} catch(Exception ex){
-    Log.write("Ocurrio una excepcion al agregar la sig cookie:");
-    Log.write("Cookie = {"+cookie.getName()+","+cookie.getValue()+"}");
-    Log.write(ex.toString());
-}
-
-String ambience = entorno.getProperty(Entorno.URL);
-driver.get(ambience); // Abre la pagina en la pestaña actual
+Navegador browser = new Navegador(navegador, p, entorno);
+//switch(navegador){
+//    case "Chrome":
+//        System.setProperty(p.getProperty(Const.CHROME_DRIVER),p.getProperty(Const.CHROME_PATH));
+//        driver = new ChromeDriver(); // Abre el navegador
+//        break;
+//    case "Mozilla Firefox":
+//        
+//        break;
+//    case "Internet Explorer":
+//        
+//        break;
+//    case "No Aplica":
+//        
+//        break;
+//}
+//
+//// Configurar timeouts
+//driver.manage().timeouts().pageLoadTimeout(Long.parseLong(p.getProperty(Const.DRIVER_PAGE_LOAD_TIMEOUT)), TimeUnit.SECONDS);
+//driver.manage().timeouts().setScriptTimeout(Long.parseLong(p.getProperty(Const.DRIVER_SET_SCRIPT_TIMEOUT)), TimeUnit.SECONDS);
+//driver.manage().timeouts().implicitlyWait(Long.parseLong(p.getProperty(Const.DRIVER_IMPLICITLY_WAIT)), TimeUnit.SECONDS);
+//
+//// Determinar ambiente de ejecucion
+//Cookie cookie = new Cookie(p.getProperty(Const.APP_COOKIE), p.getProperty(Const.APP_SITIO));
+//driver.manage().window().maximize();
+//driver.manage().deleteAllCookies();
+//
+//try{
+//    driver.manage().addCookie(cookie);
+//} catch(Exception ex){
+//    Log.write("Ocurrio una excepcion al agregar la sig cookie:");
+//    Log.write("Cookie = {"+cookie.getName()+","+cookie.getValue()+"}");
+//    Log.write(ex.toString());
+//}
+//
+//String ambience = entorno.getProperty(Entorno.URL);
+//driver.get(ambience); // Abre la pagina en la pestaña actual
 //driver.manage().deleteAllCookies();
 //driver.navigate().refresh(); // refresca la pagina
 
@@ -228,11 +229,11 @@ switch(matrizSelected){
          mdrfl.execute();
         break;
     case "TLOG":
-        Tlog tlog = new Tlog(interfaz, driver, false);
+        Tlog tlog = new Tlog(interfaz, browser, false);
         tlog.liverpool_TLOG();
         break;
     case "TLOG Excel":
-        Tlog tlogExcel = new Tlog(interfaz, driver, true);
+        Tlog tlogExcel = new Tlog(interfaz, browser, true);
         tlogExcel.liverpool_TLOG();
         break;
 }       
