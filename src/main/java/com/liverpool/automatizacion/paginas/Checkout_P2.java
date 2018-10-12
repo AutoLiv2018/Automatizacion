@@ -50,6 +50,7 @@ public class Checkout_P2 {
         Utils.sleep(1000);
         switch(metodoPago){
             case "Credito":
+            case "3ds":
                 creditoSeleccionar();
                 switch(usuario){
                     case "Login":

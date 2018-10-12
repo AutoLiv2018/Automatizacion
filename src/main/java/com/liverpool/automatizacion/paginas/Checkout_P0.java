@@ -42,7 +42,7 @@ public class Checkout_P0 {
         WebElement element;
         if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BOLSA_PASO0))) != null)
             element.click(); //Ir paso 0, click en la bolsa
-        sleep(1500);  
+        Utils.sleep(1500);  
     }
     
     public void pasoCeroComprar(){
@@ -53,7 +53,7 @@ public class Checkout_P0 {
     
     public void pasoCeroGuest() {
         WebElement element;
-        sleep(4000);
+        Utils.sleep(4000);
         WebElement frameGuestCompra;
         if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FANCYBOXCLASE))) != null){
             frameGuestCompra = element;
@@ -62,10 +62,6 @@ public class Checkout_P0 {
                 element.click();
             driver.switchTo().defaultContent();
         }
-    }
-    
-    public static void sleep(int time){
-        try {Thread.sleep(time);} catch (InterruptedException ex){}
     }
     
     public String buscarNumeroEventoMRFL(MesaRegaloFL numEv) {

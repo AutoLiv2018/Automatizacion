@@ -43,6 +43,7 @@ public class Tlog {
     Tienda tienda;
     Tarjeta tarjeta;
     Direccion direccionTar;
+    Direccion direccionGuest;
     Login loginPaypal;
     Guest guest;
     ArrayList<String> escenario = new ArrayList<>();
@@ -75,63 +76,25 @@ public class Tlog {
             loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
         }
         if(excel){
-            usuario = "Login";
+            usuario = "Guest";
             Excel excelArc = new Excel();
             casos=excelArc.getExcel(usuario);
         }
     }
     
     public void datosEscenarioExcel(int i){
-        String [] tiendaE;
-        String [] tarjetaFecha;
-        String [] SKU;
-        ArrayList<String> skuss = new ArrayList<>();
+//        String [] tiendaE;
+//        String [] tarjetaFecha;
+//        String [] SKU;
+//        ArrayList<String> skuss = new ArrayList<>();
         
         escenario = casos.get(i);
         switch(usuario){
             case "Login":
-                login = new Login(escenario.get(1), escenario.get(2));
-                envio = escenario.get(4);
-                direccion = escenario.get(6);
-                tiendaE = escenario.get(5).split(",");
-                if(tiendaE.length>1)
-                    tienda = new Tienda(tiendaE[1],tiendaE[0]);
-                metodoPago = escenario.get(7);
-                tarjetaFecha=escenario.get(10).split("/");
-                if(tarjetaFecha.length>1)
-                    tarjeta = new Tarjeta(escenario.get(8), escenario.get(9), tarjetaFecha[0], tarjetaFecha[1]);
-                else
-                    tarjeta = new Tarjeta(escenario.get(8), escenario.get(9), "", "");
-                loginPaypal = new Login(escenario.get(11),escenario.get(12));
-
-                skuss.addAll(Arrays.asList(escenario.get(3).split("\\n")));
-                skus = new ArrayList<Sku>();
-                for(int j=0; j<skuss.size();j++){
-                    SKU=skuss.get(j).split(",");
-                    skus.add(new Sku(SKU[0], SKU[1]));
-                }
+                datosPersonalLogin();
                 break;
             case "Guest":
-                guest = new Guest(escenario.get(1), escenario.get(2), escenario.get(3), escenario.get(4), escenario.get(5), escenario.get(6));
-                envio = escenario.get(8);
-                direccion = escenario.get(8);
-                tiendaE = escenario.get(7).split(",");
-                if(tiendaE.length>1)
-                    tienda = new Tienda(tiendaE[1],tiendaE[0]);
-                metodoPago = escenario.get(9);
-                tarjetaFecha=escenario.get(12).split("/");
-                if(tarjetaFecha.length>1)
-                    tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), tarjetaFecha[0], tarjetaFecha[1]);
-                else
-                    tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), "", "");
-                loginPaypal = new Login(escenario.get(13),escenario.get(14));
-
-                skuss.addAll(Arrays.asList(escenario.get(7).split("\\n")));
-                skus = new ArrayList<Sku>();
-                for(int j=0; j<skuss.size();j++){
-                    SKU=skuss.get(j).split(",");
-                    skus.add(new Sku(SKU[0], SKU[1]));
-                }
+                datosPersonalGuest();
                 break;
         }
     }
@@ -147,7 +110,11 @@ public class Tlog {
             LivHome home = new LivHome(interfaz, driver, login);
             LivPDP pdp = new LivPDP(interfaz, driver);
             Checkout_P0 paso0 = new Checkout_P0(interfaz,driver);
-            Checkout_P1 paso1 = new Checkout_P1(interfaz,driver, envio, tienda, direccion);
+            Checkout_P1 paso1;
+            if(usuario.equals("Login"))
+                paso1 = new Checkout_P1(interfaz,driver, envio, tienda, direccion);
+            else
+                paso1 = new Checkout_P1(interfaz,driver, envio, tienda, guest, direccionGuest);
             Checkout_P2 paso2 = new Checkout_P2(interfaz,driver, tarjeta, direccionTar);
             Checkout_P3 paso3 = new Checkout_P3(interfaz,driver);
             PaypalSite paypal = new PaypalSite(interfaz, driver, loginPaypal);
@@ -168,7 +135,7 @@ public class Tlog {
             paso0.pasoCeroComprar();
             if(usuario.equals("Guest"))
                 paso0.pasoCeroGuest();
-            paso1.metodoEntrega();
+            paso1.envio();
             paso2.seleccionPago(metodoPago, usuario);
             paso3.terminarCompra();
             if(metodoPago.equals("Paypal"))
@@ -178,6 +145,64 @@ public class Tlog {
             ticket = paso4.extraccionDatos(metodoPago);
     //        Excel escritura = new Excel();
     //        escritura.writeExcel(ticket);
+        }
+    }
+    
+    public void datosPersonalLogin(){
+        String [] tiendaE;
+        String [] tarjetaFecha;
+        String [] SKU;
+        ArrayList<String> skuss = new ArrayList<>();
+        
+        login = new Login(escenario.get(1), escenario.get(2));
+        envio = escenario.get(4);
+        direccion = escenario.get(6);
+        tiendaE = escenario.get(5).split(",");
+        if(tiendaE.length>1)
+            tienda = new Tienda(tiendaE[1],tiendaE[0]);
+        metodoPago = escenario.get(7);
+        tarjetaFecha=escenario.get(10).split("/");
+        if(tarjetaFecha.length>1)
+            tarjeta = new Tarjeta(escenario.get(8), escenario.get(9), tarjetaFecha[0], tarjetaFecha[1]);
+        else
+            tarjeta = new Tarjeta(escenario.get(8), escenario.get(9), "", "");
+        loginPaypal = new Login(escenario.get(11),escenario.get(12));
+
+        skuss.addAll(Arrays.asList(escenario.get(3).split("\\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size();j++){
+            SKU=skuss.get(j).split(",");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+    }
+    
+    public void datosPersonalGuest(){
+        String [] tiendaE;
+        String [] tarjetaFecha;
+        String [] SKU;
+        ArrayList<String> skuss = new ArrayList<>();
+        
+        guest = new Guest(escenario.get(1), escenario.get(2), escenario.get(3), escenario.get(4), escenario.get(5), escenario.get(6));
+        envio = escenario.get(8);
+        direccionGuest = new Direccion(escenario.get(10),escenario.get(11),escenario.get(12),escenario.get(13),
+            escenario.get(14),escenario.get(15),escenario.get(16),escenario.get(17),escenario.get(18),
+            escenario.get(19),escenario.get(20));
+        tiendaE = escenario.get(9).split(",");
+        if(tiendaE.length>1)
+            tienda = new Tienda(tiendaE[1],tiendaE[0]);
+        metodoPago = escenario.get(21);
+        tarjetaFecha=escenario.get(25).split("/");
+        if(tarjetaFecha.length>1)
+            tarjeta = new Tarjeta(escenario.get(23), escenario.get(24), tarjetaFecha[0], tarjetaFecha[1]);
+        else
+            tarjeta = new Tarjeta(escenario.get(23), escenario.get(24), "", "");
+        loginPaypal = new Login(escenario.get(26),escenario.get(27));
+
+        skuss.addAll(Arrays.asList(escenario.get(7).split("\\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size();j++){
+            SKU=skuss.get(j).split(",");
+            skus.add(new Sku(SKU[0], SKU[1]));
         }
     }
     

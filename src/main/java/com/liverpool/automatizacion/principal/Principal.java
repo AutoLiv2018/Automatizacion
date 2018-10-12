@@ -128,10 +128,10 @@ public class Principal {
         interfaz.getBtnIniciar().addActionListener((ActionEvent e) -> {
             // Ocultar la interfaz
             frame.setVisible(false);
-            
+
             // Recuperar el entorno:
             Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
-            
+
             // Cargar el ambiente
             String entornoFl = p.getProperty(Const.APP_ENTORNO).replace("?", folder.getName());
             entornoFl = new File(folder, entornoFl).getAbsolutePath();
@@ -140,25 +140,25 @@ public class Principal {
                 Log.write("No se encontro el archivo: " + entornoFl);
                 return;
             }
-            
+
             // Ya se cargaron las propiedades del entorno seleccionado
-            
+
             // Abrir el ambiente seleccionado
             Properties cart = new Properties(); // propiedades de la pagina cart.jsp
             Properties shipping = new Properties(); // propiedades de la pagina shipping.jsp
-            
+
             File shippingFl = new File(folder, Shipping.PROPERTIES_FILE);
             if(!loadProperties(shippingFl.getAbsolutePath(), shipping)){
                 Log.write("No se encontro el archivo: " + shippingFl);
                 return;
             }
-            
+
             File cartFl = new File(folder, Cart.PROPERTIES_FILE);
             if(!loadProperties(cartFl.getAbsolutePath(), cart)){
                 Log.write("No se encontro el archivo: " + cartFl);
                 return;
             }
-            
+
             // Conectarse a la BD para consultar los skus
             Properties dataConn = new Properties();
             dataConn.setProperty(DB.DB_CLASE, p.getProperty(DB.DB_CLASE));
@@ -168,75 +168,34 @@ public class Principal {
             dataConn.setProperty(DB.DB_NAME, p.getProperty(DB.DB_NAME));
             dataConn.setProperty(DB.DB_USR, p.getProperty(DB.DB_USR));
             dataConn.setProperty(DB.DB_PSW, p.getProperty(DB.DB_PSW));
-            
-// Configuracion del driver
-String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
-Navegador browser = new Navegador(navegador, p, entorno);
-//switch(navegador){
-//    case "Chrome":
-//        System.setProperty(p.getProperty(Const.CHROME_DRIVER),p.getProperty(Const.CHROME_PATH));
-//        driver = new ChromeDriver(); // Abre el navegador
-//        break;
-//    case "Mozilla Firefox":
-//        
-//        break;
-//    case "Internet Explorer":
-//        
-//        break;
-//    case "No Aplica":
-//        
-//        break;
-//}
-//
-//// Configurar timeouts
-//driver.manage().timeouts().pageLoadTimeout(Long.parseLong(p.getProperty(Const.DRIVER_PAGE_LOAD_TIMEOUT)), TimeUnit.SECONDS);
-//driver.manage().timeouts().setScriptTimeout(Long.parseLong(p.getProperty(Const.DRIVER_SET_SCRIPT_TIMEOUT)), TimeUnit.SECONDS);
-//driver.manage().timeouts().implicitlyWait(Long.parseLong(p.getProperty(Const.DRIVER_IMPLICITLY_WAIT)), TimeUnit.SECONDS);
-//
-//// Determinar ambiente de ejecucion
-//Cookie cookie = new Cookie(p.getProperty(Const.APP_COOKIE), p.getProperty(Const.APP_SITIO));
-//driver.manage().window().maximize();
-//driver.manage().deleteAllCookies();
-//
-//try{
-//    driver.manage().addCookie(cookie);
-//} catch(Exception ex){
-//    Log.write("Ocurrio una excepcion al agregar la sig cookie:");
-//    Log.write("Cookie = {"+cookie.getName()+","+cookie.getValue()+"}");
-//    Log.write(ex.toString());
-//}
-//
-//String ambience = entorno.getProperty(Entorno.URL);
-//driver.get(ambience); // Abre la pagina en la pestaña actual
-//driver.manage().deleteAllCookies();
-//driver.navigate().refresh(); // refresca la pagina
 
-// Determinar de alguna manera random o no
-// Como se va van a generar los casos para ejecutar la matriz de pruebas
+            // Configuracion del driver
+            String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
+            Navegador browser = new Navegador(navegador, p, entorno);
 
-String matrizSelected = (String)interfaz.getCbxMatriz().getSelectedItem();
-switch(matrizSelected){
-    case "Mi Cuenta":
-        break;
-    case "Checkout":
-        Checkout checkout = new Checkout(entorno, cart, shipping, driver, true);
-        checkout.execute();
-        break;
-    case "Mesa de Regalos":
-//        MesaDeRegalos mdr = new MesaDeRegalos(entorno,cart,shipping,driver, true);
-//        mdr.execute();
-         MesaDeRegalosFueraLista mdrfl = new MesaDeRegalosFueraLista(interfaz, driver,true);
-         mdrfl.execute();
-        break;
-    case "TLOG":
-        Tlog tlog = new Tlog(interfaz, browser, false);
-        tlog.liverpool_TLOG();
-        break;
-    case "TLOG Excel":
-        Tlog tlogExcel = new Tlog(interfaz, browser, true);
-        tlogExcel.liverpool_TLOG();
-        break;
-}       
+            String matrizSelected = (String)interfaz.getCbxMatriz().getSelectedItem();
+            switch(matrizSelected){
+                case "Mi Cuenta":
+                    break;
+                case "Checkout":
+                    Checkout checkout = new Checkout(entorno, cart, shipping, driver, true);
+                    checkout.execute();
+                    break;
+                case "Mesa de Regalos":
+            //        MesaDeRegalos mdr = new MesaDeRegalos(entorno,cart,shipping,driver, true);
+            //        mdr.execute();
+                     MesaDeRegalosFueraLista mdrfl = new MesaDeRegalosFueraLista(interfaz, driver,true);
+                     mdrfl.execute();
+                    break;
+                case "TLOG":
+                    Tlog tlog = new Tlog(interfaz, browser, false);
+                    tlog.liverpool_TLOG();
+                    break;
+                case "TLOG Excel":
+                    Tlog tlogExcel = new Tlog(interfaz, browser, true);
+                    tlogExcel.liverpool_TLOG();
+                    break;
+            }       
         });
     }
     
