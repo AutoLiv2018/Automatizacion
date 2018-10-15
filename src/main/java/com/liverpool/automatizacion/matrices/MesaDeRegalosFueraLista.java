@@ -11,6 +11,7 @@ import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.paginas.Checkout_P0;
 import com.liverpool.automatizacion.paginas.LivHome;
 import com.liverpool.automatizacion.paginas.LivPDP;
+import com.liverpool.automatizacion.principal.Navegador;
 import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.util.ArrayList;
@@ -29,14 +30,15 @@ public class MesaDeRegalosFueraLista extends Matriz {
     private HashMap<String, ArrayList<String>> evento;
     ArrayList<Sku> skus;
     MesaRegaloFL numEv;
+    Navegador browser;
 
     private final Interfaz interfaz;
 
-    public MesaDeRegalosFueraLista(Interfaz interfaz, WebDriver driver, boolean tlog) {
+    public MesaDeRegalosFueraLista(Interfaz interfaz, Navegador browser, boolean tlog) {
        
         this.login = login;
         this.tlog = tlog;
-        this.driver = driver;
+        this.browser = browser;
         this.interfaz = interfaz;
 
         Log.write("Antes de SKUs ****************************************");
@@ -80,14 +82,15 @@ public class MesaDeRegalosFueraLista extends Matriz {
         }
         pdp.irPaso0();
         numEv = new MesaRegaloFL();
+        System.out.println("hola");
 //        WQA:
-//        numEv.setId("36773699");
+        numEv.setNumEvento("36773699");
 //        Productivo
-        numEv.setId("50009146");
+//        numEv.setId("50009146");
 //        WST:
 //        numEv.setId("50010408");
         
-        Log.write("Numero de evento ------------------------" + numEv.getId());
+        Log.write("Numero de evento ------------------------" + numEv.getNumEvento());
         numEvEncontrado = paso0.buscarNumeroEventoMRFL(numEv);
         Log.write("Numero encontrado ------------------------" + numEvEncontrado);
 //        
@@ -100,6 +103,8 @@ public class MesaDeRegalosFueraLista extends Matriz {
     public void guestMDRFL(){
         boolean skuEncontrado;
         String numEvEncontrado;
+        
+        driver = browser.iniciarNavegador();
 
         LivHome home = new LivHome(interfaz, driver, login);
 
@@ -117,13 +122,13 @@ public class MesaDeRegalosFueraLista extends Matriz {
         pdp.irPaso0();
         numEv = new MesaRegaloFL();
 //        WQA:
-//        numEv.setId("36773699");
+        numEv.setNumEvento("36773699");
         //        Productivo
-        numEv.setId("50009146");
+//        numEv.setNumEvento("50009146");
 //        WST:
 //        numEv.setId("50010408");
         
-        Log.write("Numero de evento ------------------------" + numEv.getId());
+        Log.write("Numero de evento ------------------------" + numEv.getNumEvento());
         numEvEncontrado = paso0.buscarNumeroEventoMRFL(numEv);
         Log.write("Numero encontrado ------------------------" + numEvEncontrado);
     }
@@ -143,6 +148,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
             @Override
             public void execute() {
 //             inicioSesionMDRFL();
+
              guestMDRFL();
 //                pasoCero();
             }

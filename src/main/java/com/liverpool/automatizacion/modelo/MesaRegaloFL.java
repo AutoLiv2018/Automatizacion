@@ -13,22 +13,41 @@ import java.util.ArrayList;
  */
 public class MesaRegaloFL {
 
-    private String id;
+    private String numEvento;
+    private String festejado;
+    private String mensaje;
      
     public MesaRegaloFL() {
         this("");
     }
    
-    public MesaRegaloFL(String id){
+    public MesaRegaloFL(String numEvento){
         
-        this.id = id;
+        this.numEvento = numEvento;
     }
     
-    public String getId() {
-        return id;
+    public String getNumEvento() {
+        return numEvento;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setNumEvento(String numEvento) {
+        this.numEvento = numEvento;
     }
+
+    public String getFestejado() {
+        return festejado;
+    }
+
+    public void setFestejado(String festejado) {
+        this.festejado = festejado;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
 }

@@ -68,7 +68,7 @@ public class Checkout_P0 {
         WebElement element;
         String flag = "";
 
-        Log.write("Numero de evento *******************" + numEv.getId());
+        Log.write("Numero de evento *******************" + numEv.getNumEvento());
         Utils.sleep(500);
         botonSeleccionarParaRegalo();
         Utils.sleep(1000);
@@ -88,7 +88,7 @@ public class Checkout_P0 {
                 String evento = Cpaso0.getProperty(Checkout_Paso0.NUMEVENTO_SEARCH_LIST);
                 if ((element = Find.element(driver, evento)) != null) {
                     flag = "true evento";
-                    Log.write("busca numero 1 *******************" + numEv.getId());
+                    Log.write("busca numero 1 *******************" + numEv.getNumEvento());
                     Log.write("busca numero *******************" + flag);
                     Utils.sleep(3000);
                     Log.write("elemento *******************" + Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VALIDA_NUM_EVENTO)));
@@ -118,9 +118,9 @@ public class Checkout_P0 {
             Log.write("res busqueda *********** " + Cpaso0.getProperty(Checkout_Paso0.VALIDA_NUM_EVENTO));
             String attValue = element.getText();
             Log.write("============= 1 : " + attValue);
-            Log.write("============= 2 : " + numEv.getId());
-            Log.write("=====Validacion=============== " + (numEv.getId() != element.getText()));
-              if(numEv.getId() != element.getText()){
+            Log.write("============= 2 : " + numEv.getNumEvento());
+            Log.write("=====Validacion=============== " + (numEv.getNumEvento() != element.getText()));
+              if(numEv.getNumEvento() != element.getText()){
 //                 flag="validacion correcta";
                    Log.write("Validacion correcta");
                    res = true;
@@ -135,7 +135,7 @@ public class Checkout_P0 {
         WebElement element;
         
          if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.NUMEVENTORFL))) != null) {
-            element.sendKeys(numEv.getId(), Keys.ENTER); // Buscar el evento
+            element.sendKeys(numEv.getNumEvento(), Keys.ENTER); // Buscar el evento
             res = true;
             Log.write("primer if *******************");
          }
@@ -176,12 +176,12 @@ public class Checkout_P0 {
         Select select = new Select(element);
         List<WebElement> festejado = select.getOptions();
         Log.write("========nombre ===== : " + festejado.get(1).getText());
-//        String nombre = "MaRIa vARgAs";
-        String nombre = "Illi Israel Sanchez";
+        String nombre = "MaRIa vARgAs";
+//        String nombre = "Illi Israel Sanchez";
 //                        select.selectByVisibleText(festejado.get(1).getText());
         Log.write("========nombre ===== : " + nombre);
         Log.write("========nombre con toUpperCase===== : " + nombre.equalsIgnoreCase(nombre));
-        select.selectByVisibleText(nombre);
+        select.selectByVisibleText(nombre.toUpperCase());
 
         if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BUTTONFESTEJADO))) != null) {
             Log.write("========boton===== otro : " + element);
