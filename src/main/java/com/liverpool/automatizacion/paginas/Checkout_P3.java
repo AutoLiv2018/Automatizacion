@@ -38,11 +38,35 @@ public class Checkout_P3 {
         }
     }
     
-    //Terminar compra
-    public void terminarCompra(){
+    public void terminarCompraTLOG(){
+        terminarCompra();
+        errorCompra();
+        borrarTodosArticulos();
+    }
+    
+    public void borrarTodosArticulos(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.BOTONTERMINARCOMPRA1))) != null)
+//        element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.ELIMINARSKU));
+        while(((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.ELIMINARSKU))) != null))
             element.click();
+    }
+    
+    public boolean errorCompra(){//Valora si existe una alerta que impida terminar la compra
+        WebElement element;
+        if((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.ERRORCOMPRA))) != null){
+            return true;
+        }
+        return false;
+    }
+    
+    //Terminar compra
+    public boolean terminarCompra(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.BOTONTERMINARCOMPRA1))) != null){
+            element.click();
+            return true;
+        }
+        return false;
     }
     
 }

@@ -110,13 +110,13 @@ public class Interfaz extends javax.swing.JPanel {
 
         jLabel2.setText("Seleccione Tienda: ");
 
-        jLabel3.setText("Seleccione Ambiente: ");
+        jLabel3.setText("Seleccione Canal de venta: ");
 
         jLabel4.setText("Seleccione Navegador: ");
 
         jLabel5.setText("Seleccione Matriz: ");
 
-        jLabel6.setText("Seleccione Versión:");
+        jLabel6.setText("Seleccione Ambiente:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -76,18 +77,13 @@ public class Tlog {
             loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
         }
         if(excel){
-            usuario = "Guest";
+            usuario = "Login";
             Excel excelArc = new Excel();
             casos=excelArc.getExcel(usuario);
         }
     }
     
     public void datosEscenarioExcel(int i){
-//        String [] tiendaE;
-//        String [] tarjetaFecha;
-//        String [] SKU;
-//        ArrayList<String> skuss = new ArrayList<>();
-        
         escenario = casos.get(i);
         switch(usuario){
             case "Login":
@@ -101,7 +97,7 @@ public class Tlog {
     
     public void liverpool_TLOG(){
         boolean skuEncontrado;                                                                                  
-        Ticket ticket;
+        Ticket ticket = new Ticket();
         
         for(int e=1;e<casos.size();e++){
             datosEscenarioExcel(e);
@@ -115,7 +111,7 @@ public class Tlog {
                 paso1 = new Checkout_P1(interfaz,driver, envio, tienda, direccion);
             else
                 paso1 = new Checkout_P1(interfaz,driver, envio, tienda, guest, direccionGuest);
-            Checkout_P2 paso2 = new Checkout_P2(interfaz,driver, tarjeta, direccionTar);
+            Checkout_P2 paso2 = new Checkout_P2(interfaz,driver, tarjeta, direccionGuest);
             Checkout_P3 paso3 = new Checkout_P3(interfaz,driver);
             PaypalSite paypal = new PaypalSite(interfaz, driver, loginPaypal);
             Checkout_P4 paso4 = new Checkout_P4(interfaz,driver);
@@ -137,15 +133,17 @@ public class Tlog {
                 paso0.pasoCeroGuest();
             paso1.envio();
             paso2.seleccionPago(metodoPago, usuario);
-            paso3.terminarCompra();
+            paso3.terminarCompraTLOG();
             if(metodoPago.equals("Paypal"))
                 paypal.paypalSandBox();
             tds.validacion3DS();
             
-            ticket = paso4.extraccionDatos(metodoPago);
-    //        Excel escritura = new Excel();
-    //        escritura.writeExcel(ticket);
+            if(paso4.esperaTicket())
+                ticket = paso4.extraccionDatos(metodoPago);
+            Excel escritura = new Excel();
+            escritura.writeExcel(ticket);
         }
+        JOptionPane.showMessageDialog(null, "Compras terminadas");
     }
     
     public void datosPersonalLogin(){
@@ -193,9 +191,11 @@ public class Tlog {
         metodoPago = escenario.get(21);
         tarjetaFecha=escenario.get(25).split("/");
         if(tarjetaFecha.length>1)
-            tarjeta = new Tarjeta(escenario.get(23), escenario.get(24), tarjetaFecha[0], tarjetaFecha[1]);
+            tarjeta = new Tarjeta(escenario.get(22), escenario.get(23), escenario.get(24), 
+                    tarjetaFecha[0], tarjetaFecha[1], escenario.get(1), escenario.get(2), escenario.get(3));
         else
-            tarjeta = new Tarjeta(escenario.get(23), escenario.get(24), "", "");
+            tarjeta = new Tarjeta(escenario.get(22), escenario.get(23), escenario.get(24), 
+                    "", "", escenario.get(1), escenario.get(2), escenario.get(3));
         loginPaypal = new Login(escenario.get(26),escenario.get(27));
 
         skuss.addAll(Arrays.asList(escenario.get(7).split("\\n")));

@@ -10,7 +10,8 @@ public class Checkout_Paso2 {
     public static final String PROPERTIES_FILE = "Paso2_Checkout.properties";
     
     public static final String METODOCREDITO = "metodoCredito";
-    public static final String CREDITOVISTA = "creditoVista";
+    public static final String CREDITOVISTALOGIN = "creditoVistaLogin";
+    public static final String CREDITOVISTAGUEST = "creditoVistaGuest";
     public static final String METODOPAYPAL = "metodoPaypal";
     public static final String PAYPALVISTA = "paypalVista";
     public static final String PAGOEFECTIVO = "pagoEfectivo";

@@ -20,6 +20,8 @@ public class Checkout_Paso3 {
     public static final String LOGOPASO1 = "logoPaso1";
     public static final String LOGOPASO2 = "logoPaso2";
     public static final String LOGOPASO3 = "logoPaso3";
+    public static final String ERRORCOMPRA = "errorCompra";
+    public static final String ELIMINARSKU = "eliminarSKU";
     public static final String NUMEROTELEFONICO = "numeroTelefonico";
     public static final String TELEFONOCDMX = "telefonoCDMX";
     public static final String TELEFONOINTERIOR = "telefonoInterior";

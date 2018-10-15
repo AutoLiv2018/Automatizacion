@@ -142,7 +142,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seleccione Ambiente: "/>
+        <Property name="text" type="java.lang.String" value="Seleccione Canal de venta: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -157,7 +157,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seleccione Versi&#xf3;n:"/>
+        <Property name="text" type="java.lang.String" value="Seleccione Ambiente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cbxVersion">

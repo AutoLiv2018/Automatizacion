@@ -10,6 +10,7 @@ import com.liverpool.automatizacion.modelo.Find;
 import com.liverpool.automatizacion.modelo.Ticket;
 import com.liverpool.automatizacion.principal.Principal;
 import com.liverpool.automatizacion.properties.Checkout_Paso4;
+import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
 import java.util.Properties;
@@ -38,6 +39,18 @@ public class Checkout_P4 {
         if(!Principal.loadProperties(paso4.getAbsolutePath(), Cpaso4)){
             System.out.println("No se encontro el archivo: " + paso4);
         }
+    }
+    
+    public boolean esperaTicket(){
+        int a=0;
+        Utils.sleep(500);
+        while(!driver.getCurrentUrl().contains(Cpaso4.getProperty(Checkout_Paso4.URLTICKET))){
+            Utils.sleep(500);
+            a++;
+            if(a==20)
+                return false;
+        }
+        return true;
     }
     
     public Ticket extraccionDatos(String metodoPago){

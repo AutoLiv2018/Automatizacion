@@ -14,6 +14,7 @@ import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -65,9 +66,6 @@ public class Checkout_P1 {
     }
     
     public void envio(){
-//        String usuario;
-//        usuario = "Login";
-
         switch (usuario){
             case "Login": 
                 metodoEntrega();
@@ -131,7 +129,10 @@ public class Checkout_P1 {
     }
     
     public void tipoEntregaDomLogin(){
-        seleccionDomicilio();
+        if(!seleccionDomicilio()){
+            JOptionPane.showMessageDialog(null, "Direccion no encontrada: "+direccion,
+                        "Error en Direccion", JOptionPane.ERROR_MESSAGE);
+        }
         siguientePasoButton();
     }
     

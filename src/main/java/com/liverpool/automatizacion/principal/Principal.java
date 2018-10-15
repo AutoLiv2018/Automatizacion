@@ -84,6 +84,10 @@ public class Principal {
         });
         frame.add(interfaz,BorderLayout.CENTER);
         frame.pack(); // si se pone despues, no centra la ventana
+        mostrarInterfaz();
+    }
+    
+    public void mostrarInterfaz(){
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -196,6 +200,7 @@ public class Principal {
                     tlogExcel.liverpool_TLOG();
                     break;
             }       
+            mostrarInterfaz();
         });
     }
     

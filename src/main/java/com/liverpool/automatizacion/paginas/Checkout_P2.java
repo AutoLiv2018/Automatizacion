@@ -123,10 +123,12 @@ public class Checkout_P2 {
     
     public void creditoSeleccionar(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOCREDITO)+"..")) != null)
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.METODOCREDITO))) != null)
             element.click();
-        while((Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CREDITOVISTA))) == null)
+        while((Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CREDITOVISTALOGIN))) == null &&
+                (Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CREDITOVISTAGUEST))) == null){
             Utils.sleep(500);
+        }
         Utils.sleep(1000);
     }
     
@@ -214,9 +216,10 @@ public class Checkout_P2 {
         Select ddMes;
         String nomCorto = Cpaso2.getProperty(Checkout_Paso2.NOMBRECORTO).replace("?", nombreCorto).replace("xpath|", "");
         String mesElement = Cpaso2.getProperty(Checkout_Paso2.MESLOGIN).replace("?", nomCorto);
-        if((element = Find.element(driver, mesElement)) != null){
+        if((element = Find.element(driver, mesElement)) != null &&
+                element.isDisplayed()){
             ddMes = new Select(element);
-            try{ddMes.selectByVisibleText(mes);}catch(Exception ex){}
+            ddMes.selectByVisibleText(mes);
         }
     }
     
@@ -225,9 +228,10 @@ public class Checkout_P2 {
         Select ddAnio;
         String nomCorto = Cpaso2.getProperty(Checkout_Paso2.NOMBRECORTO).replace("?", nombreCorto).replace("xpath|", "");
         String anioElement = Cpaso2.getProperty(Checkout_Paso2.ANIOLOGIN).replace("?", nomCorto);
-        if((element = Find.element(driver, anioElement)) != null){
+        if((element = Find.element(driver, anioElement)) != null && 
+                element.isDisplayed()){
             ddAnio = new Select(element);
-            try{ddAnio.selectByVisibleText(anio);}catch(Exception ex){}
+            ddAnio.selectByVisibleText(anio);
         }
     }
     
@@ -255,7 +259,8 @@ public class Checkout_P2 {
     public void creditoMesGuest (String mes){
         WebElement element;
         Select ddMes;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.MESGUEST))) != null){
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.MESGUEST))) != null &&
+                element.isDisplayed()){
             ddMes = new Select(element);
             ddMes.selectByVisibleText(mes);
         }
@@ -264,7 +269,8 @@ public class Checkout_P2 {
     public void creditoAnioGuest (String anio){
         WebElement element;
         Select ddAnio;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.ANIOGUEST))) != null){
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.ANIOGUEST))) != null &&
+                element.isDisplayed()){
             ddAnio = new Select(element);
             ddAnio.selectByVisibleText(anio);
         }

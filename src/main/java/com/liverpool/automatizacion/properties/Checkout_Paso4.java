@@ -12,6 +12,7 @@ package com.liverpool.automatizacion.properties;
 public class Checkout_Paso4 {
     public static final String PROPERTIES_FILE = "Paso4_Checkout.properties";
     
+    public static final String URLTICKET = "urlTicket";
     public static final String CLIENTE = "cliente";
     public static final String CORREOCLIENTE = "correoCliente";
     public static final String FECHA = "fecha";

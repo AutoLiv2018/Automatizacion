@@ -64,7 +64,14 @@ public class Excel {
 
         for(int j=0; j<row.getLastCellNum();j++){
             XSSFCell cell= row.getCell(j);
-            renglon.add(cell.getStringCellValue());
+            
+            try{renglon.add(cell.getStringCellValue());}
+            catch(Exception e){//Al tener un error de lectura en excel muestra error y cierra el programa
+                JOptionPane.showMessageDialog(null, "Favor de revisar la celda "+
+                        (char)(j+65)+(nRenglon+1)+".\nNo es texto",
+                        "Error en archivo excel", JOptionPane.ERROR_MESSAGE);
+                System.exit(0);
+            }
         }
         return renglon;
     }
@@ -141,7 +148,7 @@ public class Excel {
         cell.setCellValue(ticket.getFestejado());
 
         try (
-            FileOutputStream fileOuS = new FileOutputStream(DBExcelCaso)) {//Se da formato al excel
+            FileOutputStream fileOuS = new FileOutputStream("D:\\Resultado.xlsx")) {//Se da formato al excel
             libroCaso.write(fileOuS);
             fileOuS.flush();
         } catch (FileNotFoundException ex) {

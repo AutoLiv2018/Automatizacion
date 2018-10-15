@@ -32,6 +32,7 @@ public class Tarjeta {
     //Datos Guest paso 2
     public Tarjeta (String tipo, String numero,String nip, String mes, String anio, String nomCliente, String paternoCliente, String maternoCliente){
         this.tipo = tipo;
+        this.numero = numero;
         this.nip = nip;
         this.mes = mes;
         this.anio = anio;

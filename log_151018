@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on master
 [15/10/2018 11:30:06] - Inicia Sistema de Automatizacion
 [15/10/2018 11:30:15] - Antes de SKUs ****************************************
 [15/10/2018 11:30:15] - Login********   iisancheze@liverpool.com.mx
@@ -225,3 +226,60 @@
 [15/10/2018 15:03:56] - ========boton sin registro : [[ChromeDriver: chrome on XP (e01ae5f120da9fc7df588d847a22ae87)] -> xpath: //*[@id='comprar']/a/p/button]
 [15/10/2018 15:03:58] - flag antes de *******************true evento
 [15/10/2018 15:03:58] - Numero encontrado ------------------------true evento
+=======
+[15/10/2018 07:28:30] - Inicia Sistema de Automatizacion
+[15/10/2018 07:42:37] - Inicia Sistema de Automatizacion
+[15/10/2018 07:43:20] - Inicia Sistema de Automatizacion
+[15/10/2018 07:45:39] - Inicia Sistema de Automatizacion
+[15/10/2018 07:48:47] - Inicia Sistema de Automatizacion
+[15/10/2018 07:49:18] - Inicia Sistema de Automatizacion
+[15/10/2018 07:51:15] - Inicia Sistema de Automatizacion
+[15/10/2018 07:53:42] - Inicia Sistema de Automatizacion
+[15/10/2018 07:57:29] - Inicia Sistema de Automatizacion
+[15/10/2018 07:59:43] - Inicia Sistema de Automatizacion
+[15/10/2018 08:07:33] - Inicia Sistema de Automatizacion
+[15/10/2018 08:13:17] - Inicia Sistema de Automatizacion
+[15/10/2018 09:08:41] - Inicia Sistema de Automatizacion
+[15/10/2018 09:10:44] - Inicia Sistema de Automatizacion
+[15/10/2018 09:13:08] - Inicia Sistema de Automatizacion
+[15/10/2018 09:15:30] - Inicia Sistema de Automatizacion
+[15/10/2018 09:19:26] - Inicia Sistema de Automatizacion
+[15/10/2018 09:19:31] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties
+[15/10/2018 09:19:31] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties (El sistema no puede encontrar el archivo especificado)
+[15/10/2018 09:19:31] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties
+[15/10/2018 09:19:31] - No se encontro el archivo: tiendas\liverpool\app\android\shipping.properties
+[15/10/2018 09:19:45] - Inicia Sistema de Automatizacion
+[15/10/2018 09:21:39] - Inicia Sistema de Automatizacion
+[15/10/2018 09:26:00] - Inicia Sistema de Automatizacion
+[15/10/2018 09:28:03] - Inicia Sistema de Automatizacion
+[15/10/2018 11:42:43] - Inicia Sistema de Automatizacion
+[15/10/2018 12:01:30] - Inicia Sistema de Automatizacion
+[15/10/2018 12:10:20] - Inicia Sistema de Automatizacion
+[15/10/2018 12:11:46] - Inicia Sistema de Automatizacion
+[15/10/2018 12:13:31] - Fin del Sistema de Automatizacion
+[15/10/2018 12:33:38] - Inicia Sistema de Automatizacion
+[15/10/2018 12:35:55] - Fin del Sistema de Automatizacion
+[15/10/2018 12:56:25] - Inicia Sistema de Automatizacion
+[15/10/2018 13:04:03] - Inicia Sistema de Automatizacion
+[15/10/2018 13:04:49] - Inicia Sistema de Automatizacion
+[15/10/2018 14:25:34] - Inicia Sistema de Automatizacion
+[15/10/2018 14:34:50] - Inicia Sistema de Automatizacion
+[15/10/2018 14:35:50] - Inicia Sistema de Automatizacion
+[15/10/2018 14:36:32] - Inicia Sistema de Automatizacion
+[15/10/2018 14:37:14] - Inicia Sistema de Automatizacion
+[15/10/2018 14:41:00] - Inicia Sistema de Automatizacion
+[15/10/2018 14:46:39] - Inicia Sistema de Automatizacion
+[15/10/2018 14:47:21] - Inicia Sistema de Automatizacion
+[15/10/2018 14:49:04] - Fin del Sistema de Automatizacion
+[15/10/2018 15:17:35] - Inicia Sistema de Automatizacion
+[15/10/2018 15:21:01] - Fin del Sistema de Automatizacion
+[15/10/2018 15:21:07] - Inicia Sistema de Automatizacion
+[15/10/2018 15:24:52] - Fin del Sistema de Automatizacion
+[15/10/2018 15:36:28] - Inicia Sistema de Automatizacion
+[15/10/2018 15:36:32] - Fin del Sistema de Automatizacion
+[15/10/2018 15:36:51] - Inicia Sistema de Automatizacion
+[15/10/2018 15:37:47] - Inicia Sistema de Automatizacion
+[15/10/2018 15:38:21] - Inicia Sistema de Automatizacion
+[15/10/2018 15:44:23] - Inicia Sistema de Automatizacion
+[15/10/2018 15:45:37] - Inicia Sistema de Automatizacion
+>>>>>>> 13ced17 Versión 1.2.al.3 Manejo de errores en excel Guardar datos en excel Direccion no encontrada en paso 1
