@@ -6,15 +6,22 @@
 package com.liverpool.automatizacion.matrices;
 
 import com.liverpool.automatizacion.modelo.Direccion;
+<<<<<<< Upstream, based on origin/master
 import com.liverpool.automatizacion.modelo.Find;
+=======
+>>>>>>> 83a00d8 
 import com.liverpool.automatizacion.modelo.Login;
 import com.liverpool.automatizacion.modelo.Guest;
 import com.liverpool.automatizacion.modelo.MesaRegaloFL;
 import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.modelo.Tarjeta;
+<<<<<<< Upstream, based on origin/master
 import com.liverpool.automatizacion.modelo.Ticket;
 import com.liverpool.automatizacion.modelo.Tienda;
 import com.liverpool.automatizacion.modelo.Promocion;
+=======
+import com.liverpool.automatizacion.modelo.Tienda;
+>>>>>>> 83a00d8 
 import com.liverpool.automatizacion.paginas.Checkout_P0;
 import com.liverpool.automatizacion.paginas.Checkout_P1;
 import com.liverpool.automatizacion.paginas.Checkout_P2;
@@ -51,6 +58,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
     MesaRegaloFL numEv;
     MesaRegaloFL mesaRegalo;
     Navegador browser;
+<<<<<<< Upstream, based on origin/master
 
     Tienda tienda;
     Tarjeta tarjeta;
@@ -70,11 +78,27 @@ public class MesaDeRegalosFueraLista extends Matriz {
     
     ArrayList<String> skuss = new ArrayList<>();
     String [] SKU;
+=======
+    
+    Tienda tienda;
+    Tarjeta tarjeta;
+    Direccion direccionTar;
+    Login loginPaypal;
+    ArrayList<ArrayList<String>> casos = new ArrayList<>();
+    ArrayList<String> escenario = new ArrayList<>();
+    public String usuario, metodoPago;
+    boolean excel;
+    
+>>>>>>> 83a00d8 
 
     private final Interfaz interfaz;
 
     public MesaDeRegalosFueraLista(Interfaz interfaz, Navegador browser, boolean excel) {
+<<<<<<< Upstream, based on origin/master
 
+=======
+       
+>>>>>>> 83a00d8 
         this.login = login;
         this.tlog = tlog;
         this.browser = browser;
@@ -83,6 +107,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         if(!excel){
             skus = new ArrayList<Sku>(){{
     //            add(new Sku("67966758", "5"));
+<<<<<<< Upstream, based on origin/master
                 add(new Sku("19917207", "5"));
             }};
             //Datos a leer
@@ -121,6 +146,44 @@ public class MesaDeRegalosFueraLista extends Matriz {
 ////                add(new Sku("63933834", "3"));
 //            }
 //        };
+=======
+                add(new Sku("1028042848", "5"));
+            }};
+            //Datos a leer
+            tienda = new Tienda("6","CDMX/ZONA METROPOLITANA");
+            login = new Login("mpalfredo1@yahoo.com", "liverpool");
+            tarjeta = new Tarjeta("NoesVISA", "123", "10", "2025"); 
+    //        tarjeta = new Tarjeta("Master Card", "123", "10", "2025"); //wst
+            direccionTar = new Direccion("56600","Chalco","Victoria","46","2","A",
+                "Niños Heroes","Plateros","55","56570898","5578894556");
+            usuario = "Guest";
+    //        metodoPago = "Credito";
+            metodoPago = "Paypal";
+            metodoPago = "CIE";
+            loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
+        }
+        if(excel){
+            usuario = "Guest-Fuera de lista";
+            String nombreArchivo = "ComprasMesa.xlsx";
+            Excel excelArc = new Excel(nombreArchivo);
+            casos=excelArc.getExcel(usuario);
+        }
+        
+        Log.write("Esto es lo que sucede..." + casos.get(0));
+        Log.write("Lo que contiene el excel..." + casos.get(1));
+        
+        Log.write("Antes de SKUs ****************************************");
+        skus = new ArrayList<Sku>() {
+            {
+//                Para WQA
+//                add(new Sku("10000016731", "3"));
+                add(new Sku("1044123068", "2"));
+//                add(new Sku("1027486246", "5"));
+//                Para WST:
+//                add(new Sku("63933834", "3"));
+            }
+        };
+>>>>>>> 83a00d8 
 //        Login para WQA
 //        login = new Login("vgvelascod14@gmail.com", "12345678");
 //        login = new Login("iisancheze@liverpool.com.mx", "liverpool");
@@ -393,7 +456,25 @@ public class MesaDeRegalosFueraLista extends Matriz {
         }
 
     }
-
+    
+    public void datosEscenarioExcel(int i){
+//        String [] tiendaE;
+//        String [] tarjetaFecha;
+//        String [] SKU;
+//        ArrayList<String> skuss = new ArrayList<>();
+        
+        escenario = casos.get(i);
+        
+        switch(usuario){
+            case "Login":
+                inicioSesionMDRFL();
+                break;
+            case "Guest":
+                guestMDRFL();
+                break;
+        }
+    }
+    
     public void inicioSesionMDRFL() {
 
         Log.write("InicioSesion");
