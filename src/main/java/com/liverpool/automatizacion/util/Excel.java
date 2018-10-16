@@ -28,12 +28,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class Excel {
         
-    String nombreArchivo = "Compras.xlsx";
+    //String nombreArchivo = "Compras.xlsx";
+    String nombreArchivo;
     String rutaAcceso = "D:\\";
     File file = new File(rutaAcceso);
-    File DBExcelCaso = new File(rutaAcceso+"\\"+nombreArchivo);
+    File DBExcelCaso = new File(rutaAcceso/*+"\\"*/+nombreArchivo);
     
-    public Excel(){
+    public Excel(String nombreArchivo){
+        this.nombreArchivo = nombreArchivo;
+        this.DBExcelCaso = new File (rutaAcceso/*+"\\"*/+nombreArchivo);
         if (!DBExcelCaso.exists()) 
             JOptionPane.showMessageDialog(null, "No se encuentra archivo en D:\\");
     }
@@ -64,14 +67,7 @@ public class Excel {
 
         for(int j=0; j<row.getLastCellNum();j++){
             XSSFCell cell= row.getCell(j);
-            
-            try{renglon.add(cell.getStringCellValue());}
-            catch(Exception e){//Al tener un error de lectura en excel muestra error y cierra el programa
-                JOptionPane.showMessageDialog(null, "Favor de revisar la celda "+
-                        (char)(j+65)+(nRenglon+1)+".\nNo es texto",
-                        "Error en archivo excel", JOptionPane.ERROR_MESSAGE);
-                System.exit(0);
-            }
+            renglon.add(cell.getStringCellValue());
         }
         return renglon;
     }
@@ -148,7 +144,7 @@ public class Excel {
         cell.setCellValue(ticket.getFestejado());
 
         try (
-            FileOutputStream fileOuS = new FileOutputStream("D:\\Resultado.xlsx")) {//Se da formato al excel
+            FileOutputStream fileOuS = new FileOutputStream(DBExcelCaso)) {//Se da formato al excel
             libroCaso.write(fileOuS);
             fileOuS.flush();
         } catch (FileNotFoundException ex) {

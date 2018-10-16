@@ -78,7 +78,7 @@ public class Tlog {
         }
         if(excel){
             usuario = "Login";
-            Excel excelArc = new Excel();
+            Excel excelArc = new Excel("Compras.xlsx");
             casos=excelArc.getExcel(usuario);
         }
     }
@@ -140,7 +140,7 @@ public class Tlog {
             
             if(paso4.esperaTicket())
                 ticket = paso4.extraccionDatos(metodoPago);
-            Excel escritura = new Excel();
+            Excel escritura = new Excel("Compras.xlsx");
             escritura.writeExcel(ticket);
         }
         JOptionPane.showMessageDialog(null, "Compras terminadas");

@@ -5,13 +5,17 @@
  */
 package com.liverpool.automatizacion.matrices;
 
+import com.liverpool.automatizacion.modelo.Direccion;
 import com.liverpool.automatizacion.modelo.Login;
 import com.liverpool.automatizacion.modelo.MesaRegaloFL;
 import com.liverpool.automatizacion.modelo.Sku;
+import com.liverpool.automatizacion.modelo.Tarjeta;
+import com.liverpool.automatizacion.modelo.Tienda;
 import com.liverpool.automatizacion.paginas.Checkout_P0;
 import com.liverpool.automatizacion.paginas.LivHome;
 import com.liverpool.automatizacion.paginas.LivPDP;
 import com.liverpool.automatizacion.principal.Navegador;
+import com.liverpool.automatizacion.util.Excel;
 import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.util.ArrayList;
@@ -31,16 +35,54 @@ public class MesaDeRegalosFueraLista extends Matriz {
     ArrayList<Sku> skus;
     MesaRegaloFL numEv;
     Navegador browser;
+    
+    Tienda tienda;
+    Tarjeta tarjeta;
+    Direccion direccionTar;
+    Login loginPaypal;
+    ArrayList<ArrayList<String>> casos = new ArrayList<>();
+    ArrayList<String> escenario = new ArrayList<>();
+    public String usuario, metodoPago;
+    boolean excel;
+    
 
     private final Interfaz interfaz;
 
-    public MesaDeRegalosFueraLista(Interfaz interfaz, Navegador browser, boolean tlog) {
+    public MesaDeRegalosFueraLista(Interfaz interfaz, Navegador browser, boolean excel) {
        
         this.login = login;
         this.tlog = tlog;
         this.browser = browser;
         this.interfaz = interfaz;
-
+        
+        if(!excel){
+            skus = new ArrayList<Sku>(){{
+    //            add(new Sku("67966758", "5"));
+                add(new Sku("1028042848", "5"));
+            }};
+            //Datos a leer
+            tienda = new Tienda("6","CDMX/ZONA METROPOLITANA");
+            login = new Login("mpalfredo1@yahoo.com", "liverpool");
+            tarjeta = new Tarjeta("NoesVISA", "123", "10", "2025"); 
+    //        tarjeta = new Tarjeta("Master Card", "123", "10", "2025"); //wst
+            direccionTar = new Direccion("56600","Chalco","Victoria","46","2","A",
+                "Niños Heroes","Plateros","55","56570898","5578894556");
+            usuario = "Guest";
+    //        metodoPago = "Credito";
+            metodoPago = "Paypal";
+            metodoPago = "CIE";
+            loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
+        }
+        if(excel){
+            usuario = "Guest-Fuera de lista";
+            String nombreArchivo = "ComprasMesa.xlsx";
+            Excel excelArc = new Excel(nombreArchivo);
+            casos=excelArc.getExcel(usuario);
+        }
+        
+        Log.write("Esto es lo que sucede..." + casos.get(0));
+        Log.write("Lo que contiene el excel..." + casos.get(1));
+        
         Log.write("Antes de SKUs ****************************************");
         skus = new ArrayList<Sku>() {
             {
@@ -60,7 +102,25 @@ public class MesaDeRegalosFueraLista extends Matriz {
         Log.write("Login********   " + login.getUser());
 
     }
-
+    
+    public void datosEscenarioExcel(int i){
+//        String [] tiendaE;
+//        String [] tarjetaFecha;
+//        String [] SKU;
+//        ArrayList<String> skuss = new ArrayList<>();
+        
+        escenario = casos.get(i);
+        
+        switch(usuario){
+            case "Login":
+                inicioSesionMDRFL();
+                break;
+            case "Guest":
+                guestMDRFL();
+                break;
+        }
+    }
+    
     public void inicioSesionMDRFL() {
 
         Log.write("InicioSesion");
