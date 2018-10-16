@@ -55,13 +55,14 @@ public class LivPDP {
                 element.sendKeys(Keys.BACK_SPACE);
                 element.sendKeys(sku.getCantidad());
                 }catch(Exception ex){}
-            }
+        }
+        Uninterruptibles.sleepUninterruptibly(500, TimeUnit.MILLISECONDS);
     }
     
     // Agregar el sku a la bolsa
     public void agregaraBolsa(){
         WebElement element;
-        Uninterruptibles.sleepUninterruptibly(1000, TimeUnit.MILLISECONDS);
+        Uninterruptibles.sleepUninterruptibly(1700, TimeUnit.MILLISECONDS);
         if((element = Find.element(driver, pdp.getProperty(PDPLiver.BTN_ADD_CART))) != null)
             element.click();
         // Esperar a que se abra al popup de compra
