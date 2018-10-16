@@ -15,7 +15,8 @@ public class Checkout_Paso1 {
     public static final String TIENDASESTADO = "tiendasEstado";
     public static final String TIENDASELECCION = "tiendaSeleccion";
     public static final String ENVIODOMICILIO = "envioDomicilio";
-    public static final String SIGUIENTEPASO = "siguientePaso";
+    public static final String SIGUIENTEPASOLOGIN = "siguientePasoLogin";
+    public static final String SIGUIENTEPASOGUEST = "siguientePasoGuest";
     public static final String TIENDADESCRIPCION = "tiendaDescripcion";
     public static final String NOMBRECORTO = "nombreCorto";
     public static final String NOMBRESELECCION = "nombreSeleccion";

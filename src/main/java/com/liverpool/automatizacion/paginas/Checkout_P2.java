@@ -207,8 +207,10 @@ public class Checkout_P2 {
         WebElement element;
         String nomCorto = Cpaso2.getProperty(Checkout_Paso2.NOMBRECORTO).replace("?", nombreCorto).replace("xpath|", "");
         String nipElement = Cpaso2.getProperty(Checkout_Paso2.NIPLOGIN).replace("?", nomCorto);
-        if((element = Find.element(driver, nipElement)) != null)
+        if((element = Find.element(driver, nipElement)) != null &&
+                element.isDisplayed()){
             element.sendKeys(nip);
+        }
     }
     
     public void creditoMes (String mes, String nombreCorto){

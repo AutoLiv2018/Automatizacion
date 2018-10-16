@@ -118,14 +118,20 @@ public class Checkout_P1 {
         llenadoEntreCalle();
         llenadoYCalle();
         llenadoCelular();
-        siguientePasoButton();
+        if(usuario.contains("Login"))
+            siguientePasoButtonLogin();
+        else
+            siguientePasoButtonGuest();
     }
     
     public void tipoEntregaCC (){ //Estado y numero de la tienda
         buttonClickCollect();
         estadoCC();
         seleccionTiendaCC();
-        siguientePasoButton();
+        if(usuario.contains("Login"))
+            siguientePasoButtonLogin();
+        else
+            siguientePasoButtonGuest();
     }
     
     public void tipoEntregaDomLogin(){
@@ -133,7 +139,10 @@ public class Checkout_P1 {
             JOptionPane.showMessageDialog(null, "Direccion no encontrada: "+direccion,
                         "Error en Direccion", JOptionPane.ERROR_MESSAGE);
         }
-        siguientePasoButton();
+        if(usuario.contains("Login"))
+            siguientePasoButtonLogin();
+        else
+            siguientePasoButtonGuest();
     }
     
     public boolean seleccionDomicilio(){
@@ -181,10 +190,20 @@ public class Checkout_P1 {
         return false;
     }
     
-    public boolean siguientePasoButton(){
+    public boolean siguientePasoButtonLogin(){
         WebElement element;
         Utils.sleep(500);
-        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGUIENTEPASO))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGUIENTEPASOLOGIN))) != null){
+            element.click();
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean siguientePasoButtonGuest(){
+        WebElement element;
+        Utils.sleep(500);
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGUIENTEPASOGUEST))) != null){
             element.click();
             return true;
         }
