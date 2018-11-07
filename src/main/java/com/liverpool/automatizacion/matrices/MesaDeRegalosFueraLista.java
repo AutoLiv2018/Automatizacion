@@ -109,45 +109,8 @@ public class MesaDeRegalosFueraLista extends Matriz {
         Log.write("> Datos del excel: " + casos.get(1));
         
 //        escenario = casos.get(1);
-                
+
 /*        Log.write("Antes de SKUs ****************************************");
-        skus = new ArrayList<Sku>() {
-            {
-                //            add(new Sku("67966758", "5"));
-//                add(new Sku("1028042848", "5"));
-//                add(new Sku("1044123068", "2"));
-                add(new Sku("19917207", "1"));
-            }
-        };
-        //Datos a leer
-        tienda = new Tienda("6", "CDMX/ZONA METROPOLITANA");
-//            login = new Login("mpalfredo1@yahoo.com", "liverpool");
-//        login = new Login("vgvelascod14@gmail.com", "12345678");
-        login = new Login("mrinvitado3@yahoo.com", "Regalos1");
-        tarjeta = new Tarjeta("NoesVISA", "123", "10", "2025");
-        //        tarjeta = new Tarjeta("Master Card", "123", "10", "2025"); //wst
-        direccionTar = new Direccion("56600", "Chalco", "Victoria", "46", "2", "A",
-                "Niños Heroes", "Plateros", "55", "56570898", "5578894556");
-
-//        usuario = "Login-Fuera de lista";
-//        usuario = "Guest-Fuera de lista";
-        usuario = "Login-Dentro de lista";
-//        usuario = "Guest-Dentro de lista";
-        //        metodoPago = "Credito";
-        metodoPago = "Paypal";
-        metodoPago = "CIE";
-        loginPaypal = new Login("compradorus@hotmail.com", "Comprador1");
-//        }
-//        if(excel){
-//            usuario = "Guest-Fuera de lista";
-//            String nombreArchivo = "ComprasMesa.xlsx";
-//            Excel excelArc = new Excel(nombreArchivo);
-//            casos=excelArc.getExcel(usuario);
-//        }
-
-//        Log.write("Esto es lo que sucede..." + casos.get(0));
-//        Log.write("Lo que contiene el excel..." + casos.get(1));
-//        Log.write("Antes de SKUs ****************************************");
 //        skus = new ArrayList<Sku>() {
 //            {
 ////                Para WQA
@@ -192,6 +155,157 @@ public class MesaDeRegalosFueraLista extends Matriz {
                 festejadoFueraDeLista();
                 break;
         }
+    }
+    
+    public void loginDentroDeLista(){
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
+        
+        skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size(); j++){
+            SKU = skuss.get(j).split(", ");
+            System.out.println(SKU[0]+" "+SKU[1]);
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+        
+        cupones = escenario.get(7);
+        promo = escenario.get(8).split(", ");
+        if(promo.length>1)
+            promocion = new Promocion(promo[0], promo[1]);
+        else 
+            promocion = new Promocion(promo[1]);
+        
+        metodoPago = escenario.get(9);
+        fechaTarjeta = escenario.get(12).split("/");
+        if(fechaTarjeta.length>1)
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
+        loginPaypal = new Login(escenario.get(13), escenario.get(14));
+    }
+    
+    public void guestDentroDeLista(){
+        compra = escenario.get(0);
+        guest = new Guest(escenario.get(1),escenario.get(2),escenario.get(3),
+                escenario.get(4),escenario.get(5),escenario.get(6));
+        mesaRegalo = new MesaRegaloFL(escenario.get(7),escenario.get(8),escenario.get(9));
+        
+        skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size(); j++){
+            SKU = skuss.get(j).split(", ");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+        
+        cupones = escenario.get(11);
+        promo = escenario.get(12).split(", ");
+        if(promo.length>1)
+            promocion = new Promocion(promo[0], promo[1]);
+        else 
+            promocion = new Promocion(promo[1]);
+        
+        direccionTar = new Direccion(escenario.get(13),escenario.get(14),escenario.get(15),escenario.get(16),
+                escenario.get(17),escenario.get(18),escenario.get(19),escenario.get(20),escenario.get(21),
+                escenario.get(22),escenario.get(23));
+        metodoPago = escenario.get(24);
+        fechaTarjeta = escenario.get(28).split("/");
+        if(fechaTarjeta.length>1)
+            tarjeta = new Tarjeta(escenario.get(25), escenario.get(26), escenario.get(27),
+                    fechaTarjeta[0], fechaTarjeta[1], escenario.get(1), escenario.get(2), escenario.get(3));
+        loginPaypal = new Login(escenario.get(29), escenario.get(30));
+    }
+    
+    public void loginFueraDeLista(){
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
+        
+        skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size(); j++){
+            SKU = skuss.get(j).split(", ");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+        
+        cupones = escenario.get(7);
+        promo = escenario.get(8).split(", ");
+        if(promo.length>1)
+            promocion = new Promocion(promo[0], promo[1]);
+        else 
+            promocion = new Promocion(promo[1]);
+        
+        metodoPago = escenario.get(9);
+        fechaTarjeta = escenario.get(12).split("/");
+        if(fechaTarjeta.length>1)
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
+        loginPaypal = new Login(escenario.get(13), escenario.get(14));
+        Log.write("Numero de evento dentro login... " + mesaRegalo.getNumEvento());
+    }
+    
+    public void guestFueraDeLista(){
+        compra = escenario.get(0);
+        guest = new Guest(escenario.get(1),escenario.get(2),escenario.get(3),
+                escenario.get(4),escenario.get(5),escenario.get(6));
+        mesaRegalo = new MesaRegaloFL(escenario.get(7),escenario.get(8),escenario.get(9));
+        
+        skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size(); j++){
+            SKU = skuss.get(j).split(", ");
+            System.out.println(SKU[0]+" "+SKU[1]);
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+        
+        cupones = escenario.get(11);
+        promo = escenario.get(12).split(", ");
+        if(promo.length>1)
+            promocion = new Promocion(promo[0], promo[1]);
+        else 
+            promocion = new Promocion(promo[1]);
+        
+        direccionTar = new Direccion(escenario.get(13),escenario.get(14),escenario.get(15),escenario.get(16),
+                escenario.get(17),escenario.get(18),escenario.get(19),escenario.get(20),escenario.get(21),
+                escenario.get(22),escenario.get(23));
+        metodoPago = escenario.get(24);
+        fechaTarjeta = escenario.get(28).split("/");
+        if(fechaTarjeta.length>1)
+            tarjeta = new Tarjeta(escenario.get(25), escenario.get(26), escenario.get(27),
+                    fechaTarjeta[0], fechaTarjeta[1], escenario.get(1), escenario.get(2), escenario.get(3));
+        loginPaypal = new Login(escenario.get(29), escenario.get(30));
+        
+        Log.write("Numero de evento dentro guest + ------------------------" + mesaRegalo.getNumEvento());
+        
+    }
+    
+    public void festejadoFueraDeLista(){
+        String [] tiendaCC;
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        mesaRegalo = new MesaRegaloFL(escenario.get(3));
+        
+        skuss.addAll(Arrays.asList(escenario.get(4).split("\n")));
+        skus = new ArrayList<Sku>();
+        for(int j=0; j<skuss.size(); j++){
+            SKU = skuss.get(j).split(", ");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+        
+        cupones = escenario.get(5);
+        promo = escenario.get(6).split(", ");
+        if(promo.length>1)
+            promocion = new Promocion(promo[0], promo[1]);
+        else 
+            promocion = new Promocion(promo[1]);
+        
+        tiendaCC = escenario.get(7).split(",");
+        if(tiendaCC.length>1)
+            tienda = new Tienda(tiendaCC[1], tiendaCC[0]);
+        direccionTar = new Direccion(escenario.get(8));
+        metodoPago = escenario.get(9);
+        fechaTarjeta = escenario.get(12).split("/");
+        if(fechaTarjeta.length>1)
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[0]);
+        loginPaypal = new Login(escenario.get(13), escenario.get(14));
     }
 
     public void mesaRegalos() {
@@ -358,18 +472,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
             numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
             Log.write("Numero encontrado ------------------------" + numEvEncontrado);
         }
-        pdp.irPaso0();
-        numEv = new MesaRegaloFL();
-//        WQA:
-        numEv.setNumEvento("36773699");
-        //        Productivo
-//        numEv.setNumEvento("50009146");
-//        WST:
-//        numEv.setId("50010408");
-
-        Log.write("Numero de evento ------------------------" + numEv.getNumEvento());
-        numEvEncontrado = paso0.buscarNumeroEventoMRFL(numEv);
-        Log.write("Numero encontrado ------------------------" + numEvEncontrado);
+        
     }
 
     private void pasoCero() {
