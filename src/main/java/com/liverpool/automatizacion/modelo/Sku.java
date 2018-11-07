@@ -136,4 +136,8 @@ public class Sku {
     public void setPromosBancarias(ArrayList<String> promosBancarias) {
         this.promosBancarias = promosBancarias;
     }
+
+    public String[] split(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

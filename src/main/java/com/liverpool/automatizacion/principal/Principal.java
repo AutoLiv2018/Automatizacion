@@ -5,8 +5,8 @@
  */
 package com.liverpool.automatizacion.principal;
 
-import com.liverpool.automatizacion.matrices.Checkout;
-//import com.liverpool.automatizacion.matrices.MesaDeRegalos;
+//import com.liverpool.automatizacion.matrices.Checkout;
+//import com.liverpool.automatizacion.matrices.MesaDeRegalosFueraLista;
 import com.liverpool.automatizacion.matrices.MesaDeRegalosFueraLista;
 import com.liverpool.automatizacion.matrices.Tlog;
 import com.liverpool.automatizacion.modelo.Archivo;
@@ -182,13 +182,13 @@ public class Principal {
                 case "Mi Cuenta":
                     break;
                 case "Checkout":
-                    Checkout checkout = new Checkout(entorno, cart, shipping, driver, true);
-                    checkout.execute();
+//                    Checkout checkout = new Checkout(entorno, cart, shipping, driver, true);
+//                    checkout.execute();
                     break;
                 case "Mesa de Regalos":
-            //        MesaDeRegalos mdr = new MesaDeRegalos(entorno,cart,shipping,driver, true);
+            //        MesaDeRegalosFueraLista mdr = new MesaDeRegalosFueraLista(entorno,cart,shipping,driver, true);
             //        mdr.execute();
-                     MesaDeRegalosFueraLista mdrfl = new MesaDeRegalosFueraLista(interfaz, browser,true);
+                     MesaDeRegalosFueraLista mdrfl = new MesaDeRegalosFueraLista(interfaz, browser,false);
                      mdrfl.execute();
                     break;
                 case "TLOG":

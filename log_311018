@@ -1,0 +1,296 @@
+[31/10/2018 11:46:51] - Inicia Sistema de Automatizacion
+[31/10/2018 11:47:18] - Login********   vgvelascod14@gmail.com
+[31/10/2018 11:47:29] - Despues de LiveHome
+[31/10/2018 11:47:29] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\header.properties
+[31/10/2018 11:47:29] - java.io.FileNotFoundException: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\header.properties (The system cannot find the file specified)
+[31/10/2018 11:47:29] - Ocurrio una excepcion al leer el archivo: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\header.properties
+[31/10/2018 11:47:29] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\mesa_de_regalos.properties
+[31/10/2018 11:47:29] - java.io.FileNotFoundException: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\mesa_de_regalos.properties (The system cannot find the file specified)
+[31/10/2018 11:47:29] - Ocurrio una excepcion al leer el archivo: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\mesa_de_regalos.properties
+[31/10/2018 11:47:35] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[31/10/2018 11:51:29] - Inicia Sistema de Automatizacion
+[31/10/2018 11:51:37] - Login********   vgvelascod14@gmail.com
+[31/10/2018 11:51:45] - Despues de LiveHome
+[31/10/2018 11:51:45] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\mesa_de_regalos.properties
+[31/10/2018 11:51:45] - java.io.FileNotFoundException: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\mesa_de_regalos.properties (The system cannot find the file specified)
+[31/10/2018 11:51:45] - Ocurrio una excepcion al leer el archivo: C:\Users\VGVELASCOG\Documents\NetBeansProjects\Automatizacion\tiendas\liverpool\web\wqa\mesa_de_regalos.properties
+[31/10/2018 11:51:50] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 11:59:45] - Inicia Sistema de Automatizacion
+[31/10/2018 12:00:08] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:00:16] - Despues de LiveHome
+[31/10/2018 12:00:22] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6c037968
+[31/10/2018 12:03:11] - Inicia Sistema de Automatizacion
+[31/10/2018 12:03:23] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:03:39] - Despues de LiveHome
+[31/10/2018 12:03:46] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:03:46] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 12:04:07] - Fin del Sistema de Automatizacion
+[31/10/2018 12:12:37] - Inicia Sistema de Automatizacion
+[31/10/2018 12:12:43] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:13:05] - Despues de LiveHome
+[31/10/2018 12:13:13] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:13:13] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1b55c21f
+[31/10/2018 12:35:14] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:35:28] - Despues de LiveHome
+[31/10/2018 12:35:35] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:35:35] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1b88fe53
+[31/10/2018 12:37:28] - Fin del Sistema de Automatizacion
+[31/10/2018 12:37:41] - Inicia Sistema de Automatizacion
+[31/10/2018 12:37:47] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:38:00] - Despues de LiveHome
+[31/10/2018 12:38:27] - Inicia Sistema de Automatizacion
+[31/10/2018 12:38:33] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:39:21] - Despues de LiveHome
+[31/10/2018 12:39:27] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:39:27] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@2c869aed
+[31/10/2018 12:41:48] - Inicia Sistema de Automatizacion
+[31/10/2018 12:45:23] - Inicia Sistema de Automatizacion
+[31/10/2018 12:45:42] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:45:51] - Despues de LiveHome
+[31/10/2018 12:45:57] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:45:57] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 12:45:57] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 12:46:01] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 12:46:02] - No tiene eventos registrados ------------------------
+[31/10/2018 12:47:18] - Inicia Sistema de Automatizacion
+[31/10/2018 12:47:24] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:47:32] - Despues de LiveHome
+[31/10/2018 12:47:38] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:47:38] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 12:47:38] - Numero encontrado ------------------------36773699
+[31/10/2018 12:47:41] - Numero encontrado ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 12:47:43] - No tiene eventos registrados ------------------------
+[31/10/2018 12:51:40] - Fin del Sistema de Automatizacion
+[31/10/2018 12:51:47] - Inicia Sistema de Automatizacion
+[31/10/2018 12:51:53] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:52:03] - Despues de LiveHome
+[31/10/2018 12:52:09] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:52:09] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 12:52:09] - Numero encontrado ------------------------36773699
+[31/10/2018 12:52:38] - Inicia Sistema de Automatizacion
+[31/10/2018 12:52:45] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:52:55] - Despues de LiveHome
+[31/10/2018 12:53:02] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:53:02] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6868855b
+[31/10/2018 12:53:02] - Numero encontrado ------------------------36773699
+[31/10/2018 12:55:19] - Inicia Sistema de Automatizacion
+[31/10/2018 12:55:26] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:55:35] - Despues de LiveHome
+[31/10/2018 12:55:40] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:55:40] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 12:55:40] - Numero encontrado ------------------------36773699
+[31/10/2018 12:56:08] - Inicia Sistema de Automatizacion
+[31/10/2018 12:56:14] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:56:23] - Despues de LiveHome
+[31/10/2018 12:56:28] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:56:28] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6868855b
+[31/10/2018 12:56:28] - Numero encontrado ------------------------36773699
+[31/10/2018 12:56:29] - No tiene eventos registrados ------------------------
+[31/10/2018 12:56:30] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 12:56:35] - Fin del Sistema de Automatizacion
+[31/10/2018 12:56:50] - Inicia Sistema de Automatizacion
+[31/10/2018 12:57:31] - Inicia Sistema de Automatizacion
+[31/10/2018 12:57:40] - Login********   vgvelascod14@gmail.com
+[31/10/2018 12:57:48] - Despues de LiveHome
+[31/10/2018 12:57:54] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 12:57:54] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 12:57:54] - Numero encontrado ------------------------36773699
+[31/10/2018 12:57:54] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 12:57:58] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 12:57:59] - No tiene eventos registrados ------------------------
+[31/10/2018 12:57:59] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 13:00:49] - Inicia Sistema de Automatizacion
+[31/10/2018 13:00:56] - Login********   vgvelascod14@gmail.com
+[31/10/2018 13:01:05] - Despues de LiveHome
+[31/10/2018 13:01:10] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 13:01:10] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 13:01:10] - Numero encontrado ------------------------36773699
+[31/10/2018 13:01:10] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 13:04:57] - Inicia Sistema de Automatizacion
+[31/10/2018 13:05:04] - Login********   vgvelascod14@gmail.com
+[31/10/2018 13:05:13] - Despues de LiveHome
+[31/10/2018 13:05:19] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 13:05:19] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 13:05:19] - Numero encontrado ------------------------36773699
+[31/10/2018 13:05:19] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 13:05:22] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 13:05:23] - No tiene eventos registrados ------------------------
+[31/10/2018 13:05:23] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 13:05:24] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 13:05:24] - RES ------------------------true
+[31/10/2018 13:05:58] - Login********   vgvelascod14@gmail.com
+[31/10/2018 13:06:06] - Despues de LiveHome
+[31/10/2018 13:06:11] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 13:06:11] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1a7fe049
+[31/10/2018 13:06:11] - Numero encontrado ------------------------36773699
+[31/10/2018 13:06:11] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1a7fe049
+[31/10/2018 13:06:15] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1a7fe049
+[31/10/2018 13:06:16] - No tiene eventos registrados ------------------------
+[31/10/2018 13:06:16] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 13:06:17] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1a7fe049
+[31/10/2018 13:06:17] - RES ------------------------true
+[31/10/2018 13:06:21] - Fin del Sistema de Automatizacion
+[31/10/2018 13:13:29] - Inicia Sistema de Automatizacion
+[31/10/2018 13:13:35] - Login********   vgvelascod14@gmail.com
+[31/10/2018 13:13:44] - Despues de LiveHome
+[31/10/2018 13:13:50] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 13:13:50] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 13:13:50] - Numero encontrado ------------------------36773699
+[31/10/2018 13:13:50] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 13:13:54] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 13:13:55] - No tiene eventos registrados ------------------------
+[31/10/2018 13:13:55] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 13:13:55] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 13:13:56] - RES ------------------------true
+[31/10/2018 13:14:01] - Fin del Sistema de Automatizacion
+[31/10/2018 14:28:52] - Inicia Sistema de Automatizacion
+[31/10/2018 14:29:02] - Login********   vgvelascod14@gmail.com
+[31/10/2018 14:29:27] - Despues de LiveHome
+[31/10/2018 14:29:34] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 14:29:34] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 14:29:34] - Numero encontrado ------------------------36773699
+[31/10/2018 14:29:34] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 14:29:40] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 14:29:41] - No tiene eventos registrados ------------------------
+[31/10/2018 14:29:41] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 14:29:42] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[31/10/2018 14:29:42] - RES ------------------------true
+[31/10/2018 14:37:08] - Fin del Sistema de Automatizacion
+[31/10/2018 15:15:53] - Inicia Sistema de Automatizacion
+[31/10/2018 15:16:21] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:16:48] - Despues de LiveHome
+[31/10/2018 15:16:56] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:16:56] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:16:56] - Numero encontrado ------------------------36773699
+[31/10/2018 15:16:56] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:17:03] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:17:03] - Entro en Seleccionar Evento ------------------------
+[31/10/2018 15:17:40] - Inicia Sistema de Automatizacion
+[31/10/2018 15:17:49] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:18:02] - Despues de LiveHome
+[31/10/2018 15:18:08] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:18:08] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@67a5b374
+[31/10/2018 15:18:08] - Numero encontrado ------------------------36773699
+[31/10/2018 15:18:08] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@67a5b374
+[31/10/2018 15:18:12] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@67a5b374
+[31/10/2018 15:18:13] - No tiene eventos registrados ------------------------
+[31/10/2018 15:18:13] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 15:18:14] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@67a5b374
+[31/10/2018 15:18:14] - RES ------------------------true
+[31/10/2018 15:19:58] - Fin del Sistema de Automatizacion
+[31/10/2018 15:20:05] - Inicia Sistema de Automatizacion
+[31/10/2018 15:20:35] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:20:48] - Despues de LiveHome
+[31/10/2018 15:20:57] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:20:57] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[31/10/2018 15:20:57] - Numero encontrado ------------------------36773699
+[31/10/2018 15:20:57] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[31/10/2018 15:21:14] - Inicia Sistema de Automatizacion
+[31/10/2018 15:21:20] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:21:33] - Despues de LiveHome
+[31/10/2018 15:21:38] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:21:39] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:21:39] - Numero encontrado ------------------------36773699
+[31/10/2018 15:21:39] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:21:44] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:21:45] - No tiene eventos registrados ------------------------
+[31/10/2018 15:21:45] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 15:21:46] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:21:46] - RES ------------------------true
+[31/10/2018 15:22:22] - Fin del Sistema de Automatizacion
+[31/10/2018 15:24:55] - Inicia Sistema de Automatizacion
+[31/10/2018 15:25:01] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:25:12] - Despues de LiveHome
+[31/10/2018 15:25:16] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:25:16] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 15:25:16] - Numero encontrado ------------------------36773699
+[31/10/2018 15:25:18] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 15:25:58] - Inicia Sistema de Automatizacion
+[31/10/2018 15:26:10] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:26:23] - Despues de LiveHome
+[31/10/2018 15:26:49] - Inicia Sistema de Automatizacion
+[31/10/2018 15:26:56] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:27:07] - Despues de LiveHome
+[31/10/2018 15:27:55] - Inicia Sistema de Automatizacion
+[31/10/2018 15:28:06] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:28:17] - Despues de LiveHome
+[31/10/2018 15:28:25] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:28:25] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@4733fc14
+[31/10/2018 15:28:25] - Numero encontrado ------------------------36773699
+[31/10/2018 15:28:25] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@4733fc14
+[31/10/2018 15:28:29] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@4733fc14
+[31/10/2018 15:28:30] - No tiene eventos registrados ------------------------
+[31/10/2018 15:28:30] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 15:28:31] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@4733fc14
+[31/10/2018 15:28:31] - RES ------------------------true
+[31/10/2018 15:30:23] - Fin del Sistema de Automatizacion
+[31/10/2018 15:31:13] - Inicia Sistema de Automatizacion
+[31/10/2018 15:31:21] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:31:33] - Despues de LiveHome
+[31/10/2018 15:31:39] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:31:39] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:31:39] - Numero encontrado ------------------------36773699
+[31/10/2018 15:31:39] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:31:44] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:31:45] - No tiene eventos registrados ------------------------
+[31/10/2018 15:31:46] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 15:31:46] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:31:47] - RES ------------------------true
+[31/10/2018 15:32:19] - Fin del Sistema de Automatizacion
+[31/10/2018 15:32:50] - Inicia Sistema de Automatizacion
+[31/10/2018 15:32:57] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:33:10] - Despues de LiveHome
+[31/10/2018 15:33:16] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:33:16] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@233789f6
+[31/10/2018 15:33:16] - Numero encontrado ------------------------36773699
+[31/10/2018 15:33:47] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@233789f6
+[31/10/2018 15:35:48] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@233789f6
+[31/10/2018 15:36:24] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[31/10/2018 15:38:14] - Inicia Sistema de Automatizacion
+[31/10/2018 15:38:21] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:38:35] - Despues de LiveHome
+[31/10/2018 15:38:42] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:38:42] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:38:42] - Numero encontrado ------------------------36773699
+[31/10/2018 15:38:42] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:38:46] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:38:47] - No tiene eventos registrados ------------------------
+[31/10/2018 15:38:47] - Numero encontrado dentro de metodo ------------------------36773699
+[31/10/2018 15:38:48] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[31/10/2018 15:38:48] - RES ------------------------true
+[31/10/2018 15:39:16] - Fin del Sistema de Automatizacion
+[31/10/2018 15:40:36] - Inicia Sistema de Automatizacion
+[31/10/2018 15:40:43] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:40:54] - Despues de LiveHome
+[31/10/2018 15:40:59] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:40:59] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@258a968f
+[31/10/2018 15:40:59] - Numero encontrado ------------------------36773699
+[31/10/2018 15:41:10] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@258a968f
+[31/10/2018 15:41:46] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@258a968f
+[31/10/2018 15:42:19] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[31/10/2018 15:43:52] - Inicia Sistema de Automatizacion
+[31/10/2018 15:43:59] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:44:11] - Despues de LiveHome
+[31/10/2018 15:44:39] - Inicia Sistema de Automatizacion
+[31/10/2018 15:44:45] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:44:57] - Despues de LiveHome
+[31/10/2018 15:45:03] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:45:03] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 15:45:03] - Numero encontrado ------------------------36773699
+[31/10/2018 15:45:04] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 15:45:08] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[31/10/2018 15:45:08] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[31/10/2018 15:46:02] - Fin del Sistema de Automatizacion
+[31/10/2018 15:51:33] - Inicia Sistema de Automatizacion
+[31/10/2018 15:51:42] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:51:58] - Despues de LiveHome
+[31/10/2018 15:52:06] - Usuario ------------------------Login-Dentro de lista
+[31/10/2018 15:52:06] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:52:06] - Numero encontrado ------------------------36773699
+[31/10/2018 15:52:06] - Entro a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[31/10/2018 15:54:07] - Inicia Sistema de Automatizacion
+[31/10/2018 15:54:13] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 15:54:26] - Despues de LiveHome
+[31/10/2018 16:07:29] - Inicia Sistema de Automatizacion
+[31/10/2018 16:07:36] - Login********   mrinvitado3@yahoo.com
+[31/10/2018 16:07:55] - Despues de LiveHome

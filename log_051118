@@ -1,0 +1,376 @@
+[05/11/2018 07:44:06] - Inicia Sistema de Automatizacion
+[05/11/2018 07:44:14] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 07:44:20] - Despues de LiveHome
+[05/11/2018 12:25:04] - Inicia Sistema de Automatizacion
+[05/11/2018 12:25:16] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:25:25] - Despues de LiveHome
+[05/11/2018 12:25:32] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:25:32] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@50f2b14d
+[05/11/2018 12:25:32] - Numero encontrado ------------------------36773699
+[05/11/2018 12:25:32] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:25:42] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@50f2b14d
+[05/11/2018 12:25:42] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:27:47] - Inicia Sistema de Automatizacion
+[05/11/2018 12:27:56] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:28:04] - Despues de LiveHome
+[05/11/2018 12:28:37] - Numero de evento ------------------------36773699
+[05/11/2018 12:28:37] - Numero de evento *******************36773699
+[05/11/2018 12:28:39] - selecciono agrega regalo
+[05/11/2018 12:28:39] - seleccionotrue
+[05/11/2018 12:28:40] - cambia de frame *******************[[ChromeDriver: chrome on XP (ea768d5d595c7d94d6e16377f29d37c2)] -> class name: fancybox-iframe]
+[05/11/2018 12:28:40] - property     xpath|//input[@class='inputMaterial justNumbers']
+[05/11/2018 12:28:41] - primer if *******************
+[05/11/2018 12:28:42] - busca numero 1 *******************36773699
+[05/11/2018 12:28:42] - busca numero *******************true evento
+[05/11/2018 12:28:45] - elemento *******************[[ChromeDriver: chrome on XP (ea768d5d595c7d94d6e16377f29d37c2)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[05/11/2018 12:28:45] - ========entra a combo ===== : 
+[05/11/2018 12:28:45] - ========nombre ===== : MARIA VARGAS
+[05/11/2018 12:28:45] - ========nombre ===== : MaRIa vARgAs
+[05/11/2018 12:28:45] - ========nombre con toUpperCase===== : true
+[05/11/2018 12:28:45] - ========boton===== otro : [[ChromeDriver: chrome on XP (ea768d5d595c7d94d6e16377f29d37c2)] -> xpath: /html/body/div[2]/div[2]/button]
+[05/11/2018 12:28:46] - ---------boton pagar----false
+[05/11/2018 12:28:46] - ========RES==antes del click=== : true
+[05/11/2018 12:28:50] - ========RES===== : true
+[05/11/2018 12:28:50] - div mesa  *******************true
+[05/11/2018 12:28:51] - ---------boton pagar----false
+[05/11/2018 12:28:52] - ========RES===== : false
+[05/11/2018 12:28:53] - ========boton sin registro antes del if  : 
+[05/11/2018 12:28:54] - flag antes de *******************true evento
+[05/11/2018 12:28:54] - Numero encontrado ------------------------true evento
+[05/11/2018 12:28:58] - Fin del Sistema de Automatizacion
+[05/11/2018 12:29:14] - Inicia Sistema de Automatizacion
+[05/11/2018 12:29:20] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:29:30] - Despues de LiveHome
+[05/11/2018 12:29:47] - Numero de evento ------------------------36773699
+[05/11/2018 12:29:47] - Numero de evento *******************36773699
+[05/11/2018 12:29:48] - selecciono agrega regalo
+[05/11/2018 12:29:48] - seleccionotrue
+[05/11/2018 12:29:49] - cambia de frame *******************[[ChromeDriver: chrome on XP (bbb86ecee9134ac7cbfe7730bd3774a4)] -> class name: fancybox-iframe]
+[05/11/2018 12:29:49] - property     xpath|//input[@class='inputMaterial justNumbers']
+[05/11/2018 12:29:49] - primer if *******************
+[05/11/2018 12:29:50] - busca numero 1 *******************36773699
+[05/11/2018 12:29:50] - busca numero *******************true evento
+[05/11/2018 12:29:53] - elemento *******************[[ChromeDriver: chrome on XP (bbb86ecee9134ac7cbfe7730bd3774a4)] -> xpath: //*[@id='eventSingleSearchForm']/p/span/span[2]]
+[05/11/2018 12:29:53] - ========entra a combo ===== : 
+[05/11/2018 12:29:53] - ========nombre ===== : MARIA VARGAS
+[05/11/2018 12:29:53] - ========nombre ===== : MaRIa vARgAs
+[05/11/2018 12:29:53] - ========nombre con toUpperCase===== : true
+[05/11/2018 12:29:53] - ========boton===== otro : [[ChromeDriver: chrome on XP (bbb86ecee9134ac7cbfe7730bd3774a4)] -> xpath: /html/body/div[2]/div[2]/button]
+[05/11/2018 12:29:54] - ---------boton pagar----true
+[05/11/2018 12:29:54] - ========RES==antes del click=== : true
+[05/11/2018 12:29:55] - ========RES===== : true
+[05/11/2018 12:29:55] - div mesa  *******************true
+[05/11/2018 12:29:55] - ---------boton pagar----true
+[05/11/2018 12:29:55] - ========RES==antes del click=== : true
+[05/11/2018 12:29:57] - ========RES===== : true
+[05/11/2018 12:29:57] - cambia de frame *******************[[ChromeDriver: chrome on XP (bbb86ecee9134ac7cbfe7730bd3774a4)] -> class name: fancybox-iframe]
+[05/11/2018 12:29:57] - ========boton sin registro antes del if  : 
+[05/11/2018 12:29:57] - ========boton sin registro : [[ChromeDriver: chrome on XP (bbb86ecee9134ac7cbfe7730bd3774a4)] -> xpath: //*[@id='comprar']/a/p/button]
+[05/11/2018 12:29:58] - flag antes de *******************true evento
+[05/11/2018 12:29:58] - Numero encontrado ------------------------true evento
+[05/11/2018 12:30:02] - Fin del Sistema de Automatizacion
+[05/11/2018 12:30:24] - Inicia Sistema de Automatizacion
+[05/11/2018 12:30:31] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:30:40] - Despues de LiveHome
+[05/11/2018 12:30:46] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:30:46] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[05/11/2018 12:30:46] - Numero encontrado ------------------------36773699
+[05/11/2018 12:30:46] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:30:53] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[05/11/2018 12:30:53] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:30:55] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:30:57] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[05/11/2018 12:30:57] - RES ------------------------true
+[05/11/2018 12:30:57] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:30:57] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:30:57] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:30:57] - ======== SKU  ===== : 1
+[05/11/2018 12:30:58] - ========entro else ===== 
+[05/11/2018 12:31:54] - Inicia Sistema de Automatizacion
+[05/11/2018 12:32:00] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:32:09] - Despues de LiveHome
+[05/11/2018 12:32:16] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:32:16] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[05/11/2018 12:32:16] - Numero encontrado ------------------------36773699
+[05/11/2018 12:32:16] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:32:22] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[05/11/2018 12:32:22] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:32:24] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:32:26] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[05/11/2018 12:32:26] - RES ------------------------true
+[05/11/2018 12:32:26] - ========entra a combo ===== 
+[05/11/2018 12:32:26] - ========nombre ===== : MaRIa vARgAs
+[05/11/2018 12:32:26] - ========nombre con toUpperCase===== : true
+[05/11/2018 12:32:26] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:32:26] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:32:26] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:32:26] - ======== SKU  ===== : 1
+[05/11/2018 12:32:27] - ========entro else ===== 
+[05/11/2018 12:35:51] - Inicia Sistema de Automatizacion
+[05/11/2018 12:35:57] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:36:05] - Despues de LiveHome
+[05/11/2018 12:36:13] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:36:13] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 12:36:13] - Numero encontrado ------------------------36773699
+[05/11/2018 12:36:13] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:36:20] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 12:36:20] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:36:23] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:36:24] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 12:36:24] - RES ------------------------true
+[05/11/2018 12:36:25] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:36:25] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:36:25] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:36:26] - ======== SKU  ===== : 1
+[05/11/2018 12:36:27] - ========entro else ===== 
+[05/11/2018 12:36:54] - Inicia Sistema de Automatizacion
+[05/11/2018 12:37:00] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:37:09] - Despues de LiveHome
+[05/11/2018 12:37:14] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:37:14] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1e20204e
+[05/11/2018 12:37:14] - Numero encontrado ------------------------36773699
+[05/11/2018 12:37:14] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:37:24] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1e20204e
+[05/11/2018 12:37:24] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:37:26] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:37:28] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1e20204e
+[05/11/2018 12:37:28] - RES ------------------------true
+[05/11/2018 12:37:31] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:37:31] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:37:31] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:37:31] - ======== SKU  ===== : 1
+[05/11/2018 12:37:32] - ========entro else ===== 
+[05/11/2018 12:38:41] - Inicia Sistema de Automatizacion
+[05/11/2018 12:38:48] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:38:56] - Despues de LiveHome
+[05/11/2018 12:39:03] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:39:03] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[05/11/2018 12:39:03] - Numero encontrado ------------------------36773699
+[05/11/2018 12:39:03] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:39:08] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[05/11/2018 12:39:08] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:39:11] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:39:12] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@17d87bfe
+[05/11/2018 12:39:12] - RES ------------------------true
+[05/11/2018 12:39:16] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:39:16] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:39:16] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:39:16] - ======== SKU  ===== : 1
+[05/11/2018 12:39:17] - ========entro else ===== 
+[05/11/2018 12:42:02] - Fin del Sistema de Automatizacion
+[05/11/2018 12:42:09] - Inicia Sistema de Automatizacion
+[05/11/2018 12:42:26] - Inicia Sistema de Automatizacion
+[05/11/2018 12:42:33] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:42:42] - Despues de LiveHome
+[05/11/2018 12:42:48] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:42:48] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[05/11/2018 12:42:48] - Numero encontrado ------------------------36773699
+[05/11/2018 12:42:49] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@14c4129b
+[05/11/2018 12:42:53] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:42:54] - RES ------------------------false
+[05/11/2018 12:42:57] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:42:57] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:42:57] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:42:57] - ======== SKU  ===== : 1
+[05/11/2018 12:42:58] - ========entro else ===== 
+[05/11/2018 12:43:03] - Fin del Sistema de Automatizacion
+[05/11/2018 12:43:08] - Inicia Sistema de Automatizacion
+[05/11/2018 12:43:14] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:43:21] - Despues de LiveHome
+[05/11/2018 12:43:27] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:43:27] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 12:43:27] - Numero encontrado ------------------------36773699
+[05/11/2018 12:43:28] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 12:43:32] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:43:33] - RES ------------------------false
+[05/11/2018 12:43:36] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:43:36] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:43:36] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:43:36] - ======== SKU  ===== : 1
+[05/11/2018 12:43:37] - ========entro else ===== 
+[05/11/2018 12:43:42] - Fin del Sistema de Automatizacion
+[05/11/2018 12:43:48] - Inicia Sistema de Automatizacion
+[05/11/2018 12:43:54] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:44:04] - Despues de LiveHome
+[05/11/2018 12:44:11] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:44:11] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 12:44:11] - Numero encontrado ------------------------36773699
+[05/11/2018 12:44:12] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 12:44:16] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:44:17] - RES ------------------------false
+[05/11/2018 12:44:20] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:44:20] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:44:20] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:44:20] - ======== SKU  ===== : 1
+[05/11/2018 12:44:21] - ========entro else ===== 
+[05/11/2018 12:44:25] - Fin del Sistema de Automatizacion
+[05/11/2018 12:44:37] - Inicia Sistema de Automatizacion
+[05/11/2018 12:44:43] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:44:52] - Despues de LiveHome
+[05/11/2018 12:44:58] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:44:58] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6595dad0
+[05/11/2018 12:44:58] - Numero encontrado ------------------------36773699
+[05/11/2018 12:44:59] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6595dad0
+[05/11/2018 12:45:03] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:45:04] - RES ------------------------false
+[05/11/2018 12:45:07] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:45:07] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:45:07] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:45:07] - ======== SKU  ===== : 1
+[05/11/2018 12:45:08] - ========entro else ===== 
+[05/11/2018 12:45:12] - Fin del Sistema de Automatizacion
+[05/11/2018 12:47:16] - Inicia Sistema de Automatizacion
+[05/11/2018 12:47:26] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:47:36] - Despues de LiveHome
+[05/11/2018 12:47:43] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:47:43] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6c55162c
+[05/11/2018 12:48:00] - Numero encontrado ------------------------36773699
+[05/11/2018 12:50:16] - Inicia Sistema de Automatizacion
+[05/11/2018 12:50:23] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:50:33] - Despues de LiveHome
+[05/11/2018 12:50:39] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:50:39] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 12:50:39] - Numero encontrado ------------------------36773699
+[05/11/2018 12:50:39] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:50:43] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 12:50:44] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 12:50:46] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 12:50:47] - RES ------------------------false
+[05/11/2018 12:50:50] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 12:50:50] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 12:50:50] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 12:50:50] - ======== SKU  ===== : 1
+[05/11/2018 12:50:51] - ========entro else ===== 
+[05/11/2018 12:51:52] - Inicia Sistema de Automatizacion
+[05/11/2018 12:52:02] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:52:11] - Despues de LiveHome
+[05/11/2018 12:52:17] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:52:17] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@79b4af1b
+[05/11/2018 12:52:25] - Numero encontrado ------------------------36773699
+[05/11/2018 12:52:25] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:52:29] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@79b4af1b
+[05/11/2018 12:53:03] - Inicia Sistema de Automatizacion
+[05/11/2018 12:53:11] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 12:53:19] - Despues de LiveHome
+[05/11/2018 12:53:25] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 12:53:25] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1724a5c1
+[05/11/2018 12:53:25] - Numero encontrado ------------------------36773699
+[05/11/2018 12:53:25] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 12:53:31] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@1724a5c1
+[05/11/2018 13:00:18] - Inicia Sistema de Automatizacion
+[05/11/2018 13:00:27] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 13:00:36] - Despues de LiveHome
+[05/11/2018 13:00:42] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 13:00:42] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[05/11/2018 13:00:42] - Numero encontrado ------------------------36773699
+[05/11/2018 13:00:42] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 13:00:47] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[05/11/2018 13:00:51] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 13:00:52] - RES ------------------------false
+[05/11/2018 13:00:56] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 13:00:56] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 13:00:56] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 13:00:56] - ======== SKU  ===== : 1
+[05/11/2018 13:00:57] - ========entro else ===== 
+[05/11/2018 13:15:30] - Inicia Sistema de Automatizacion
+[05/11/2018 13:15:40] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 13:15:48] - Despues de LiveHome
+[05/11/2018 13:15:55] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 13:15:55] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 13:15:55] - Numero encontrado ------------------------36773699
+[05/11/2018 13:15:55] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 13:16:00] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 13:16:39] - Inicia Sistema de Automatizacion
+[05/11/2018 13:17:03] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 13:17:11] - Despues de LiveHome
+[05/11/2018 13:17:17] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 13:17:17] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 13:17:17] - Numero encontrado ------------------------36773699
+[05/11/2018 13:17:17] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 13:17:23] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 13:17:23] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 13:17:26] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 13:17:27] - RES ------------------------false
+[05/11/2018 13:17:30] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 13:17:30] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 13:17:30] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 13:17:30] - ======== SKU  ===== : 1
+[05/11/2018 13:17:33] - ========entro cerrarPopupGift ===== 
+[05/11/2018 13:36:06] - Inicia Sistema de Automatizacion
+[05/11/2018 13:37:14] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 13:37:22] - Despues de LiveHome
+[05/11/2018 13:37:28] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 13:37:28] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 13:37:28] - Numero encontrado ------------------------36773699
+[05/11/2018 13:37:28] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 13:37:36] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 13:37:36] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 13:37:39] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 13:37:40] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@46186ee5
+[05/11/2018 13:37:40] - RES ------------------------true
+[05/11/2018 13:37:43] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 13:37:43] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 13:37:43] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 13:37:43] - ======== SKU  ===== : 1
+[05/11/2018 13:37:44] - ========entro else ===== 
+[05/11/2018 15:36:35] - Fin del Sistema de Automatizacion
+[05/11/2018 16:11:43] - Inicia Sistema de Automatizacion
+[05/11/2018 16:11:51] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 16:12:41] - Despues de LiveHome
+[05/11/2018 16:12:52] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 16:12:52] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[05/11/2018 16:12:52] - Numero encontrado ------------------------36773699
+[05/11/2018 16:12:52] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 16:13:18] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@6a144a3
+[05/11/2018 16:13:22] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 16:13:23] - RES ------------------------false
+[05/11/2018 16:13:26] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 16:13:26] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 16:13:26] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 16:13:26] - ======== SKU  ===== : 1
+[05/11/2018 16:13:27] - ========entro else ===== 
+[05/11/2018 16:13:30] - Fin del Sistema de Automatizacion
+[05/11/2018 16:20:14] - Inicia Sistema de Automatizacion
+[05/11/2018 16:20:24] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 16:21:09] - Despues de LiveHome
+[05/11/2018 16:21:20] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 16:21:21] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@2ba0e59e
+[05/11/2018 16:21:21] - Numero encontrado ------------------------36773699
+[05/11/2018 16:21:21] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 16:21:44] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@2ba0e59e
+[05/11/2018 16:21:45] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 16:21:47] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 16:21:48] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@2ba0e59e
+[05/11/2018 16:21:49] - RES ------------------------true
+[05/11/2018 16:21:52] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 16:21:52] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 16:21:52] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 16:21:52] - ======== SKU  ===== : 1
+[05/11/2018 16:21:53] - ========entro else ===== 
+[05/11/2018 16:22:00] - Fin del Sistema de Automatizacion
+[05/11/2018 16:23:14] - Inicia Sistema de Automatizacion
+[05/11/2018 16:23:21] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 16:23:53] - Despues de LiveHome
+[05/11/2018 16:24:06] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 16:24:06] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 16:24:06] - Numero encontrado ------------------------36773699
+[05/11/2018 16:24:06] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 16:24:57] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@5ad5a6c5
+[05/11/2018 16:24:58] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 16:41:01] - Inicia Sistema de Automatizacion
+[05/11/2018 16:41:07] - Login********   mrinvitado3@yahoo.com
+[05/11/2018 16:42:35] - Despues de LiveHome
+[05/11/2018 16:42:49] - Usuario ------------------------Login-Dentro de lista
+[05/11/2018 16:42:49] - N E ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[05/11/2018 16:42:49] - Numero encontrado ------------------------36773699
+[05/11/2018 16:42:49] - Entro a boton mesa de regalos ------------------------
+[05/11/2018 16:43:09] - Salio a boton mesa de regalos ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[05/11/2018 16:43:10] - Tiene evento registrado ********* Entro en Seleccionar Evento ------------------------
+[05/11/2018 16:43:12] - Numero encontrado dentro de metodo ------------------------36773699
+[05/11/2018 16:43:13] - Entro if NE ------------------------com.liverpool.automatizacion.modelo.MesaRegaloFL@249603e8
+[05/11/2018 16:43:15] - RES ------------------------true
+[05/11/2018 16:43:18] - Antes de entrar a SKU  ------------------------true
+[05/11/2018 16:43:18] - Antes de entrar a SKU  ------------------------19917207,1
+[05/11/2018 16:43:18] - ======== SKU  ===== : [19917207,1]
+[05/11/2018 16:43:18] - ======== SKU  ===== : 1
+[05/11/2018 16:43:19] - ========entro else ===== 
