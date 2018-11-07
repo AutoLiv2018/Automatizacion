@@ -8,11 +8,13 @@ package com.liverpool.automatizacion.matrices;
 import com.liverpool.automatizacion.modelo.Direccion;
 import com.liverpool.automatizacion.modelo.Find;
 import com.liverpool.automatizacion.modelo.Login;
+import com.liverpool.automatizacion.modelo.Guest;
 import com.liverpool.automatizacion.modelo.MesaRegaloFL;
 import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.modelo.Tarjeta;
 import com.liverpool.automatizacion.modelo.Ticket;
 import com.liverpool.automatizacion.modelo.Tienda;
+import com.liverpool.automatizacion.modelo.Promocion;
 import com.liverpool.automatizacion.paginas.Checkout_P0;
 import com.liverpool.automatizacion.paginas.Checkout_P1;
 import com.liverpool.automatizacion.paginas.Checkout_P2;
@@ -29,6 +31,7 @@ import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Properties;
 import javax.json.JsonObject;
@@ -46,16 +49,27 @@ public class MesaDeRegalosFueraLista extends Matriz {
     private HashMap<String, ArrayList<String>> evento;
     ArrayList<Sku> skus;
     MesaRegaloFL numEv;
+    MesaRegaloFL mesaRegalo;
     Navegador browser;
 
     Tienda tienda;
     Tarjeta tarjeta;
     Direccion direccionTar;
+    Login login;
     Login loginPaypal;
+    Guest guest;
+    Sku sku;
+    Promocion promocion;
     ArrayList<ArrayList<String>> casos = new ArrayList<>();
     ArrayList<String> escenario = new ArrayList<>();
-    public String usuario, metodoPago;
+    public String usuario, metodoPago, compra, cupones;
     boolean excel;
+    String [] sku_cantidad;
+    String [] fechaTarjeta;
+    String [] promo;
+    
+    ArrayList<String> skuss = new ArrayList<>();
+    String [] SKU;
 
     private final Interfaz interfaz;
 
@@ -65,8 +79,38 @@ public class MesaDeRegalosFueraLista extends Matriz {
         this.tlog = tlog;
         this.browser = browser;
         this.interfaz = interfaz;
-
-//        if(!excel){
+        
+        if(!excel){
+            skus = new ArrayList<Sku>(){{
+    //            add(new Sku("67966758", "5"));
+                add(new Sku("1028042848", "5"));
+            }};
+            //Datos a leer
+            tienda = new Tienda("6","CDMX/ZONA METROPOLITANA");
+            login = new Login("mpalfredo1@yahoo.com", "liverpool");
+            tarjeta = new Tarjeta("NoesVISA", "123", "10", "2025"); 
+    //        tarjeta = new Tarjeta("Master Card", "123", "10", "2025"); //wst
+            direccionTar = new Direccion("56600","Chalco","Victoria","46","2","A",
+                "Niños Heroes","Plateros","55","56570898","5578894556");
+            usuario = "Guest";
+//            metodoPago = "Credito";
+            metodoPago = "Paypal";
+            metodoPago = "CIE";
+            loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
+        }
+        if(excel){
+            usuario = "Guest-Fuera de lista";
+            String nombreArchivo = "Compras Mesa.xlsx";
+            Excel excelArc = new Excel(nombreArchivo);
+            casos=excelArc.getExcel(usuario);
+        }
+        
+        Log.write("--> Cabecera Excel: " + casos.get(0));
+        Log.write("> Datos del excel: " + casos.get(1));
+        
+//        escenario = casos.get(1);
+                
+/*        Log.write("Antes de SKUs ****************************************");
         skus = new ArrayList<Sku>() {
             {
                 //            add(new Sku("67966758", "5"));
@@ -121,22 +165,31 @@ public class MesaDeRegalosFueraLista extends Matriz {
 //        login = new Login("vane.velasco1407@gmail.com", "12345678");
         Log.write("Login********   " + login.getUser());
 
-    }
-
-    public void datosEscenarioExcel(int i) {
+*/    }
+        
+    public void datosEscenarioExcel(int i){
 //        String [] tiendaE;
 //        String [] tarjetaFecha;
 //        String [] SKU;
 //        ArrayList<String> skuss = new ArrayList<>();
 
         escenario = casos.get(i);
-
-        switch (usuario) {
-            case "Login":
-                inicioSesionMDRFL();
+        
+        switch(usuario){
+            case "Login-Dentro de lista":
+                loginDentroDeLista();
                 break;
-            case "Guest":
-                guestMDRFL();
+            case "Guest-Dentro de lista":
+                guestDentroDeLista();
+                break;
+            case "Login-Fuera de lista":
+                loginFueraDeLista();
+                break;
+            case "Guest-Fuera de lista":
+                guestFueraDeLista();
+                break;
+            case "Festejado-Fuera de lista":
+                festejadoFueraDeLista();
                 break;
         }
     }
@@ -231,56 +284,79 @@ public class MesaDeRegalosFueraLista extends Matriz {
         Log.write("InicioSesion");
         boolean skuEncontrado;
         String numEvEncontrado;
+        
+        for(int e=1; e<casos.size(); e++){
+            datosEscenarioExcel(e);
+            
+            driver = browser.iniciarNavegador();
 
-        LivHome home = new LivHome(interfaz, driver, login);
+            LivHome home = new LivHome(interfaz, driver, login);
 
-        Log.write("Despues de LiveHome");
-        LivPDP pdp = new LivPDP(interfaz, driver);
-        Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
-        home.incioSesion();
-        for (int i = 0; i < skus.size(); i++) {
-            skuEncontrado = home.buscarSKU(skus.get(i));
-            if (skuEncontrado) {
-                pdp.cantidadSKU(skus.get(i));
-                pdp.agregaraBolsa();
+            Log.write("Despues de LiveHome");
+            LivPDP pdp = new LivPDP(interfaz, driver);
+            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
+            home.incioSesion();
+            for (int i = 0; i < skus.size(); i++) {
+                skuEncontrado = home.buscarSKU(skus.get(i));
+                if (skuEncontrado) {
+                    pdp.cantidadSKU(skus.get(i));
+                    pdp.agregaraBolsa();
+                }
             }
-        }
-        pdp.irPaso0();
-        numEv = new MesaRegaloFL();
-        System.out.println("hola");
-//        WQA:
-        numEv.setNumEvento("36773699");
-//        Productivo
-//        numEv.setId("50009146");
-//        WST:
-//        numEv.setId("50010408");
-
-        Log.write("Numero de evento ------------------------" + numEv.getNumEvento());
-        numEvEncontrado = paso0.buscarNumeroEventoMRFL(numEv);
-        Log.write("Numero encontrado ------------------------" + numEvEncontrado);
+            pdp.irPaso0();
+//            mesaRegalo = new MesaRegaloFL();
+//            System.out.println("hola");
+//          WQA:
+//            numEv.setNumEvento("36773699");
+//          Productivo
+//          numEv.setId("50009146");
+//          WST:
+//          numEv.setId("50010408");
+        
+            Log.write("Numero de evento ------------------------//" + mesaRegalo.getNumEvento());
+            numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
+            Log.write("Numero encontrado ------------------------" + numEvEncontrado);
 //        
-
-//        paso0.pasoCeroFin();
+//          paso0.pasoCeroFin();
+        }
     }
 
     public void guestMDRFL() {
         boolean skuEncontrado;
         String numEvEncontrado;
+        
+        for(int e=1; e<casos.size(); e++){
+            datosEscenarioExcel(e);
+        
+        
+            driver = browser.iniciarNavegador();
 
-        driver = browser.iniciarNavegador();
+            LivHome home = new LivHome(interfaz, driver, login);
 
-        LivHome home = new LivHome(interfaz, driver, login);
+            Log.write("Despues de LiveHome");
+            LivPDP pdp = new LivPDP(interfaz, driver);
+            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
 
-        Log.write("Despues de LiveHome");
-        LivPDP pdp = new LivPDP(interfaz, driver);
-        Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
-
-        for (int i = 0; i < skus.size(); i++) {
-            skuEncontrado = home.buscarSKU(skus.get(i));
-            if (skuEncontrado) {
-                pdp.cantidadSKU(skus.get(i));
-                pdp.agregaraBolsa();
+            for (int i = 0; i < skus.size(); i++) {
+                skuEncontrado = home.buscarSKU(skus.get(i));
+                if (skuEncontrado) {
+                    pdp.cantidadSKU(skus.get(i));
+                    pdp.agregaraBolsa();
+                }
             }
+            pdp.irPaso0();
+//          numEv = new MesaRegaloFL();
+//          WQA:
+//          numEv.setNumEvento("36773699");
+//          Productivo
+//          numEv.setNumEvento("50009146");
+//          WST:
+//          numEv.setId("50010408");
+
+            Log.write("Numero de evento ------------------------" );
+            Log.write("Numero de evento ------------------------" + mesaRegalo.getNumEvento());
+            numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
+            Log.write("Numero encontrado ------------------------" + numEvEncontrado);
         }
         pdp.irPaso0();
         numEv = new MesaRegaloFL();

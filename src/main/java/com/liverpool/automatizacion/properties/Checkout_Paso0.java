@@ -24,6 +24,8 @@ public class Checkout_Paso0 {
     public static final String REGALOFL = "regaloFL";
     public static final String VALIDA_NUM_EVENTO = "valida_num_evento";
     public static final String FESTEJADO = "festejado";
+    public static final String VISTA_UNICO_EVENTO = "vistaUnicoEvento";
+    public static final String VISTA_MULTIPLES_EVENTOS = "VistaMultiplesEventos";
     public static final String BUTTONFESTEJADO = "buttonFestejado";
     public static final String MENSAJEPARAFESTEJADO = "mensajeParaFestejado";
     public static final String BOTONPAGARMRFL = "botonPagarMRFL";

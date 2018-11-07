@@ -22,6 +22,7 @@ public class Direccion {
     private String lada;
     private String telefono;
     private String celular;
+    private String nomCorto;
     
     public Direccion(String cp, String ciudad, String calle, String numExterior, String numInterior, 
             String edificio, String entreCalle, String yCalle, String lada, String telefono, String celular){
@@ -36,6 +37,10 @@ public class Direccion {
         this.lada = lada;
         this.telefono = telefono;
         this.celular = celular;
+    }
+    
+    public Direccion(String nomCorto){
+        this.nomCorto = nomCorto;
     }
     
     public String getCp(){
@@ -124,5 +129,13 @@ public class Direccion {
     
     public void setCelular(String celular){
         this.celular = celular;
+    }
+
+    public String getNomCorto() {
+        return nomCorto;
+    }
+
+    public void setNomCorto(String nomCorto) {
+        this.nomCorto = nomCorto;
     }
 }

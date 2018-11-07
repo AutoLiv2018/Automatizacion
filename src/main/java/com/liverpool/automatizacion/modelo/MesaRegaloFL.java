@@ -16,14 +16,25 @@ public class MesaRegaloFL {
     private String numEvento;
     private String festejado;
     private String mensaje;
-     
+    private String nomEvento;
+      
     public MesaRegaloFL() {
         this("");
     }
-   
+/*    
     public MesaRegaloFL(String numEvento){
         
         this.numEvento = numEvento;
+    }
+*/    
+    public MesaRegaloFL(String numEvento, String festejado, String mensaje){
+        this.numEvento = numEvento;
+        this.festejado = festejado;
+        this.mensaje = mensaje;
+    }
+    
+    public MesaRegaloFL(String nomEvento){
+        this.nomEvento = nomEvento;
     }
     
     public String getNumEvento() {
@@ -50,4 +61,12 @@ public class MesaRegaloFL {
         this.mensaje = mensaje;
     }
 
+    public String getNomEvento() {
+        return nomEvento;
+    }
+
+    public void setNomEvento(String nomEvento) {
+        this.nomEvento = nomEvento;
+    }
+    
 }

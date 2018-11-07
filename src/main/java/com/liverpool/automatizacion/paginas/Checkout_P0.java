@@ -14,6 +14,7 @@ import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
 import java.util.List;
 import java.util.Properties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -69,6 +70,8 @@ public class Checkout_P0 {
         String flag = "";
 
         Log.write("Numero de evento *******************" + numEv.getNumEvento());
+        Log.write("Festejado de evento *******************" + numEv.getFestejado());
+        Log.write("Mensaje de evento *******************" + numEv.getMensaje());
         Utils.sleep(500);
         botonSeleccionarParaRegalo();
         Utils.sleep(1000);
@@ -95,8 +98,8 @@ public class Checkout_P0 {
                     
 //                    validaNumEvento(numEv);
 
-                    seleccionarCombo();
-//                    llenarMensaje();
+                    seleccionarCombo(numEv);
+                    llenarMensaje(numEv);
 //                    divMesaRegalosFL();
 //                    Log.write("div mesa  *******************" + divMesaRegalosFL());
                     Log.write("div mesa  *******************" + botonPagar());
@@ -134,11 +137,11 @@ public class Checkout_P0 {
         boolean res = false;
         WebElement element;
         
-         if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.NUMEVENTORFL))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.NUMEVENTORFL))) != null) {
             element.sendKeys(numEv.getNumEvento(), Keys.ENTER); // Buscar el evento
             res = true;
             Log.write("primer if *******************");
-         }
+        }
 
         return res;
     }
@@ -167,21 +170,24 @@ public class Checkout_P0 {
         return res;
     }
 
-    public boolean seleccionarCombo() {
-        Log.write("========entra a combo ===== : ");
+    public boolean seleccionarCombo(MesaRegaloFL numEv) {
+        Log.write("========entra a combo ===== ");
         boolean res = false;
-        WebElement element;
+        WebElement element = null;        
         element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO));
+        Log.write("Aqui debería buscar el comboBox");
+//        vistaEvento();
         
         Select select = new Select(element);
+        Log.write("=====Select ===== ");
         List<WebElement> festejado = select.getOptions();
-        Log.write("========nombre ===== : " + festejado.get(1).getText());
+        Log.write("=====nombre ===== : " + festejado.get(2).getText());
         String nombre = "MaRIa vARgAs";
 //        String nombre = "Illi Israel Sanchez";
 //                        select.selectByVisibleText(festejado.get(1).getText());
-        Log.write("========nombre ===== : " + nombre);
+        Log.write("========nombre ===== : " + numEv.getFestejado());
         Log.write("========nombre con toUpperCase===== : " + nombre.equalsIgnoreCase(nombre));
-        select.selectByVisibleText(nombre.toUpperCase());
+        select.selectByVisibleText(numEv.getFestejado());
 
         if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BUTTONFESTEJADO))) != null) {
             Log.write("========boton===== otro : " + element);
@@ -191,18 +197,18 @@ public class Checkout_P0 {
         return res;
     }
 
-    public void llenarMensaje() {
+    public void llenarMensaje(MesaRegaloFL numEv) {
         WebElement element;
         String mensaje = "hola muchas felicidades";
 
         element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.MENSAJEPARAFESTEJADO));
-        element.sendKeys(mensaje, Keys.ENTER);
+        element.sendKeys(numEv.getMensaje(), Keys.ENTER);
 
         Log.write("====Mensaje ===== otro : " + mensaje);
 
     }
 
-     public boolean divMesaRegalosFL() {
+    public boolean divMesaRegalosFL() {
         WebElement element;
         boolean res = false;
         Log.write("cambia entra  *******************" );
@@ -242,10 +248,29 @@ public class Checkout_P0 {
         }
         return res;
     }
+    
+//    public void vistaUnicoEvento(){
+//        WebElement element;
+//        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_UNICO_EVENTO))) != null)
+//            while(!element.getAttribute("style").contains("display: block;"));
+//    }
+//    
+//    public void vistaMultiplesEventos(){
+//        WebElement element;
+//        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_MULTIPLES_EVENTOS))) != null)
+//            while(!element.getAttribute("style").contains("display: block;"))
+//                Utils.sleep(500);
+//    }
+    
+    public void vistaEvento(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_UNICO_EVENTO))) != null){
+            while(!element.getAttribute("style").contains("display: block;"))
+                element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO));
+        } else if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_MULTIPLES_EVENTOS))) != null){
+            while(!element.getAttribute("style").contains("display: block;"))
+                element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO));
+        }
+    }
 
-    
-    
-    
-    
-    
 }
