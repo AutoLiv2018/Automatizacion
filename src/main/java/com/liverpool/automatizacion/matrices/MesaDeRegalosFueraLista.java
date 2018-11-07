@@ -83,7 +83,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         if(!excel){
             skus = new ArrayList<Sku>(){{
     //            add(new Sku("67966758", "5"));
-                add(new Sku("1028042848", "5"));
+                add(new Sku("19917207", "5"));
             }};
             //Datos a leer
             tienda = new Tienda("6","CDMX/ZONA METROPOLITANA");
@@ -92,22 +92,22 @@ public class MesaDeRegalosFueraLista extends Matriz {
     //        tarjeta = new Tarjeta("Master Card", "123", "10", "2025"); //wst
             direccionTar = new Direccion("56600","Chalco","Victoria","46","2","A",
                 "Niños Heroes","Plateros","55","56570898","5578894556");
-            usuario = "Guest";
+            usuario = "Login-Dentro de lista";
 //            metodoPago = "Credito";
             metodoPago = "Paypal";
             metodoPago = "CIE";
             loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
         }
         if(excel){
-            usuario = "Guest-Fuera de lista";
+            usuario = "Login-Fuera de lista";
             String nombreArchivo = "Compras Mesa.xlsx";
             Excel excelArc = new Excel(nombreArchivo);
             casos=excelArc.getExcel(usuario);
         }
         
-        Log.write("--> Cabecera Excel: " + casos.get(0));
-        Log.write("> Datos del excel: " + casos.get(1));
-        
+//        Log.write("--> Cabecera Excel: " + casos.get(0));
+//        Log.write("> Datos del excel: " + casos.get(1));
+//        
 //        escenario = casos.get(1);
 
 /*        Log.write("Antes de SKUs ****************************************");
@@ -312,84 +312,85 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
         boolean skuEncontrado;
         String numEvEncontrado;
-        numEv = new MesaRegaloFL();
-
-        driver = browser.iniciarNavegador();
-
-        LivHome home = new LivHome(interfaz, driver, login);
-
-        Log.write("Despues de LiveHome");
-        Utils.sleep(2000);
-        LivPDP pdp = new LivPDP(interfaz, driver);
-        Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
-        MesaRegalos mesa = new MesaRegalos(interfaz, driver);
+//        mesaRegalo = new MesaRegaloFL();
         
-        
-        //        WQA:
-        numEv.setNumEvento("36773699");
-        //        Productivo
-//        numEv.setNumEvento("50009146");
-//        WST:
-//        numEv.setId("50010408");
+        for(int e=1; e<casos.size(); e++){
+            datosEscenarioExcel(e);
 
-        if (usuario.equals("Login-Fuera de lista")) {
-            home.incioSesion();
-            for (int i = 0; i < skus.size(); i++) {
-                skuEncontrado = home.buscarSKU(skus.get(i));
-                if (skuEncontrado) {
-                    pdp.cantidadSKU(skus.get(i));
-                    pdp.agregaraBolsa();
+            driver = browser.iniciarNavegador();
+
+            LivHome home = new LivHome(interfaz, driver, login);
+
+            Log.write("Despues de LiveHome");
+            Utils.sleep(2000);
+            LivPDP pdp = new LivPDP(interfaz, driver);
+            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
+            MesaRegalos mesa = new MesaRegalos(interfaz, driver);
+
+
+            //        WQA:
+//            numEv.setNumEvento("36773699");
+            //        Productivo
+//            numEv.setNumEvento("50009146");
+//            WST:
+//            numEv.setId("50010408");
+
+            if (usuario.equals("Login-Fuera de lista")) {
+                home.incioSesion();
+                for (int i = 0; i < skus.size(); i++) {
+                    skuEncontrado = home.buscarSKU(skus.get(i));
+                    if (skuEncontrado) {
+                        pdp.cantidadSKU(skus.get(i));
+                        pdp.agregaraBolsa();
+                    }
                 }
-            }
-            pdp.irPaso0();
-            Log.write("Numero de evento ------------------------" + numEv.getNumEvento());
-            numEvEncontrado = paso0.buscarNumeroEventoMRFL(numEv);
-            Log.write("Numero encontrado ------------------------" + numEvEncontrado);
-            
-        } else if (usuario.equals("Guest-Fuera de lista")) {
-            for (int i = 0; i < skus.size(); i++) {
-                skuEncontrado = home.buscarSKU(skus.get(i));
-                if (skuEncontrado) {
-                    pdp.cantidadSKU(skus.get(i));
-                    pdp.agregaraBolsa();
+                pdp.irPaso0();
+                Log.write("Numero de evento ------------------------" + mesaRegalo.getNumEvento());
+                numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
+                Log.write("Numero encontrado ------------------------" + numEvEncontrado);
+
+            } else if (usuario.equals("Guest-Fuera de lista")) {
+                for (int i = 0; i < skus.size(); i++) {
+                    skuEncontrado = home.buscarSKU(skus.get(i));
+                    if (skuEncontrado) {
+                        pdp.cantidadSKU(skus.get(i));
+                        pdp.agregaraBolsa();
+                    }
                 }
+                pdp.irPaso0();
+                Log.write("Numero de evento ------------------------" + mesaRegalo.getNumEvento());
+                numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
+                Log.write("Numero encontrado ------------------------" + numEvEncontrado);
+
+            }else if (usuario.equals("Login-Dentro de lista")){
+                home.incioSesion();
+                Log.write("Usuario ------------------------" + usuario);
+                Log.write("N E ------------------------" + mesaRegalo);
+                numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo,login);
+                Log.write("Antes de entrar a SKU  ------------------------" + numEvEncontrado);
+                Log.write("Antes de entrar a SKU  ------------------------" + skus.get(0));
+    //            mesa.seleccionaSKU(skus,numEv);
+                for (int i = 0; i < skus.size(); i++) {
+                    Log.write("entra for SKU  ------------------------" + skus.get(i));
+                   Utils.sleep(2000);
+                   skuEncontrado = mesa.seleccionaSKU(skus.get(i));
+                   Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
+                   if (skuEncontrado) {
+    //                   mesa.cantidad(skus.get(i));
+                       mesa.agregaBolsa(mesaRegalo);
+    //                   mesa.addGiftToCart(numEv);
+                   }
+                }
+
+            }else if (usuario.equals("Guest-Dentro de lista")){
+
+    //            numEvEncontrado = mesa.compraGuestDentroDeLista(mesaRegalo);
+                numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo, login);
+    //            mesa.seleccionaSKU(skus,numEv);
+
             }
-            pdp.irPaso0();
-            Log.write("Numero de evento ------------------------" + numEv.getNumEvento());
-            numEvEncontrado = paso0.buscarNumeroEventoMRFL(numEv);
-            Log.write("Numero encontrado ------------------------" + numEvEncontrado);
-            
-        }else if (usuario.equals("Login-Dentro de lista")){
-            home.incioSesion();
-            Log.write("Usuario ------------------------" + usuario);
-            Log.write("N E ------------------------" + numEv);
-            numEvEncontrado = mesa.compraPersonalDentroDeLista(numEv,login);
-            Log.write("Antes de entrar a SKU  ------------------------" + numEvEncontrado);
-            Log.write("Antes de entrar a SKU  ------------------------" + skus.get(0));
-//            mesa.seleccionaSKU(skus,numEv);
-            for (int i = 0; i < skus.size(); i++) {
-                Log.write("entra for SKU  ------------------------" + skus.get(i));
-               Utils.sleep(2000);
-               skuEncontrado = mesa.seleccionaSKU(skus.get(i));
-               Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
-               if (skuEncontrado) {
-//                   mesa.cantidad(skus.get(i));
-                   mesa.agregaBolsa(numEv);
-//                   mesa.addGiftToCart(numEv);
-               }
-            }
-            
-        }else if (usuario.equals("Guest-Dentro de lista")){
-            
-//            numEvEncontrado = mesa.compraGuestDentroDeLista(numEv);
-            numEvEncontrado = mesa.compraPersonalDentroDeLista(numEv, login);
-//            mesa.seleccionaSKU(skus,numEv);
 
         }
-
-        
-
-        
 
     }
 
