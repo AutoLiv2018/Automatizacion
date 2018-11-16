@@ -26,9 +26,11 @@ public class Checkout_P0 {
     private Interfaz interfaz;
     public final File paso0;
     public final Properties Cpaso0;
+    String cupon;
     
-    public Checkout_P0(Interfaz interfaz, WebDriver driver){
+    public Checkout_P0(Interfaz interfaz, WebDriver driver, String cupon){
         this.driver = driver;
+        this.cupon = cupon;
         
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso0 = new Properties(); // propiedades de la pagina shipping.jsp
@@ -91,6 +93,7 @@ public class Checkout_P0 {
         return false;
     }
     
+<<<<<<< Upstream, based on master
     public void aplicarCupon(){
         if(cupon.length() > 5){
             cuponEscribir();
@@ -117,6 +120,8 @@ public class Checkout_P0 {
         return false;
     }
     
+=======
+>>>>>>> e037105 1.2.al.5 Se agregó el campo de cupon
     public String buscarNumeroEventoMRFL(MesaRegaloFL numEv) {
         WebElement element;
         String flag = "";
@@ -324,13 +329,4 @@ public class Checkout_P0 {
                 element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO));
         }
     }
-
-<<<<<<< Upstream, based on master
-=======
-    
-    
-    
-    
-    
->>>>>>> 7b59241 1.2.al.5 Se agregó el campo de cupon
 }
