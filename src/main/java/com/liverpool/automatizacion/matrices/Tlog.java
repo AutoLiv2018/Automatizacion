@@ -106,7 +106,7 @@ public class Tlog {
             
             LivHome home = new LivHome(interfaz, driver, login);
             LivPDP pdp = new LivPDP(interfaz, driver);
-            Checkout_P0 paso0 = new Checkout_P0(interfaz,driver, cupon);
+            Checkout_P0 paso0 = new Checkout_P0(interfaz,driver);
             Checkout_P1 paso1;
             if(usuario.equals("Login"))
                 paso1 = new Checkout_P1(interfaz,driver, envio, tienda, direccion);
@@ -129,7 +129,7 @@ public class Tlog {
             }
             pdp.irPaso0();
             //Login-Guest
-            paso0.aplicarCupon();
+            paso0.aplicarCupon(cupon);
             paso0.pasoCeroComprar();
             if(usuario.equals("Guest"))
                 paso0.pasoCeroGuest();
