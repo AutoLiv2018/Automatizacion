@@ -31,5 +31,7 @@ public class Checkout_Paso0 {
     public static final String BOTONPAGARMRFL = "botonPagarMRFL";
     public static final String BUTTONSINREGISTRO = "buttonSinRegistro";
     public static final String DIVBOTONPAGAR = "divBotonPagar";
+    public static final String PROMOCIONESCAMPO = "promocionesCampo";
+    public static final String APLICARPROMOCION = "aplicarPromocion";
     
 }
