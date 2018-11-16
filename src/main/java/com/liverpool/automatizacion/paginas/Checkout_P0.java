@@ -26,9 +26,11 @@ public class Checkout_P0 {
     private Interfaz interfaz;
     public final File paso0;
     public final Properties Cpaso0;
+    String cupon;
     
-    public Checkout_P0(Interfaz interfaz, WebDriver driver){
+    public Checkout_P0(Interfaz interfaz, WebDriver driver, String cupon){
         this.driver = driver;
+        this.cupon = cupon;
         
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso0 = new Properties(); // propiedades de la pagina shipping.jsp
@@ -63,6 +65,32 @@ public class Checkout_P0 {
                 element.click();
             driver.switchTo().defaultContent();
         }
+    }
+    
+    public void aplicarCupon(){
+        if(cupon.length() > 5){
+            cuponEscribir();
+            cuponAplicar();
+        }
+    }
+    
+    public boolean cuponEscribir(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.PROMOCIONESCAMPO))) != null){
+            element.sendKeys(cupon);
+            Utils.sleep(2000);
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean cuponAplicar(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.APLICARPROMOCION))) != null){
+            element.click();
+            return true;
+        }
+        return false;
     }
     
     public String buscarNumeroEventoMRFL(MesaRegaloFL numEv) {
