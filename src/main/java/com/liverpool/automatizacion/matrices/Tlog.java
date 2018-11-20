@@ -140,7 +140,7 @@ public class Tlog {
             
             if(paso4.esperaTicket())
                 ticket = paso4.extraccionDatos(metodoPago);
-            Excel escritura = new Excel("Compras.xlsx");
+            Excel escritura = new Excel("Resultado.xlsx");
             escritura.writeExcel(ticket);
         }
         JOptionPane.showMessageDialog(null, "Compras terminadas");
