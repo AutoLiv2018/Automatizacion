@@ -13,9 +13,7 @@ import com.liverpool.automatizacion.modelo.MesaRegaloFL;
 import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.modelo.Tarjeta;
 import com.liverpool.automatizacion.modelo.Ticket;
-import com.liverpool.automatizacion.modelo.Tienda;
 import com.liverpool.automatizacion.modelo.Promocion;
-=======
 import com.liverpool.automatizacion.modelo.Tienda;
 import com.liverpool.automatizacion.paginas.Checkout_P0;
 import com.liverpool.automatizacion.paginas.Checkout_P1;
@@ -53,23 +51,6 @@ public class MesaDeRegalosFueraLista extends Matriz {
     MesaRegaloFL numEv;
     MesaRegaloFL mesaRegalo;
     Navegador browser;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Tienda tienda;
     Tarjeta tarjeta;
     Direccion direccionTar;
@@ -89,39 +70,10 @@ public class MesaDeRegalosFueraLista extends Matriz {
     ArrayList<String> skuss = new ArrayList<>();
     String [] SKU;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ArrayList<String> skuss = new ArrayList<>();
-    String [] SKU;
-
     private final Interfaz interfaz;
 
     public MesaDeRegalosFueraLista(Interfaz interfaz, Navegador browser, boolean excel) {
        
-        this.login = login;
-        this.tlog = tlog;
-        this.browser = browser;
-        this.interfaz = interfaz;
-        
-        if(!excel){
-            skus = new ArrayList<Sku>(){{
-    //            add(new Sku("67966758", "5"));
-=======
-
         this.login = login;
         this.tlog = tlog;
         this.browser = browser;
@@ -439,272 +391,8 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
         }
 
-*/    }
-        
-    public void datosEscenarioExcel(int i){
-//        String [] tiendaE;
-//        String [] tarjetaFecha;
-//        String [] SKU;
-//        ArrayList<String> skuss = new ArrayList<>();
-        
-        escenario = casos.get(i);
-        
-        switch(usuario){
-            case "Login-Dentro de lista":
-                loginDentroDeLista();
-                break;
-            case "Guest-Dentro de lista":
-                guestDentroDeLista();
-                break;
-            case "Login-Fuera de lista":
-                loginFueraDeLista();
-                break;
-            case "Guest-Fuera de lista":
-                guestFueraDeLista();
-                break;
-            case "Festejado-Fuera de lista":
-                festejadoFueraDeLista();
-                break;
-        }
     }
     
-    public void loginDentroDeLista(){
-        compra = escenario.get(0);
-        login = new Login(escenario.get(1), escenario.get(2));
-        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
-        
-        skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
-        skus = new ArrayList<Sku>();
-        for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
-            System.out.println(SKU[0]+" "+SKU[1]);
-            skus.add(new Sku(SKU[0], SKU[1]));
-        }
-        
-        cupones = escenario.get(7);
-        promo = escenario.get(8).split(", ");
-        if(promo.length>1)
-            promocion = new Promocion(promo[0], promo[1]);
-        else 
-            promocion = new Promocion(promo[1]);
-        
-        metodoPago = escenario.get(9);
-        fechaTarjeta = escenario.get(12).split("/");
-        if(fechaTarjeta.length>1)
-            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
-        loginPaypal = new Login(escenario.get(13), escenario.get(14));
-    }
-    
-    public void guestDentroDeLista(){
-        compra = escenario.get(0);
-        guest = new Guest(escenario.get(1),escenario.get(2),escenario.get(3),
-                escenario.get(4),escenario.get(5),escenario.get(6));
-        mesaRegalo = new MesaRegaloFL(escenario.get(7),escenario.get(8),escenario.get(9));
-        
-        skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
-        skus = new ArrayList<Sku>();
-        for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
-            skus.add(new Sku(SKU[0], SKU[1]));
-        }
-        
-        cupones = escenario.get(11);
-        promo = escenario.get(12).split(", ");
-        if(promo.length>1)
-            promocion = new Promocion(promo[0], promo[1]);
-        else 
-            promocion = new Promocion(promo[1]);
-        
-        direccionTar = new Direccion(escenario.get(13),escenario.get(14),escenario.get(15),escenario.get(16),
-                escenario.get(17),escenario.get(18),escenario.get(19),escenario.get(20),escenario.get(21),
-                escenario.get(22),escenario.get(23));
-        metodoPago = escenario.get(24);
-        fechaTarjeta = escenario.get(28).split("/");
-        if(fechaTarjeta.length>1)
-            tarjeta = new Tarjeta(escenario.get(25), escenario.get(26), escenario.get(27),
-                    fechaTarjeta[0], fechaTarjeta[1], escenario.get(1), escenario.get(2), escenario.get(3));
-        loginPaypal = new Login(escenario.get(29), escenario.get(30));
-    }
-    
-    public void loginFueraDeLista(){
-        compra = escenario.get(0);
-        login = new Login(escenario.get(1), escenario.get(2));
-        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
-        
-        skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
-        skus = new ArrayList<Sku>();
-        for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
-            skus.add(new Sku(SKU[0], SKU[1]));
-        }
-        
-        cupones = escenario.get(7);
-        promo = escenario.get(8).split(", ");
-        if(promo.length>1)
-            promocion = new Promocion(promo[0], promo[1]);
-        else 
-            promocion = new Promocion(promo[1]);
-        
-        metodoPago = escenario.get(9);
-        fechaTarjeta = escenario.get(12).split("/");
-        if(fechaTarjeta.length>1)
-            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
-        loginPaypal = new Login(escenario.get(13), escenario.get(14));
-        Log.write("Numero de evento dentro login... " + mesaRegalo.getNumEvento());
-    }
-    
-    public void guestFueraDeLista(){
-        compra = escenario.get(0);
-        guest = new Guest(escenario.get(1),escenario.get(2),escenario.get(3),
-                escenario.get(4),escenario.get(5),escenario.get(6));
-        mesaRegalo = new MesaRegaloFL(escenario.get(7),escenario.get(8),escenario.get(9));
-        
-        skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
-        skus = new ArrayList<Sku>();
-        for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
-            System.out.println(SKU[0]+" "+SKU[1]);
-            skus.add(new Sku(SKU[0], SKU[1]));
-        }
-        
-        cupones = escenario.get(11);
-        promo = escenario.get(12).split(", ");
-        if(promo.length>1)
-            promocion = new Promocion(promo[0], promo[1]);
-        else 
-            promocion = new Promocion(promo[1]);
-        
-        direccionTar = new Direccion(escenario.get(13),escenario.get(14),escenario.get(15),escenario.get(16),
-                escenario.get(17),escenario.get(18),escenario.get(19),escenario.get(20),escenario.get(21),
-                escenario.get(22),escenario.get(23));
-        metodoPago = escenario.get(24);
-        fechaTarjeta = escenario.get(28).split("/");
-        if(fechaTarjeta.length>1)
-            tarjeta = new Tarjeta(escenario.get(25), escenario.get(26), escenario.get(27),
-                    fechaTarjeta[0], fechaTarjeta[1], escenario.get(1), escenario.get(2), escenario.get(3));
-        loginPaypal = new Login(escenario.get(29), escenario.get(30));
-        
-        Log.write("Numero de evento dentro guest + ------------------------" + mesaRegalo.getNumEvento());
-        
-    }
-    
-    public void festejadoFueraDeLista(){
-        String [] tiendaCC;
-        compra = escenario.get(0);
-        login = new Login(escenario.get(1), escenario.get(2));
-        mesaRegalo = new MesaRegaloFL(escenario.get(3));
-        
-        skuss.addAll(Arrays.asList(escenario.get(4).split("\n")));
-        skus = new ArrayList<Sku>();
-        for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
-            skus.add(new Sku(SKU[0], SKU[1]));
-        }
-        
-        cupones = escenario.get(5);
-        promo = escenario.get(6).split(", ");
-        if(promo.length>1)
-            promocion = new Promocion(promo[0], promo[1]);
-        else 
-            promocion = new Promocion(promo[1]);
-        
-        tiendaCC = escenario.get(7).split(",");
-        if(tiendaCC.length>1)
-            tienda = new Tienda(tiendaCC[1], tiendaCC[0]);
-        direccionTar = new Direccion(escenario.get(8));
-        metodoPago = escenario.get(9);
-        fechaTarjeta = escenario.get(12).split("/");
-        if(fechaTarjeta.length>1)
-            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[0]);
-        loginPaypal = new Login(escenario.get(13), escenario.get(14));
-    }
-
-    public void mesaRegalos() {
-
-        boolean skuEncontrado;
-        String numEvEncontrado;
-//        mesaRegalo = new MesaRegaloFL();
-        
-        for(int e=1; e<casos.size(); e++){
-            datosEscenarioExcel(e);
-
-            driver = browser.iniciarNavegador();
-
-            LivHome home = new LivHome(interfaz, driver, login);
-
-            Log.write("Despues de LiveHome");
-            Utils.sleep(2000);
-            LivPDP pdp = new LivPDP(interfaz, driver);
-            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
-            MesaRegalos mesa = new MesaRegalos(interfaz, driver);
-
-
-            //        WQA:
-//            numEv.setNumEvento("36773699");
-            //        Productivo
-//            numEv.setNumEvento("50009146");
-//            WST:
-//            numEv.setId("50010408");
-
-            if (usuario.equals("Login-Fuera de lista")) {
-                home.incioSesion();
-                for (int i = 0; i < skus.size(); i++) {
-                    skuEncontrado = home.buscarSKU(skus.get(i));
-                    if (skuEncontrado) {
-                        pdp.cantidadSKU(skus.get(i));
-                        pdp.agregaraBolsa();
-                    }
-                }
-                pdp.irPaso0();
-                Log.write("Numero de evento ------------------------" + mesaRegalo.getNumEvento());
-                numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
-                Log.write("Numero encontrado ------------------------" + numEvEncontrado);
-
-            } else if (usuario.equals("Guest-Fuera de lista")) {
-                for (int i = 0; i < skus.size(); i++) {
-                    skuEncontrado = home.buscarSKU(skus.get(i));
-                    if (skuEncontrado) {
-                        pdp.cantidadSKU(skus.get(i));
-                        pdp.agregaraBolsa();
-                    }
-                }
-                pdp.irPaso0();
-                Log.write("Numero de evento ------------------------" + mesaRegalo.getNumEvento());
-                numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo);
-                Log.write("Numero encontrado ------------------------" + numEvEncontrado);
-
-            }else if (usuario.equals("Login-Dentro de lista")){
-                home.incioSesion();
-                Log.write("Usuario ------------------------" + usuario);
-                Log.write("N E ------------------------" + mesaRegalo);
-                numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo,login);
-                Log.write("Antes de entrar a SKU  ------------------------" + numEvEncontrado);
-                Log.write("Antes de entrar a SKU  ------------------------" + skus.get(0));
-    //            mesa.seleccionaSKU(skus,numEv);
-                for (int i = 0; i < skus.size(); i++) {
-                    Log.write("entra for SKU  ------------------------" + skus.get(i));
-                   Utils.sleep(2000);
-                   skuEncontrado = mesa.seleccionaSKU(skus.get(i));
-                   Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
-                   if (skuEncontrado) {
-    //                   mesa.cantidad(skus.get(i));
-                       mesa.agregaBolsa(mesaRegalo);
-    //                   mesa.addGiftToCart(numEv);
-                   }
-                }
-
-            }else if (usuario.equals("Guest-Dentro de lista")){
-
-    //            numEvEncontrado = mesa.compraGuestDentroDeLista(mesaRegalo);
-                numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo, login);
-    //            mesa.seleccionaSKU(skus,numEv);
-
-            }
-
-        }
-
-    }
-
     public void inicioSesionMDRFL() {
 
         Log.write("InicioSesion");
