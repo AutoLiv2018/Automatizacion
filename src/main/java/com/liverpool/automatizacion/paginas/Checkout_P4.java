@@ -13,7 +13,9 @@ import com.liverpool.automatizacion.properties.Checkout_Paso4;
 import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
+import java.util.List;
 import java.util.Properties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -47,27 +49,23 @@ public class Checkout_P4 {
         while(!driver.getCurrentUrl().contains(Cpaso4.getProperty(Checkout_Paso4.URLTICKET))){
             Utils.sleep(500);
             a++;
-            if(a==20)
+            if(a==10)
                 return false;
         }
         return true;
     }
     
-    public Ticket extraccionDatos(String metodoPago){
+    public List<Ticket> extraccionDatos(String metodoPago){
         System.out.println("paso 4");
+        List <WebElement> skuCobrados, skuNoCobrados, skus;
+        List <Ticket> ticketValores = null;
+        skuCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.));
+        skuNoCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.GRUPOSSKU));
+        int i=0; int j=0;
+        
         cliente();
         correoCliente();
         fecha();
-        sku();
-        cantidadSKU();
-        facturacion();
-        boleta();
-        terminal();
-        tienda();
-        pedido();
-        if(!metodoPago.equals("Paypal"))
-            autoBancaria();
-        precioSKU();
         calle();
         nExterior();
         nInterior();
@@ -75,45 +73,43 @@ public class Checkout_P4 {
         cp();
         delegacion();
         ciudad();
-        if(metodoPago.equals("Paypal")){
-            folioPago();
-            folioPaypal();
-        }
         tarjeta();
         nTarjeta();
         fechaTarjeta();
         precioTotal();
         referenciaCIE();
-        mesa();
-        festejado();
-        System.out.println("1 "+ticket.getCliente());
-        System.out.println("2 "+ticket.getCorreoCliente());
-        System.out.println("3 "+ticket.getFecha());
-        System.out.println("4 "+ticket.getSku());
-        System.out.println("5 "+ticket.getCantidadSKU());
-        System.out.println("6 "+ticket.getFacturacion());
-        System.out.println("7 "+ticket.getBoleta());
-        System.out.println("8 "+ticket.getTerminal());
-        System.out.println("9 "+ticket.getTienda());
-        System.out.println("10 "+ticket.getPedido());
-        System.out.println("11 "+ticket.getAutoBancaria());
-        System.out.println("12 "+ticket.getPrecioSKU());
-        System.out.println("13 "+ticket.getCalle());
-        System.out.println("14 "+ticket.getNExterior());
-        System.out.println("15 "+ticket.getNInterior());
-        System.out.println("16 "+ticket.getColonia());
-        System.out.println("17 "+ticket.getCp());
-        System.out.println("18 "+ticket.getDelegacion());
-        System.out.println("19 "+ticket.getCiudad());
-        System.out.println("20 "+ticket.getFolioPago());
-        System.out.println("21 "+ticket.getFolioPaypal());
-        System.out.println("22 "+ticket.getTarjeta());
-        System.out.println("23 "+ticket.getNTarjeta());
-        System.out.println("24 "+ticket.getFechaTarjeta());
-        System.out.println("25 "+ticket.getPrecioTotal());
-        System.out.println("26 "+ticket.getReferenciaCIE());
-        System.out.println("27 "+ticket.getMesa());
-        System.out.println("28 "+ticket.getFestejado());
+        referenciaOpenPay();
+        while(i<skuCobrados.size()){
+            facturacion(grupos.get(i));
+            boleta(grupos.get(i));
+            terminal(grupos.get(i));
+            tienda(grupos.get(i));
+            pedido(grupos.get(i));
+            if(!metodoPago.equals("Paypal"))
+                autoBancaria(grupos.get(i));
+            else{
+                folioPago(grupos.get(i));
+                folioPaypal(grupos.get(i));
+            }
+            mesa(grupos.get(i));
+            festejado(grupos.get(i));
+            skus = grupos.get(0).findElements(By.xpath("//div[@class='titles-row-prods']"));
+            skus = Find.elements(grupos.get(i), Cpaso4.getProperty(Checkout_Paso4.SKURENGLON));
+            while(j<skus.size()){
+                sku(skus.get(j));
+                cantidadSKU(skus.get(j));
+                precioSKU(skus.get(j));
+                j++;
+                imprimirValores();
+                ticketValores.add(obtenerDatos());
+            }
+            i++;
+        }
+        
+        return ticketValores;
+    }
+    
+    public Ticket obtenerDatos(){
         return ticket;
     }
     
@@ -144,81 +140,81 @@ public class Checkout_P4 {
         return false;
     }
     
-    public boolean sku(){
+    public boolean sku(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.SKU))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.SKU))) != null){
             ticket.setSku(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean cantidadSKU(){
+    public boolean cantidadSKU(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.CANTIDADSKU))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.CANTIDADSKU))) != null){
             ticket.setCantidadSKU(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean facturacion(){
+    public boolean facturacion(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FACTURACION))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FACTURACION))) != null){
             ticket.setFacturacion(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean boleta(){
+    public boolean boleta(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.BOLETA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.BOLETA))) != null){
             ticket.setBoleta(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean terminal(){
+    public boolean terminal(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.TERMINAL))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.TERMINAL))) != null){
             ticket.setTerminal(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean tienda(){
+    public boolean tienda(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.TIENDA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.TIENDA))) != null){
             ticket.setTienda(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean pedido(){
+    public boolean pedido(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.PEDIDO))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.PEDIDO))) != null){
             ticket.setPedido(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean autoBancaria(){
+    public boolean autoBancaria(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.AUTOBANCARIA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.AUTOBANCARIA))) != null){
             ticket.setAutoBancaria(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean precioSKU(){
+    public boolean precioSKU(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.PRECIOSKU))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.PRECIOSKU))) != null){
             ticket.setPrecioSKU(element.getText());
             return true;
         }
@@ -288,18 +284,18 @@ public class Checkout_P4 {
         return false;
     }
     
-    public boolean folioPago(){
+    public boolean folioPago(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FOLIOPAGO))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FOLIOPAGO))) != null){
             ticket.setFolioPago(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean folioPaypal(){
+    public boolean folioPaypal(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FOLIOPAYPAL))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FOLIOPAYPAL))) != null){
             ticket.setFolioPaypal(element.getText());
             return true;
         }
@@ -351,18 +347,27 @@ public class Checkout_P4 {
         return false;
     }
     
-    public boolean mesa(){
+    public boolean referenciaOpenPay(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.MESA))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.REFERENCIAOPENPAY))) != null){
+            ticket.setReferenciaOpenPay(element.getText());
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean mesa(WebElement padre){
+        WebElement element;
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.MESA))) != null){
             ticket.setMesa(element.getText());
             return true;
         }
         return false;
     }
     
-    public boolean festejado(){
+    public boolean festejado(WebElement padre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FESTEJADO))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FESTEJADO))) != null){
             ticket.setFestejado(element.getText());
             return true;
         }
@@ -376,5 +381,37 @@ public class Checkout_P4 {
             return true;
         }
         return false;
+    }
+    
+    public void imprimirValores(){
+        System.out.println("1 "+ticket.getCliente());
+        System.out.println("2 "+ticket.getCorreoCliente());
+        System.out.println("3 "+ticket.getFecha());
+        System.out.println("4 "+ticket.getSku());
+        System.out.println("5 "+ticket.getCantidadSKU());
+        System.out.println("6 "+ticket.getFacturacion());
+        System.out.println("7 "+ticket.getBoleta());
+        System.out.println("8 "+ticket.getTerminal());
+        System.out.println("9 "+ticket.getTienda());
+        System.out.println("10 "+ticket.getPedido());
+        System.out.println("11 "+ticket.getAutoBancaria());
+        System.out.println("12 "+ticket.getPrecioSKU());
+        System.out.println("13 "+ticket.getCalle());
+        System.out.println("14 "+ticket.getNExterior());
+        System.out.println("15 "+ticket.getNInterior());
+        System.out.println("16 "+ticket.getColonia());
+        System.out.println("17 "+ticket.getCp());
+        System.out.println("18 "+ticket.getDelegacion());
+        System.out.println("19 "+ticket.getCiudad());
+        System.out.println("20 "+ticket.getFolioPago());
+        System.out.println("21 "+ticket.getFolioPaypal());
+        System.out.println("22 "+ticket.getTarjeta());
+        System.out.println("23 "+ticket.getNTarjeta());
+        System.out.println("24 "+ticket.getFechaTarjeta());
+        System.out.println("25 "+ticket.getPrecioTotal());
+        System.out.println("26 "+ticket.getReferenciaCIE());
+        System.out.println("27 "+ticket.getReferenciaOpenPay());
+        System.out.println("28 "+ticket.getMesa());
+        System.out.println("29 "+ticket.getFestejado());
     }
 }

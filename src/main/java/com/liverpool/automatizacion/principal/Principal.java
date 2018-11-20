@@ -37,6 +37,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -176,7 +177,7 @@ public class Principal {
             // Configuracion del driver
             String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
             Navegador browser = new Navegador(navegador, p, entorno);
-
+            
             String matrizSelected = (String)interfaz.getCbxMatriz().getSelectedItem();
             switch(matrizSelected){
                 case "Mi Cuenta":
@@ -199,7 +200,7 @@ public class Principal {
                     Tlog tlogExcel = new Tlog(interfaz, browser, true);
                     tlogExcel.liverpool_TLOG();
                     break;
-            }       
+            }
             mostrarInterfaz();
         });
     }

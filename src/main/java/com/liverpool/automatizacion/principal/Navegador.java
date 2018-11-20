@@ -8,6 +8,7 @@ package com.liverpool.automatizacion.principal;
 import com.liverpool.automatizacion.util.Log;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -47,6 +48,7 @@ public class Navegador {
         }
         configuracionTiempos();
         iniciarPagina();
+        validarHome();
         return driver;
     }
     
@@ -72,5 +74,9 @@ public class Navegador {
         String ambience = entorno.getProperty(Entorno.URL);
         driver.manage().window().maximize();
         driver.get(ambience); // Abre la pagina en la pestaña actual
+    }
+    
+    public void validarHome(){
+        driver.findElement(By.id("home"));
     }
 }

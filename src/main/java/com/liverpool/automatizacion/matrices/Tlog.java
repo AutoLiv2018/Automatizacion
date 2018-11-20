@@ -25,6 +25,7 @@ import com.liverpool.automatizacion.util.Excel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -98,7 +99,7 @@ public class Tlog {
     
     public void liverpool_TLOG(){
         boolean skuEncontrado;                                                                                  
-        Ticket ticket = new Ticket();
+        List <Ticket> ticket = null;
         
         for(int e=1;e<casos.size();e++){
             datosEscenarioExcel(e);
