@@ -81,11 +81,13 @@ public class Checkout_P1 {
         switch (envio){
             case "Tienda": 
                 tipoEntregaCC();
+                seleccionMRCyC("index", "1");
                 break;
             case "Domicilio":
                 switch (usuario){
                     case "Login": 
                         tipoEntregaDomLogin();
+                        seleccionMRdireccion(direccion, "index", "1");
                         break;
                     case "Guest":
                         tipoEntregaDomGuest();
@@ -156,10 +158,52 @@ public class Checkout_P1 {
         return false;
     }
     
+    public boolean seleccionMRdireccion(String direccion, String dato, String mesa){
+        WebElement element, elementDir;
+        elementDir = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion));
+        String numero = elementDir.getAttribute("index");
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EVENTODIR)+numero)) != null){
+            Select dropDownMesaDir = new Select(element);
+            switch (dato){
+                case "valor":
+                    dropDownMesaDir.selectByValue(mesa);
+                    break;
+                case "index":
+                    dropDownMesaDir.selectByIndex(Integer.parseInt(mesa));
+                    break;
+                case "texto":
+                    dropDownMesaDir.selectByVisibleText(mesa);
+                    break;
+            }
+            return true;
+        }
+        return false;
+    }
+    
     public boolean buttonClickCollect(){//Seleccion de Click and Collect
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CCBUTTON))) != null){
             element.click();
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean seleccionMRCyC(String dato, String mesa){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EVENTOCC))) != null){
+            Select dropDownMesaDir = new Select(element);
+            switch (dato){
+                case "valor":
+                    dropDownMesaDir.selectByValue(mesa);
+                    break;
+                case "index":
+                    dropDownMesaDir.selectByIndex(Integer.parseInt(mesa));
+                    break;
+                case "texto":
+                    dropDownMesaDir.selectByVisibleText(mesa);
+                    break;
+            }
             return true;
         }
         return false;

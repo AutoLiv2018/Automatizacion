@@ -13,6 +13,7 @@ import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -201,6 +202,8 @@ public class Checkout_P2 {
         String nomText = Cpaso2.getProperty(Checkout_Paso2.TARJETANOMBRE).replace("?", nomCorto);
         if((element = Find.element(driver, nomText)) != null)
             element.click();
+        else
+            JOptionPane.showMessageDialog(null, "No se encuentra la tarjeta:" + nombreCorto, "Error de tarjeta", JOptionPane.WARNING_MESSAGE);
     }
     
     public void creditoNIP (String nip, String nombreCorto){

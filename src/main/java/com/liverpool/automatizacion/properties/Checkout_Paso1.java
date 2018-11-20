@@ -12,9 +12,11 @@ public class Checkout_Paso1 {
     
     public static final String CCBUTTON = "ccButton";
     public static final String ESTADOCC = "estadoCC";
+    public static final String EVENTOCC = "eventoCC";
     public static final String TIENDASESTADO = "tiendasEstado";
     public static final String TIENDASELECCION = "tiendaSeleccion";
     public static final String ENVIODOMICILIO = "envioDomicilio";
+    public static final String EVENTODIR = "eventoDir";
     public static final String SIGUIENTEPASOLOGIN = "siguientePasoLogin";
     public static final String SIGUIENTEPASOGUEST = "siguientePasoGuest";
     public static final String TIENDADESCRIPCION = "tiendaDescripcion";
