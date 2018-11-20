@@ -91,6 +91,32 @@ public class Checkout_P0 {
         return false;
     }
     
+    public void aplicarCupon(){
+        if(cupon.length() > 5){
+            cuponEscribir();
+            cuponAplicar();
+        }
+    }
+    
+    public boolean cuponEscribir(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.PROMOCIONESCAMPO))) != null){
+            element.sendKeys(cupon);
+            Utils.sleep(2000);
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean cuponAplicar(){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.APLICARPROMOCION))) != null){
+            element.click();
+            return true;
+        }
+        return false;
+    }
+    
     public String buscarNumeroEventoMRFL(MesaRegaloFL numEv) {
         WebElement element;
         String flag = "";
