@@ -91,7 +91,6 @@ public class Checkout_P0 {
         return false;
     }
     
-<<<<<<< Upstream, based on master
     public void aplicarCupon(){
         if(cupon.length() > 5){
             cuponEscribir();
@@ -118,8 +117,6 @@ public class Checkout_P0 {
         return false;
     }
     
-=======
->>>>>>> e037105 1.2.al.5 Se agregó el campo de cupon
     public String buscarNumeroEventoMRFL(MesaRegaloFL numEv) {
         WebElement element;
         String flag = "";
