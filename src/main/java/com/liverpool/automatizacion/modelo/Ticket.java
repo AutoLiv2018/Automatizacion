@@ -29,6 +29,7 @@ public class Ticket {
     private String folioPaypal;
     private String PrecioTotal;
     private String referenciaCIE;
+    private String referenciaOpenPay;
     private String calle;
     private String nExterior;
     private String nInterior;
@@ -42,13 +43,13 @@ public class Ticket {
             
     public Ticket(){
         this("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-                 "", "", "", "", "", "", "", "", "", "", "");
+                 "", "", "", "", "", "", "", "", "", "", "", "");
     }
     
     public Ticket(String sku,String cliente,String correoCliente,String fecha,String cantidadSKU,
             String precioSKU,String mesa,String festejado,String facturacion,String boleta,String terminal,String tienda,
             String pedido,String autoBancaria,String folioPago,String folioPaypal,String PrecioTotal,
-            String referenciaCIE,String calle,String nExterior,String nInterior,String colonia,
+            String referenciaCIE,String referenciaOpenPay,String calle,String nExterior,String nInterior,String colonia,
             String cp,String delegacion,String ciudad,String tarjeta,String nTarjeta,
             String fechaTarjeta){
         this.sku = sku;
@@ -69,6 +70,7 @@ public class Ticket {
         this.folioPaypal = folioPaypal;
         this.PrecioTotal = PrecioTotal;
         this.referenciaCIE = referenciaCIE;
+        this.referenciaOpenPay = referenciaOpenPay;
         this.calle = calle;
         this.nExterior = nExterior;
         this.nInterior = nInterior;
@@ -150,6 +152,10 @@ public class Ticket {
     }
     
     public String getReferenciaCIE (){
+        return referenciaCIE;
+    }
+    
+    public String getReferenciaOpenPay (){
         return referenciaCIE;
     }
     
@@ -263,6 +269,10 @@ public class Ticket {
     
     public void setReferenciaCIE (String referenciaCIE){
         this.referenciaCIE = referenciaCIE;
+    }
+    
+    public void setReferenciaOpenPay (String referenciaOpenPay){
+        this.referenciaOpenPay = referenciaOpenPay;
     }
     
     public void setCalle (String calle){

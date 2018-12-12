@@ -1,0 +1,61 @@
+[23/11/2018 09:12:00] - Inicia Sistema de Automatizacion
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\HomeLiv.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\HomeLiv.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\HomeLiv.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PDPLiver.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PDPLiver.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PDPLiver.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso0_Checkout.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso0_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso0_Checkout.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso1_Checkout.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso1_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso1_Checkout.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso2_Checkout.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso2_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso2_Checkout.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso3_Checkout.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso3_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso3_Checkout.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PaypalProperties.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PaypalProperties.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PaypalProperties.properties
+[23/11/2018 09:12:51] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso4_Checkout.properties
+[23/11/2018 09:12:51] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso4_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:51] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso4_Checkout.properties
+[23/11/2018 09:12:52] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Flujo3DSecure.properties
+[23/11/2018 09:12:52] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Flujo3DSecure.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:12:52] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Flujo3DSecure.properties
+[23/11/2018 09:20:32] - Inicia Sistema de Automatizacion
+[23/11/2018 09:20:46] - Fin del Sistema de Automatizacion
+[23/11/2018 09:21:51] - Inicia Sistema de Automatizacion
+[23/11/2018 09:22:00] - Fin del Sistema de Automatizacion
+[23/11/2018 09:22:11] - Inicia Sistema de Automatizacion
+[23/11/2018 09:22:48] - Inicia Sistema de Automatizacion
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\HomeLiv.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\HomeLiv.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\HomeLiv.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PDPLiver.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PDPLiver.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PDPLiver.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso0_Checkout.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso0_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso0_Checkout.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso1_Checkout.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso1_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso1_Checkout.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso2_Checkout.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso2_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso2_Checkout.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso3_Checkout.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso3_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso3_Checkout.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PaypalProperties.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PaypalProperties.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\PaypalProperties.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso4_Checkout.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso4_Checkout.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Paso4_Checkout.properties
+[23/11/2018 09:23:08] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Flujo3DSecure.properties
+[23/11/2018 09:23:08] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Flujo3DSecure.properties (El sistema no puede encontrar el archivo especificado)
+[23/11/2018 09:23:08] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\web\wst\Flujo3DSecure.properties

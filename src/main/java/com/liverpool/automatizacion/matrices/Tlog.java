@@ -4,6 +4,7 @@
 package com.liverpool.automatizacion.matrices;
 
 import com.liverpool.automatizacion.modelo.Direccion;
+import com.liverpool.automatizacion.util.GuardarImagen;
 import com.liverpool.automatizacion.modelo.Login;
 import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.modelo.Tarjeta;
@@ -22,12 +23,10 @@ import com.liverpool.automatizacion.paginas.Checkout_P4;
 import com.liverpool.automatizacion.paginas.ThreeDSecure;
 import com.liverpool.automatizacion.principal.Navegador;
 import com.liverpool.automatizacion.util.Excel;
-import java.io.IOException;
+import com.liverpool.automatizacion.util.Video;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.openqa.selenium.WebDriver;
 
@@ -100,27 +99,27 @@ public class Tlog {
     public void liverpool_TLOG(){
         boolean skuEncontrado;                                                                                  
         List <Ticket> ticket = null;
+        String folder = "D:\\Evidencia\\Compras\\";
         
         for(int e=1;e<casos.size();e++){
             datosEscenarioExcel(e);
             driver = browser.iniciarNavegador();
             
-            LivHome home = new LivHome(interfaz, driver, login);
+//            Video video = new Video();
+//            video.iniciarVideo();
+            
+            LivHome home = new LivHome(interfaz, driver);
             LivPDP pdp = new LivPDP(interfaz, driver);
             Checkout_P0 paso0 = new Checkout_P0(interfaz,driver);
-            Checkout_P1 paso1;
-            if(usuario.equals("Login"))
-                paso1 = new Checkout_P1(interfaz,driver, envio, tienda, direccion);
-            else
-                paso1 = new Checkout_P1(interfaz,driver, envio, tienda, guest, direccionGuest);
-            Checkout_P2 paso2 = new Checkout_P2(interfaz,driver, tarjeta, direccionGuest);
+            Checkout_P1 paso1 = new Checkout_P1(interfaz,driver);
+            Checkout_P2 paso2 = new Checkout_P2(interfaz,driver);
             Checkout_P3 paso3 = new Checkout_P3(interfaz,driver);
-            PaypalSite paypal = new PaypalSite(interfaz, driver, loginPaypal);
+            PaypalSite paypal = new PaypalSite(interfaz, driver);
             Checkout_P4 paso4 = new Checkout_P4(interfaz,driver);
             ThreeDSecure tds = new ThreeDSecure(interfaz,driver);
             
             if(usuario.equals("Login"))
-                home.incioSesion();
+                home.incioSesion(login);
             for(int i=0;i<skus.size();i++){
                 skuEncontrado = home.buscarSKU(skus.get(i));
                 if(skuEncontrado){
@@ -129,22 +128,34 @@ public class Tlog {
                 }
             }
             pdp.irPaso0();
-            //Login-Guest
+            //Login-Guest Paso 0
             paso0.aplicarCupon(cupon);
             paso0.pasoCeroComprar();
             if(usuario.equals("Guest"))
                 paso0.pasoCeroGuest();
-            paso1.envio();
-            paso2.seleccionPago(metodoPago, usuario);
+            //Paso 1
+            if(usuario.equals("Login"))
+                paso1.envioLogin(envio, tienda, direccion);
+            else
+                paso1.envioGuest(envio, tienda, guest, direccionGuest);
+            
+            paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionGuest);
             paso3.terminarCompraTLOG();
             if(metodoPago.equals("Paypal"))
-                paypal.paypalSandBox();
+                paypal.paypalSandBox(loginPaypal);
             tds.validacion3DS();
             
-            if(paso4.esperaTicket())
-                ticket = paso4.extraccionDatos(metodoPago);
             Excel escritura = new Excel("Resultado.xlsx");
-            escritura.writeExcel(ticket);
+            if(paso4.esperaTicket()){
+                ticket = paso4.extraccionDatos(metodoPago);
+                for(Ticket valores : ticket)
+                    escritura.writeExcel(valores, escenario.get(0));
+            }else
+                escritura.writeExcel("No hay datos de la compra");
+            GuardarImagen save = new GuardarImagen();
+            save.guardarPantalla(escenario.get(0), folder, driver);
+            
+//            video.detenerVideo();
         }
         JOptionPane.showMessageDialog(null, "Compras terminadas");
     }

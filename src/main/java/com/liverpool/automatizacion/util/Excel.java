@@ -32,11 +32,11 @@ public class Excel {
     String nombreArchivo;
     String rutaAcceso = "D:\\";
     File file = new File(rutaAcceso);
-    File DBExcelCaso = new File(rutaAcceso/*+"\\"*/+nombreArchivo);
+    File DBExcelCaso = new File(rutaAcceso+nombreArchivo);
     
     public Excel(String nombreArchivo){
         this.nombreArchivo = nombreArchivo;
-        this.DBExcelCaso = new File (rutaAcceso/*+"\\"*/+nombreArchivo);
+        this.DBExcelCaso = new File (rutaAcceso+nombreArchivo);
         if (!DBExcelCaso.exists()) 
             JOptionPane.showMessageDialog(null, "No se encuentra archivo en D:\\");
     }
@@ -72,7 +72,7 @@ public class Excel {
         return renglon;
     }
     
-     public void writeExcel(Ticket ticket) {
+     public void writeExcel(Ticket ticket, String caso) {
         XSSFWorkbook libroCaso = null;
         try {
             libroCaso = new XSSFWorkbook(new FileInputStream("D:\\Resultado.xlsx"));
@@ -87,62 +87,90 @@ public class Excel {
         XSSFCell cell;
         //Se escribe los datos de la compra
         cell= row.createCell(0);
-        cell.setCellValue(ticket.getCliente());
+        cell.setCellValue(caso);
         cell= row.createCell(1);
-        cell.setCellValue(ticket.getCorreoCliente());
+        cell.setCellValue(ticket.getCliente());
         cell= row.createCell(2);
-        cell.setCellValue(ticket.getFecha());
+        cell.setCellValue(ticket.getCorreoCliente());
         cell= row.createCell(3);
-        cell.setCellValue(ticket.getSku());
+        cell.setCellValue(ticket.getFecha());
         cell= row.createCell(4);
-        cell.setCellValue(ticket.getCantidadSKU());
+        cell.setCellValue(ticket.getSku());
         cell= row.createCell(5);
-        cell.setCellValue(ticket.getFacturacion());
+        cell.setCellValue(ticket.getCantidadSKU());
         cell= row.createCell(6);
-        cell.setCellValue(ticket.getBoleta());
+        cell.setCellValue(ticket.getFacturacion());
         cell= row.createCell(7);
-        cell.setCellValue(ticket.getTerminal());
+        cell.setCellValue(ticket.getBoleta());
         cell= row.createCell(8);
-        cell.setCellValue(ticket.getTienda());
+        cell.setCellValue(ticket.getTerminal());
         cell= row.createCell(9);
-        cell.setCellValue(ticket.getPedido());
+        cell.setCellValue(ticket.getTienda());
         cell= row.createCell(10);
-        cell.setCellValue(ticket.getAutoBancaria());
+        cell.setCellValue(ticket.getPedido());
         cell= row.createCell(11);
-        cell.setCellValue(ticket.getPrecioSKU());
+        cell.setCellValue(ticket.getAutoBancaria());
         cell= row.createCell(12);
-        cell.setCellValue(ticket.getCalle());
+        cell.setCellValue(ticket.getPrecioSKU());
         cell= row.createCell(13);
-        cell.setCellValue(ticket.getNExterior());
+        cell.setCellValue(ticket.getCalle());
         cell= row.createCell(14);
-        cell.setCellValue(ticket.getNInterior());
+        cell.setCellValue(ticket.getNExterior());
         cell= row.createCell(15);
-        cell.setCellValue(ticket.getColonia());
+        cell.setCellValue(ticket.getNInterior());
         cell= row.createCell(16);
-        cell.setCellValue(ticket.getCp());
+        cell.setCellValue(ticket.getColonia());
         cell= row.createCell(17);
-        cell.setCellValue(ticket.getDelegacion());
+        cell.setCellValue(ticket.getCp());
         cell= row.createCell(18);
-        cell.setCellValue(ticket.getCiudad());
+        cell.setCellValue(ticket.getDelegacion());
         cell= row.createCell(19);
-        cell.setCellValue(ticket.getFolioPago());
+        cell.setCellValue(ticket.getCiudad());
         cell= row.createCell(20);
-        cell.setCellValue(ticket.getFolioPaypal());
+        cell.setCellValue(ticket.getFolioPago());
         cell= row.createCell(21);
-        cell.setCellValue(ticket.getTarjeta());
+        cell.setCellValue(ticket.getFolioPaypal());
         cell= row.createCell(22);
-        cell.setCellValue(ticket.getNTarjeta());
+        cell.setCellValue(ticket.getTarjeta());
         cell= row.createCell(23);
-        cell.setCellValue(ticket.getFechaTarjeta());
+        cell.setCellValue(ticket.getNTarjeta());
         cell= row.createCell(24);
-        cell.setCellValue(ticket.getPrecioTotal());
+        cell.setCellValue(ticket.getFechaTarjeta());
         cell= row.createCell(25);
-        cell.setCellValue(ticket.getReferenciaCIE());
+        cell.setCellValue(ticket.getPrecioTotal());
         cell= row.createCell(26);
-        cell.setCellValue(ticket.getMesa());
+        cell.setCellValue(ticket.getReferenciaCIE());
         cell= row.createCell(27);
+        cell.setCellValue(ticket.getReferenciaOpenPay());
+        cell= row.createCell(28);
+        cell.setCellValue(ticket.getMesa());
+        cell= row.createCell(29);
         cell.setCellValue(ticket.getFestejado());
 
+        cerrarExcel(libroCaso);
+    }
+     
+    public void writeExcel(String texto) {
+        XSSFWorkbook libroCaso = null;
+        try {
+            libroCaso = new XSSFWorkbook(new FileInputStream("D:\\Resultado.xlsx"));
+        } catch (IOException ex) {
+            Logger.getLogger(Excel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        XSSFSheet hoja1 = libroCaso.getSheet("Resultados");
+        
+        int ultRenglon = hoja1.getLastRowNum();
+        XSSFRow row=hoja1.createRow(ultRenglon+1); //Se situa en el último renglon
+        XSSFCell cell;
+        //Se escribe los datos de la compra
+        cell= row.createCell(0);
+        cell.setCellValue(texto);
+        
+        cerrarExcel(libroCaso);
+    }
+    
+    public void cerrarExcel(XSSFWorkbook libroCaso){
         try (
             FileOutputStream fileOuS = new FileOutputStream(DBExcelCaso)) {//Se da formato al excel
             libroCaso.write(fileOuS);

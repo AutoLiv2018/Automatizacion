@@ -46,7 +46,6 @@ public class Checkout_P3 {
     
     public void borrarTodosArticulos(){
         WebElement element;
-//        element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.ELIMINARSKU));
         while(((element = Find.element(driver, Cpaso3.getProperty(Checkout_Paso3.ELIMINARSKU))) != null))
             element.click();
     }

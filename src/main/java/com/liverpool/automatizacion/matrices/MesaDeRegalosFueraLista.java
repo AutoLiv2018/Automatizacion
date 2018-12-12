@@ -318,7 +318,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
             driver = browser.iniciarNavegador();
 
-            LivHome home = new LivHome(interfaz, driver, login);
+            LivHome home = new LivHome(interfaz, driver);
 
             Log.write("Despues de LiveHome");
             Utils.sleep(2000);
@@ -335,7 +335,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
 //            numEv.setId("50010408");
 
             if (usuario.equals("Login-Fuera de lista")) {
-                home.incioSesion();
+                home.incioSesion(login);
                 for (int i = 0; i < skus.size(); i++) {
                     skuEncontrado = home.buscarSKU(skus.get(i));
                     if (skuEncontrado) {
@@ -362,7 +362,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
                 Log.write("Numero encontrado ------------------------" + numEvEncontrado);
 
             }else if (usuario.equals("Login-Dentro de lista")){
-                home.incioSesion();
+                home.incioSesion(login);
                 Log.write("Usuario ------------------------" + usuario);
                 Log.write("N E ------------------------" + mesaRegalo);
                 numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo,login);
@@ -404,12 +404,12 @@ public class MesaDeRegalosFueraLista extends Matriz {
             
             driver = browser.iniciarNavegador();
 
-            LivHome home = new LivHome(interfaz, driver, login);
+            LivHome home = new LivHome(interfaz, driver);
 
             Log.write("Despues de LiveHome");
             LivPDP pdp = new LivPDP(interfaz, driver);
             Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
-            home.incioSesion();
+            home.incioSesion(login);
             for (int i = 0; i < skus.size(); i++) {
                 skuEncontrado = home.buscarSKU(skus.get(i));
                 if (skuEncontrado) {
@@ -445,7 +445,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         
             driver = browser.iniciarNavegador();
 
-            LivHome home = new LivHome(interfaz, driver, login);
+            LivHome home = new LivHome(interfaz, driver);
 
             Log.write("Despues de LiveHome");
             LivPDP pdp = new LivPDP(interfaz, driver);

@@ -29,33 +29,16 @@ public class Checkout_P1 {
     private Interfaz interfaz;
     public File paso1;
     public Properties Cpaso1;
-    public final String envio;
-    public String direccion, usuario;
-    Tienda tienda;
-    Direccion direccionGuest;
-    Guest guest;
+//    public final String envio;
+//    public String direccion, usuario;
+//    Tienda tienda;
+//    Direccion direccionGuest;
+//    Guest guest;
     
-    public Checkout_P1(Interfaz interfaz, WebDriver driver, String envio, Tienda tienda, String direccion){
+    public Checkout_P1(Interfaz interfaz, WebDriver driver){
         this.driver = driver;
-        this.tienda = tienda;
-        this.envio = envio;
-        this.direccion = direccion;
-        usuario = "Login";
-        iniciarProperties(interfaz);
-    }
-    
-    public Checkout_P1(Interfaz interfaz, WebDriver driver, String envio, 
-            Tienda tienda, Guest guest, Direccion direccionGuest){
-        this.driver = driver;
-        this.tienda = tienda;
-        this.envio = envio;
-        this.guest=guest;
-        this.direccionGuest=direccionGuest;
-        usuario = "Guest";
-        iniciarProperties(interfaz);
-    }
-    
-    public final void iniciarProperties(Interfaz interfaz){
+        this.interfaz = interfaz;
+        
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso1 = new Properties(); // propiedades de la pagina shipping.jsp
                 
@@ -65,89 +48,75 @@ public class Checkout_P1 {
         }
     }
     
-    public void envio(){
-        switch (usuario){
-            case "Login": 
-                metodoEntrega();
-                break;
-            case "Guest":
-                datosGuest();
-                metodoEntrega();
-                break;
-        }
-    }
-    
-    public void metodoEntrega(){
+    public void envioLogin(String envio, Tienda tienda, String direccion){
         switch (envio){
             case "Tienda": 
-                tipoEntregaCC();
+                tipoEntregaCC("Login", tienda);
                 seleccionMRCyC("index", "1");
                 break;
             case "Domicilio":
-                switch (usuario){
-                    case "Login": 
-                        tipoEntregaDomLogin();
-                        seleccionMRdireccion(direccion, "index", "1");
-                        break;
-                    case "Guest":
-                        tipoEntregaDomGuest();
-                        break;
-                }
+                tipoEntregaDomLogin(direccion);
+                seleccionMRdireccion(direccion, "index", "1");
                 break;
         }
-        
     }
     
-    public void datosGuest(){
-        llenadoNombre();
-        llenadoAPaterno();
-        llenadoAMaterno();
-        llenadoCorreo();
-        llenadoLada();
-        llenadoTelefono();
+    public void envioGuest(String envio, Tienda tienda, Guest guest, Direccion direccionGuest){
+        datosGuest(guest);
+        switch (envio){
+            case "Tienda": 
+                tipoEntregaCC("Guest", tienda);
+                break;
+            case "Domicilio":
+                tipoEntregaDomGuest(direccionGuest);
+                break;
+        }
     }
     
-    public void tipoEntregaDomGuest(){
+    public void datosGuest(Guest guest){
+        llenadoNombre(guest.getNombre());
+        llenadoAPaterno(guest.getApaterno());
+        llenadoAMaterno(guest.getAmaterno());
+        llenadoCorreo(guest.getCorreo());
+        llenadoLada(guest.getLada());
+        llenadoTelefono(guest.getTelefono());
+    }
+    
+    public void tipoEntregaDomGuest(Direccion direccionGuest){
         envioDomicilio();
-        llenadoCP();
+        llenadoCP(direccionGuest.getCp());
         esperaEstado();
-        llenadoCiudad();
+        llenadoCiudad(direccionGuest.getCiudad());
         esperaDelegacion();
-        llenadoCalle();
-        llenadoNExterior();
-        llenadoNInterior();
-        llenadoEdificio();
-        llenadoEntreCalle();
-        llenadoYCalle();
-        llenadoCelular();
-        if(usuario.contains("Login"))
-            siguientePasoButtonLogin();
-        else
-            siguientePasoButtonGuest();
+        llenadoCalle(direccionGuest.getCalle());
+        llenadoNExterior(direccionGuest.getNumExterior());
+        llenadoNInterior(direccionGuest.getNumInterior());
+        llenadoEdificio(direccionGuest.getEdificio());
+        llenadoEntreCalle(direccionGuest.getEntreCalle());
+        llenadoYCalle(direccionGuest.getYCalle());
+        llenadoCelular(direccionGuest.getCelular());
+        siguientePasoButtonGuest();
     }
     
-    public void tipoEntregaCC (){ //Estado y numero de la tienda
+    public void tipoEntregaCC (String usuario, Tienda tienda){ //Estado y numero de la tienda
         buttonClickCollect();
-        estadoCC();
-        seleccionTiendaCC();
+        estadoCC(tienda);
+        seleccionTiendaCC(tienda);
         if(usuario.contains("Login"))
             siguientePasoButtonLogin();
         else
             siguientePasoButtonGuest();
     }
     
-    public void tipoEntregaDomLogin(){
-        if(!seleccionDomicilio()){
+    public void tipoEntregaDomLogin(String direccion){
+        if(!seleccionDomicilio(direccion)){
             JOptionPane.showMessageDialog(null, "Direccion no encontrada: "+direccion,
                         "Error en Direccion", JOptionPane.ERROR_MESSAGE);
         }
-        if(usuario.contains("Login"))
-            siguientePasoButtonLogin();
-        else
-            siguientePasoButtonGuest();
+        siguientePasoButtonLogin();
     }
     
-    public boolean seleccionDomicilio(){
+    public boolean seleccionDomicilio(String direccion){
         WebElement element;
         String nombre = Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion).replace("xpath|", "");
         String nombreSeleccion = Cpaso1.getProperty(Checkout_Paso1.NOMBRESELECCION).replace("?", nombre);
@@ -160,22 +129,24 @@ public class Checkout_P1 {
     
     public boolean seleccionMRdireccion(String direccion, String dato, String mesa){
         WebElement element, elementDir;
-        elementDir = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion));
-        String numero = elementDir.getAttribute("index");
-        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EVENTODIR)+numero)) != null){
-            Select dropDownMesaDir = new Select(element);
-            switch (dato){
-                case "valor":
-                    dropDownMesaDir.selectByValue(mesa);
-                    break;
-                case "index":
-                    dropDownMesaDir.selectByIndex(Integer.parseInt(mesa));
-                    break;
-                case "texto":
-                    dropDownMesaDir.selectByVisibleText(mesa);
-                    break;
+        if((elementDir = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion))) != null)
+        {
+            String numero = elementDir.getAttribute("index");
+            if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EVENTODIR)+numero)) != null){
+                Select dropDownMesaDir = new Select(element);
+                switch (dato){
+                    case "valor":
+                        dropDownMesaDir.selectByValue(mesa);
+                        break;
+                    case "index":
+                        dropDownMesaDir.selectByIndex(Integer.parseInt(mesa));
+                        break;
+                    case "texto":
+                        dropDownMesaDir.selectByVisibleText(mesa);
+                        break;
+                }
+                return true;
             }
-            return true;
         }
         return false;
     }
@@ -209,7 +180,7 @@ public class Checkout_P1 {
         return false;
     }
     
-    public boolean estadoCC(){//Seleccion de estado
+    public boolean estadoCC(Tienda tienda){//Seleccion de estado
         WebElement element;
         Select estado;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.ESTADOCC))) != null){
@@ -220,7 +191,7 @@ public class Checkout_P1 {
         return false;
     }
     
-    public boolean seleccionTiendaCC(){//Seleccion de tienda
+    public boolean seleccionTiendaCC(Tienda tienda){//Seleccion de tienda
         WebElement element;
         String tiendaNumero = Cpaso1.getProperty(Checkout_Paso1.TIENDASELECCION).replace("?", tienda.getNumTienda()).replace("xpath|", "");
         String tiendaTexto =  Cpaso1.getProperty(Checkout_Paso1.TIENDADESCRIPCION).replace("?", tiendaNumero);
@@ -254,64 +225,64 @@ public class Checkout_P1 {
         return false;
     }
     
-    public boolean llenadoNombre(){
+    public boolean llenadoNombre(String nombre){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NOMBREGUEST))) != null){
-            element.sendKeys(guest.getNombre());
+            element.sendKeys(nombre);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoAPaterno(){
+    public boolean llenadoAPaterno(String aPaterno){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.APATERNOGUEST))) != null){
-            element.sendKeys(guest.getApaterno());
+            element.sendKeys(aPaterno);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoAMaterno(){
+    public boolean llenadoAMaterno(String aMaterno){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.AMATERNOGUEST))) != null){
-            element.sendKeys(guest.getAmaterno());
+            element.sendKeys(aMaterno);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoCorreo(){
+    public boolean llenadoCorreo(String correo){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CORREOGUEST))) != null){
-            element.sendKeys(guest.getCorreo());
+            element.sendKeys(correo);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoLada(){
+    public boolean llenadoLada(String lada){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.LADAGUEST))) != null){
-            element.sendKeys(guest.getLada());
+            element.sendKeys(lada);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoTelefono(){
+    public boolean llenadoTelefono(String telefono){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.TELEFONOGUEST))) != null){
-            element.sendKeys(guest.getTelefono());
+            element.sendKeys(telefono);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoCP(){
+    public boolean llenadoCP(String cp){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CODIGOPOSTAL))) != null){
-            element.sendKeys(direccionGuest.getCp());
+            element.sendKeys(cp);
             return true;
         }
         return false;
@@ -327,10 +298,10 @@ public class Checkout_P1 {
         }
     }
     
-    public boolean llenadoCiudad(){
+    public boolean llenadoCiudad(String ciudad){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CIUDAD))) != null){
-            element.sendKeys(direccionGuest.getCiudad());
+            element.sendKeys(ciudad);
             return true;
         }
         return false;
@@ -346,64 +317,64 @@ public class Checkout_P1 {
         }
     }
     
-    public boolean llenadoCalle(){
+    public boolean llenadoCalle(String calle){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CALLE))) != null){
-            element.sendKeys(direccionGuest.getCalle());
+            element.sendKeys(calle);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoNExterior(){
+    public boolean llenadoNExterior(String numExterior){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NUMEXTERIOR))) != null){
-            element.sendKeys(direccionGuest.getNumExterior());
+            element.sendKeys(numExterior);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoNInterior(){
+    public boolean llenadoNInterior(String numInterior){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NUMINTERIOR))) != null){
-            element.sendKeys(direccionGuest.getNumInterior());
+            element.sendKeys(numInterior);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoEdificio(){
+    public boolean llenadoEdificio(String edificio){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EDIFICIO))) != null){
-            element.sendKeys(direccionGuest.getEdificio());
+            element.sendKeys(edificio);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoEntreCalle(){
+    public boolean llenadoEntreCalle(String entreCalle){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.ENTRECALLE))) != null){
-            element.sendKeys(direccionGuest.getEntreCalle());
+            element.sendKeys(entreCalle);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoYCalle(){
+    public boolean llenadoYCalle(String yCalle){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.YCALLE))) != null){
-            element.sendKeys(direccionGuest.getYCalle());
+            element.sendKeys(yCalle);
             return true;
         }
         return false;
     }
     
-    public boolean llenadoCelular(){
+    public boolean llenadoCelular(String celular){
         WebElement element;
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CELULAR))) != null){
-            element.sendKeys(direccionGuest.getCelular());
+            element.sendKeys(celular);
             return true;
         }
         return false;

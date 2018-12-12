@@ -31,14 +31,11 @@ public class LivHome {
     private final Interfaz interfaz;
     public final File LHome;
     public final Properties home;
-    Login login;
-    ArrayList<Sku> skus;
     
-    public LivHome(Interfaz interfaz,WebDriver driver, Login login){
+    public LivHome(Interfaz interfaz,WebDriver driver){
         
         this.driver = driver;
         this.interfaz = interfaz;
-        this.login = login;
         
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         home = new Properties(); // propiedades de la pagina HOME
@@ -49,7 +46,7 @@ public class LivHome {
         }
     }
     
-    public void incioSesion(){
+    public void incioSesion(Login login){
         WebElement element;
 
         int a;

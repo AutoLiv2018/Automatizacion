@@ -29,14 +29,9 @@ public class Checkout_P2 {
     public final File paso2;
     public final Properties Cpaso2;
     private static JavascriptExecutor js;
-    Tarjeta tarjeta;
-    Direccion direccionTar;
     
-    
-    public Checkout_P2(Interfaz interfaz, WebDriver driver, Tarjeta tarjeta, Direccion direccionTar){
+    public Checkout_P2(Interfaz interfaz, WebDriver driver){
         this.driver = driver;
-        this.tarjeta = tarjeta;
-        this.direccionTar = direccionTar;
         
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso2 = new Properties(); // propiedades de la pagina shipping.jsp
@@ -47,7 +42,7 @@ public class Checkout_P2 {
         }
     }
     
-    public void seleccionPago(String metodoPago, String usuario) {
+    public void seleccionPago(String metodoPago, String usuario, Tarjeta tarjeta, Direccion direccionTar) {
         Utils.sleep(1000);
         switch(metodoPago){
             case "Credito":
@@ -130,7 +125,7 @@ public class Checkout_P2 {
                 (Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CREDITOVISTAGUEST))) == null){
             Utils.sleep(500);
         }
-        Utils.sleep(1000);
+        Utils.sleep(1500);
     }
     
     public void paypalSeleccionar(){
@@ -139,7 +134,7 @@ public class Checkout_P2 {
             element.click();
         while((Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.PAYPALVISTA))) == null)
             Utils.sleep(500);
-        Utils.sleep(500);
+        Utils.sleep(1000);
     }
     
     public void efectivoSeleccionar(){

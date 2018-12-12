@@ -13,6 +13,7 @@ import com.liverpool.automatizacion.properties.Checkout_Paso4;
 import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import org.openqa.selenium.By;
@@ -57,11 +58,20 @@ public class Checkout_P4 {
     
     public List<Ticket> extraccionDatos(String metodoPago){
         System.out.println("paso 4");
-        List <WebElement> skuCobrados, skuNoCobrados, skus;
-        List <Ticket> ticketValores = null;
-        skuCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.));
-        skuNoCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.GRUPOSSKU));
-        int i=0; int j=0;
+        List <WebElement> gruposSkusCobrados, gruposSkusNoCobrados, grupoProductos, grupoProductosMesa,skuRenglon;
+        List <Ticket> ticketValores = new ArrayList<>();
+        List <WebElement> grupoP = new ArrayList<>();
+        
+        gruposSkusCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.GRUPOSSKUSCOBRADOS));
+        gruposSkusNoCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.GRUPOSSKUSNOCOBRADOS));
+        
+        grupoProductos = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(Checkout_Paso4.GRUPOPRODUCTOS));
+        grupoProductosMesa = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(Checkout_Paso4.GRUPOPRODUCTOSMESA));
+        grupoP.addAll(grupoProductos);
+        grupoP.addAll(grupoProductosMesa);
+//        for(int i=0;i<grupoProductos.size();i++){
+//            skuRenglon = Find.elements(grupoProductos.get(i), Cpaso4.getProperty(Checkout_Paso4.SKURENGLON));
+//            for(int j=0;j<skuRenglon.size();j++){
         
         cliente();
         correoCliente();
@@ -79,33 +89,44 @@ public class Checkout_P4 {
         precioTotal();
         referenciaCIE();
         referenciaOpenPay();
-        while(i<skuCobrados.size()){
-            facturacion(grupos.get(i));
-            boleta(grupos.get(i));
-            terminal(grupos.get(i));
-            tienda(grupos.get(i));
-            pedido(grupos.get(i));
-            if(!metodoPago.equals("Paypal"))
-                autoBancaria(grupos.get(i));
-            else{
-                folioPago(grupos.get(i));
-                folioPaypal(grupos.get(i));
-            }
-            mesa(grupos.get(i));
-            festejado(grupos.get(i));
-            skus = grupos.get(0).findElements(By.xpath("//div[@class='titles-row-prods']"));
-            skus = Find.elements(grupos.get(i), Cpaso4.getProperty(Checkout_Paso4.SKURENGLON));
-            while(j<skus.size()){
-                sku(skus.get(j));
-                cantidadSKU(skus.get(j));
-                precioSKU(skus.get(j));
-                j++;
-                imprimirValores();
-                ticketValores.add(obtenerDatos());
-            }
-            i++;
-        }
         
+//        grupoProductos = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(Checkout_Paso4.GRUPOPRODUCTOS));
+        for(int i=0;i<grupoP.size();i++){
+            facturacion(grupoP.get(i));
+            boleta(grupoP.get(i));
+            terminal(grupoP.get(i));
+            pedido(grupoP.get(i));
+            tienda(grupoP.get(i));
+            if(!metodoPago.equals("Paypal"))
+                autoBancaria(grupoP.get(i));
+            else{
+                folioPago(grupoP.get(i));
+                folioPaypal(grupoP.get(i));
+            }
+            mesa(grupoP.get(i));
+            festejado(grupoP.get(i));
+            
+            skuRenglon = Find.elements(grupoP.get(i), Cpaso4.getProperty(Checkout_Paso4.SKURENGLON));
+            for(int j=0;j<skuRenglon.size();j++){
+                sku(skuRenglon.get(j));
+                cantidadSKU(skuRenglon.get(j));
+                precioSKU(skuRenglon.get(j));
+                ticketValores.add(obtenerDatos());
+//                ticket = new Ticket();
+                ticket = new Ticket("",ticket.getCliente(),ticket.getCorreoCliente(),ticket.getFecha(),"","",ticket.getMesa(),
+                    ticket.getFestejado(),ticket.getFacturacion(),ticket.getBoleta(),ticket.getTerminal(),ticket.getTienda(),
+                    ticket.getPedido(),ticket.getAutoBancaria(),ticket.getFolioPago(),ticket.getFolioPaypal(),ticket.getPrecioTotal(),
+                    ticket.getReferenciaCIE(),ticket.getReferenciaOpenPay(),ticket.getCalle(),ticket.getNExterior(),
+                    ticket.getNInterior(),ticket.getColonia(),ticket.getCp(),ticket.getDelegacion(),ticket.getCiudad(),
+                    ticket.getTarjeta(),ticket.getNTarjeta(),ticket.getFechaTarjeta());
+            }
+            ticket = new Ticket("",ticket.getCliente(),ticket.getCorreoCliente(),ticket.getFecha(),"","","",
+                "","","","","",
+                "","","","",ticket.getPrecioTotal(),
+                ticket.getReferenciaCIE(),ticket.getReferenciaOpenPay(),ticket.getCalle(),ticket.getNExterior(),
+                ticket.getNInterior(),ticket.getColonia(),ticket.getCp(),ticket.getDelegacion(),ticket.getCiudad(),
+                ticket.getTarjeta(),ticket.getNTarjeta(),ticket.getFechaTarjeta());
+        }
         return ticketValores;
     }
     

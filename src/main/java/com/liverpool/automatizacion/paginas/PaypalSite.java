@@ -26,11 +26,9 @@ public class PaypalSite {
     private Interfaz interfaz;
     public final File PaypalProperties;
     public final Properties proPaypal;
-    Login loginPaypal;
     
-    public PaypalSite(Interfaz interfaz, WebDriver driver, Login loginPaypal){
+    public PaypalSite(Interfaz interfaz, WebDriver driver){
         this.driver = driver;
-        this.loginPaypal = loginPaypal;
 
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         proPaypal = new Properties(); // propiedades de la pagina shipping.jsp
@@ -41,11 +39,11 @@ public class PaypalSite {
         }
     }
     
-    public void paypalSandBox(){
+    public void paypalSandBox(Login loginPaypal){
         esperaLoad();
         iniciarSesion();
-        escribirEmail();
-        escribirPassword();
+        escribirEmail(loginPaypal.getUser());
+        escribirPassword(loginPaypal.getPassword());
         seleccionarTarjeta();
         botonContinuar();
         comprar();
@@ -68,20 +66,20 @@ public class PaypalSite {
             Utils.sleep(500);
     }
     
-    public void escribirEmail(){
+    public void escribirEmail(String user){
         WebElement element;
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.EMAIL))) != null)
-            element.sendKeys(loginPaypal.getUser());
+            element.sendKeys(user);
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.SIGUIENTE))) != null)
             element.click();
         while((Find.element(driver, proPaypal.getProperty(PaypalProper.SPINER))) != null)
             Utils.sleep(500);
     }
     
-    public void escribirPassword(){
+    public void escribirPassword(String password){
         WebElement element;
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.PASSWORD))) != null)
-            element.sendKeys(loginPaypal.getPassword());
+            element.sendKeys(password);
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.LOGEAR))) != null)
             element.click();
         esperaLoad();
@@ -89,7 +87,6 @@ public class PaypalSite {
     
     public void seleccionarTarjeta(){
         WebElement element;
-        System.out.println(proPaypal.getProperty(PaypalProper.SELECCIONARTARJETA));
         if((element = Find.element(driver, proPaypal.getProperty(PaypalProper.SELECCIONARTARJETA))) != null){
             element.click();
             System.out.println("Entra");

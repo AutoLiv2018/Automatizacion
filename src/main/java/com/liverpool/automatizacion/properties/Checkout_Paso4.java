@@ -12,6 +12,11 @@ package com.liverpool.automatizacion.properties;
 public class Checkout_Paso4 {
     public static final String PROPERTIES_FILE = "Paso4_Checkout.properties";
     
+    public static final String GRUPOSSKUSCOBRADOS = "gruposSkusCobrados";
+    public static final String GRUPOSSKUSNOCOBRADOS = "gruposSkusNoCobrados";
+    public static final String GRUPOPRODUCTOS = "grupoProductos";
+    public static final String GRUPOPRODUCTOSMESA = "grupoProductosMesa";
+    public static final String SKURENGLON = "skuRenglon";
     public static final String URLTICKET = "urlTicket";
     public static final String CLIENTE = "cliente";
     public static final String CORREOCLIENTE = "correoCliente";
@@ -39,6 +44,7 @@ public class Checkout_Paso4 {
     public static final String FECHATARJETA = "fechaTarjeta";
     public static final String PRECIOTOTAL = "precioTotal";
     public static final String REFENCIACIE = "refenciaCIE";
+    public static final String REFERENCIAOPENPAY = "referenciaOpenPay";
     public static final String MESA = "mesa";
     public static final String FESTEJADO = "festejado";
     public static final String LOGOLIVERPOOL = "logoLiverpool";
