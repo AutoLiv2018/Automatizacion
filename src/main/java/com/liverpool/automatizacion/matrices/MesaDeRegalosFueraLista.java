@@ -69,6 +69,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
     
     ArrayList<String> skuss = new ArrayList<>();
     String [] SKU;
+    ArrayList<Sku> skuSinImagen;
 
     private final Interfaz interfaz;
 
@@ -98,7 +99,11 @@ public class MesaDeRegalosFueraLista extends Matriz {
             loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
         }
         if(excel){
-            usuario = "Login-Fuera de lista";
+//            usuario = "Guest-Fuera de lista";
+//            usuario = "Login-Fuera de lista";
+            usuario = "Festejado-Fuera de lista";
+//            usuario = "Login-Dentro de lista";
+//            usuario = "Guest-Dentro de lista";
             String nombreArchivo = "Compras Mesa.xlsx";
             Excel excelArc = new Excel(nombreArchivo);
             casos=excelArc.getExcel(usuario);
@@ -164,7 +169,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
         skus = new ArrayList<Sku>();
         for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
+            SKU = skuss.get(j).replace(" ", "").split(",");
             System.out.println(SKU[0]+" "+SKU[1]);
             skus.add(new Sku(SKU[0], SKU[1]));
         }
@@ -192,7 +197,9 @@ public class MesaDeRegalosFueraLista extends Matriz {
         skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
         skus = new ArrayList<Sku>();
         for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
+//            SKU = skuss.get(j).replace(" ", "").split(", ");
+//            skus.add(new Sku(SKU[0], SKU[1]));
+            SKU = skuss.get(j).replace(" ", "").split(",");
             skus.add(new Sku(SKU[0], SKU[1]));
         }
         
@@ -201,7 +208,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         if(promo.length>1)
             promocion = new Promocion(promo[0], promo[1]);
         else 
-            promocion = new Promocion(promo[1]);
+            promocion = new Promocion(promo[0]);
         
         direccionTar = new Direccion(escenario.get(13),escenario.get(14),escenario.get(15),escenario.get(16),
                 escenario.get(17),escenario.get(18),escenario.get(19),escenario.get(20),escenario.get(21),
@@ -222,7 +229,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
         skus = new ArrayList<Sku>();
         for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
+            SKU = skuss.get(j).replace(" ", "").split(",");
             skus.add(new Sku(SKU[0], SKU[1]));
         }
         
@@ -260,7 +267,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
         if(promo.length>1)
             promocion = new Promocion(promo[0], promo[1]);
         else 
-            promocion = new Promocion(promo[1]);
+            promocion = new Promocion(promo[0]);
         
         direccionTar = new Direccion(escenario.get(13),escenario.get(14),escenario.get(15),escenario.get(16),
                 escenario.get(17),escenario.get(18),escenario.get(19),escenario.get(20),escenario.get(21),
@@ -285,17 +292,18 @@ public class MesaDeRegalosFueraLista extends Matriz {
         skuss.addAll(Arrays.asList(escenario.get(4).split("\n")));
         skus = new ArrayList<Sku>();
         for(int j=0; j<skuss.size(); j++){
-            SKU = skuss.get(j).split(", ");
+//            SKU = skuss.get(j).split(", ");
+//            skus.add(new Sku(SKU[0], SKU[1]));
+            SKU = skuss.get(j).replace(" ", "").split(",");
             skus.add(new Sku(SKU[0], SKU[1]));
         }
         
         cupones = escenario.get(5);
-        promo = escenario.get(6).split(", ");
+        promo = escenario.get(6).replace(" ", "").split(", ");
         if(promo.length>1)
             promocion = new Promocion(promo[0], promo[1]);
         else 
-            promocion = new Promocion(promo[1]);
-        
+            promocion = new Promocion(promo[0]);
         tiendaCC = escenario.get(7).split(",");
         if(tiendaCC.length>1)
             tienda = new Tienda(tiendaCC[1], tiendaCC[0]);
@@ -311,6 +319,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
         boolean skuEncontrado;
         String numEvEncontrado;
+        skuSinImagen = new ArrayList<Sku>();
 //        mesaRegalo = new MesaRegaloFL();
         
         for(int e=1; e<casos.size(); e++){
@@ -318,7 +327,11 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
             driver = browser.iniciarNavegador();
 
+<<<<<<< Upstream, based on master
             LivHome home = new LivHome(interfaz, driver);
+=======
+             LivHome home = new LivHome(interfaz, driver, login);
+>>>>>>> 4d743c3 Mesa Regalos cambios cantidad
 
             Log.write("Despues de LiveHome");
             Utils.sleep(2000);
@@ -337,6 +350,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
             if (usuario.equals("Login-Fuera de lista")) {
                 home.incioSesion(login);
                 for (int i = 0; i < skus.size(); i++) {
+                    Log.write("SKU ++++++++++++++++ " + skus.get(i));
                     skuEncontrado = home.buscarSKU(skus.get(i));
                     if (skuEncontrado) {
                         pdp.cantidadSKU(skus.get(i));
@@ -364,29 +378,63 @@ public class MesaDeRegalosFueraLista extends Matriz {
             }else if (usuario.equals("Login-Dentro de lista")){
                 home.incioSesion(login);
                 Log.write("Usuario ------------------------" + usuario);
-                Log.write("N E ------------------------" + mesaRegalo);
+                Log.write("N E ------------------------" + mesaRegalo.getFestejado());
                 numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo,login);
                 Log.write("Antes de entrar a SKU  ------------------------" + numEvEncontrado);
                 Log.write("Antes de entrar a SKU  ------------------------" + skus.get(0));
     //            mesa.seleccionaSKU(skus,numEv);
                 for (int i = 0; i < skus.size(); i++) {
-                    Log.write("entra for SKU  ------------------------" + skus.get(i));
+                   Log.write("entra for SKU  ------------------------" + skus.get(i));
                    Utils.sleep(2000);
                    skuEncontrado = mesa.seleccionaSKU(skus.get(i));
                    Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
                    if (skuEncontrado) {
     //                   mesa.cantidad(skus.get(i));
                        mesa.agregaBolsa(mesaRegalo);
-    //                   mesa.addGiftToCart(numEv);
+                   }else{
+                       skuSinImagen.add(skus.get(i));
                    }
+                   
                 }
+                if(!skuSinImagen.isEmpty()){
+                   // Agregar a la bolsa, los articulos sin imagen
+                   Log.write("SKU size  ------------------------" + skuSinImagen.size());
+                        Utils.sleep(2000);
+                        skuEncontrado = mesa.seleccionaSkuSinImagen(mesaRegalo);
+                        Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
+                }
+                Log.write("Antes de entrar PASO 0 ------------------------" + skuSinImagen);
+                mesa.irPaso0();
+                paso0.obtenerListaSKU(skuSinImagen,mesaRegalo,skus);
+                
 
             }else if (usuario.equals("Guest-Dentro de lista")){
 
-    //            numEvEncontrado = mesa.compraGuestDentroDeLista(mesaRegalo);
-                numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo, login);
-    //            mesa.seleccionaSKU(skus,numEv);
-
+    //            numEvEncontrado = mesa.compraGuestDentroDeLista(]
+                numEvEncontrado = mesa.compraGuestDentroDeLista(mesaRegalo);
+                for (int i = 0; i < skus.size(); i++) {
+                   Log.write("entra for SKU  ------------------------" + skus.get(i));
+                   Utils.sleep(2000);
+                   skuEncontrado = mesa.seleccionaSKU(skus.get(i));
+                   Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
+                   if (skuEncontrado) {
+    //                   mesa.cantidad(skus.get(i));
+                       mesa.agregaBolsa(mesaRegalo);
+                   }else{
+                       skuSinImagen.add(skus.get(i));
+                   }
+                   
+                }
+                if(!skuSinImagen.isEmpty()){
+                   // Agregar a la bolsa, los articulos sin imagen
+                   Log.write("SKU size  ------------------------" + skuSinImagen.size());
+                        Utils.sleep(2000);
+                        skuEncontrado = mesa.seleccionaSkuSinImagen(mesaRegalo);
+                        Log.write("Antes de entrar a SKU  ------------------------" + skuEncontrado);
+                }
+                Log.write("Antes de entrar PASO 0 ------------------------" + skuSinImagen);
+                mesa.irPaso0();
+                paso0.obtenerListaSKU(skuSinImagen,mesaRegalo,skus);
             }
 
         }

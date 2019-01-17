@@ -67,9 +67,9 @@ public class MesaRegalos {
 //        }
     }
 
-    public void inicioSesion() {
+    public void inicioSesion(Login login) {
         boolean res = false;
-        Log.write("login" + login.getUser() + " ----  " + login.getPassword());
+//        Log.write("login" + login.getUser() + " ----  " + login.getPassword());
         int a;
         do {
             a = 1;
@@ -87,6 +87,7 @@ public class MesaRegalos {
 //                  }
             if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.USUARIOCAMPO))) != null) {
                 element.sendKeys(login.getUser());
+                
             }
             if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.CONTRASENA))) != null) {
                 element.sendKeys(login.getPassword());
@@ -94,7 +95,7 @@ public class MesaRegalos {
             if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BOTONLOGIN))) != null) {
                 element.click();
             }
-//            driver.switchTo().defaultContent();
+            driver.switchTo().defaultContent();
 //            //
 //            while (driver.findElements(By.xpath(HomeLiv.FRAMEXPATH)).size() > 0) {
 //                System.out.println("Hola");
@@ -102,7 +103,7 @@ public class MesaRegalos {
 //                if (a == 20) {
 //                    a = 0;
             driver.navigate().refresh();
-//                    driver.switchTo().defaultContent();
+                    driver.switchTo().defaultContent();
 //                }
 //                a++;
 //            }
@@ -134,7 +135,8 @@ public class MesaRegalos {
 //        Log.write("Entro a login ------------------------   " +nombre2);
         if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.VALIDASESION))) != null) {
             while (!element.getAttribute("style").contains("display: none;")) {
-                inicioSesion();
+                inicioSesion(login);
+                element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.VALIDASESION));
             }
 
             Utils.sleep(500);
@@ -148,7 +150,7 @@ public class MesaRegalos {
             //clien en evento 
             // Hacer click en "BUSCAR UNA MESA"
         }
-        Utils.sleep(2000);
+        Utils.sleep(2500);
         buscarMesa();
         Utils.sleep(2000);
         numEvento(numEv);
@@ -166,14 +168,17 @@ public class MesaRegalos {
         botonMesa();
         // Hacer click en "Buscar una mesa de regalos"
         buscarMesa();
+        numEvento(numEv);
+        botonEvento();
         return flag;
     }
 
     public void botonMesa() {
         if ((element = Find.element(driver, ambiente.getProperty(Header.A_MESA_DE_REGALOS))) != null) {
             Log.write("Entro a boton mesa de regalos ------------------------");
-
+//            Utils.sleep(500);
             element.click();
+            Utils.sleep(2500);
 //            element.sendKeys(Keys.RETURN); 
         }
     }
@@ -183,13 +188,26 @@ public class MesaRegalos {
 
         if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_BUSCAR_MESA))) != null) {
             res = true;
-
+            
             element.click();
 
         }
         return res;
     }
 
+    public boolean buscarMesaGuest() {
+        boolean res = false;
+
+        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_MESA_GUEST))) != null) {
+            res = true;
+            
+            element.click();
+
+        }
+        return res;
+    }
+
+    
     public boolean botonEvento() {
         boolean res = false;
 
@@ -245,66 +263,11 @@ public class MesaRegalos {
 
         Log.write("======== searchSKU ===== " + searchSku);
         if ((element = Find.element(driver, searchSku)) != null) {
-//                if(!addGiftToCart(element, festejados.get(articulo.getString("festejado")))){
-//                String festejado = numEv.getFestejado();
-//                if (!addGiftToCart(element, festejado)) {
-//                    cerrarPopupGift();
-//                }
             res = true;
             element.click();
 
         }
-
-//          else {
-//              
-//                // Poner el articulo en la lista de pendientes/no encontrados
-////                String numSku = skus.get(r);
-////                giftsNotFounds.add(numSku); // No se encontro el sku
-//                Log.write("========entro else ===== ");
-//            }
-        return true;
-
-//        Log.write("======== SKU  ===== : " + skus);
-//        Log.write("======== SKU  ===== : " + skus.size());
-//        String[] numSku = new String[8];
-//        Sku numS = new Sku();
-//
-//        ArrayList<String> giftsNotFounds = new ArrayList<>();
-////          ArrayList<String> numSKU= skus.split(",");
-//        Log.write("======== for:   ===== : " + numS.getId());
-//        for (int r = 0; r < skus.size(); r++) {
-//            Log.write("======== entro------ for  ===== " + numS.getId());
-//            numSku = skus.get(r).split(",");
-//            Log.write("======== entro for  ===== : " + numSku);
-////            JsonObject articulo = articulos.getJsonObject(i);
-//
-//            Log.write("======== SKU  con split===== : " + numSku);
-//            String searchSku = mesaRegalos.getProperty(MesaDeRegalosProper.SEARCH_SKU);
-//            searchSku = searchSku.replace("?", "");
-//
-//            // Buscar el articulo
-//            if ((element = Find.element(driver, searchSku)) != null) {
-////                if(!addGiftToCart(element, festejados.get(articulo.getString("festejado")))){
-//                String festejado = numEv.getFestejado();
-//                if (!addGiftToCart(element, festejado)) {
-//                    cerrarPopupGift();
-//                }
-//            } else {
-//                // Poner el articulo en la lista de pendientes/no encontrados
-////                String numSku = skus.get(r);
-////                giftsNotFounds.add(numSku); // No se encontro el sku
-//                Log.write("========entro else ===== ");
-//            }
-//        }
-//        if (!giftsNotFounds.isEmpty()) {
-//            // Agregar a la bolsa, los articulos sin imagen
-////            List<WebElement> sinImagen = Find.elements(driver, mesaRegalos.getProperty(MesaDeRegalosProper.GIFT_NOT_FOUND));
-////            for(WebElement gift : sinImagen){
-////                if(!addGiftToCart(gift, numEv)){
-////                    cerrarPopupGift();
-////                }
-////            }
-//        }
+        return res;
     }
 
     public boolean cantidad(Sku sku) {
@@ -325,14 +288,44 @@ public class MesaRegalos {
     public boolean agregaBolsa(MesaRegaloFL numEv) {
         boolean res = false;
         entrarPopUp();
+        selecionarFestejado(numEv);
+        
+        // Hacer click en el boton de agregar a la bolsa
+        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.ADD_GIFT_BAG))) != null) {
+            element.click();
+        }
+        // Aqui hay que validar que el boton "Continuar comprando" haya aparacido
+        // O que la leyenda "Agregaste X Productos a tu bolsa" haya aparecido
+        Uninterruptibles.sleepUninterruptibly(5, TimeUnit.SECONDS);
+        // Hacer click en el boton continuar comprando
+        botonContinuarComprando();
+                
+        return res;
+    }
+    
+    public boolean selecionarFestejado(MesaRegaloFL numEv) {
+        boolean res = false;
         String festejado = mesaRegalos.getProperty(MesaDeRegalosProper.LBL_FESTEJADO);
         festejado = festejado.replace("?", numEv.getFestejado());
         if ((element = Find.element(driver, festejado)) != null){
              element.click();
+             res = true;
         }
         return res;
     }
+    
+    public boolean botonContinuarComprando() {
+        boolean res = false;
+        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_CONTINUAR_COMPRANDO))) != null) {
+            element.click();
+            Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
+        }
 
+        return res;
+    }
+    
+    
+   
     public boolean entrarPopUp() {
         boolean res = false;
 
@@ -342,13 +335,50 @@ public class MesaRegalos {
 
             if (element.isDisplayed()) {
                  Log.write("======== entro if displayed ===== ");
-               res = true; // No esta visible el div del gift
+               res = true; // esta visible el div del gift
             }
         }
 
         return res;
     }
 
+        public boolean seleccionaSkuSinImagen(MesaRegaloFL numEv) {
+        boolean res = false;
+
+//        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.GIFT_NOT_FOUND_PNG))) != null || 
+//        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.GIFT_NOT_FOUND))) != null){
+//            res = true;
+//            element.click();
+//
+//        }
+         int i =0;
+         List<WebElement> sinImagen = Find.elements(driver, mesaRegalos.getProperty(MesaDeRegalosProper.GIFT_NOT_FOUND));
+            for(WebElement gift : sinImagen){
+                if (gift.isDisplayed()) {
+                    Log.write("======== entro if displayed ===== ");
+                    gift.click();
+                    agregaBolsa(numEv);
+                    res = true; // esta visible el div del gift
+                    i++;
+                }
+            }
+            Log.write("======== contador  ===== " + i);
+        return res;
+    }
+   
+        
+        
+    public void irPaso0(){
+        WebElement element;
+        Utils.sleep(2000); 
+        if((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.LINK_CART))) != null)
+            Utils.sleep(1000); 
+            element.click();
+            Utils.sleep(2500); 
+    } 
+            
+            
+            
     public boolean addGiftToCart(MesaRegaloFL numEv) {
 
         boolean agregado = false;

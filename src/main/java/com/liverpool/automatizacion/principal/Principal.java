@@ -189,7 +189,7 @@ public class Principal {
                 case "Mesa de Regalos":
             //        MesaDeRegalosFueraLista mdr = new MesaDeRegalosFueraLista(entorno,cart,shipping,driver, true);
             //        mdr.execute();
-                     MesaDeRegalosFueraLista mdrfl = new MesaDeRegalosFueraLista(interfaz, browser,false);
+                     MesaDeRegalosFueraLista mdrfl = new MesaDeRegalosFueraLista(interfaz, browser,true);
                      mdrfl.execute();
                     break;
                 case "TLOG":

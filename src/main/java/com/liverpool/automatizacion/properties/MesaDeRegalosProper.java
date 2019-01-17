@@ -21,6 +21,7 @@ public class MesaDeRegalosProper {
 
     public static final String SEARCH_SKU = "search_sku";
     public static final String GIFT_NOT_FOUND = "gift_not_found";
+    public static final String GIFT_NOT_FOUND_PNG = "gift_not_found_png";
     public static final String DIV_POPUP_GIFT = "div_popup_gift";
     public static final String QUANTITY_GIFT = "quantity_gift";
     public static final String MINUS_GIFT = "minus_gift";
@@ -39,6 +40,9 @@ public class MesaDeRegalosProper {
     public static final String CANTIDAD = "cantidad";
     public static final String NOMBRESESION = "nombreSesion";
     public static final String VALIDASESION = "validaSesion";
+    public static final String MENSAJE_NO_AGREGA_BOLSA = "mensajeNoAgregaBolsa";
+    public static final String BTN_MESA_GUEST = "btn_mesa_guest";
+    
     
        
 }
