@@ -59,6 +59,21 @@ public class Checkout_P1 {
                 seleccionMRdireccion(direccion, "index", "1");
                 break;
         }
+        siguientePasoButtonLogin();
+    }
+    
+    public void envioLogin(String envio, Tienda tienda, String direccion, String eventoNombre){
+        switch (envio){
+            case "Tienda": 
+                tipoEntregaCC("Login", tienda);
+                seleccionMRCyC("texto", eventoNombre);
+                break;
+            case "Domicilio":
+                tipoEntregaDomLogin(direccion);
+                seleccionMRdireccion(direccion, "texto", eventoNombre);
+                break;
+        }
+        siguientePasoButtonLogin();
     }
     
     public void envioGuest(String envio, Tienda tienda, Guest guest, Direccion direccionGuest){
@@ -71,6 +86,7 @@ public class Checkout_P1 {
                 tipoEntregaDomGuest(direccionGuest);
                 break;
         }
+        siguientePasoButtonGuest();
     }
     
     public void datosGuest(Guest guest){
@@ -83,7 +99,7 @@ public class Checkout_P1 {
     }
     
     public void tipoEntregaDomGuest(Direccion direccionGuest){
-        envioDomicilio();
+//        envioDomicilio();
         llenadoCP(direccionGuest.getCp());
         esperaEstado();
         llenadoCiudad(direccionGuest.getCiudad());
@@ -102,10 +118,6 @@ public class Checkout_P1 {
         buttonClickCollect();
         estadoCC(tienda);
         seleccionTiendaCC(tienda);
-        if(usuario.contains("Login"))
-            siguientePasoButtonLogin();
-        else
-            siguientePasoButtonGuest();
     }
     
     public void tipoEntregaDomLogin(String direccion){
@@ -113,7 +125,7 @@ public class Checkout_P1 {
             JOptionPane.showMessageDialog(null, "Direccion no encontrada: "+direccion,
                         "Error en Direccion", JOptionPane.ERROR_MESSAGE);
         }
-        siguientePasoButtonLogin();
+        
     }
     
     public boolean seleccionDomicilio(String direccion){
@@ -209,6 +221,15 @@ public class Checkout_P1 {
         WebElement element;
         Utils.sleep(500);
         if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGUIENTEPASOLOGIN))) != null){
+            element.click();
+            return true;
+        }
+        return false;
+    }
+     public boolean siguientePasoButtonLoginPrueba(){
+        WebElement element;
+        Utils.sleep(500);
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGPASOLOGIN))) != null){
             element.click();
             return true;
         }

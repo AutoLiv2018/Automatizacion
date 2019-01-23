@@ -39,6 +39,7 @@ public class Checkout_Paso1 {
     public static final String ENTRECALLE = "entreCalle";
     public static final String YCALLE = "yCalle";
     public static final String CELULAR = "celular";
+    public static final String SIGPASOLOGIN = "sigPasoLogin";
     
 
 }

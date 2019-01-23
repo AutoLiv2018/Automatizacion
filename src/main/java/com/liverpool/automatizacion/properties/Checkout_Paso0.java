@@ -31,10 +31,8 @@ public class Checkout_Paso0 {
     public static final String BOTONPAGARMRFL = "botonPagarMRFL";
     public static final String BUTTONSINREGISTRO = "buttonSinRegistro";
     public static final String DIVBOTONPAGAR = "divBotonPagar";
-<<<<<<< Upstream, based on master
     public static final String PROMOCIONESCAMPO = "promocionesCampo";
     public static final String APLICARPROMOCION = "aplicarPromocion";
-=======
     public static final String PRODUCT_LIST = "product_list";
     public static final String DIV_LIST_BAG = "div_list_bag";
     
@@ -48,6 +46,5 @@ public class Checkout_Paso0 {
     public static final String CANTIDAD = "cantidad";
     public static final String SPAN_CANTIDAD = "span_cantidad";
    
->>>>>>> 4d743c3 Mesa Regalos cambios cantidad
     
 }

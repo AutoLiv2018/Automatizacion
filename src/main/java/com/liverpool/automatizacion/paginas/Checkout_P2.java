@@ -6,6 +6,7 @@ package com.liverpool.automatizacion.paginas;
 import com.liverpool.automatizacion.modelo.Archivo;
 import com.liverpool.automatizacion.modelo.Direccion;
 import com.liverpool.automatizacion.modelo.Find;
+import com.liverpool.automatizacion.modelo.Guest;
 import com.liverpool.automatizacion.modelo.Tarjeta;
 import com.liverpool.automatizacion.principal.Principal;
 import com.liverpool.automatizacion.properties.Checkout_Paso2;
@@ -60,6 +61,50 @@ public class Checkout_P2 {
                 break;
             case "Paypal":
                 paypalSeleccionar();
+                break;
+            case "Openpay":
+                efectivoSeleccionar();
+                efectivoVista();
+                break;
+            case "SPEI":
+                efectivoSeleccionar();
+                efectivoVista();
+                speiSeleccionar();
+                speiRadioButton();
+                break;
+            case "CIE":
+                efectivoSeleccionar();
+                efectivoVista();
+                cieSeleccionar();
+                cieRadioButton();
+                break;
+        }
+        siguientePaso();
+    }
+    public void seleccionPago(String metodoPago, String usuario, Tarjeta tarjeta, Direccion direccionTar,Guest guest) {
+        Utils.sleep(1000);
+        switch(metodoPago){
+            case "Credito":
+            case "3ds":
+                creditoSeleccionar();
+                switch(usuario){
+                    case "Login":
+                        creditoLogin(tarjeta);
+                        break;
+                    case "Guest":
+                        creditoGuestTarjeta(tarjeta);
+                        llenadoCorreo(guest.getCorreo());
+                        creditoGuestDireccion(direccionTar);
+                        break;
+                }
+                break;
+            case "Paypal":
+                paypalSeleccionar();
+                llenadoNombre(guest.getNombre());
+                llenadoApaterno(guest.getApaterno());
+                llenadoAmaterno(guest.getAmaterno());
+                llenadoCorreo(guest.getCorreo());
+                
                 break;
             case "Openpay":
                 efectivoSeleccionar();
@@ -384,5 +429,39 @@ public class Checkout_P2 {
         WebElement element;
         if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.SIGUIENTEPASO))) != null)
             element.click();
+    }
+    
+    public boolean llenadoCorreo(String correo){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CORREOGUESTPAYPAL))) != null){
+            element.sendKeys(correo);
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean llenadoNombre(String correo){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.NOMBREPAYPAL))) != null){
+            element.sendKeys(correo);
+            return true;
+        }
+        return false;
+    }
+    public boolean llenadoApaterno(String correo){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.APETERNOPAYPAL))) != null){
+            element.sendKeys(correo);
+            return true;
+        }
+        return false;
+    }
+    public boolean llenadoAmaterno(String correo){
+        WebElement element;
+        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.AMATERNOPAYPAL))) != null){
+            element.sendKeys(correo);
+            return true;
+        }
+        return false;
     }
 }
