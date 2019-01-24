@@ -9,7 +9,7 @@ import com.liverpool.automatizacion.modelo.Archivo;
 import com.liverpool.automatizacion.modelo.Find;
 import com.liverpool.automatizacion.modelo.Ticket;
 import com.liverpool.automatizacion.principal.Principal;
-import com.liverpool.automatizacion.properties.Checkout_Paso4;
+import com.liverpool.automatizacion.properties.CheckoutPaso4;
 import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
@@ -23,7 +23,7 @@ import org.openqa.selenium.WebElement;
 /**
  * @author aperezg03
  */
-public class Checkout_P4 {
+public class CheckoutP4 {
     
     private final WebDriver driver;
     private Interfaz interfaz;
@@ -31,14 +31,14 @@ public class Checkout_P4 {
     public final Properties Cpaso4;
     Ticket ticket;
     
-    public Checkout_P4(Interfaz interfaz, WebDriver driver){
+    public CheckoutP4(Interfaz interfaz, WebDriver driver){
         this.driver = driver;
         ticket = new Ticket();
 
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso4 = new Properties(); // propiedades de la pagina shipping.jsp
                 
-        paso4 = new File(folder, Checkout_Paso4.PROPERTIES_FILE);
+        paso4 = new File(folder, CheckoutPaso4.PROPERTIES_FILE);
         if(!Principal.loadProperties(paso4.getAbsolutePath(), Cpaso4)){
             System.out.println("No se encontro el archivo: " + paso4);
         }
@@ -47,7 +47,7 @@ public class Checkout_P4 {
     public boolean esperaTicket(){
         int a=0;
         Utils.sleep(500);
-        while(!driver.getCurrentUrl().contains(Cpaso4.getProperty(Checkout_Paso4.URLTICKET))){
+        while(!driver.getCurrentUrl().contains(Cpaso4.getProperty(CheckoutPaso4.URLTICKET))){
             Utils.sleep(500);
             a++;
             if(a==10)
@@ -62,17 +62,15 @@ public class Checkout_P4 {
         List <Ticket> ticketValores = new ArrayList<>();
         List <WebElement> grupoP = new ArrayList<>();
         
-        gruposSkusCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.GRUPOSSKUSCOBRADOS));
-        gruposSkusNoCobrados = Find.elements(driver, Cpaso4.getProperty(Checkout_Paso4.GRUPOSSKUSNOCOBRADOS));
+        gruposSkusCobrados = Find.elements(driver, Cpaso4.getProperty(CheckoutPaso4.GRUPOSSKUSCOBRADOS));
+        gruposSkusNoCobrados = Find.elements(driver, Cpaso4.getProperty(CheckoutPaso4.GRUPOSSKUSNOCOBRADOS));
         
-        grupoProductos = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(Checkout_Paso4.GRUPOPRODUCTOS));
-        grupoProductosMesa = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(Checkout_Paso4.GRUPOPRODUCTOSMESA));
+        grupoProductos = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(CheckoutPaso4.GRUPOPRODUCTOS));
+        grupoProductosMesa = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(CheckoutPaso4.GRUPOPRODUCTOSMESA));
         grupoP.addAll(grupoProductos);
         grupoP.addAll(grupoProductosMesa);
-//        for(int i=0;i<grupoProductos.size();i++){
-//            skuRenglon = Find.elements(grupoProductos.get(i), Cpaso4.getProperty(Checkout_Paso4.SKURENGLON));
-//            for(int j=0;j<skuRenglon.size();j++){
         
+        //Datos generales
         cliente();
         correoCliente();
         fecha();
@@ -90,7 +88,7 @@ public class Checkout_P4 {
         referenciaCIE();
         referenciaOpenPay();
         
-//        grupoProductos = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(Checkout_Paso4.GRUPOPRODUCTOS));
+//        grupoProductos = Find.elements(gruposSkusCobrados.get(0), Cpaso4.getProperty(CheckoutPaso4.GRUPOPRODUCTOS));
         for(int i=0;i<grupoP.size();i++){
             facturacion(grupoP.get(i));
             boleta(grupoP.get(i));
@@ -106,13 +104,12 @@ public class Checkout_P4 {
             mesa(grupoP.get(i));
             festejado(grupoP.get(i));
             
-            skuRenglon = Find.elements(grupoP.get(i), Cpaso4.getProperty(Checkout_Paso4.SKURENGLON));
+            skuRenglon = Find.elements(grupoP.get(i), Cpaso4.getProperty(CheckoutPaso4.SKURENGLON));
             for(int j=0;j<skuRenglon.size();j++){
                 sku(skuRenglon.get(j));
                 cantidadSKU(skuRenglon.get(j));
                 precioSKU(skuRenglon.get(j));
                 ticketValores.add(obtenerDatos());
-//                ticket = new Ticket();
                 ticket = new Ticket("",ticket.getCliente(),ticket.getCorreoCliente(),ticket.getFecha(),"","",ticket.getMesa(),
                     ticket.getFestejado(),ticket.getFacturacion(),ticket.getBoleta(),ticket.getTerminal(),ticket.getTienda(),
                     ticket.getPedido(),ticket.getAutoBancaria(),ticket.getFolioPago(),ticket.getFolioPaypal(),ticket.getPrecioTotal(),
@@ -136,7 +133,7 @@ public class Checkout_P4 {
     
    public boolean cliente(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.CLIENTE))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.CLIENTE))) != null){
             ticket.setCliente(element.getText());
             return true;
         }
@@ -145,7 +142,7 @@ public class Checkout_P4 {
    
     public boolean correoCliente(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.CORREOCLIENTE))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.CORREOCLIENTE))) != null){
             ticket.setCorreoCliente(element.getText());
             return true;
         }
@@ -154,7 +151,7 @@ public class Checkout_P4 {
     
     public boolean fecha(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FECHA))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.FECHA))) != null){
             ticket.setFecha(element.getText());
             return true;
         }
@@ -163,7 +160,7 @@ public class Checkout_P4 {
     
     public boolean sku(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.SKU))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.SKU))) != null){
             ticket.setSku(element.getText());
             return true;
         }
@@ -172,7 +169,7 @@ public class Checkout_P4 {
     
     public boolean cantidadSKU(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.CANTIDADSKU))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.CANTIDADSKU))) != null){
             ticket.setCantidadSKU(element.getText());
             return true;
         }
@@ -181,7 +178,7 @@ public class Checkout_P4 {
     
     public boolean facturacion(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FACTURACION))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.FACTURACION))) != null){
             ticket.setFacturacion(element.getText());
             return true;
         }
@@ -190,7 +187,7 @@ public class Checkout_P4 {
     
     public boolean boleta(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.BOLETA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.BOLETA))) != null){
             ticket.setBoleta(element.getText());
             return true;
         }
@@ -199,7 +196,7 @@ public class Checkout_P4 {
     
     public boolean terminal(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.TERMINAL))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.TERMINAL))) != null){
             ticket.setTerminal(element.getText());
             return true;
         }
@@ -208,7 +205,7 @@ public class Checkout_P4 {
     
     public boolean tienda(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.TIENDA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.TIENDA))) != null){
             ticket.setTienda(element.getText());
             return true;
         }
@@ -217,7 +214,7 @@ public class Checkout_P4 {
     
     public boolean pedido(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.PEDIDO))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.PEDIDO))) != null){
             ticket.setPedido(element.getText());
             return true;
         }
@@ -226,7 +223,7 @@ public class Checkout_P4 {
     
     public boolean autoBancaria(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.AUTOBANCARIA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.AUTOBANCARIA))) != null){
             ticket.setAutoBancaria(element.getText());
             return true;
         }
@@ -235,7 +232,7 @@ public class Checkout_P4 {
     
     public boolean precioSKU(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.PRECIOSKU))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.PRECIOSKU))) != null){
             ticket.setPrecioSKU(element.getText());
             return true;
         }
@@ -244,7 +241,7 @@ public class Checkout_P4 {
     
     public boolean calle(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.CALLE))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.CALLE))) != null){
             ticket.setCalle(element.getText());
             return true;
         }
@@ -253,7 +250,7 @@ public class Checkout_P4 {
     
     public boolean nExterior(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.NEXTERIOR))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.NEXTERIOR))) != null){
             ticket.setNExterior(element.getText());
             return true;
         }
@@ -262,7 +259,7 @@ public class Checkout_P4 {
     
     public boolean nInterior(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.NINTERIOR))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.NINTERIOR))) != null){
             ticket.setNInterior(element.getText());
             return true;
         }
@@ -271,7 +268,7 @@ public class Checkout_P4 {
     
     public boolean colonia(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.COLONIA))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.COLONIA))) != null){
             ticket.setColonia(element.getText());
             return true;
         }
@@ -280,7 +277,7 @@ public class Checkout_P4 {
     
     public boolean cp(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.CP))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.CP))) != null){
             ticket.setCp(element.getText());
             return true;
         }
@@ -289,7 +286,7 @@ public class Checkout_P4 {
     
     public boolean delegacion(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.DELEGACION))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.DELEGACION))) != null){
             ticket.setDelegacion(element.getText());
             return true;
         }
@@ -298,7 +295,7 @@ public class Checkout_P4 {
     
     public boolean ciudad(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.CIUDAD))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.CIUDAD))) != null){
             ticket.setCiudad(element.getText());
             return true;
         }
@@ -307,7 +304,7 @@ public class Checkout_P4 {
     
     public boolean folioPago(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FOLIOPAGO))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.FOLIOPAGO))) != null){
             ticket.setFolioPago(element.getText());
             return true;
         }
@@ -316,7 +313,7 @@ public class Checkout_P4 {
     
     public boolean folioPaypal(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FOLIOPAYPAL))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.FOLIOPAYPAL))) != null){
             ticket.setFolioPaypal(element.getText());
             return true;
         }
@@ -325,7 +322,7 @@ public class Checkout_P4 {
     
     public boolean tarjeta(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.TARJETA))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.TARJETA))) != null){
             ticket.setTarjeta(element.getText());
             return true;
         }
@@ -334,7 +331,7 @@ public class Checkout_P4 {
     
     public boolean nTarjeta(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.NTARJETA))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.NTARJETA))) != null){
             ticket.setNTarjeta(element.getText());
             return true;
         }
@@ -343,7 +340,7 @@ public class Checkout_P4 {
     
     public boolean fechaTarjeta(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.FECHATARJETA))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.FECHATARJETA))) != null){
             ticket.setFechaTarjeta(element.getText());
             return true;
         }
@@ -352,7 +349,7 @@ public class Checkout_P4 {
     
     public boolean precioTotal(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.PRECIOTOTAL))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.PRECIOTOTAL))) != null){
             ticket.setPrecioTotal(element.getText());
             return true;
         }
@@ -361,7 +358,7 @@ public class Checkout_P4 {
     
     public boolean referenciaCIE(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.REFENCIACIE))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.REFENCIACIE))) != null){
             ticket.setReferenciaCIE(element.getText());
             return true;
         }
@@ -370,7 +367,7 @@ public class Checkout_P4 {
     
     public boolean referenciaOpenPay(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.REFERENCIAOPENPAY))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.REFERENCIAOPENPAY))) != null){
             ticket.setReferenciaOpenPay(element.getText());
             return true;
         }
@@ -379,7 +376,7 @@ public class Checkout_P4 {
     
     public boolean mesa(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.MESA))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.MESA))) != null){
             ticket.setMesa(element.getText());
             return true;
         }
@@ -388,7 +385,7 @@ public class Checkout_P4 {
     
     public boolean festejado(WebElement padre){
         WebElement element;
-        if((element = Find.element(padre, Cpaso4.getProperty(Checkout_Paso4.FESTEJADO))) != null){
+        if((element = Find.element(padre, Cpaso4.getProperty(CheckoutPaso4.FESTEJADO))) != null){
             ticket.setFestejado(element.getText());
             return true;
         }
@@ -397,7 +394,7 @@ public class Checkout_P4 {
     
     public boolean clickLogoLiverpool(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso4.getProperty(Checkout_Paso4.LOGOLIVERPOOL))) != null){
+        if((element = Find.element(driver, Cpaso4.getProperty(CheckoutPaso4.LOGOLIVERPOOL))) != null){
             element.click();
             return true;
         }

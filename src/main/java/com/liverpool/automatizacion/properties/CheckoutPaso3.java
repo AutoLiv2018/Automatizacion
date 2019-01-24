@@ -9,7 +9,7 @@ package com.liverpool.automatizacion.properties;
  *
  * @author aperezg03
  */
-public class Checkout_Paso3 {
+public class CheckoutPaso3 {
     public static final String PROPERTIES_FILE = "Paso3_Checkout.properties";
     
     public static final String URLSHOPPINGCAR = "URLShoppingCar";

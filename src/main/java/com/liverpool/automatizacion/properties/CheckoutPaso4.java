@@ -9,7 +9,7 @@ package com.liverpool.automatizacion.properties;
  *
  * @author aperezg03
  */
-public class Checkout_Paso4 {
+public class CheckoutPaso4 {
     public static final String PROPERTIES_FILE = "Paso4_Checkout.properties";
     
     public static final String GRUPOSSKUSCOBRADOS = "gruposSkusCobrados";

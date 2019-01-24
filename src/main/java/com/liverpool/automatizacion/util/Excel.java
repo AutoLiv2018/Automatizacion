@@ -38,7 +38,7 @@ public class Excel {
         this.nombreArchivo = nombreArchivo;
         this.DBExcelCaso = new File (rutaAcceso+nombreArchivo);
         if (!DBExcelCaso.exists()) 
-            JOptionPane.showMessageDialog(null, "No se encuentra archivo en D:\\");
+            JOptionPane.showMessageDialog(null, "No se encuentra archivo de excel en D:\\");
     }
     
     public ArrayList<ArrayList<String>> getExcel(String hoja){

@@ -14,12 +14,12 @@ import com.liverpool.automatizacion.modelo.Guest;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.paginas.LivHome;
 import com.liverpool.automatizacion.paginas.LivPDP;
-import com.liverpool.automatizacion.paginas.Checkout_P0;
-import com.liverpool.automatizacion.paginas.Checkout_P1;
-import com.liverpool.automatizacion.paginas.Checkout_P2;
-import com.liverpool.automatizacion.paginas.Checkout_P3;
+import com.liverpool.automatizacion.paginas.CheckoutP0;
+import com.liverpool.automatizacion.paginas.CheckoutP1;
+import com.liverpool.automatizacion.paginas.CheckoutP2;
+import com.liverpool.automatizacion.paginas.CheckoutP3;
 import com.liverpool.automatizacion.paginas.PaypalSite;
-import com.liverpool.automatizacion.paginas.Checkout_P4;
+import com.liverpool.automatizacion.paginas.CheckoutP4;
 import com.liverpool.automatizacion.paginas.ThreeDSecure;
 import com.liverpool.automatizacion.principal.Navegador;
 import com.liverpool.automatizacion.util.Excel;
@@ -105,17 +105,17 @@ public class Tlog {
             datosEscenarioExcel(e);
             driver = browser.iniciarNavegador();
             
-//            Video video = new Video();
-//            video.iniciarVideo();
+            Video video = new Video();
+            video.iniciarVideo();
             
             LivHome home = new LivHome(interfaz, driver);
             LivPDP pdp = new LivPDP(interfaz, driver);
-            Checkout_P0 paso0 = new Checkout_P0(interfaz,driver);
-            Checkout_P1 paso1 = new Checkout_P1(interfaz,driver);
-            Checkout_P2 paso2 = new Checkout_P2(interfaz,driver);
-            Checkout_P3 paso3 = new Checkout_P3(interfaz,driver);
+            CheckoutP0 paso0 = new CheckoutP0(interfaz,driver);
+            CheckoutP1 paso1 = new CheckoutP1(interfaz,driver);
+            CheckoutP2 paso2 = new CheckoutP2(interfaz,driver);
+            CheckoutP3 paso3 = new CheckoutP3(interfaz,driver);
             PaypalSite paypal = new PaypalSite(interfaz, driver);
-            Checkout_P4 paso4 = new Checkout_P4(interfaz,driver);
+            CheckoutP4 paso4 = new CheckoutP4(interfaz,driver);
             ThreeDSecure tds = new ThreeDSecure(interfaz,driver);
             
             if(usuario.equals("Login"))
@@ -155,7 +155,7 @@ public class Tlog {
             GuardarImagen save = new GuardarImagen();
             save.guardarPantalla(escenario.get(0), folder, driver);
             
-//            video.detenerVideo();
+            video.detenerVideo();
         }
         JOptionPane.showMessageDialog(null, "Compras terminadas");
     }

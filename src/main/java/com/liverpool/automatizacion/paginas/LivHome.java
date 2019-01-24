@@ -70,7 +70,6 @@ public class LivHome {
             driver.switchTo().defaultContent();
             //
             while (driver.findElements(By.xpath(HomeLiv.FRAMEXPATH)).size() > 0) {
-                System.out.println("Hola");
                 Utils.sleep(500);
                 if (a == 20) {
                     a = 0;
