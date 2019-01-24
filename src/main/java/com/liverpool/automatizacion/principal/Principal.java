@@ -10,9 +10,6 @@ package com.liverpool.automatizacion.principal;
 import com.liverpool.automatizacion.matrices.MesaDeRegalosFueraLista;
 import com.liverpool.automatizacion.matrices.Tlog;
 import com.liverpool.automatizacion.modelo.Archivo;
-import com.liverpool.automatizacion.modelo.Login;
-import com.liverpool.automatizacion.modelo.Sku;
-import com.liverpool.automatizacion.negocio.MyAcount;
 import com.liverpool.automatizacion.properties.Cart;
 import com.liverpool.automatizacion.properties.Shipping;
 import com.liverpool.automatizacion.util.DB;
@@ -35,12 +32,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.os.WindowsUtils;
 
 /**

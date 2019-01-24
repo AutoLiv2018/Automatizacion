@@ -15,11 +15,11 @@ import com.liverpool.automatizacion.modelo.Tarjeta;
 import com.liverpool.automatizacion.modelo.Ticket;
 import com.liverpool.automatizacion.modelo.Promocion;
 import com.liverpool.automatizacion.modelo.Tienda;
-import com.liverpool.automatizacion.paginas.Checkout_P0;
-import com.liverpool.automatizacion.paginas.Checkout_P1;
-import com.liverpool.automatizacion.paginas.Checkout_P2;
-import com.liverpool.automatizacion.paginas.Checkout_P3;
-import com.liverpool.automatizacion.paginas.Checkout_P4;
+import com.liverpool.automatizacion.paginas.CheckoutP0;
+import com.liverpool.automatizacion.paginas.CheckoutP1;
+import com.liverpool.automatizacion.paginas.CheckoutP2;
+import com.liverpool.automatizacion.paginas.CheckoutP3;
+import com.liverpool.automatizacion.paginas.CheckoutP4;
 import com.liverpool.automatizacion.paginas.LivHome;
 import com.liverpool.automatizacion.paginas.LivPDP;
 import com.liverpool.automatizacion.paginas.MesaRegalos;
@@ -323,7 +323,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
             Log.write("Despues de LiveHome");
             Utils.sleep(2000);
             LivPDP pdp = new LivPDP(interfaz, driver);
-            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
+            CheckoutP0 paso0 = new CheckoutP0(interfaz, driver);
             MesaRegalos mesa = new MesaRegalos(interfaz, driver);
 
 
@@ -408,7 +408,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
             Log.write("Despues de LiveHome");
             LivPDP pdp = new LivPDP(interfaz, driver);
-            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
+            CheckoutP0 paso0 = new CheckoutP0(interfaz, driver);
             home.incioSesion(login);
             for (int i = 0; i < skus.size(); i++) {
                 skuEncontrado = home.buscarSKU(skus.get(i));
@@ -449,7 +449,7 @@ public class MesaDeRegalosFueraLista extends Matriz {
 
             Log.write("Despues de LiveHome");
             LivPDP pdp = new LivPDP(interfaz, driver);
-            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
+            CheckoutP0 paso0 = new CheckoutP0(interfaz, driver);
 
             for (int i = 0; i < skus.size(); i++) {
                 skuEncontrado = home.buscarSKU(skus.get(i));
