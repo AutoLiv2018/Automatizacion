@@ -1,431 +1,578 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package com.liverpool.automatizacion.matrices;
-//
-//import com.google.common.util.concurrent.Uninterruptibles;
-//import com.liverpool.automatizacion.modelo.Archivo;
-//import com.liverpool.automatizacion.modelo.Find;
-//import com.liverpool.automatizacion.modelo.Login;
-////import com.liverpool.automatizacion.paginas.Header;
-//import com.liverpool.automatizacion.principal.Entorno;
-////import com.liverpool.automatizacion.properties.BusquedaEvento;
-////import com.liverpool.automatizacion.properties.CartMesaDeRegalos;
-////import com.liverpool.automatizacion.properties.ListaRegalos;
-////import com.liverpool.automatizacion.properties.MesaRegalos;
-////import com.liverpool.automatizacion.properties.MiListaRegalos;
-//import com.liverpool.automatizacion.util.Utils;
-//import java.io.File;
-//import java.util.ArrayList;
-//import java.util.HashMap;
-//import java.util.Properties;
-//import java.util.List;
-//import java.util.concurrent.TimeUnit;
-//import javax.json.JsonArray;
-//import javax.json.JsonObject;
-//import org.openqa.selenium.Keys;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
-//
-///**
-// *
-// * @author IASANCHEZA
-// */
-//public class MesaDeRegalos extends Matriz {
-//    private Properties cart;
-//    private Properties shipping;
-//    private Properties listaRegalos;
-//    private Properties mesaRegalos;
-//    private Properties busquedaEvento;
-//    private Properties miListaRegalos;
-//    private Properties cartMesaDeRegalos;
-//    private Header header;
-//    
-//    public MesaDeRegalos(Properties entorno, Properties cart, Properties shipping, WebDriver driver, boolean tlog, ArrayList<JsonObject> casos, Archivo folder){
-//        this.entorno = entorno;
-//        this.cart = cart;
-//        this.driver = driver;
-//        this.shipping = shipping;
-//        this.tlog = tlog;
-//        this.casos = casos;
-//        this.folder = folder;
-//        // Cargar los properties necesarios
-//        this.listaRegalos = Utils.loadProperties(new File(folder, ListaRegalos.PROPERTIES_FILE).getAbsolutePath());
-//        this.mesaRegalos = Utils.loadProperties(new File(folder, MesaRegalos.PROPERTIES_FILE).getAbsolutePath());
-//        this.busquedaEvento = Utils.loadProperties(new File(folder, BusquedaEvento.PROPERTIES_FILE).getAbsolutePath());
-//        this.miListaRegalos = Utils.loadProperties(new File(folder, MiListaRegalos.PROPERTIES_FILE).getAbsolutePath());
-//        this.cartMesaDeRegalos = Utils.loadProperties(new File(folder, CartMesaDeRegalos.PROPERTIES_FILE).getAbsolutePath());
-//        this.header = new Header(driver, folder);
-//    }
-//    
-//    private void cerrarPopupGift(){
-//        WebElement element;
-//        if ((element = Find.element(driver, miListaRegalos.getProperty(MiListaRegalos.BTN_CLOSE_POPUP_GIFT))) != null){
-//            // Hacer click en el boton cerrar del popup
-//            Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//            element.click();
-//        }
-//    }
-//    
-//    private boolean addGiftToCart(WebElement articulo, String festejado){
-//        WebElement element;
-//        boolean agregado = false;
-//        // poner timeout aqui
-//        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//        articulo.click();
-//        
-//        // Encontrar el div del popup de gift
-//        if((element = Find.element(driver, miListaRegalos.getProperty(MiListaRegalos.DIV_POPUP_GIFT))) == null) {
-//            return agregado; // No se puede acceder al popup de gift
-//        }
-//                
-//        // Validar que este visible el div
-//        if(!element.isDisplayed()) {
-//            return agregado; // No esta visible el div del gift
-//        }
-//                
-//        // Seleccionar la persona a la quien va diriga el regalo
-//        List<WebElement> divFestejados = Find.elements(driver, miListaRegalos.getProperty(MiListaRegalos.GIFT_SEND_FESTEJADOS));
-//        for(int i=1; i <= divFestejados.size(); i++) {
-//                    
-//            // Obtener el label
-//            if((element = Find.element(driver, miListaRegalos.getProperty(MiListaRegalos.LBL_FESTEJADO).replace("?", String.valueOf(i)))) != null) {
-//                       
-//       		// Comparar con el festejado al que se le va a asignar el regalo
-//        	if(!festejado.equals(element.getText())){
-//                    continue; // no es el festajado al cual se le va a asignar el regalo
-//        	}
-//        	element.click();
-//                Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//                        
-//        	// Hacer click en el boton de agregar a la bolsa
-//        	if((element = Find.element(driver, miListaRegalos.getProperty(MiListaRegalos.ADD_GIFT_BAG))) != null) {
-//                    element.click();
-//                    
-//        	}
-//                // Aqui hay que validar que el boton "Continuar comprando" haya aparacido
-//                // O que la leyenda "Agregaste X Productos a tu bolsa" haya aparecido
-//                Uninterruptibles.sleepUninterruptibly(5, TimeUnit.SECONDS);
-//        	//this.waitForElement(miListaRegalos.getProperty(MiListaRegalos.BTN_CONTINUAR_COMPRANDO), 4);
-//                
-//                // Hacer click en el boton continuar comprando
-//        	if((element = Find.element(driver, miListaRegalos.getProperty(MiListaRegalos.BTN_CONTINUAR_COMPRANDO))) != null) {
-//                    element.click();
-//                    Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//        	}
-//                
-//                // Ya encontramos al festejado, hay que salir de la interacion
-//                agregado = true;
-//        	break; 
-//            }
-//        }
-//        return agregado;
-//    }
-//    
-//    private JsonObject getArticulo(JsonArray articulos, String sku){
-//        JsonObject articulo = null;
-//        
-//        for(int i=0; i < articulos.size(); i++){
-//            articulo = articulos.getJsonObject(i);
-//            if(articulo.getString("sku").equals(sku)){
-//                return articulo;
-//            }
-//        }
-//        return articulo;
-//    }
-//    
-//    private boolean login(Login l){
-//        String oldWindow = driver.getWindowHandle();
-//        WebElement element;
-//        // Validar si se encuentra el boton de login
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.BTN_LOGIN))) == null){
-//            return false; // No hay boton de click, no es posible iniciar sesion
-//        }
-//        element.click();
-//        // Cambiar el foco al popup de login
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.POPUP_LOGIN))) == null){
-//            return false; // No se puede acceder al popup de login
-//        }
-//            
-//        // Cambiar al popup de login
-//        if((Find.frame(driver, element)) == null){
-//            return false; // No se pudo cambiar al frame del popup
-//        }
-//            
-//        // Validar el div del login
-//        if(Find.element(driver, entorno.getProperty(Entorno.DIV_LOGIN)) == null){
-//            return false; // No hay div de login
-//        }
-//            
-//        // Iniciar sesion
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.TXT_LOGIN))) != null){
-//            element.sendKeys(l.getUser());
-//        }
-//               
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.TXT_PASSWORD))) != null){
-//            element.sendKeys(l.getPassword());
-//        }
-//                
-//        // Hacer click en el boton inicia sesion
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.BTN_FRM_LOGIN))) != null){
-//            element.click();
-//        }
-//        
-//        // Cambiar al frame original
-//        return driver.switchTo().window(oldWindow) != null;
-//    }
-//    
-//    private void compraPersonalDentroDeLista(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//        
-//        // Ir al boton de mesa de regalos
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.BTN_MESA_DE_REGALOS))) != null){
-//            element.click();
-//        }
-//        
-//        // Hacer click en "BUSCAR UNA MESA"
-//        if((element = Find.element(driver, listaRegalos.getProperty(ListaRegalos.BTN_BUSCAR_MESA))) != null){
-//            element.click();
-//        }
-//    }
-//    
-//    private void compraPersonalFueraDeLista(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//        
-//        // Obtener los skus
-//        // Seleccionar a quien van dirigos los regalos
-//        JsonArray articulos = caso.getJsonArray("articulos");
-//        ArrayList<JsonObject> giftsNotFounds = new ArrayList<>();
-//        
-//        for(int i=0; i < articulos.size(); i++){
-//            JsonObject articulo = articulos.getJsonObject(i);
-//            
-//            // Ingresar el sku en la barra de busqueda
-//            if((element = header.buscador()) == null){
-//                return;
-//            }
-//            element.sendKeys(articulo.getString("sku"), Keys.ENTER);
-//            
-//        }
-//        
-//        
-//    }
-//    
-//    private void compraLoginDentroDeLista(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//        
-//        // Ir al boton de mesa de regalos
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.BTN_MESA_DE_REGALOS))) != null){
-//            element.click();
-//        }
-//        
-//        // Hacer click en "Buscar una mesa de regalos"
-//        if((element = Find.element(driver, mesaRegalos.getProperty(MesaRegalos.BTN_BUSCAR_MESA))) != null){
-//            element.click();
-//        }
-//    }
-//    
-//    private void compraLoginFueraDeLista(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//    }
-//    
-//    private void compraGuestDentroDeLista(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//        
-//        // Ir al boton de mesa de regalos
-//        if((element = Find.element(driver, entorno.getProperty(Entorno.BTN_MESA_DE_REGALOS))) != null){
-//            element.click();
-//        }
-//        
-//        // Hacer click en "Buscar una mesa de regalos"
-//        if((element = Find.element(driver, mesaRegalos.getProperty(MesaRegalos.BTN_BUSCAR_MESA))) != null){
-//            element.click();
-//        }
-//    }
-//    
-//    private void compraGuestFueraDeLista(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//    }
-//    
-//    
-//    private void pasoCero(JsonObject caso){
-//        WebElement element;
-//        JsonObject json;
-//        
-//        /*  Casos de Mesa de Regalo
-//            1. Compra personal dentro de lista (festejado login)
-//            2. Compra personal fuera  de lista (festejado login)
-//            3. Compra invitado login dentro de lista
-//            4. Compra invitado login fuera  de lista 
-//            5. Compra invitado guest dentro de lista
-//            6. Compra invitado guest fuera  de lista
-//        */
-//        
-//        boolean compraDentroDeLista = caso.getBoolean("compraDentroDeLista");
-//        
-//        // Validar si es login (festejado o invitado) o guest (invitado)
-//        if((json = caso.getJsonObject("login")) != null){
-//            // Iniciar sesion
-//            if(!login(new Login(json))){
-//                return;
-//            }
-//            
-//            boolean festejado = json.getBoolean("festejado");
-//            
-//            // Validar si es festejado o invitado
-//            if(festejado && compraDentroDeLista){
-//                // Festejado con compra dentro de lista
-//                compraPersonalDentroDeLista(caso);
-//            } else if (festejado && (!compraDentroDeLista)){ 
-//                // Festejado con compra fuera de lista
-//                compraPersonalFueraDeLista(caso);
-//            } else if((!festejado) && compraDentroDeLista) {
-//                // Invitado login con compra dentro de lista
-//                compraLoginDentroDeLista(caso);
-//            } else {
-//                // Invitado login con compra fuera de lista
-//                compraLoginFueraDeLista(caso);
-//            }
-//        } else if (compraDentroDeLista){ // Es invitado con compra dentro de lista
-//            compraGuestDentroDeLista(caso);
-//        } else { // Es invitado con compra fuera de lista
-//            compraGuestFueraDeLista(caso);
-//        }
-//        
-//        // Ingresar el numero de la mesa de regalos
-//        if((element = Find.element(driver, busquedaEvento.getProperty(BusquedaEvento.TXT_NUM_EVENTO))) == null){
-//            return; // No se encontro la caja de texto para ingresar el numero de evento
-//        }
-//        
-//        // Obtener el numero de evento
-//        if((json = caso.getJsonObject("mesaDeRegalos")) != null){
-//            String numEvento = json.getString("evento");
-//            element.sendKeys(numEvento);
-//            Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//        }
-//        
-//        // Hacer click en el boton de buscar mesa
-//        if((element = Find.element(driver, busquedaEvento.getProperty(BusquedaEvento.BTN_BUSCAR_MESA))) != null){
-//            // Si el boton esta visible
-//            if(element.isDisplayed()){
-//                element.click();
-//                Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//            }
-//        }
-//        
-//        // Crear hashMap de festejados
-//        // alias, nombre
-//        HashMap<String, String> festejados = new HashMap<>();
-//        JsonArray arrayFestejados = json.getJsonArray("festejados");
-//        for(int i=0; i < arrayFestejados.size(); i++){
-//            JsonObject festejado = arrayFestejados.getJsonObject(i);
-//            festejados.put(festejado.getString("alias"), festejado.getString("nombre"));
-//        }
-//        
-//        // Seleccionar a quien van dirigos los regalos
-//        JsonArray articulos = caso.getJsonArray("articulos");
-//        ArrayList<JsonObject> giftsNotFounds = new ArrayList<>();
-//        
-//        for(int i=0; i < articulos.size(); i++){
-//            JsonObject articulo = articulos.getJsonObject(i);
-//            
-//            String searchSku = miListaRegalos.getProperty(MiListaRegalos.SEARCH_SKU);
-//            searchSku = searchSku.replace("?", articulo.getString("sku"));
-//            
-//            // Buscar el articulo
-//            if((element = Find.element(driver, searchSku)) != null){
-//                if(!addGiftToCart(element, festejados.get(articulo.getString("festejado")))){
-//                    cerrarPopupGift();
-//                }
-//            } else {
-//                // Poner el articulo en la lista de pendientes/no encontrados
-//                giftsNotFounds.add(articulo); // No se encontro el sku
-//            }
-//        }
-//        
-//        // Que hacer despues de agregar los articulos a la bolsa
-//        
-//        // Si hay articulos que no se agregaron, entonces agregar todos los articulos sin imagen
-//        if(!giftsNotFounds.isEmpty()){
-//            // Agregar a la bolsa, los articulos sin imagen
-//            List<WebElement> sinImagen = Find.elements(driver, miListaRegalos.getProperty(MiListaRegalos.GIFT_NOT_FOUND));
-//            for(WebElement gift : sinImagen){
-//                if(!addGiftToCart(gift, (String)festejados.values().toArray()[0])){
-//                    cerrarPopupGift();
-//                }
-//            }
-//        }
-//        
-//        // Hacer click en la bolsa
-//        if((element = Find.element(driver, miListaRegalos.getProperty(MiListaRegalos.LINK_CART))) != null){
-//            element.click();
-//        }
-//        
-//        // Validar que se encuentre el body de la lista de articulos en la bolsa
-//        if((element = Find.element(driver, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.DIV_LIST_BAG))) == null){
-//            return;
-//        }
-//        
-//        // Recuperar todos los articulos
-//        List<WebElement> productList = Find.elements(element, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.PRODUCT_LIST));
-//        
-//        for(WebElement articulo : productList){
-//            WebElement temp;
-//            
-//            if((temp = Find.element(articulo, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.DESCRIPCION_SKU))) !=  null){
-//                System.out.println("Descripcion: " + temp.getText());
-//            }
-//            
-//            if((temp = Find.element(articulo, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.SKU))) != null){
-//                System.out.println("Sku: " + temp.getText());
-//            }
-//            
-//            if((temp = Find.element(articulo, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.TIPO_COMPRA))) != null){
-//                System.out.println("Tipo Compra: " + temp.getText());
-//            }
-//            
-//            if((temp =  Find.element(articulo, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.IS_A_GIFT))) != null){
-//                System.out.println("Is a gift: " + temp.getText());
-//            } else {
-//                System.out.println("No es un regalo");
-//            }
-//            
-//            if((temp = Find.element(articulo, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.SELECTOR_QUANTITY_SKU))) != null){
-//                //temp.clear();
-//                temp.sendKeys(Keys.BACK_SPACE);
-//                temp.sendKeys("1");
-//                Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-//            }
-//            
-//            if((temp = Find.element(articulo, cartMesaDeRegalos.getProperty(CartMesaDeRegalos.BTN_ELIMINAR_SKU))) != null){
-//                System.out.println("Eliminar: " + temp.getText());
-//            }
-//            
-//            System.out.println("\n");
-//        }
-//        
-//        // Encontrar los articulos sin imagen
-//        // si pertenece a la lista de no agregados, conservar, sino eleminar
-//        
-//        // porner a 1 la cantidad de todos los articulos
-//        
-//        // hacer click en el boton pagar
-//        
-//        // iniciar sesion o continuar como invitado
-//    }
-//    
-//    @Override
-//    public void execute() {
-//        for(JsonObject caso : casos){
-//            pasoCero(caso);
-//        }
-//    }
-//}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.liverpool.automatizacion.matrices;
+
+import com.liverpool.automatizacion.modelo.Direccion;
+import com.liverpool.automatizacion.modelo.Login;
+import com.liverpool.automatizacion.modelo.Guest;
+import com.liverpool.automatizacion.modelo.MesaRegaloFL;
+import com.liverpool.automatizacion.modelo.Sku;
+import com.liverpool.automatizacion.modelo.Tarjeta;
+import com.liverpool.automatizacion.modelo.Ticket;
+import com.liverpool.automatizacion.modelo.Promocion;
+import com.liverpool.automatizacion.modelo.Tienda;
+import com.liverpool.automatizacion.paginas.CheckoutP0;
+import com.liverpool.automatizacion.paginas.CheckoutP1;
+import com.liverpool.automatizacion.paginas.CheckoutP2;
+import com.liverpool.automatizacion.paginas.CheckoutP3;
+import com.liverpool.automatizacion.paginas.CheckoutP4;
+import com.liverpool.automatizacion.paginas.LivHome;
+import com.liverpool.automatizacion.paginas.LivPDP;
+import com.liverpool.automatizacion.paginas.MesaRegalos;
+import com.liverpool.automatizacion.paginas.PaypalSite;
+import com.liverpool.automatizacion.paginas.ThreeDSecure;
+import com.liverpool.automatizacion.principal.Navegador;
+import com.liverpool.automatizacion.util.Excel;
+import com.liverpool.automatizacion.util.GuardarImagen;
+import com.liverpool.automatizacion.util.Log;
+import com.liverpool.automatizacion.util.Utils;
+import com.liverpool.automatizacion.vista.Interfaz;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Properties;
+
+/**
+ *
+ * @author IASANCHEZA
+ */
+public class MesaDeRegalos extends Matriz {
+
+    private Properties cart;
+    private Properties shipping;
+    private HashMap<String, ArrayList<String>> evento;
+    ArrayList<Sku> skus;
+    MesaRegaloFL mesaRegalo;
+    Navegador browser;
+    Tienda tienda;
+    Tarjeta tarjeta;
+    Direccion direccionTar, direccionGuest;
+    Login login;
+    Login loginPaypal;
+    Guest guest;
+    Sku sku;
+    Promocion promocion;
+    ArrayList<ArrayList<String>> casos = new ArrayList<>();
+    ArrayList<String> escenario = new ArrayList<>();
+    String usuario, metodoPago, compra, cupones, envio, direccion, eventoNombre, cupon;
+    boolean excel;
+    String[] sku_cantidad;
+    String[] fechaTarjeta;
+    String[] promo;
+
+    ArrayList<String> skuss = new ArrayList<>();
+    String[] SKU;
+    ArrayList<Sku> skuSinImagen;
+
+    private final Interfaz interfaz;
+
+    boolean skuEncontrado;
+
+    public MesaDeRegalos(Interfaz interfaz, Navegador browser, boolean excel) {
+
+        this.browser = browser;
+        this.interfaz = interfaz;
+
+        if (!excel) {
+            skus = new ArrayList<Sku>() {
+                {
+                    //            add(new Sku("67966758", "5"));
+                    add(new Sku("19917207", "5"));
+                }
+            };
+            //Datos a leer
+            tienda = new Tienda("6", "CDMX/ZONA METROPOLITANA");
+            login = new Login("mpalfredo1@yahoo.com", "liverpool");
+            tarjeta = new Tarjeta("NoesVISA", "123", "10", "2025");
+            //        tarjeta = new Tarjeta("Master Card", "123", "10", "2025"); //wst
+            direccionTar = new Direccion("56600", "Chalco", "Victoria", "46", "2", "A",
+                    "Niños Heroes", "Plateros", "55", "56570898", "5578894556");
+            usuario = "Login-Dentro de lista";
+//            metodoPago = "Credito";
+            metodoPago = "Paypal";
+            metodoPago = "CIE";
+            loginPaypal = new Login("compradorus@hotmail.com", "Comprador1");
+        }
+        if (excel) {
+//            usuario = "Guest-Fuera de lista";
+//            usuario = "Login-Fuera de lista";
+//            usuario = "Festejado-Fuera de lista";
+
+            usuario = "Login-Dentro de lista";
+//            usuario = "Guest-Dentro de lista";
+//            usuario = "Festejado-Destro de lista";
+            String nombreArchivo = "Compras Mesa.xlsx";
+            Excel excelArc = new Excel(nombreArchivo);
+            casos = excelArc.getExcel(usuario);
+        }
+    }
+
+    public void datosEscenarioExcel(int i) {
+        escenario = casos.get(i);
+
+        switch (usuario) {
+            case "Login-Dentro de lista":
+                loginDentroDeLista();
+                break;
+            case "Guest-Dentro de lista":
+                guestDentroDeLista();
+                break;
+            case "Festejado-Destro de lista":
+                festejadoDentroDeLista();
+                break;
+            case "Login-Fuera de lista":
+                loginFueraDeLista();
+                break;
+            case "Guest-Fuera de lista":
+                guestFueraDeLista();
+                break;
+            case "Festejado-Fuera de lista":
+                festejadoFueraDeLista();
+                break;
+        }
+    }
+
+    public void loginDentroDeLista() {
+        String[] tiendaCC;
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
+
+        skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
+        skus = new ArrayList<Sku>();
+        for (int j = 0; j < skuss.size(); j++) {
+            SKU = skuss.get(j).replace(" ", "").split(",");
+            System.out.println(SKU[0] + " " + SKU[1]);
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+
+        cupon = escenario.get(7);
+        promo = escenario.get(8).split(", ");
+        if (promo.length > 1) {
+            promocion = new Promocion(promo[0], promo[1]);
+        } else {
+            promocion = new Promocion(promo[0]);
+        }
+
+        metodoPago = escenario.get(9);
+        fechaTarjeta = escenario.get(12).split("/");
+        if (fechaTarjeta.length > 1) {
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
+        }
+        loginPaypal = new Login(escenario.get(13), escenario.get(14));
+    }
+
+    public void guestDentroDeLista() {
+        compra = escenario.get(0);
+        guest = new Guest(escenario.get(1), escenario.get(2), escenario.get(3),
+                escenario.get(4), escenario.get(5), escenario.get(6));
+        mesaRegalo = new MesaRegaloFL(escenario.get(7), escenario.get(8), escenario.get(9));
+
+        skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
+        skus = new ArrayList<Sku>();
+        for (int j = 0; j < skuss.size(); j++) {
+            SKU = skuss.get(j).replace(" ", "").split(",");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+
+        cupon = escenario.get(11);
+        promo = escenario.get(12).split(", ");
+        if (promo.length > 1) {
+            promocion = new Promocion(promo[0], promo[1]);
+        } else {
+            promocion = new Promocion(promo[0]);
+        }
+
+        direccionTar = new Direccion(escenario.get(13), escenario.get(14), escenario.get(15), escenario.get(16),
+                escenario.get(17), escenario.get(18), escenario.get(19), escenario.get(20), escenario.get(21),
+                escenario.get(22), escenario.get(23));
+        metodoPago = escenario.get(24);
+        fechaTarjeta = escenario.get(28).split("/");
+        if (fechaTarjeta.length > 1) {
+            tarjeta = new Tarjeta(escenario.get(25), escenario.get(26), escenario.get(27),
+                    fechaTarjeta[0], fechaTarjeta[1], escenario.get(1), escenario.get(2), escenario.get(3));
+        }
+        loginPaypal = new Login(escenario.get(29), escenario.get(30));
+    }
+
+    public void festejadoDentroDeLista() {
+        String[] tiendaCC;
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
+        eventoNombre = escenario.get(6);
+
+        skuss.addAll(Arrays.asList(escenario.get(7).split("\n")));
+        skus = new ArrayList<Sku>();
+        for (int j = 0; j < skuss.size(); j++) {
+            SKU = skuss.get(j).replace(" ", "").split(",");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+
+        cupon = escenario.get(8);
+        promo = escenario.get(9).replace(" ", "").split(", ");
+        if (promo.length > 1) {
+            promocion = new Promocion(promo[0], promo[1]);
+        } else {
+            promocion = new Promocion(promo[0]);
+        }
+        envio = escenario.get(10);
+        tiendaCC = escenario.get(11).split(",");
+        if (tiendaCC.length > 1) {
+            tienda = new Tienda(tiendaCC[1], tiendaCC[0]);
+        }
+        direccion = escenario.get(12);
+        metodoPago = escenario.get(13);
+        fechaTarjeta = escenario.get(16).split("/");
+        if (fechaTarjeta.length > 1) {
+            tarjeta = new Tarjeta(escenario.get(14), escenario.get(15), fechaTarjeta[0], fechaTarjeta[0]);
+        } else {
+            tarjeta = new Tarjeta(escenario.get(14), escenario.get(15), "", "");
+        }
+        loginPaypal = new Login(escenario.get(17), escenario.get(18));
+    }
+
+    public void loginFueraDeLista() {
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
+
+        skuss.addAll(Arrays.asList(escenario.get(6).split("\n")));
+        skus = new ArrayList<Sku>();
+        for (int j = 0; j < skuss.size(); j++) {
+            SKU = skuss.get(j).replace(" ", "").split(",");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+
+        cupon = escenario.get(7);
+        promo = escenario.get(8).split(", ");
+        if (promo.length > 1) {
+            promocion = new Promocion(promo[0], promo[1]);
+        } else {
+            promocion = new Promocion(promo[0]);
+        }
+
+        metodoPago = escenario.get(9);
+        fechaTarjeta = escenario.get(12).split("/");
+        if (fechaTarjeta.length > 1) {
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
+        }
+        loginPaypal = new Login(escenario.get(13), escenario.get(14));
+        Log.write("Numero de evento dentro login... " + mesaRegalo.getNumEvento());
+    }
+
+    public void guestFueraDeLista() {
+        compra = escenario.get(0);
+        guest = new Guest(escenario.get(1), escenario.get(2), escenario.get(3),
+                escenario.get(4), escenario.get(5), escenario.get(6));
+        mesaRegalo = new MesaRegaloFL(escenario.get(7), escenario.get(8), escenario.get(9));
+
+        skuss.addAll(Arrays.asList(escenario.get(10).split("\n")));
+        skus = new ArrayList<Sku>();
+        for (int j = 0; j < skuss.size(); j++) {
+//            SKU = skuss.get(j).split(", ");
+            SKU = skuss.get(j).replace(" ", "").split(",");
+            System.out.println(SKU[0] + " " + SKU[1]);
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+
+        cupon = escenario.get(11);
+        promo = escenario.get(12).split(", ");
+        if (promo.length > 1) {
+            promocion = new Promocion(promo[0], promo[1]);
+        } else {
+            promocion = new Promocion(promo[0]);
+        }
+
+        direccionTar = new Direccion(escenario.get(13), escenario.get(14), escenario.get(15), escenario.get(16),
+                escenario.get(17), escenario.get(18), escenario.get(19), escenario.get(20), escenario.get(21),
+                escenario.get(22), escenario.get(23));
+        metodoPago = escenario.get(24);
+        fechaTarjeta = escenario.get(28).split("/");
+        if (fechaTarjeta.length > 1) {
+            tarjeta = new Tarjeta(escenario.get(25), escenario.get(26), escenario.get(27),
+                    fechaTarjeta[0], fechaTarjeta[1], escenario.get(1), escenario.get(2), escenario.get(3));
+        }
+        loginPaypal = new Login(escenario.get(29), escenario.get(30));
+
+        Log.write("Numero de evento dentro guest + ------------------------" + mesaRegalo.getNumEvento());
+
+    }
+
+    public void festejadoFueraDeLista() {
+        String[] tiendaCC;
+        compra = escenario.get(0);
+        login = new Login(escenario.get(1), escenario.get(2));
+        eventoNombre = escenario.get(3);
+
+        skuss.addAll(Arrays.asList(escenario.get(4).split("\n")));
+        skus = new ArrayList<Sku>();
+        for (int j = 0; j < skuss.size(); j++) {
+            SKU = skuss.get(j).replace(" ", "").split(",");
+            skus.add(new Sku(SKU[0], SKU[1]));
+        }
+
+        cupones = escenario.get(5);
+        promo = escenario.get(6).replace(" ", "").split(", ");
+        if (promo.length > 1) {
+            promocion = new Promocion(promo[0], promo[1]);
+        } else {
+            promocion = new Promocion(promo[0]);
+        }
+        envio = escenario.get(7);
+        tiendaCC = escenario.get(8).split(",");
+        if (tiendaCC.length > 1) {
+            tienda = new Tienda(tiendaCC[1], tiendaCC[0]);
+        }
+        direccion = escenario.get(9);
+        metodoPago = escenario.get(10);
+        fechaTarjeta = escenario.get(13).split("/");
+        if (fechaTarjeta.length > 1) {
+            tarjeta = new Tarjeta(escenario.get(11), escenario.get(12), fechaTarjeta[0], fechaTarjeta[0]);
+        } else {
+            tarjeta = new Tarjeta(escenario.get(11), escenario.get(12), "", "");
+        }
+        loginPaypal = new Login(escenario.get(14), escenario.get(15));
+    }
+
+    public void mesaRegalos() {
+
+        String numEvEncontrado;
+        List<Ticket> ticket = null;
+        skuSinImagen = new ArrayList<Sku>();
+
+        for (int e = 1; e < casos.size(); e++) {
+            datosEscenarioExcel(e);
+
+            driver = browser.iniciarNavegador();
+
+            LivHome home = new LivHome(interfaz, driver);
+
+            Log.write("Despues de LiveHome");
+            Utils.sleep(2000);
+            LivPDP pdp = new LivPDP(interfaz, driver);
+            CheckoutP0 paso0 = new CheckoutP0(interfaz, driver);
+            MesaRegalos mesa = new MesaRegalos(interfaz, driver);
+            CheckoutP1 paso1 = new CheckoutP1(interfaz, driver);
+            CheckoutP2 paso2 = new CheckoutP2(interfaz, driver);
+            CheckoutP3 paso3 = new CheckoutP3(interfaz, driver);
+            PaypalSite paypal = new PaypalSite(interfaz, driver);
+            CheckoutP4 paso4 = new CheckoutP4(interfaz, driver);
+            ThreeDSecure tds = new ThreeDSecure(interfaz, driver);
+            Excel escritura;
+            GuardarImagen save = new GuardarImagen();
+
+            switch (usuario) {
+                case "Login-Fuera de lista":
+                    usuario = "Login";
+                    home.incioSesion(login);
+                    agregaSku(home, pdp);
+                    pdp.irPaso0();
+                    numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo, skus);
+                    paso0.aplicarCupon(cupon);
+                    paso0.pasoCeroComprar();
+                    paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionGuest);
+                    paso3.terminarCompraTLOG();
+                    if (metodoPago.equals("Paypal")) {
+                        paypal.paypalSandBox(loginPaypal);
+                    }
+                    tds.validacion3DS();
+                     escritura = new Excel("Resultado.xlsx");
+                    if (paso4.esperaTicket()) {
+                        ticket = paso4.extraccionDatos(metodoPago);
+                        for (Ticket valores : ticket) {
+                            escritura.writeExcel(valores, escenario.get(0));
+                        }
+                    } else {
+                        escritura.writeExcel("No hay datos de la compra");
+                    }
+//                    GuardarImagen save = new GuardarImagen();
+                    //            video.detenerVideo();
+                    break;
+
+                case "Guest-Fuera de lista":
+                    usuario = "Guest";
+                    agregaSku(home, pdp);
+                    pdp.irPaso0();
+                    numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo, skus);
+                    paso0.aplicarCupon(cupon);
+                    paso0.pasoCeroComprar();
+                    paso0.frameMesaRegaloFL();
+                    paso0.botonCompraSinRegistro();
+                    paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionTar, guest);
+                    paso3.terminarCompraTLOG();
+
+                    if (metodoPago.equals("Paypal")) {
+                        paypal.paypalSandBox(loginPaypal);
+                    }
+                    tds.validacion3DS();
+
+                    escritura = new Excel("Resultado.xlsx");
+                    if (paso4.esperaTicket()) {
+                        ticket = paso4.extraccionDatos(metodoPago);
+                        for (Ticket valores : ticket) {
+                            escritura.writeExcel(valores, escenario.get(0));
+                        }
+                    } else {
+                        escritura.writeExcel("No hay datos de la compra");
+                    }
+//                    GuardarImagen save = new GuardarImagen();
+                    break;
+
+                case "Login-Dentro de lista":
+                    usuario = "login";
+
+                    home.incioSesion(login);
+                    numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo, login);
+                    skuSinImagen = agregaSkuDentroLista(mesa);
+                    mesa.irPaso0();
+                    paso0.obtenerListaSKU(skuSinImagen, mesaRegalo, skus);
+                    paso0.pasoCeroComprar();
+                    paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionGuest);
+                    paso3.terminarCompraTLOG();
+                    if (metodoPago.equals("Paypal")) {
+                        paypal.paypalSandBox(loginPaypal);
+                    }
+                    tds.validacion3DS();
+
+                    escritura = new Excel("Resultado.xlsx");
+                    if (paso4.esperaTicket()) {
+                        ticket = paso4.extraccionDatos(metodoPago);
+                        for (Ticket valores : ticket) {
+                            escritura.writeExcel(valores, escenario.get(0));
+                        }
+                    } else {
+                        escritura.writeExcel("No hay datos de la compra");
+                    }
+//                    GuardarImagen save = new GuardarImagen();
+                    //            video.detenerVideo();
+
+                    break;
+                case "Guest-Dentro de lista":
+                    numEvEncontrado = mesa.compraGuestDentroDeLista(mesaRegalo);
+                    skuSinImagen = agregaSkuDentroLista(mesa);
+                    mesa.irPaso0();
+                    paso0.obtenerListaSKU(skuSinImagen, mesaRegalo, skus);
+                    paso0.aplicarCupon(cupon);
+                    paso0.pasoCeroComprar();
+                    paso0.frameMesaRegaloFL();
+                    paso0.botonCompraSinRegistro();
+                    paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionTar, guest);
+                    paso3.terminarCompraTLOG();
+
+                    if (metodoPago.equals("Paypal")) {
+                        paypal.paypalSandBox(loginPaypal);
+                    }
+                    tds.validacion3DS();
+
+                    escritura = new Excel("Resultado.xlsx");
+                    if (paso4.esperaTicket()) {
+                        ticket = paso4.extraccionDatos(metodoPago);
+                        for (Ticket valores : ticket) {
+                            escritura.writeExcel(valores, escenario.get(0));
+                        }
+                    } else {
+                        escritura.writeExcel("No hay datos de la compra");
+                    }
+                    break;
+
+                case "Festejado-Fuera de lista":
+
+                    home.incioSesion(login);
+                    agregaSku(home, pdp);
+                    pdp.irPaso0();
+                    //Login-Guest Paso 0
+                    paso0.aplicarCupon(cupon);
+                    paso0.pasoCeroComprar();
+                    //Paso 1
+                    paso1.envioLogin(envio, tienda, direccion, eventoNombre);
+                    paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionGuest);
+                    paso3.terminarCompraTLOG();
+                    if (metodoPago.equals("Paypal")) {
+                        paypal.paypalSandBox(loginPaypal);
+                    }
+                    tds.validacion3DS();
+
+                    escritura = new Excel("Resultado.xlsx");
+                    if (paso4.esperaTicket()) {
+                        ticket = paso4.extraccionDatos(metodoPago);
+                        for (Ticket valores : ticket) {
+                            escritura.writeExcel(valores, escenario.get(0));
+                        }
+                    } else {
+                        escritura.writeExcel("No hay datos de la compra");
+                    }
+//                GuardarImagen save = new GuardarImagen();
+//                save.guardarPantalla(escenario.get(0), folder, driver);
+
+                    break;
+
+                case "Festejado-Destro de lista":
+                    usuario = "login";
+
+                    home.incioSesion(login);
+                    numEvEncontrado = mesa.festejadoDentroDeLista(mesaRegalo, login);
+                    skuSinImagen = agregaSkuDentroLista(mesa);
+                    mesa.irPaso0();
+                    paso0.obtenerListaSKU(skuSinImagen, mesaRegalo, skus);
+                    paso0.aplicarCupon(cupon);
+                    paso0.pasoCeroComprar();
+                    paso1.envioLogin(envio, tienda, direccion, eventoNombre);
+                    paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionGuest);
+                    paso3.terminarCompraTLOG();
+                    if (metodoPago.equals("Paypal")) {
+                        paypal.paypalSandBox(loginPaypal);
+                    }
+                    tds.validacion3DS();
+                    escritura = new Excel("Resultado.xlsx");
+                    if (paso4.esperaTicket()) {
+                        ticket = paso4.extraccionDatos(metodoPago);
+                        for (Ticket valores : ticket) {
+                            escritura.writeExcel(valores, escenario.get(0));
+                        }
+                    } else {
+                        escritura.writeExcel("No hay datos de la compra");
+                    }
+//                    GuardarImagen save = new GuardarImagen();
+                    //            video.detenerVideo();
+                    break;
+            }
+        }
+    }
+
+    public void agregaSku(LivHome home, LivPDP pdp) {
+        for (int i = 0; i < skus.size(); i++) {
+            Log.write("SKU ++++++++++++++++ " + skus.get(i));
+            skuEncontrado = home.buscarSKU(skus.get(i));
+            if (skuEncontrado) {
+                pdp.cantidadSKU(skus.get(i));
+                pdp.agregaraBolsa();
+            }
+        }
+
+    }
+
+    public ArrayList<Sku> agregaSkuDentroLista(MesaRegalos mesa) {
+
+        for (int i = 0; i < skus.size(); i++) {
+            Utils.sleep(2000);
+            skuEncontrado = mesa.seleccionaSKU(skus.get(i));
+            if (skuEncontrado) {
+                mesa.agregaBolsa(mesaRegalo);
+            } else {
+                skuSinImagen.add(skus.get(i));
+            }
+        }
+        if (!skuSinImagen.isEmpty()) {
+            // Agregar a la bolsa, los articulos sin imagen
+            Utils.sleep(2000);
+            skuEncontrado = mesa.seleccionaSkuSinImagen(mesaRegalo);
+        }
+        return skuSinImagen;
+    }
+
+}

@@ -9,7 +9,7 @@ import com.liverpool.automatizacion.modelo.Find;
 import com.liverpool.automatizacion.modelo.Guest;
 import com.liverpool.automatizacion.modelo.Tienda;
 import com.liverpool.automatizacion.principal.Principal;
-import com.liverpool.automatizacion.properties.CheckoutPaso1;
+import com.liverpool.automatizacion.properties.Checkout_Paso1;
 import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
@@ -23,21 +23,26 @@ import org.openqa.selenium.support.ui.Select;
  *
  * @author aperezg03
  */
-public class CheckoutP1 {
+public class Checkout_P1 {
     
     private final WebDriver driver;
     private Interfaz interfaz;
     public File paso1;
     public Properties Cpaso1;
+//    public final String envio;
+//    public String direccion, usuario;
+//    Tienda tienda;
+//    Direccion direccionGuest;
+//    Guest guest;
     
-    public CheckoutP1(Interfaz interfaz, WebDriver driver){
+    public Checkout_P1(Interfaz interfaz, WebDriver driver){
         this.driver = driver;
         this.interfaz = interfaz;
         
         Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
         Cpaso1 = new Properties(); // propiedades de la pagina shipping.jsp
                 
-        paso1 = new File(folder, CheckoutPaso1.PROPERTIES_FILE);
+        paso1 = new File(folder, Checkout_Paso1.PROPERTIES_FILE);
         if(!Principal.loadProperties(paso1.getAbsolutePath(), Cpaso1)){
             System.out.println("No se encontro el archivo: " + paso1);
         }
@@ -94,7 +99,7 @@ public class CheckoutP1 {
     }
     
     public void tipoEntregaDomGuest(Direccion direccionGuest){
-        envioDomicilio();
+//        envioDomicilio();
         llenadoCP(direccionGuest.getCp());
         esperaEstado();
         llenadoCiudad(direccionGuest.getCiudad());
@@ -120,12 +125,13 @@ public class CheckoutP1 {
             JOptionPane.showMessageDialog(null, "Direccion no encontrada: "+direccion,
                         "Error en Direccion", JOptionPane.ERROR_MESSAGE);
         }
+        
     }
     
     public boolean seleccionDomicilio(String direccion){
         WebElement element;
-        String nombre = Cpaso1.getProperty(CheckoutPaso1.NOMBRECORTO).replace("?", direccion).replace("xpath|", "");
-        String nombreSeleccion = Cpaso1.getProperty(CheckoutPaso1.NOMBRESELECCION).replace("?", nombre);
+        String nombre = Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion).replace("xpath|", "");
+        String nombreSeleccion = Cpaso1.getProperty(Checkout_Paso1.NOMBRESELECCION).replace("?", nombre);
         if((element = Find.element(driver, nombreSeleccion)) != null){
             element.click();
             return true;
@@ -135,10 +141,10 @@ public class CheckoutP1 {
     
     public boolean seleccionMRdireccion(String direccion, String dato, String mesa){
         WebElement element, elementDir;
-        if((elementDir = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.NOMBRECORTO).replace("?", direccion))) != null)
+        if((elementDir = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NOMBRECORTO).replace("?", direccion))) != null)
         {
             String numero = elementDir.getAttribute("index");
-            if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.EVENTODIR)+numero)) != null){
+            if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EVENTODIR)+numero)) != null){
                 Select dropDownMesaDir = new Select(element);
                 switch (dato){
                     case "valor":
@@ -159,7 +165,7 @@ public class CheckoutP1 {
     
     public boolean buttonClickCollect(){//Seleccion de Click and Collect
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.CCBUTTON))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CCBUTTON))) != null){
             element.click();
             return true;
         }
@@ -168,7 +174,7 @@ public class CheckoutP1 {
     
     public boolean seleccionMRCyC(String dato, String mesa){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.EVENTOCC))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EVENTOCC))) != null){
             Select dropDownMesaDir = new Select(element);
             switch (dato){
                 case "valor":
@@ -189,7 +195,7 @@ public class CheckoutP1 {
     public boolean estadoCC(Tienda tienda){//Seleccion de estado
         WebElement element;
         Select estado;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.ESTADOCC))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.ESTADOCC))) != null){
             estado = new Select (element);
             estado.selectByVisibleText(tienda.getEstado());
             return true;
@@ -199,8 +205,8 @@ public class CheckoutP1 {
     
     public boolean seleccionTiendaCC(Tienda tienda){//Seleccion de tienda
         WebElement element;
-        String tiendaNumero = Cpaso1.getProperty(CheckoutPaso1.TIENDASELECCION).replace("?", tienda.getNumTienda()).replace("xpath|", "");
-        String tiendaTexto =  Cpaso1.getProperty(CheckoutPaso1.TIENDADESCRIPCION).replace("?", tiendaNumero);
+        String tiendaNumero = Cpaso1.getProperty(Checkout_Paso1.TIENDASELECCION).replace("?", tienda.getNumTienda()).replace("xpath|", "");
+        String tiendaTexto =  Cpaso1.getProperty(Checkout_Paso1.TIENDADESCRIPCION).replace("?", tiendaNumero);
         
         while(Find.element(driver, tiendaTexto) == null)
             Utils.sleep(500);
@@ -214,7 +220,16 @@ public class CheckoutP1 {
     public boolean siguientePasoButtonLogin(){
         WebElement element;
         Utils.sleep(500);
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.SIGUIENTEPASOLOGIN))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGUIENTEPASOLOGIN))) != null){
+            element.click();
+            return true;
+        }
+        return false;
+    }
+     public boolean siguientePasoButtonLoginPrueba(){
+        WebElement element;
+        Utils.sleep(500);
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGPASOLOGIN))) != null){
             element.click();
             return true;
         }
@@ -224,7 +239,7 @@ public class CheckoutP1 {
     public boolean siguientePasoButtonGuest(){
         WebElement element;
         Utils.sleep(500);
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.SIGUIENTEPASOGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.SIGUIENTEPASOGUEST))) != null){
             element.click();
             return true;
         }
@@ -233,7 +248,7 @@ public class CheckoutP1 {
     
     public boolean llenadoNombre(String nombre){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.NOMBREGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NOMBREGUEST))) != null){
             element.sendKeys(nombre);
             return true;
         }
@@ -242,7 +257,7 @@ public class CheckoutP1 {
     
     public boolean llenadoAPaterno(String aPaterno){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.APATERNOGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.APATERNOGUEST))) != null){
             element.sendKeys(aPaterno);
             return true;
         }
@@ -251,7 +266,7 @@ public class CheckoutP1 {
     
     public boolean llenadoAMaterno(String aMaterno){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.AMATERNOGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.AMATERNOGUEST))) != null){
             element.sendKeys(aMaterno);
             return true;
         }
@@ -260,7 +275,7 @@ public class CheckoutP1 {
     
     public boolean llenadoCorreo(String correo){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.CORREOGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CORREOGUEST))) != null){
             element.sendKeys(correo);
             return true;
         }
@@ -269,7 +284,7 @@ public class CheckoutP1 {
     
     public boolean llenadoLada(String lada){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.LADAGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.LADAGUEST))) != null){
             element.sendKeys(lada);
             return true;
         }
@@ -278,7 +293,7 @@ public class CheckoutP1 {
     
     public boolean llenadoTelefono(String telefono){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.TELEFONOGUEST))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.TELEFONOGUEST))) != null){
             element.sendKeys(telefono);
             return true;
         }
@@ -287,7 +302,7 @@ public class CheckoutP1 {
     
     public boolean llenadoCP(String cp){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.CODIGOPOSTAL))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CODIGOPOSTAL))) != null){
             element.sendKeys(cp);
             return true;
         }
@@ -297,7 +312,7 @@ public class CheckoutP1 {
     public void esperaEstado(){
         WebElement element;
         Select dropdown;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.ESTADO))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.ESTADO))) != null){
             dropdown = new Select(element);
             while(dropdown.getFirstSelectedOption().getText().equals("Seleccionar")){
                 Utils.sleep(1000);}
@@ -306,7 +321,7 @@ public class CheckoutP1 {
     
     public boolean llenadoCiudad(String ciudad){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.CIUDAD))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CIUDAD))) != null){
             element.sendKeys(ciudad);
             return true;
         }
@@ -316,7 +331,7 @@ public class CheckoutP1 {
     public void esperaDelegacion(){
         WebElement element;
         Select dropdown;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.DELEGACION))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.DELEGACION))) != null){
             dropdown = new Select(element);
             while(dropdown.getFirstSelectedOption().getText().equals("Seleccionar")){
                 Utils.sleep(1000);}
@@ -325,7 +340,7 @@ public class CheckoutP1 {
     
     public boolean llenadoCalle(String calle){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.CALLE))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CALLE))) != null){
             element.sendKeys(calle);
             return true;
         }
@@ -334,7 +349,7 @@ public class CheckoutP1 {
     
     public boolean llenadoNExterior(String numExterior){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.NUMEXTERIOR))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NUMEXTERIOR))) != null){
             element.sendKeys(numExterior);
             return true;
         }
@@ -343,7 +358,7 @@ public class CheckoutP1 {
     
     public boolean llenadoNInterior(String numInterior){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.NUMINTERIOR))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.NUMINTERIOR))) != null){
             element.sendKeys(numInterior);
             return true;
         }
@@ -352,7 +367,7 @@ public class CheckoutP1 {
     
     public boolean llenadoEdificio(String edificio){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.EDIFICIO))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.EDIFICIO))) != null){
             element.sendKeys(edificio);
             return true;
         }
@@ -361,7 +376,7 @@ public class CheckoutP1 {
     
     public boolean llenadoEntreCalle(String entreCalle){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.ENTRECALLE))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.ENTRECALLE))) != null){
             element.sendKeys(entreCalle);
             return true;
         }
@@ -370,7 +385,7 @@ public class CheckoutP1 {
     
     public boolean llenadoYCalle(String yCalle){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.YCALLE))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.YCALLE))) != null){
             element.sendKeys(yCalle);
             return true;
         }
@@ -379,7 +394,7 @@ public class CheckoutP1 {
     
     public boolean llenadoCelular(String celular){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.CELULAR))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.CELULAR))) != null){
             element.sendKeys(celular);
             return true;
         }
@@ -388,7 +403,7 @@ public class CheckoutP1 {
     
     public boolean envioDomicilio(){
         WebElement element;
-        if((element = Find.element(driver, Cpaso1.getProperty(CheckoutPaso1.ENVIODOMICILIO))) != null){
+        if((element = Find.element(driver, Cpaso1.getProperty(Checkout_Paso1.ENVIODOMICILIO))) != null){
             element.click();
             return true;
         }

@@ -7,108 +7,98 @@ import com.liverpool.automatizacion.modelo.Archivo;
 import com.liverpool.automatizacion.modelo.Find;
 import com.liverpool.automatizacion.modelo.MesaRegaloFL;
 import com.liverpool.automatizacion.modelo.Sku;
-import com.liverpool.automatizacion.properties.CheckoutPaso0;
+import com.liverpool.automatizacion.properties.Checkout_Paso0;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.principal.Principal;
-import com.liverpool.automatizacion.properties.Checkout_Paso0;
-import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class CheckoutP0 {
+public class Checkout_P0 {
 
     private final WebDriver driver;
     private Interfaz interfaz;
     public final File paso0;
     public final Properties Cpaso0;
     String skuLista = "";
-    
-    public CheckoutP0(Interfaz interfaz, WebDriver driver){
+
+    public Checkout_P0(Interfaz interfaz, WebDriver driver) {
         this.driver = driver;
-        
-        Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
+
+        Archivo folder = (Archivo) interfaz.getCbxVersion().getSelectedItem();
         Cpaso0 = new Properties(); // propiedades de la pagina shipping.jsp
-                
-        paso0 = new File(folder, CheckoutPaso0.PROPERTIES_FILE);
-        if(!Principal.loadProperties(paso0.getAbsolutePath(), Cpaso0)){
+
+        paso0 = new File(folder, Checkout_Paso0.PROPERTIES_FILE);
+        if (!Principal.loadProperties(paso0.getAbsolutePath(), Cpaso0)) {
             System.out.println("No se encontro el archivo: " + paso0);
         }
     }
-    
-    public void pasoCeroInicio() {    
+
+    public void pasoCeroInicio() {
         WebElement element;
-        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.BOLSA_PASO0))) != null)
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BOLSA_PASO0))) != null) {
             element.click(); //Ir paso 0, click en la bolsa
-        Utils.sleep(1500);  
+        }
+        Utils.sleep(1500);
     }
-    
-    public void pasoCeroComprar(){
+
+    public void pasoCeroComprar() {
         WebElement element;
-        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.PAGARTEXTO))) != null)
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.PAGARTEXTO))) != null) {
             element.click();
+        }
     }
-    
+
     public void pasoCeroGuest() {
         WebElement element;
         Utils.sleep(4000);
         WebElement frameGuestCompra;
-        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.FANCYBOXCLASE))) != null){
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FANCYBOXCLASE))) != null) {
             frameGuestCompra = element;
             driver.switchTo().frame(frameGuestCompra);
-            if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.COMPRAGUESTTEXT))) != null)
+            if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.COMPRAGUESTTEXT))) != null) {
                 element.click();
+            }
             driver.switchTo().defaultContent();
         }
     }
-    
-    public void aplicarCupon(String cupon){
-        if(cupon.length() > 5){
+
+    public void aplicarCupon(String cupon) {
+        if (cupon.length() > 5) {
             cuponEscribir(cupon);
             cuponAplicar();
         }
     }
-    
-    public boolean cuponEscribir(String cupon){
+
+    public boolean cuponEscribir(String cupon) {
         WebElement element;
-        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.PROMOCIONESCAMPO))) != null){
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.PROMOCIONESCAMPO))) != null) {
             element.sendKeys(cupon);
             Utils.sleep(2000);
             return true;
         }
         return false;
     }
-    
-    public boolean cuponAplicar(){
+
+    public boolean cuponAplicar() {
         WebElement element;
-        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.APLICARPROMOCION))) != null){
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.APLICARPROMOCION))) != null) {
             element.click();
             return true;
         }
         return false;
     }
 
-    public void vistaEvento(){
-        WebElement element;
-        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.VISTA_UNICO_EVENTO))) != null){
-            while(!element.getAttribute("style").contains("display: block;"))
-                element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.FESTEJADO));
-        } else if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.VISTA_MULTIPLES_EVENTOS))) != null){
-            while(!element.getAttribute("style").contains("display: block;"))
-                element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.FESTEJADO));
-        }
-    }
-    
     public String buscarNumeroEventoMRFL(MesaRegaloFL numEv, ArrayList<Sku> skus) {
         String flag = "";
         Utils.sleep(500);
+
         ArrayList<String> skuActualizado = new ArrayList<String>();
         ArrayList<String> skuArticulo = new ArrayList<String>();
         skuActualizado.add("1");
@@ -229,6 +219,18 @@ public class CheckoutP0 {
 //            while(!element.getAttribute("style").contains("display: block;"))
 //                Utils.sleep(500);
 //    }
+    public void vistaEvento() {
+        WebElement element;
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_UNICO_EVENTO))) != null) {
+            while (!element.getAttribute("style").contains("display: block;")) {
+                element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO));
+            }
+        } else if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_MULTIPLES_EVENTOS))) != null) {
+            while (!element.getAttribute("style").contains("display: block;")) {
+                element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO));
+            }
+        }
+    }
 
     public void obtenerListaSKU(ArrayList<Sku> skuSinImagen, MesaRegaloFL numEv, ArrayList<Sku> skus) {
         WebElement element;
@@ -464,6 +466,14 @@ public class CheckoutP0 {
         }
         return skuActualizado;
     }
-    
-}
 
+    public boolean validaBody() {
+        boolean res = false;
+        WebElement element;
+        // Validar que se encuentre el body de la lista de articulos en la bolsa
+        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIV_LIST_BAG))) != null) {
+            res = true;
+        }
+        return res;
+    }
+}
