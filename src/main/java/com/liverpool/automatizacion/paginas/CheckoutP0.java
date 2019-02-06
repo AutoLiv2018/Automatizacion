@@ -9,7 +9,6 @@ import com.liverpool.automatizacion.modelo.MesaRegaloFL;
 import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.principal.Principal;
-import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.properties.CheckoutPaso0;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
