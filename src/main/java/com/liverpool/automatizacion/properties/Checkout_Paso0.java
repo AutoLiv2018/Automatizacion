@@ -35,7 +35,6 @@ public class Checkout_Paso0 {
     public static final String APLICARPROMOCION = "aplicarPromocion";
     public static final String PRODUCT_LIST = "product_list";
     public static final String DIV_LIST_BAG = "div_list_bag";
-    
     public static final String DESCRIPCION_SKU = "descripcion_sku";
     public static final String SKU = "sku";
     public static final String TIPO_COMPRA = "tipo_compra";

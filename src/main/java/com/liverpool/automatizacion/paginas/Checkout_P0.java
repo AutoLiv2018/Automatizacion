@@ -10,6 +10,7 @@ import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.properties.Checkout_Paso0;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.principal.Principal;
+import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
 import java.util.ArrayList;
@@ -434,7 +435,7 @@ public class Checkout_P0 {
                         for (Sku sku : skus) {
                             if (sku.getId().equals(skuLista)) {
                                 cantidad = "";
-                                cantidad = Cpaso0.getProperty(Checkout_Paso0.REGALOFL);
+                                cantidad = Cpaso0.getProperty(Checkout_Paso0.REGALOFL);//Selecciona Comprar para mesa de Regalos
                                 cantidad = cantidad.replace("?", skuLista);
                                 Utils.sleep(2500);
                                 if ((element = Find.element(driver, cantidad)) != null) {
@@ -445,12 +446,13 @@ public class Checkout_P0 {
                                 buscaEvento(numEv);
                                 if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.LBL_BUSQ_ERROR))) != null) {
                                     String leyenda = element.getText();
+                                    Log.write("El numero de evento no existe - " + leyenda);
                                 } else {
-                                    String evento = Cpaso0.getProperty(Checkout_Paso0.NUMEVENTO_SEARCH_LIST);
-                                    if ((element = Find.element(driver, evento)) != null) {
-                                        Utils.sleep(500);
+                                    String evento = Cpaso0.getProperty(Checkout_Paso0.NUMEVENTO_SEARCH_LIST);//probar sin 
+                                    if ((element = Find.element(driver, evento)) != null) {//probar sin 
+                                        Utils.sleep(500);//probar sin 
                                         seleccionarCombo(numEv);
-                                    }
+                                    }//probar sin 
                                 }
                                 if (skuActualizado.get(c).equals("1")) {
                                     skuActualizado.remove(c);

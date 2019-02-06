@@ -14,11 +14,11 @@ import com.liverpool.automatizacion.modelo.Tarjeta;
 import com.liverpool.automatizacion.modelo.Ticket;
 import com.liverpool.automatizacion.modelo.Promocion;
 import com.liverpool.automatizacion.modelo.Tienda;
-import com.liverpool.automatizacion.paginas.CheckoutP0;
-import com.liverpool.automatizacion.paginas.CheckoutP1;
-import com.liverpool.automatizacion.paginas.CheckoutP2;
-import com.liverpool.automatizacion.paginas.CheckoutP3;
-import com.liverpool.automatizacion.paginas.CheckoutP4;
+import com.liverpool.automatizacion.paginas.Checkout_P0;
+import com.liverpool.automatizacion.paginas.Checkout_P1;
+import com.liverpool.automatizacion.paginas.Checkout_P2;
+import com.liverpool.automatizacion.paginas.Checkout_P3;
+import com.liverpool.automatizacion.paginas.Checkout_P4;
 import com.liverpool.automatizacion.paginas.LivHome;
 import com.liverpool.automatizacion.paginas.LivPDP;
 import com.liverpool.automatizacion.paginas.MesaRegalos;
@@ -72,10 +72,11 @@ public class MesaDeRegalos extends Matriz {
 
     boolean skuEncontrado;
 
-    public MesaDeRegalos(Interfaz interfaz, Navegador browser, boolean excel) {
+    public MesaDeRegalos(Interfaz interfaz, Navegador browser, boolean excel,String usuario) {
 
         this.browser = browser;
         this.interfaz = interfaz;
+        this.usuario = usuario;
 
         if (!excel) {
             skus = new ArrayList<Sku>() {
@@ -101,8 +102,9 @@ public class MesaDeRegalos extends Matriz {
 //            usuario = "Guest-Fuera de lista";
 //            usuario = "Login-Fuera de lista";
 //            usuario = "Festejado-Fuera de lista";
-
-            usuario = "Login-Dentro de lista";
+//
+//            usuario = "Login-Dentro de lista";
+            
 //            usuario = "Guest-Dentro de lista";
 //            usuario = "Festejado-Destro de lista";
             String nombreArchivo = "Compras Mesa.xlsx";
@@ -316,7 +318,7 @@ public class MesaDeRegalos extends Matriz {
             skus.add(new Sku(SKU[0], SKU[1]));
         }
 
-        cupones = escenario.get(5);
+        cupon = escenario.get(5);
         promo = escenario.get(6).replace(" ", "").split(", ");
         if (promo.length > 1) {
             promocion = new Promocion(promo[0], promo[1]);
@@ -355,13 +357,13 @@ public class MesaDeRegalos extends Matriz {
             Log.write("Despues de LiveHome");
             Utils.sleep(2000);
             LivPDP pdp = new LivPDP(interfaz, driver);
-            CheckoutP0 paso0 = new CheckoutP0(interfaz, driver);
+            Checkout_P0 paso0 = new Checkout_P0(interfaz, driver);
             MesaRegalos mesa = new MesaRegalos(interfaz, driver);
-            CheckoutP1 paso1 = new CheckoutP1(interfaz, driver);
-            CheckoutP2 paso2 = new CheckoutP2(interfaz, driver);
-            CheckoutP3 paso3 = new CheckoutP3(interfaz, driver);
+            Checkout_P1 paso1 = new Checkout_P1(interfaz, driver);
+            Checkout_P2 paso2 = new Checkout_P2(interfaz, driver);
+            Checkout_P3 paso3 = new Checkout_P3(interfaz, driver);
             PaypalSite paypal = new PaypalSite(interfaz, driver);
-            CheckoutP4 paso4 = new CheckoutP4(interfaz, driver);
+            Checkout_P4 paso4 = new Checkout_P4(interfaz, driver);
             ThreeDSecure tds = new ThreeDSecure(interfaz, driver);
             Excel escritura;
             GuardarImagen save = new GuardarImagen();
@@ -431,6 +433,7 @@ public class MesaDeRegalos extends Matriz {
                     skuSinImagen = agregaSkuDentroLista(mesa);
                     mesa.irPaso0();
                     paso0.obtenerListaSKU(skuSinImagen, mesaRegalo, skus);
+                    paso0.aplicarCupon(cupon);
                     paso0.pasoCeroComprar();
                     paso2.seleccionPago(metodoPago, usuario, tarjeta, direccionGuest);
                     paso3.terminarCompraTLOG();

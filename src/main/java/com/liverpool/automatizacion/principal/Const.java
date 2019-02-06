@@ -29,4 +29,5 @@ public class Const {
     
     // Querys para la base de datos
     public static final String QUERY_ARTICULO_ALL = "query.articulo.all";
+    public static final String APP_MESAREGALOS = "app.mesaRegalos";
 }

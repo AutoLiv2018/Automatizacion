@@ -88,8 +88,8 @@ public class MesaRegalos {
         
         botonMesa();// Ir al boton de mesa de regalos
         validarSesion();//Valida que siga en sesion sino inicia sesion
-        seleccionaEvento();//Selecciona Evento
-        buscarMesaGuest();
+        seleccionaEvento();//Selecciona Evento si tiene evento registrado
+        buscarMesaGuest();//Selecciona Buscar Mesa si NO tiene evento registrado
         Utils.sleep(2500);
         buscarMesa();//Selecciona buscar una Mesa
         Utils.sleep(2000);

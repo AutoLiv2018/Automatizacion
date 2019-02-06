@@ -55,9 +55,10 @@ public class Tlog {
     public String metodoPago;
     public String cupon;
     
-    public Tlog (Interfaz interfaz, Navegador browser, boolean excel){
+    public Tlog (Interfaz interfaz, Navegador browser, boolean excel,String usuario){
         this.interfaz = interfaz;
         this.browser = browser;
+        this.usuario = usuario;
         
         if(!excel){
             skus = new ArrayList<Sku>(){{
@@ -78,7 +79,7 @@ public class Tlog {
             loginPaypal = new Login("compradorus@hotmail.com","Comprador1");
         }
         if(excel){
-            usuario = "Login";
+//            usuario = "Login";
             Excel excelArc = new Excel("Compras.xlsx");
             casos=excelArc.getExcel(usuario);
         }

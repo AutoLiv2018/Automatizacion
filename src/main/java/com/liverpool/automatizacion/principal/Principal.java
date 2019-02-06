@@ -7,8 +7,7 @@ package com.liverpool.automatizacion.principal;
 
 //import com.liverpool.automatizacion.matrices.Checkout;
 //import com.liverpool.automatizacion.matrices.MesaDeRegalos;
-import com.liverpool.automatizacion.matrices.MesaDeRegalos;
-import com.liverpool.automatizacion.matrices.Tlog;
+import com.liverpool.automatizacion.principal.TlogCompras;
 import com.liverpool.automatizacion.modelo.Archivo;
 import com.liverpool.automatizacion.properties.Cart;
 import com.liverpool.automatizacion.properties.Shipping;
@@ -41,70 +40,72 @@ import org.openqa.selenium.os.WindowsUtils;
  * @author iasancheza
  */
 public class Principal {
+
     Properties p = new Properties(); // propiedades generales
     private JFrame frame; // Ventana de la aplicacion
+    private JFrame jFMesa; // Ventana de la aplicacion
     public Interfaz interfaz; // Interfaz de la aplicacion
     private WebDriver driver; // manejador del explorador web
     private Properties entorno;
-    
+
     public static void main(String[] args) {
         new Principal();
     }
-    
-    public Principal(){
+
+    public Principal() {
         init();
     }
-    
-    private void init(){
+
+    private void init() {
         // Cargar el archivo de configuracion general
-        if(!loadProperties(Const.PROPERTIES_FILE, p)){
+        if (!loadProperties(Const.PROPERTIES_FILE, p)) {
             Log.write("No se encontro el archivo: " + Const.PROPERTIES_FILE);
             return;
         }
-        
+
         Log.write("Inicia Sistema de Automatizacion");
-        
+
         initInterfaz(); // Inicializar la interfaz grafica
-        
+
         frame = new JFrame(p.getProperty(Const.APP_VERSION));
         frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.addWindowListener(new WindowAdapter() {
             @Override
-            public void windowClosing(java.awt.event.WindowEvent evt){
+            public void windowClosing(java.awt.event.WindowEvent evt) {
                 frame.setVisible(false);
                 closeAll(getNameExe());
             }
         });
-        frame.add(interfaz,BorderLayout.CENTER);
+        frame.add(interfaz, BorderLayout.CENTER);
         frame.pack(); // si se pone despues, no centra la ventana
         mostrarInterfaz();
     }
-    
-    public void mostrarInterfaz(){
+
+    public void mostrarInterfaz() {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-    
-    private void initInterfaz(){
+
+    private void initInterfaz() {
         interfaz = new Interfaz();
         HashMap<Archivo, ArrayList<Archivo>> arbol = workspaceTree(p.getProperty(Const.APP_WORKSPACE));
-        
+
         // Llenar el combo de tienda
         ArrayList<Archivo> files = arbol.get(new Archivo(p.getProperty(Const.APP_WORKSPACE)));
-        if(files != null){
-            for(Archivo f : files){
+        if (files != null) {
+            for (Archivo f : files) {
                 interfaz.getCbxTienda().addItem(f);
             }
         }
-        
+
         // Llenar el combo de ambiente
         interfaz.getCbxTienda().addActionListener((ActionEvent e) -> {
             llenarComboAmbiente(arbol);
         });
         llenarComboAmbiente(arbol);
-        
+
         // Llenar el combo de version
         interfaz.getCbxAmbiente().addActionListener(new ActionListener() {
             @Override
@@ -115,175 +116,182 @@ public class Principal {
             }
         });
         llenarComboVersion(arbol);
-        
+
         // Llenar el combo de navegadores web
         llenarComboNavegadores(p.getProperty(Const.APP_NAVEGADORES).split("\\|"));
-        
+
         // Llenar el combo de matrices
         llenarComboMatrices(p.getProperty(Const.APP_MATRICES).split("\\|"));
-        
+
         // Configurar el boton de Iniciar
-        interfaz.getBtnIniciar().addActionListener((ActionEvent e) -> {
-            // Ocultar la interfaz
-            frame.setVisible(false);
+        interfaz.getBtnIniciar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Ocultar la interfaz
+                frame.setVisible(false);
 
-            // Recuperar el entorno:
-            Archivo folder = (Archivo)interfaz.getCbxVersion().getSelectedItem();
+                // Recuperar el entorno:
+                Archivo folder = (Archivo) interfaz.getCbxVersion().getSelectedItem();
 
-            // Cargar el ambiente
-            String entornoFl = p.getProperty(Const.APP_ENTORNO).replace("?", folder.getName());
-            entornoFl = new File(folder, entornoFl).getAbsolutePath();
-            entorno = new Properties(); // propiedades del ambiente de ejecucion
-            if(!loadProperties(entornoFl, entorno)){
-                Log.write("No se encontro el archivo: " + entornoFl);
-                return;
-            }
+                // Cargar el ambiente
+                String entornoFl = p.getProperty(Const.APP_ENTORNO).replace("?", folder.getName());
+                entornoFl = new File(folder, entornoFl).getAbsolutePath();
+                entorno = new Properties(); // propiedades del ambiente de ejecucion
+                if (!loadProperties(entornoFl, entorno)) {
+                    Log.write("No se encontro el archivo: " + entornoFl);
+                    return;
+                }
 
-            // Ya se cargaron las propiedades del entorno seleccionado
+                // Ya se cargaron las propiedades del entorno seleccionado
+                // Abrir el ambiente seleccionado
+                Properties cart = new Properties(); // propiedades de la pagina cart.jsp
+                Properties shipping = new Properties(); // propiedades de la pagina shipping.jsp
 
-            // Abrir el ambiente seleccionado
-            Properties cart = new Properties(); // propiedades de la pagina cart.jsp
-            Properties shipping = new Properties(); // propiedades de la pagina shipping.jsp
+                File shippingFl = new File(folder, Shipping.PROPERTIES_FILE);
+                if (!loadProperties(shippingFl.getAbsolutePath(), shipping)) {
+                    Log.write("No se encontro el archivo: " + shippingFl);
+                    return;
+                }
 
-            File shippingFl = new File(folder, Shipping.PROPERTIES_FILE);
-            if(!loadProperties(shippingFl.getAbsolutePath(), shipping)){
-                Log.write("No se encontro el archivo: " + shippingFl);
-                return;
-            }
+                File cartFl = new File(folder, Cart.PROPERTIES_FILE);
+                if (!loadProperties(cartFl.getAbsolutePath(), cart)) {
+                    Log.write("No se encontro el archivo: " + cartFl);
+                    return;
+                }
 
-            File cartFl = new File(folder, Cart.PROPERTIES_FILE);
-            if(!loadProperties(cartFl.getAbsolutePath(), cart)){
-                Log.write("No se encontro el archivo: " + cartFl);
-                return;
-            }
+                // Conectarse a la BD para consultar los skus
+                Properties dataConn = new Properties();
+                dataConn.setProperty(DB.DB_CLASE, p.getProperty(DB.DB_CLASE));
+                dataConn.setProperty(DB.DB_URL, p.getProperty(DB.DB_URL));
+                dataConn.setProperty(DB.DB_HOST, p.getProperty(DB.DB_HOST));
+                dataConn.setProperty(DB.DB_PORT, p.getProperty(DB.DB_PORT));
+                dataConn.setProperty(DB.DB_NAME, p.getProperty(DB.DB_NAME));
+                dataConn.setProperty(DB.DB_USR, p.getProperty(DB.DB_USR));
+                dataConn.setProperty(DB.DB_PSW, p.getProperty(DB.DB_PSW));
 
-            // Conectarse a la BD para consultar los skus
-            Properties dataConn = new Properties();
-            dataConn.setProperty(DB.DB_CLASE, p.getProperty(DB.DB_CLASE));
-            dataConn.setProperty(DB.DB_URL, p.getProperty(DB.DB_URL));
-            dataConn.setProperty(DB.DB_HOST, p.getProperty(DB.DB_HOST));
-            dataConn.setProperty(DB.DB_PORT, p.getProperty(DB.DB_PORT));
-            dataConn.setProperty(DB.DB_NAME, p.getProperty(DB.DB_NAME));
-            dataConn.setProperty(DB.DB_USR, p.getProperty(DB.DB_USR));
-            dataConn.setProperty(DB.DB_PSW, p.getProperty(DB.DB_PSW));
-            
-            // Configuracion del driver
-            String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
-            Navegador browser = new Navegador(navegador, p, entorno);
-            
-            String matrizSelected = (String)interfaz.getCbxMatriz().getSelectedItem();
-            switch(matrizSelected){
-                case "Mi Cuenta":
-                    break;
-                case "Checkout":
+                // Configuracion del driver
+                String navegador = (String) interfaz.getCbxNavegador().getSelectedItem();
+                Navegador browser = new Navegador(navegador, p, entorno);
+
+                String matrizSelected = (String) interfaz.getCbxMatriz().getSelectedItem();
+                switch (matrizSelected) {
+                    case "Mi Cuenta":
+                        break;
+                    case "Checkout":
 //                    Checkout checkout = new Checkout(entorno, cart, shipping, driver, true);
 //                    checkout.execute();
-                    break;
-                case "Mesa de Regalos":
-            //        MesaDeRegalos mdr = new MesaDeRegalos(entorno,cart,shipping,driver, true);
-            //        mdr.execute();
-                     MesaDeRegalos mdrfl = new MesaDeRegalos(interfaz, browser,true);
-                     mdrfl.mesaRegalos();
-                    break;
-                case "TLOG":
-                    Tlog tlog = new Tlog(interfaz, browser, false);
-                    tlog.liverpool_TLOG();
-                    break;
-                case "TLOG Excel":
-                    Tlog tlogExcel = new Tlog(interfaz, browser, true);
-                    tlogExcel.liverpool_TLOG();
-                    break;
+                        break;
+                    case "Mesa de Regalos":
+//                     MesaDeRegalos mdrfl = new MesaDeRegalos(interfaz, browser,true);
+//                     mdrfl.mesaRegalos();
+//                    mostrarInterfazMesa();
+//                    MesaR mesa = new MesaR();
+//                     mesa.tipoLista();
+                        MesaRegalos mesa = new MesaRegalos(interfaz, browser, true);
+                        mesa.mostrarInterfazMesa();
+
+                        break;
+                    case "TLOG":
+//                    Tlog tlog = new Tlog(interfaz, browser, false);
+//                    tlog.liverpool_TLOG();
+                        TlogCompras tlog = new TlogCompras(interfaz, browser, true);
+                        tlog.mostrarInterfazTlog();
+                        break;
+                    case "TLOG Excel":
+//                        TlogCompras tlogExcel = new TlogCompras(interfaz, browser, true);
+//                        tlogExcel.liverpool_TLOG();
+                        break;
+                }
+//            mostrarInterfaz();
             }
-            mostrarInterfaz();
         });
     }
-    
-    
-    private String getNameExe(){
-        String navegador = (String)interfaz.getCbxNavegador().getSelectedItem();
-        if(navegador == null){
-                    System.exit(0);
-                }
-                
-                String nameExe = "";
-                switch(navegador){
-                    case "Chrome":
-                        nameExe = new File(p.getProperty(Const.CHROME_PATH)).getName();
-                        break;
-                    case "Mozilla Firefox":
-                        nameExe = "";
-                        break;
-                    case "Internet Explorer":
-                        nameExe = "";
-                        break;
-                    default:
-                        System.exit(0);
-                }
+
+    private String getNameExe() {
+        String navegador = (String) interfaz.getCbxNavegador().getSelectedItem();
+        if (navegador == null) {
+            System.exit(0);
+        }
+
+        String nameExe = "";
+        switch (navegador) {
+            case "Chrome":
+                nameExe = new File(p.getProperty(Const.CHROME_PATH)).getName();
+                break;
+            case "Mozilla Firefox":
+                nameExe = "";
+                break;
+            case "Internet Explorer":
+                nameExe = "";
+                break;
+            default:
+                System.exit(0);
+        }
         return nameExe;
     }
-    
-    private void llenarComboAmbiente(HashMap<Archivo, ArrayList<Archivo>> arbol){
+
+    private void llenarComboAmbiente(HashMap<Archivo, ArrayList<Archivo>> arbol) {
         interfaz.getCbxAmbiente().removeAllItems();
-        
-        ArrayList<Archivo> files = arbol.get((Archivo)interfaz.getCbxTienda().getSelectedItem());
-        if(files != null){
-            for(Archivo f : files){
+
+        ArrayList<Archivo> files = arbol.get((Archivo) interfaz.getCbxTienda().getSelectedItem());
+        if (files != null) {
+            for (Archivo f : files) {
                 interfaz.getCbxAmbiente().addItem(f);
             }
         }
     }
-    
-    private void llenarComboVersion(HashMap<Archivo, ArrayList<Archivo>> arbol){
+
+    private void llenarComboVersion(HashMap<Archivo, ArrayList<Archivo>> arbol) {
         interfaz.getCbxVersion().removeAllItems();
-        
-        ArrayList<Archivo> files = arbol.get((Archivo)interfaz.getCbxAmbiente().getSelectedItem());
-        if(files != null){
-            for(Archivo f : files){
+
+        ArrayList<Archivo> files = arbol.get((Archivo) interfaz.getCbxAmbiente().getSelectedItem());
+        if (files != null) {
+            for (Archivo f : files) {
                 interfaz.getCbxVersion().addItem(f);
             }
         }
     }
-    
-    private void llenarComboNavegadores(String[] navegadores){
+
+    private void llenarComboNavegadores(String[] navegadores) {
         interfaz.getCbxNavegador().removeAllItems();
-        Archivo item = (Archivo)interfaz.getCbxAmbiente().getSelectedItem();
-        if(item == null){
+        Archivo item = (Archivo) interfaz.getCbxAmbiente().getSelectedItem();
+        if (item == null) {
             return;
         }
         String ambiente = item.getName().toUpperCase();
-        for(String navegador : navegadores){
-            switch(ambiente){
+        for (String navegador : navegadores) {
+            switch (ambiente) {
                 case "WEB":
                 case "WAP":
                     interfaz.getCbxNavegador().addItem(navegador);
             }
         }
     }
-    
-    private void llenarComboMatrices(String[] matrices){
+
+    private void llenarComboMatrices(String[] matrices) {
         interfaz.getCbxMatriz().removeAllItems();
-        for(String matriz : matrices){
-            interfaz.getCbxMatriz().addItem(matriz);            
+        for (String matriz : matrices) {
+            interfaz.getCbxMatriz().addItem(matriz);
         }
     }
-    
-    private HashMap<Archivo, ArrayList<Archivo>> workspaceTree(String workspace){
+
+    private HashMap<Archivo, ArrayList<Archivo>> workspaceTree(String workspace) {
         Archivo workspaceFl = new Archivo(workspace);
         HashMap<Archivo, ArrayList<Archivo>> arbol = new HashMap<>();
         arbol.put(workspaceFl, new ArrayList<>());
         try {
             Iterator<Path> paths = Files.walk(Paths.get(workspaceFl.getName())).filter(Files::isDirectory).iterator();
-            while(paths.hasNext()){
+            while (paths.hasNext()) {
                 Archivo f = new Archivo(paths.next().toString());
-                
-                if(f.equals(workspaceFl)){
+
+                if (f.equals(workspaceFl)) {
                     continue;
                 }
-                
+
                 Archivo parent = new Archivo(f.getParentFile().getPath());
-                
+
                 ArrayList<Archivo> list = arbol.get(parent);
-                if(list == null){
+                if (list == null) {
                     list = new ArrayList<>();
                     arbol.put(parent, list);
                 }
@@ -295,24 +303,24 @@ public class Principal {
         }
         return arbol;
     }
-    
-    public void closeAll (String nameExe){
-        if(driver != null){
+
+    public void closeAll(String nameExe) {
+        if (driver != null) {
             driver.close(); // Cierra la pestania
             driver.quit(); // Cierra el navegador actual y finaliza la sesion del webdriver
         }
-        if(!nameExe.equals("")){
+        if (!nameExe.equals("")) {
             WindowsUtils.killByName(nameExe); // Mata el proceso del driver
         }
         Log.write("Fin del Sistema de Automatizacion");
         System.exit(0);
     }
-    
-    static public boolean loadProperties(String nameFl, Properties props){
+
+    static public boolean loadProperties(String nameFl, Properties props) {
         boolean load = false;
         InputStream input = null;
         Reader reader = null;
-        try{
+        try {
             input = new FileInputStream(new File(nameFl));
             reader = new InputStreamReader(input, "UTF-8");
             props.load(reader);
@@ -326,20 +334,20 @@ public class Principal {
             load = false;
         } finally {
             try {
-                if(reader != null){
+                if (reader != null) {
                     reader.close();
                 }
-                
+
                 if (input != null) {
                     input.close();
                 }
-            } catch (IOException e){
+            } catch (IOException e) {
                 Log.write(e.toString());
                 load = false;
             }
         }
-        
-        if(!load){
+
+        if (!load) {
             Log.write("Ocurrio una excepcion al leer el archivo: " + nameFl);
             //JOptionPane.showMessageDialog(null,"Falta el archivo de configuración: " + nameFl,"", JOptionPane.ERROR_MESSAGE);
         }
