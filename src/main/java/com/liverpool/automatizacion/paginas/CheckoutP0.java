@@ -10,7 +10,6 @@ import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.properties.CheckoutPaso0;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.principal.Principal;
-import com.liverpool.automatizacion.properties.Checkout_Paso0;
 import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
@@ -125,7 +124,7 @@ public class CheckoutP0 {
     public boolean validaNumEvento(MesaRegaloFL numEv) {
         boolean res = false;
         WebElement element;
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VALIDA_NUM_EVENTO))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.VALIDA_NUM_EVENTO))) != null) {
             String attValue = element.getText();
             if (numEv.getNumEvento() != element.getText()) {
                 res = true;
@@ -137,7 +136,7 @@ public class CheckoutP0 {
     public boolean buscaEvento(MesaRegaloFL numEv) {
         boolean res = false;
         WebElement element;
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.NUMEVENTORFL))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.NUMEVENTORFL))) != null) {
             element.sendKeys(numEv.getNumEvento(), Keys.ENTER); // Buscar el evento
             res = true;
         }
@@ -148,7 +147,7 @@ public class CheckoutP0 {
         boolean res = false;
         WebElement element;
         Utils.sleep(500);
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.REGALOFL))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.REGALOFL))) != null) {
             res = true;
             element.click();
         }
@@ -158,7 +157,7 @@ public class CheckoutP0 {
     public boolean frameMesaRegaloFL() {
         WebElement element;
         boolean res = false;
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FRAMECLASSMESARFL))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.FRAMECLASSMESARFL))) != null) {
             driver.switchTo().frame(element);
             res = true;
         }
@@ -168,12 +167,12 @@ public class CheckoutP0 {
     public boolean seleccionarCombo(MesaRegaloFL numEv) {
         boolean res = false;
         WebElement element = null;
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.FESTEJADO) + numEv.getNumEvento());
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.FESTEJADO) + numEv.getNumEvento());
         Select select = new Select(element);
         List<WebElement> festejado = select.getOptions();
         select.selectByVisibleText(numEv.getFestejado());
 
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BUTTONFESTEJADO))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.BUTTONFESTEJADO))) != null) {
             res = true;
             element.click();
         }
@@ -182,14 +181,14 @@ public class CheckoutP0 {
 
     public void llenarMensaje(MesaRegaloFL numEv) {
         WebElement element;
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.MENSAJEPARAFESTEJADO));
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.MENSAJEPARAFESTEJADO));
         element.sendKeys(numEv.getMensaje(), Keys.ENTER);
     }
 
     public boolean divMesaRegalosFL() {
         WebElement element;
         boolean res = false;
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIVBOTONPAGAR))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIVBOTONPAGAR))) != null) {
             driver.switchTo().frame(element);
             res = true;
         }
@@ -199,7 +198,7 @@ public class CheckoutP0 {
     public boolean botonPagar() {
         WebElement element;
         boolean res = false;
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BOTONPAGARMRFL))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.BOTONPAGARMRFL))) != null) {
             res = true;
             element.sendKeys(Keys.RETURN);
 //            element.click();
@@ -210,7 +209,7 @@ public class CheckoutP0 {
     public boolean botonCompraSinRegistro() {
         boolean res = false;
         WebElement element;
-        if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.BUTTONSINREGISTRO))) != null) {
+        if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.BUTTONSINREGISTRO))) != null) {
             res = true;
             element.click();
         }
@@ -219,13 +218,13 @@ public class CheckoutP0 {
 
 //    public void vistaUnicoEvento(){
 //        WebElement element;
-//        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_UNICO_EVENTO))) != null)
+//        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.VISTA_UNICO_EVENTO))) != null)
 //            while(!element.getAttribute("style").contains("display: block;"));
 //    }
 //    
 //    public void vistaMultiplesEventos(){
 //        WebElement element;
-//        if((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.VISTA_MULTIPLES_EVENTOS))) != null)
+//        if((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.VISTA_MULTIPLES_EVENTOS))) != null)
 //            while(!element.getAttribute("style").contains("display: block;"))
 //                Utils.sleep(500);
 //    }
@@ -235,12 +234,12 @@ public class CheckoutP0 {
         ArrayList<String> skuAEliminar = new ArrayList<String>();
         ArrayList<Sku> skuApagar = new ArrayList<Sku>();
 
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIV_LIST_BAG));
-        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(Checkout_Paso0.PRODUCT_LIST));
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));
+        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));
 
         for (WebElement articulo : productList) {
             WebElement temp;
-            if ((temp = Find.element(articulo, Cpaso0.getProperty(Checkout_Paso0.SKU))) != null) {
+            if ((temp = Find.element(articulo, Cpaso0.getProperty(CheckoutPaso0.SKU))) != null) {
 
                 skuLista = temp.getText();
 
@@ -279,8 +278,8 @@ public class CheckoutP0 {
         WebElement element;
         String skuLista = "";
 
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIV_LIST_BAG));
-        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(Checkout_Paso0.PRODUCT_LIST));
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));
+        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));
 
         for (int c = 0; c < productList.size(); c++) {
             WebElement temp;
@@ -289,7 +288,7 @@ public class CheckoutP0 {
 
             for (WebElement articulo : productList) {
 
-                if ((temp = Find.element(articulo, Cpaso0.getProperty(Checkout_Paso0.SKU))) != null) {
+                if ((temp = Find.element(articulo, Cpaso0.getProperty(CheckoutPaso0.SKU))) != null) {
 
                     skuLista = temp.getText();
 
@@ -297,7 +296,7 @@ public class CheckoutP0 {
 
                         if (skuAEliminar.get(i).equals(skuLista)) {
 
-                            String botonEliminar = Cpaso0.getProperty(Checkout_Paso0.BTN_ELIMINAR_SKU);
+                            String botonEliminar = Cpaso0.getProperty(CheckoutPaso0.BTN_ELIMINAR_SKU);
                             botonEliminar = botonEliminar.replace("?", skuAEliminar.get(i));
                             Utils.sleep(2500);
                             if ((element = Find.element(driver, botonEliminar)) != null) {
@@ -325,14 +324,14 @@ public class CheckoutP0 {
         WebElement temp;
         String mensajeText;
         Utils.sleep(2500);
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIV_LIST_BAG));
-        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(Checkout_Paso0.PRODUCT_LIST));
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));
+        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));
 
         for (WebElement articulo : productList) {
-            if ((temp = Find.element(articulo, Cpaso0.getProperty(Checkout_Paso0.SKU))) != null) {
+            if ((temp = Find.element(articulo, Cpaso0.getProperty(CheckoutPaso0.SKU))) != null) {
                 skuLista = temp.getText();
                 mensajeText = "";
-                mensajeText = Cpaso0.getProperty(Checkout_Paso0.MENSAJE_SKU);
+                mensajeText = Cpaso0.getProperty(CheckoutPaso0.MENSAJE_SKU);
                 mensajeText = mensajeText.replace("?", skuLista);
                 if ((element = Find.element(driver, mensajeText)) != null) {
                     if (element.isDisplayed()) {
@@ -354,11 +353,11 @@ public class CheckoutP0 {
         boolean existe = false;
 
         Utils.sleep(2550);
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIV_LIST_BAG));
-        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(Checkout_Paso0.PRODUCT_LIST));
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));
+        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));
 
         for (WebElement articulo : productList) {
-            if ((temp = Find.element(articulo, Cpaso0.getProperty(Checkout_Paso0.SKU))) != null) {
+            if ((temp = Find.element(articulo, Cpaso0.getProperty(CheckoutPaso0.SKU))) != null) {
                 skuLista = temp.getText();
                 for (int c = 0; c < skuActualizado.size(); c++) {
                     for (int a = 0; a < skuArticulo.size(); a++) {
@@ -372,7 +371,7 @@ public class CheckoutP0 {
                         for (Sku sku : skus) {
                             if (sku.getId().equals(skuLista)) {
                                 cantidad = "";
-                                cantidad = Cpaso0.getProperty(Checkout_Paso0.CANTIDAD);
+                                cantidad = Cpaso0.getProperty(CheckoutPaso0.CANTIDAD);
                                 cantidad = cantidad.replace("?", skuLista);
                                 Utils.sleep(2500);
                                 if ((element = Find.element(driver, cantidad)) != null) {
@@ -414,11 +413,11 @@ public class CheckoutP0 {
         boolean existe = false;
 
         Utils.sleep(2550);
-        element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.DIV_LIST_BAG));
-        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(Checkout_Paso0.PRODUCT_LIST));
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));
+        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));
 
         for (WebElement articulo : productList) {
-            if ((temp = Find.element(articulo, Cpaso0.getProperty(Checkout_Paso0.SKU))) != null) {
+            if ((temp = Find.element(articulo, Cpaso0.getProperty(CheckoutPaso0.SKU))) != null) {
                 skuLista = temp.getText();
                 for (int c = 0; c < skuActualizado.size(); c++) {
                     for (int a = 0; a < skuArticulo.size(); a++) {
@@ -432,7 +431,7 @@ public class CheckoutP0 {
                         for (Sku sku : skus) {
                             if (sku.getId().equals(skuLista)) {
                                 cantidad = "";
-                                cantidad = Cpaso0.getProperty(Checkout_Paso0.REGALOFL);
+                                cantidad = Cpaso0.getProperty(CheckoutPaso0.REGALOFL);
                                 cantidad = cantidad.replace("?", skuLista);
                                 Utils.sleep(2500);
                                 if ((element = Find.element(driver, cantidad)) != null) {
@@ -441,10 +440,10 @@ public class CheckoutP0 {
                                 Utils.sleep(1000);
                                 frameMesaRegaloFL();
                                 buscaEvento(numEv);
-                                if ((element = Find.element(driver, Cpaso0.getProperty(Checkout_Paso0.LBL_BUSQ_ERROR))) != null) {
+                                if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.LBL_BUSQ_ERROR))) != null) {
                                     String leyenda = element.getText();
                                 } else {
-                                    String evento = Cpaso0.getProperty(Checkout_Paso0.NUMEVENTO_SEARCH_LIST);
+                                    String evento = Cpaso0.getProperty(CheckoutPaso0.NUMEVENTO_SEARCH_LIST);
                                     if ((element = Find.element(driver, evento)) != null) {
                                         Utils.sleep(500);
                                         seleccionarCombo(numEv);
