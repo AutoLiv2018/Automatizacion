@@ -49,4 +49,8 @@ public class CheckoutPaso2 {
     public static final String TELPARTICULAR = "telParticular";
     public static final String CELULAR = "celular";
     public static final String SIGUIENTEPASO = "siguientePaso";
+    public static final String CORREOGUESTPAYPAL = "correoGuestPaypal";
+    public static final String NOMBREPAYPAL = "nombrePaypal";
+    public static final String APETERNOPAYPAL = "aPaternoPaypal";
+    public static final String AMATERNOPAYPAL = "aMaternoPaypal";
 }

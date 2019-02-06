@@ -10,7 +10,6 @@ import com.liverpool.automatizacion.modelo.Guest;
 import com.liverpool.automatizacion.modelo.Tarjeta;
 import com.liverpool.automatizacion.principal.Principal;
 import com.liverpool.automatizacion.properties.CheckoutPaso2;
-import com.liverpool.automatizacion.properties.Checkout_Paso2;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
@@ -435,7 +434,7 @@ public class CheckoutP2 {
     
      public boolean llenadoCorreo(String correo){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.CORREOGUESTPAYPAL))) != null){
+        if((element = Find.element(driver, Cpaso2.getProperty(CheckoutPaso2.CORREOGUESTPAYPAL))) != null){
             element.sendKeys(correo);
             return true;
         }
@@ -444,7 +443,7 @@ public class CheckoutP2 {
     
     public boolean llenadoNombre(String correo){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.NOMBREPAYPAL))) != null){
+        if((element = Find.element(driver, Cpaso2.getProperty(CheckoutPaso2.NOMBREPAYPAL))) != null){
             element.sendKeys(correo);
             return true;
         }
@@ -452,7 +451,7 @@ public class CheckoutP2 {
     }
     public boolean llenadoApaterno(String correo){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.APETERNOPAYPAL))) != null){
+        if((element = Find.element(driver, Cpaso2.getProperty(CheckoutPaso2.APETERNOPAYPAL))) != null){
             element.sendKeys(correo);
             return true;
         }
@@ -460,7 +459,7 @@ public class CheckoutP2 {
     }
     public boolean llenadoAmaterno(String correo){
         WebElement element;
-        if((element = Find.element(driver, Cpaso2.getProperty(Checkout_Paso2.AMATERNOPAYPAL))) != null){
+        if((element = Find.element(driver, Cpaso2.getProperty(CheckoutPaso2.AMATERNOPAYPAL))) != null){
             element.sendKeys(correo);
             return true;
         }

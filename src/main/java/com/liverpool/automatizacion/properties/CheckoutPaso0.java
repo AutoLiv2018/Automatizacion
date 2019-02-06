@@ -12,7 +12,7 @@ package com.liverpool.automatizacion.properties;
 public class CheckoutPaso0 {
     
     public static final String PROPERTIES_FILE = "Paso0_Checkout.properties";
-    
+
     public static final String BOLSA_PASO0 = "bolsa_Paso0";
     public static final String PAGARTEXTO = "pagarTexto";
     public static final String FANCYBOXCLASE = "fancyboxClase";
