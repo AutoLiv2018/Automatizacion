@@ -214,6 +214,20 @@ public class MesaRegalos {
         return res;
     }
     
+    public void agregarCertificado(Sku sku){
+       String precioCert = sku.getId().substring(8, 11);
+       if(precioCert.equals("000")){
+           precioCert = sku.getId().substring(7, 11);
+       }
+       String buscarCert = "CERTIFICADO $"+precioCert;
+       String certificado =  mesaRegalos.getProperty(MesaDeRegalosProper.CERTIFICADO);
+       certificado = certificado.replace("?", buscarCert);
+//       if ((element = Find.element(driver, "xpath|//*[@text="+buscarCert+"]")) != null) {
+       if ((element = Find.element(driver,certificado)) != null) {
+           element.click();
+       }
+   }
+    
     public boolean selecionarFestejado(MesaRegaloFL numEv) {
         boolean res = false;
         String festejado = mesaRegalos.getProperty(MesaDeRegalosProper.LBL_FESTEJADO);

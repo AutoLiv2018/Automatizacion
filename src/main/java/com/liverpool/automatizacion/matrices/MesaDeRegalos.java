@@ -565,8 +565,11 @@ public class MesaDeRegalos extends Matriz {
             Utils.sleep(2000);
             skuEncontrado = mesa.seleccionaSKU(skus.get(i));
             if (skuEncontrado) {
-                mesa.agregaBolsa(mesaRegalo);
-            } else {
+               mesa.agregaBolsa(mesaRegalo);
+            }  else if (skus.get(i).getId().length()==12){
+               mesa.agregarCertificado(skus.get(i));
+               mesa.agregaBolsa(mesaRegalo);
+           }else {
                 skuSinImagen.add(skus.get(i));
             }
         }
