@@ -35,6 +35,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -139,6 +140,7 @@ public class MesaDeRegalos extends Matriz {
     }
 
     public void loginDentroDeLista() {
+        skuss.clear();
         String[] tiendaCC;
         compra = escenario.get(0);
         login = new Login(escenario.get(1), escenario.get(2));
@@ -164,11 +166,14 @@ public class MesaDeRegalos extends Matriz {
         fechaTarjeta = escenario.get(12).split("/");
         if (fechaTarjeta.length > 1) {
             tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
-        }
+        }else
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), "", "");
+        
         loginPaypal = new Login(escenario.get(13), escenario.get(14));
     }
 
     public void guestDentroDeLista() {
+        skuss.clear();
         compra = escenario.get(0);
         guest = new Guest(escenario.get(1), escenario.get(2), escenario.get(3),
                 escenario.get(4), escenario.get(5), escenario.get(6));
@@ -202,6 +207,7 @@ public class MesaDeRegalos extends Matriz {
     }
 
     public void festejadoDentroDeLista() {
+        skuss.clear();
         String[] tiendaCC;
         compra = escenario.get(0);
         login = new Login(escenario.get(1), escenario.get(2));
@@ -231,7 +237,7 @@ public class MesaDeRegalos extends Matriz {
         metodoPago = escenario.get(13);
         fechaTarjeta = escenario.get(16).split("/");
         if (fechaTarjeta.length > 1) {
-            tarjeta = new Tarjeta(escenario.get(14), escenario.get(15), fechaTarjeta[0], fechaTarjeta[0]);
+            tarjeta = new Tarjeta(escenario.get(14), escenario.get(15), fechaTarjeta[0], fechaTarjeta[1]);
         } else {
             tarjeta = new Tarjeta(escenario.get(14), escenario.get(15), "", "");
         }
@@ -239,6 +245,7 @@ public class MesaDeRegalos extends Matriz {
     }
 
     public void loginFueraDeLista() {
+        skuss.clear();
         compra = escenario.get(0);
         login = new Login(escenario.get(1), escenario.get(2));
         mesaRegalo = new MesaRegaloFL(escenario.get(3), escenario.get(4), escenario.get(5));
@@ -262,12 +269,15 @@ public class MesaDeRegalos extends Matriz {
         fechaTarjeta = escenario.get(12).split("/");
         if (fechaTarjeta.length > 1) {
             tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), fechaTarjeta[0], fechaTarjeta[1]);
+        }else {
+            tarjeta = new Tarjeta(escenario.get(10), escenario.get(11), "", "");
         }
         loginPaypal = new Login(escenario.get(13), escenario.get(14));
         Log.write("Numero de evento dentro login... " + mesaRegalo.getNumEvento());
     }
 
     public void guestFueraDeLista() {
+        skuss.clear();
         compra = escenario.get(0);
         guest = new Guest(escenario.get(1), escenario.get(2), escenario.get(3),
                 escenario.get(4), escenario.get(5), escenario.get(6));
@@ -306,6 +316,7 @@ public class MesaDeRegalos extends Matriz {
     }
 
     public void festejadoFueraDeLista() {
+        skuss.clear();
         String[] tiendaCC;
         compra = escenario.get(0);
         login = new Login(escenario.get(1), escenario.get(2));
@@ -334,7 +345,7 @@ public class MesaDeRegalos extends Matriz {
         metodoPago = escenario.get(10);
         fechaTarjeta = escenario.get(13).split("/");
         if (fechaTarjeta.length > 1) {
-            tarjeta = new Tarjeta(escenario.get(11), escenario.get(12), fechaTarjeta[0], fechaTarjeta[0]);
+            tarjeta = new Tarjeta(escenario.get(11), escenario.get(12), fechaTarjeta[0], fechaTarjeta[1]);
         } else {
             tarjeta = new Tarjeta(escenario.get(11), escenario.get(12), "", "");
         }
@@ -346,8 +357,9 @@ public class MesaDeRegalos extends Matriz {
         String numEvEncontrado;
         List<Ticket> ticket = null;
         skuSinImagen = new ArrayList<Sku>();
-
+//     Dentro de este for se indica el numero de veces que repetira el proceso dependiendo del numero de compras a realizar 
         for (int e = 1; e < casos.size(); e++) {
+//            Recupera los datos del excel
             datosEscenarioExcel(e);
 
             driver = browser.iniciarNavegador();
@@ -371,9 +383,9 @@ public class MesaDeRegalos extends Matriz {
             switch (usuario) {
                 case "Login-Fuera de lista":
                     usuario = "Login";
-                    home.incioSesion(login);
-                    agregaSku(home, pdp);
-                    pdp.irPaso0();
+                    home.incioSesion(login);//Inicia Sesion  el usuario
+                    agregaSku(home, pdp);//Metodo que agrega sku a la bolsa
+                    pdp.irPaso0();//Selecciona la mini bolsa para ir a paso cero
                     numEvEncontrado = paso0.buscarNumeroEventoMRFL(mesaRegalo, skus);
                     paso0.aplicarCupon(cupon);
                     paso0.pasoCeroComprar();
@@ -392,6 +404,8 @@ public class MesaDeRegalos extends Matriz {
                     } else {
                         escritura.writeExcel("No hay datos de la compra");
                     }
+                    
+                    usuario = "Login-Fuera de lista";
 //                    GuardarImagen save = new GuardarImagen();
                     //            video.detenerVideo();
                     break;
@@ -423,10 +437,11 @@ public class MesaDeRegalos extends Matriz {
                         escritura.writeExcel("No hay datos de la compra");
                     }
 //                    GuardarImagen save = new GuardarImagen();
+                    usuario = "Guest-Fuera de lista";
                     break;
 
                 case "Login-Dentro de lista":
-                    usuario = "login";
+                    usuario = "Login";
 
                     home.incioSesion(login);
                     numEvEncontrado = mesa.compraPersonalDentroDeLista(mesaRegalo, login);
@@ -452,10 +467,11 @@ public class MesaDeRegalos extends Matriz {
                         escritura.writeExcel("No hay datos de la compra");
                     }
 //                    GuardarImagen save = new GuardarImagen();
-                    //            video.detenerVideo();
-
+//                                video.detenerVideo();
+                    usuario = "Login-Dentro de lista";
                     break;
                 case "Guest-Dentro de lista":
+                    usuario = "Guest";
                     numEvEncontrado = mesa.compraGuestDentroDeLista(mesaRegalo);
                     skuSinImagen = agregaSkuDentroLista(mesa);
                     mesa.irPaso0();
@@ -481,10 +497,12 @@ public class MesaDeRegalos extends Matriz {
                     } else {
                         escritura.writeExcel("No hay datos de la compra");
                     }
+                    usuario = "Guest-Dentro de lista";
                     break;
 
                 case "Festejado-Fuera de lista":
-
+                    
+                    usuario = "Login";
                     home.incioSesion(login);
                     agregaSku(home, pdp);
                     pdp.irPaso0();
@@ -511,7 +529,7 @@ public class MesaDeRegalos extends Matriz {
                     }
 //                GuardarImagen save = new GuardarImagen();
 //                save.guardarPantalla(escenario.get(0), folder, driver);
-
+                    usuario = "Festejado-Fuera de lista";
                     break;
 
                 case "Festejado-Destro de lista":
@@ -540,19 +558,24 @@ public class MesaDeRegalos extends Matriz {
                     } else {
                         escritura.writeExcel("No hay datos de la compra");
                     }
+                    usuario = "Festejado-Destro de lista";
 //                    GuardarImagen save = new GuardarImagen();
                     //            video.detenerVideo();
                     break;
             }
         }
+        JOptionPane.showMessageDialog(null, "Compras terminadas");
     }
 
     public void agregaSku(LivHome home, LivPDP pdp) {
         for (int i = 0; i < skus.size(); i++) {
             Log.write("SKU ++++++++++++++++ " + skus.get(i));
+//            Busca el sku desde la barra de busqueda 
             skuEncontrado = home.buscarSKU(skus.get(i));
             if (skuEncontrado) {
+//                Estando dentro del pdp se modifica la cantidad que se desea comprar
                 pdp.cantidadSKU(skus.get(i));
+//                Se selecciona agregar a la bolsa
                 pdp.agregaraBolsa();
             }
         }
@@ -564,6 +587,7 @@ public class MesaDeRegalos extends Matriz {
         for (int i = 0; i < skus.size(); i++) {
             Utils.sleep(2000);
             skuEncontrado = mesa.seleccionaSKU(skus.get(i));
+            Log.write("========= SKU  =====  " +  skus.get(i));
             if (skuEncontrado) {
                mesa.agregaBolsa(mesaRegalo);
             }  else if (skus.get(i).getId().length()==12){
@@ -580,5 +604,5 @@ public class MesaDeRegalos extends Matriz {
         }
         return skuSinImagen;
     }
-
+ 
 }

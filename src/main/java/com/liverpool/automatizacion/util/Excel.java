@@ -67,6 +67,7 @@ public class Excel {
 
         for(int j=0; j<row.getLastCellNum();j++){
             XSSFCell cell= row.getCell(j);
+            System.out.println("columna --- " + j);
             renglon.add(cell.getStringCellValue());
         }
         return renglon;

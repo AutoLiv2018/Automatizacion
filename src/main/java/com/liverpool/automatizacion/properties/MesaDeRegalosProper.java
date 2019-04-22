@@ -43,6 +43,7 @@ public class MesaDeRegalosProper {
     public static final String MENSAJE_NO_AGREGA_BOLSA = "mensajeNoAgregaBolsa";
     public static final String BTN_MESA_GUEST = "btn_mesa_guest";
     public static final String CERTIFICADO = "certificado";
+    public static final String SUBURBIA = "subirbia";
     
     
        

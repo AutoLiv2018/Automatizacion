@@ -45,34 +45,34 @@ public class CheckoutP2 {
     
     public void seleccionPago(String metodoPago, String usuario, Tarjeta tarjeta, Direccion direccionTar) {
         Utils.sleep(1000);
-        switch(metodoPago){
-            case "Credito":
+        switch(metodoPago.toLowerCase()){
+            case "credito":
             case "3ds":
                 creditoSeleccionar();
-                switch(usuario){
-                    case "Login":
+                switch(usuario.toLowerCase()){
+                    case "login":
                         creditoLogin(tarjeta);
                         break;
-                    case "Guest":
+                    case "guest":
                         creditoGuestTarjeta(tarjeta);
                         creditoGuestDireccion(direccionTar);
                         break;
                 }
                 break;
-            case "Paypal":
+            case "paypal":
                 paypalSeleccionar();
                 break;
-            case "Openpay":
+            case "openpay":
                 efectivoSeleccionar();
                 efectivoVista();
                 break;
-            case "SPEI":
+            case "spei":
                 efectivoSeleccionar();
                 efectivoVista();
                 speiSeleccionar();
                 speiRadioButton();
                 break;
-            case "CIE":
+            case "cie":
                 efectivoSeleccionar();
                 efectivoVista();
                 cieSeleccionar();

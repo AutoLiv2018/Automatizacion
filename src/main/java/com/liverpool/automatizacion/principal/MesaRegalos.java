@@ -80,6 +80,7 @@ public class MesaRegalos {
             String tipoLista = (String) mesaInterfaz.getTipo().getSelectedItem();
             String tipoUsuario  = (String) mesaInterfaz.getTipoUsuario().getSelectedItem();
             String usuario = "";
+//            Obtiene los datos seleccionados desde la interfaz 
             if(lista.equals("Fuera de Lista" ) && tipoLista.equals("Invitado") && tipoUsuario.equals("Login") ){
                
                 usuario = "Login-Fuera de lista";

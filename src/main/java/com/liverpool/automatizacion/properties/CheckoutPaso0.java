@@ -44,4 +44,5 @@ public class CheckoutPaso0 {
     public static final String SPAN_SKU = "span_sku";
     public static final String CANTIDAD = "cantidad";
     public static final String SPAN_CANTIDAD = "span_cantidad";
+    public static final String REGALOCONCOMPRA = "regaloConCompra";
 }

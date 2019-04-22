@@ -14,6 +14,7 @@ import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.principal.Principal;
 import com.liverpool.automatizacion.properties.Header;
 import com.liverpool.automatizacion.properties.MesaDeRegalosProper;
+import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.Utils;
 import com.liverpool.automatizacion.vista.Interfaz;
 import java.io.File;
@@ -57,7 +58,7 @@ public class MesaRegalos {
             System.out.println("No se encontro el archivo: " + mesaR);
         }
     }
-
+//Metodo para iniciar sesion desde Mesa de Regalos
     public void inicioSesion(Login login) {
         boolean res = false;
         int a;
@@ -118,16 +119,29 @@ public class MesaRegalos {
         String flag = "";
         botonMesa();// Ir al boton de mesa de regalos
         buscarMesaGuest();// Hacer click en "Buscar una mesa de regalos"
-        numEvento(numEv);
-        botonEvento();
+        numEvento(numEv);//Ingresar Numero deEvento
+        botonEvento();//Dar click en boton Buscar Mesa
         return flag;
     }
 
     public void botonMesa() {
-        if ((element = Find.element(driver, ambiente.getProperty(Header.A_MESA_DE_REGALOS))) != null) {
-            element.click();
-            Utils.sleep(2500);
+        
+//        if ((element = Find.element(driver, ambiente.getProperty(Header.A_MESA_DE_REGALOS))) != null) {
+//            element.click();
+//            Utils.sleep(2500);
+//        }
+        element = Find.element(driver, ambiente.getProperty(Header.A_MESA_DE_REGALOS));
+        Log.write("elemento de boton mesa " + element);
+        while (element == null) {
+            Log.write("entro al while boton mesa ");
+            element = Find.element(driver, ambiente.getProperty(Header.A_MESA_DE_REGALOS));
+             Utils.sleep(300);
+            Log.write("elemento buscabo en boton mesa " + element);
         }
+        Utils.sleep(300);
+        Log.write("antes del clic en boton mesa " + element);
+        element.click();
+        Utils.sleep(2500);
     }
 
     public void validarSesion() {
@@ -162,6 +176,7 @@ public class MesaRegalos {
     public boolean buscarMesaGuest() {
         boolean res = false;
         if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_MESA_GUEST))) != null) {
+            Log.write("Buscar mesa guest ------- " + element);
             res = true;
             element.click();
         }
@@ -192,7 +207,12 @@ public class MesaRegalos {
         searchSku = searchSku.replace("?", sku.getId());
         if ((element = Find.element(driver, searchSku)) != null) {
             res = true;
-            Utils.sleep(2500);
+            Utils.sleep(2600);
+            int a=0;
+            while(Find.element(driver, "class|modal-body").isDisplayed() && a<=8){
+                Utils.sleep(500);
+                a++;
+            }
             element.click();
             Utils.sleep(2600);
         }
@@ -204,6 +224,7 @@ public class MesaRegalos {
         entrarPopUp();
         selecionarFestejado(numEv);
         if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.ADD_GIFT_BAG))) != null) {
+            Log.write("Boton Agregar bolsa ---------------------- " + element);
             element.click();
         }
         // Aqui hay que validar que el boton "Continuar comprando" haya aparacido
@@ -232,20 +253,39 @@ public class MesaRegalos {
         boolean res = false;
         String festejado = mesaRegalos.getProperty(MesaDeRegalosProper.LBL_FESTEJADO);
         festejado = festejado.replace("?", numEv.getFestejado());
+        
+//        Utils.sleep(2500);
         if ((element = Find.element(driver, festejado)) != null){
              element.click();
              res = true;
         }
+//        element = Find.element(driver, festejado);
+//        while (element == null) {            
+//            element = Find.element(driver, festejado);
+//        }
+//        element.click();
+//        res = true;
         return res;
     }
     
     public boolean botonContinuarComprando() {
         boolean res = false;
-        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_CONTINUAR_COMPRANDO))) != null) {
-            Utils.sleep(500);
+//        if ((element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_CONTINUAR_COMPRANDO))) != null) {
+           // Utils.sleep(500);
+            element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_CONTINUAR_COMPRANDO));
+            Log.write("========= boton continuar comprando  =====  " +  element);
+            Utils.sleep(2500);
+            Log.write("========= boton continuar comprando  =====  " +  element);
+            while (element == null) {   
+                Log.write("entro al while");
+                element = Find.element(driver, mesaRegalos.getProperty(MesaDeRegalosProper.BTN_CONTINUAR_COMPRANDO));
+                Log.write("elemento buscabo " + element);
+            }
+             Log.write("antes del clic " + element);
+            Utils.sleep(2500);
             element.click();
             Utils.sleep(2500);
-        }
+//        }
         return res;
     }
     
@@ -283,6 +323,8 @@ public class MesaRegalos {
             element.click();
             Utils.sleep(2500); 
     } 
+    
+    
     
     private void compraPersonalDentroDeLista(JsonObject caso) {
         JsonObject json;

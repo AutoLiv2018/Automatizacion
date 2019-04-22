@@ -10,6 +10,7 @@ import com.liverpool.automatizacion.modelo.Sku;
 import com.liverpool.automatizacion.vista.Interfaz;
 import com.liverpool.automatizacion.principal.Principal;
 import com.liverpool.automatizacion.properties.CheckoutPaso0;
+import com.liverpool.automatizacion.util.Log;
 import com.liverpool.automatizacion.util.Utils;
 import java.io.File;
 import java.util.ArrayList;
@@ -112,10 +113,10 @@ public class CheckoutP0 {
 
         int n = skuActualizado.size();
         while (n <= skus.size()) {
-            skuActualizado = agregaAMesa(numEv, skus, skuActualizado, skuArticulo);
+            skuActualizado = agregaAMesa(numEv, skus, skuActualizado, skuArticulo);//Agregar SKU a la mesa de regalos 
             n++;
         }
-        mensaje(numEv, skuLista);
+        mensaje(numEv, skuLista);//Agrega mensaje de felicitacion
         return flag;
     }
 
@@ -303,6 +304,10 @@ public class CheckoutP0 {
                                 res = true;
                                 skuAEliminar.remove(i);
                                 productList.remove(c);
+                            }else if ((element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.REGALOCONCOMPRA))) != null) {
+                                res = true;
+                                skuAEliminar.remove(i);
+                                productList.remove(c);
                             }
                         }//cierra if de comparacion para SkuAEliminar
                     }// ***ciclo for de skuEliminar 
@@ -331,8 +336,10 @@ public class CheckoutP0 {
                 mensajeText = "";
                 mensajeText = Cpaso0.getProperty(CheckoutPaso0.MENSAJE_SKU);
                 mensajeText = mensajeText.replace("?", skuLista);
+                Log.write("***************** elemento para agregar mensaje ********************* " + element);
                 if ((element = Find.element(driver, mensajeText)) != null) {
                     if (element.isDisplayed()) {
+                        Log.write("Es visible para agregar Mensaje ++++++++++++++++++++++++ " + element);
                         element.sendKeys(numEv.getMensaje(), Keys.ENTER);
                         res = true;
                     }
@@ -402,23 +409,26 @@ public class CheckoutP0 {
         return skuActualizado;
     }
 
+//    Metodo para agregar a mesa de regalos un sku 
     public ArrayList<String> agregaAMesa(MesaRegaloFL numEv, ArrayList<Sku> skus, ArrayList<String> skuActualizado, ArrayList<String> skuArticulo) {
-        boolean res = false;
         WebElement element;
         WebElement temp;
-        String cantidad, cantidadSpan;
-        String cant = "", valorHtml = "";
+        String cantidad;
         boolean existe = false;
 
         Utils.sleep(2550);
-        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));
-        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));
-
+        element = Find.element(driver, Cpaso0.getProperty(CheckoutPaso0.DIV_LIST_BAG));//obtiene todos los divs que existen en paso cero
+        List<WebElement> productList = Find.elements(element, Cpaso0.getProperty(CheckoutPaso0.PRODUCT_LIST));//obtiene los productos que existen dentro de los divs
+//      Recorre todos los articulos dentro de paso cero
         for (WebElement articulo : productList) {
+//            De cada articulo que se recorre se valida cuando encuentra un SKU 
             if ((temp = Find.element(articulo, Cpaso0.getProperty(CheckoutPaso0.SKU))) != null) {
                 skuLista = temp.getText();
+//                valida si el sku ya se actualizo, es decir, ya se agrego el articulo a una mesa de regalos
                 for (int c = 0; c < skuActualizado.size(); c++) {
+//                    Recorre los articulos que ya se han agregado *******************
                     for (int a = 0; a < skuArticulo.size(); a++) {
+//                        valida si el articulo que se obtiene de paso cero es igual al articulo que ya se recorrio anteriormente
                         if (skuLista.equals(skuArticulo.get(a))) {
                             existe = true;
                         }
@@ -433,7 +443,7 @@ public class CheckoutP0 {
                                 cantidad = cantidad.replace("?", skuLista);
                                 Utils.sleep(2500);
                                 if ((element = Find.element(driver, cantidad)) != null) {
-                                    element.click();
+                                    element.click();//Hace click en el en el campo de cantidad 
                                 }
                                 Utils.sleep(1000);
                                 frameMesaRegaloFL();
