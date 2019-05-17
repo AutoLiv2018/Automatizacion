@@ -1,0 +1,33 @@
+[16/04/2019 15:00:54] - Inicia Sistema de Automatizacion
+[16/04/2019 15:01:19] - Inicia Sistema de Automatizacion
+[16/04/2019 15:01:19] - Inicia Sistema de Tlog
+[16/04/2019 15:09:06] - Inicia Sistema de Automatizacion
+[16/04/2019 15:09:57] - Inicia Sistema de Automatizacion
+[16/04/2019 15:09:57] - Inicia Sistema de Tlog
+[16/04/2019 15:10:41] - Inicia Sistema de Automatizacion
+[16/04/2019 15:10:54] - Inicia Sistema de Automatizacion
+[16/04/2019 15:10:54] - Inicia Sistema de Tlog
+[16/04/2019 15:14:36] - Inicia Sistema de Automatizacion
+[16/04/2019 15:14:46] - Inicia Sistema de Automatizacion
+[16/04/2019 15:14:46] - Inicia Sistema de Tlog
+[16/04/2019 15:21:36] - Inicia Sistema de Automatizacion
+[16/04/2019 15:21:42] - Inicia Sistema de Automatizacion
+[16/04/2019 15:21:42] - Inicia Sistema de Tlog
+[16/04/2019 15:28:19] - Inicia Sistema de Automatizacion
+[16/04/2019 15:28:28] - Inicia Sistema de Automatizacion
+[16/04/2019 15:28:28] - Inicia Sistema de Tlog
+[16/04/2019 15:30:55] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties
+[16/04/2019 15:30:55] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties (El sistema no puede encontrar el archivo especificado)
+[16/04/2019 15:30:55] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties
+[16/04/2019 15:30:55] - No se encontro el archivo: tiendas\liverpool\app\android\shipping.properties
+[16/04/2019 15:31:13] - Inicia Sistema de Automatizacion
+[16/04/2019 15:31:25] - Inicia Sistema de Automatizacion
+[16/04/2019 15:31:32] - Inicia Sistema de Automatizacion
+[16/04/2019 15:31:32] - Inicia Sistema de Tlog
+[16/04/2019 15:39:37] - Ocurrio una excepcion al cargar el archivo de configuracion: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties
+[16/04/2019 15:39:37] - java.io.FileNotFoundException: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties (El sistema no puede encontrar el archivo especificado)
+[16/04/2019 15:39:37] - Ocurrio una excepcion al leer el archivo: C:\Users\APEREZG03\Documents\NetBeansProjects\Automa\tiendas\liverpool\app\android\shipping.properties
+[16/04/2019 15:39:37] - No se encontro el archivo: tiendas\liverpool\app\android\shipping.properties
+[16/04/2019 15:49:57] - Inicia Sistema de Automatizacion
+[16/04/2019 15:50:05] - Inicia Sistema de Automatizacion
+[16/04/2019 15:50:05] - Inicia Sistema de Tlog
